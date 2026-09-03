@@ -1,16 +1,16 @@
 # Image officielle Node.js légère
 FROM node:20-alpine
 
-# Répertoire de travail dans le conteneur
+# Répertoire de travail
 WORKDIR /app
 
-# Copie des métadonnées
+# Copie des fichiers applicatifs et guides
 COPY package.json ./
-
-# Copie des fichiers applicatifs et données
 COPY server.js prototype.html index.html* sessions_catalog.json guides_etalon.json ./
 COPY Guides_Pedagogiques ./Guides_Pedagogiques
-COPY Sessions_Data ./Sessions_Data
+
+# Création du dossier Sessions_Data
+RUN mkdir -p Sessions_Data
 
 # Exposition du port
 EXPOSE 3000
