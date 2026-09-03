@@ -1,0 +1,755 @@
+{
+  "organization": "OIDANEOS",
+  "formationTitle": "Concepteur & Développeur d'Applications IA No-Code",
+  "totalSessions": 14,
+  "assetisedCount": 7,
+  "replaysCount": 7,
+  "sessions": [
+    {
+      "id": "accueil",
+      "number": 0,
+      "folder": "Accueil - 010626",
+      "title": "Accueil & Cadrage Pédagogique",
+      "date": "01 Juin 2026",
+      "formateur": "Milène / Équipe OIDANEOS",
+      "description": "Prise de contact, présentation des objectifs, fonctionnement de Digiforma, documents administratifs et cadrage du parcours.",
+      "isAssetised": true,
+      "status": "ASSETISE",
+      "microVideosCount": 7,
+      "microVideos": [
+        {
+          "id": 1,
+          "filename": "1 Tour de table.mp4",
+          "title": "1 Tour de table",
+          "cleanTitle": "Tour de table",
+          "relPath": "/Sessions_Data/Accueil - 010626/Session bienvenu toutes les vidéos/1 Tour de table.mp4"
+        },
+        {
+          "id": 2,
+          "filename": "2 Introduction à digiforma.mp4",
+          "title": "2 Introduction à digiforma",
+          "cleanTitle": "Introduction à digiforma",
+          "relPath": "/Sessions_Data/Accueil - 010626/Session bienvenu toutes les vidéos/2 Introduction à digiforma.mp4"
+        },
+        {
+          "id": 3,
+          "filename": "3 Le programme et évaluation.mp4",
+          "title": "3 Le programme et évaluation",
+          "cleanTitle": "Le programme et évaluation",
+          "relPath": "/Sessions_Data/Accueil - 010626/Session bienvenu toutes les vidéos/3 Le programme et évaluation.mp4"
+        },
+        {
+          "id": 4,
+          "filename": "4 Point administratif.mp4",
+          "title": "4 Point administratif",
+          "cleanTitle": "Point administratif",
+          "relPath": "/Sessions_Data/Accueil - 010626/Session bienvenu toutes les vidéos/4 Point administratif.mp4"
+        },
+        {
+          "id": 5,
+          "filename": "5 Présentation du formateur.mp4",
+          "title": "5 Présentation du formateur",
+          "cleanTitle": "Présentation du formateur",
+          "relPath": "/Sessions_Data/Accueil - 010626/Session bienvenu toutes les vidéos/5 Présentation du formateur.mp4"
+        },
+        {
+          "id": 6,
+          "filename": "6 Partie Documents et replays.mp4",
+          "title": "6 Partie Documents et replays",
+          "cleanTitle": "Partie Documents et replays",
+          "relPath": "/Sessions_Data/Accueil - 010626/Session bienvenu toutes les vidéos/6 Partie Documents et replays.mp4"
+        },
+        {
+          "id": 7,
+          "filename": "7 Questions et derniers points.mp4",
+          "title": "7 Questions et derniers points",
+          "cleanTitle": "Questions et derniers points",
+          "relPath": "/Sessions_Data/Accueil - 010626/Session bienvenu toutes les vidéos/7 Questions et derniers points.mp4"
+        }
+      ],
+      "replayVideo": null,
+      "docx": null,
+      "docxContentPreview": ""
+    },
+    {
+      "id": "session-1",
+      "number": 1,
+      "folder": "Session 1 - Cas pratique 080626",
+      "title": "Cadrage des Cas Pratiques & Préparation Certification",
+      "date": "08 Juin 2026",
+      "formateur": "Milène / Alain",
+      "description": "Introduction aux projets individuels, étude de cas sur Celestory et base de données, consignes d'évaluation.",
+      "isAssetised": true,
+      "status": "ASSETISE",
+      "microVideosCount": 7,
+      "microVideos": [
+        {
+          "id": 1,
+          "filename": "1 Introduction et mise au point.mp4",
+          "title": "1 Introduction et mise au point",
+          "cleanTitle": "Introduction et mise au point",
+          "relPath": "/Sessions_Data/Session 1 - Cas pratique 080626/Session 1 toutes les vidéos/1 Introduction et mise au point.mp4"
+        },
+        {
+          "id": 2,
+          "filename": "2 Cas pratique.mp4",
+          "title": "2 Cas pratique",
+          "cleanTitle": "Cas pratique",
+          "relPath": "/Sessions_Data/Session 1 - Cas pratique 080626/Session 1 toutes les vidéos/2 Cas pratique.mp4"
+        },
+        {
+          "id": 3,
+          "filename": "3 Exemple de projet d'Alain.mp4",
+          "title": "3 Exemple de projet d'Alain",
+          "cleanTitle": "Exemple de projet d'Alain",
+          "relPath": "/Sessions_Data/Session 1 - Cas pratique 080626/Session 1 toutes les vidéos/3 Exemple de projet d'Alain.mp4"
+        },
+        {
+          "id": 4,
+          "filename": "4 Les outils utilisés Ceslestory & Base de données.mp4",
+          "title": "4 Les outils utilisés Ceslestory & Base de données",
+          "cleanTitle": "Les outils utilisés Ceslestory & Base de données",
+          "relPath": "/Sessions_Data/Session 1 - Cas pratique 080626/Session 1 toutes les vidéos/4 Les outils utilisés Ceslestory & Base de données.mp4"
+        },
+        {
+          "id": 5,
+          "filename": "5 Questions sur les outils.mp4",
+          "title": "5 Questions sur les outils",
+          "cleanTitle": "Questions sur les outils",
+          "relPath": "/Sessions_Data/Session 1 - Cas pratique 080626/Session 1 toutes les vidéos/5 Questions sur les outils.mp4"
+        },
+        {
+          "id": 6,
+          "filename": "6 Digiforma évaluations, documents, replays.mp4",
+          "title": "6 Digiforma évaluations, documents, replays",
+          "cleanTitle": "Digiforma évaluations, documents, replays",
+          "relPath": "/Sessions_Data/Session 1 - Cas pratique 080626/Session 1 toutes les vidéos/6 Digiforma évaluations, documents, replays.mp4"
+        },
+        {
+          "id": 7,
+          "filename": "7 Mise au point & administratif.mp4",
+          "title": "7 Mise au point & administratif",
+          "cleanTitle": "Mise au point & administratif",
+          "relPath": "/Sessions_Data/Session 1 - Cas pratique 080626/Session 1 toutes les vidéos/7 Mise au point & administratif.mp4"
+        }
+      ],
+      "replayVideo": null,
+      "docx": {
+        "filename": "Session de cadrage des cas pratiques et préparation à la cer.docx",
+        "relPath": "/Sessions_Data/Session 1 - Cas pratique 080626/Session de cadrage des cas pratiques et préparation à la cer.docx"
+      },
+      "docxContentPreview": "Session de cadrage des cas pratiques et préparation à la certification IA\n\nDate de la session\n\n08 juin 2026\n\n🎯 Résumé exécutif\n\n🎯 L'objectif de la session était d'accompagner les apprenants dans l'identification et le cadrage de leur cas pratique de certification, tout en apportant des précisions sur les outils, les livrables et les modalités d'évaluation attendues dans le cadre du parcours CISIA.\n\n👉 La session a permis de présenter l'outil Celestory, les solutions de gestion de données (Base Row et Airtable), ainsi que plusieurs exemples de projets portés par les entreprises participantes. Les échanges ont également permis de préciser les cas pratiques retenus pour les apprenants de 2DRD, ISP et Big Bet.\n\nPoints clés\n\nCas pratiques identifiés\n\n2DRD\n\nXavier : Assistant IA de conception et de dimensionnement des réseaux électriques.\n\nJean-José : Assistant IA de génération automatique des rapports terrain.\n\nRené : Assistant IA de suivi de chantier et d'analyse de rentabilité.\n\nSuzie : Assistant IA de pilotage stratégique de l'entreprise.\n\nISP\n\nProjet commun centré sur l'anti-fragilité de l'entreprise.\n\nCapitalisation des connaissances métiers.\n\nAmélioration de la transmission des sav"
+    },
+    {
+      "id": "session-2",
+      "number": 2,
+      "folder": "Session 2 - Cas pratiques 150626",
+      "title": "Cas Pratiques Celestory & Journal de Bord",
+      "date": "15 Juin 2026",
+      "formateur": "Milène",
+      "description": "Pratique approfondie des scénarios interactifs dans Celestory, tenue du journal de bord et méthodologie d'apprentissage.",
+      "isAssetised": true,
+      "status": "ASSETISE",
+      "microVideosCount": 4,
+      "microVideos": [
+        {
+          "id": 1,
+          "filename": "1 Questions réponses.mp4",
+          "title": "1 Questions réponses",
+          "cleanTitle": "Questions réponses",
+          "relPath": "/Sessions_Data/Session 2 - Cas pratiques 150626/Session 2 toutes les vidéos/1 Questions réponses.mp4"
+        },
+        {
+          "id": 2,
+          "filename": "2 Journal de bord.mp4",
+          "title": "2 Journal de bord",
+          "cleanTitle": "Journal de bord",
+          "relPath": "/Sessions_Data/Session 2 - Cas pratiques 150626/Session 2 toutes les vidéos/2 Journal de bord.mp4"
+        },
+        {
+          "id": 3,
+          "filename": "3 Exemples de cas sur Celestory et son Replay.mp4",
+          "title": "3 Exemples de cas sur Celestory et son Replay",
+          "cleanTitle": "Exemples de cas sur Celestory et son Replay",
+          "relPath": "/Sessions_Data/Session 2 - Cas pratiques 150626/Session 2 toutes les vidéos/3 Exemples de cas sur Celestory et son Replay.mp4"
+        },
+        {
+          "id": 4,
+          "filename": "4 Rappels et devoirs.mp4",
+          "title": "4 Rappels et devoirs",
+          "cleanTitle": "Rappels et devoirs",
+          "relPath": "/Sessions_Data/Session 2 - Cas pratiques 150626/Session 2 toutes les vidéos/4 Rappels et devoirs.mp4"
+        }
+      ],
+      "replayVideo": null,
+      "docx": {
+        "filename": "Fiche de résumé détaillée 150626.docx",
+        "relPath": "/Sessions_Data/Session 2 - Cas pratiques 150626/Fiche de résumé détaillée 150626.docx"
+      },
+      "docxContentPreview": "Titre de la session\n\nStructuration des données : préparation de la solution IA et dossier de certification\n\nDate de la session\n\n15 juin 2026\n\nRésumé exécutif\n\n🎯 L’objectif de la session est d’accompagner les apprenants dans la structuration des données nécessaires à leur future solution IA tout en poursuivant la préparation du journal de bord de certification. La session vise à aider chacun à clarifier son besoin métier, identifier les données à collecter et préparer les fondations nécessaires à la création de son application.\n\n👉 La session s'appuie sur les différents cas pratiques des participants (appels d'offres, suivi de chantiers, rapports terrain, pilotage d'activité, gestion documentaire, etc.) afin d'identifier les informations à organiser avant toute intégration de l'intelligence artificielle. Les échanges portent notamment sur la structuration des bases de données, l'organisation des informations métier, les possibilités offertes par Celestory et l'importance de constituer des jeux de données cohérents.\n\n💡 Sous la vidéo :\n\n• Fiche de révision\n\nPoints clés de la session\n\nLa réussite d'une solution IA repose d'abord sur la qualité et l'organisation des données.\n\nAvant d'int"
+    },
+    {
+      "id": "session-3",
+      "number": 3,
+      "folder": "Session 3 - Cas pratique + Pierre 220626",
+      "title": "Présentation des Projets & Arrivée de Pierre",
+      "date": "22 Juin 2026",
+      "formateur": "Milène & Pierre Lacombe",
+      "description": "Présentation des cas des apprenants, feedback direct et transition vers les modules techniques IA avancés avec Pierre Lacombe.",
+      "isAssetised": true,
+      "status": "ASSETISE",
+      "microVideosCount": 5,
+      "microVideos": [
+        {
+          "id": 1,
+          "filename": "1 Présentation du formateur.mp4",
+          "title": "1 Présentation du formateur",
+          "cleanTitle": "Présentation du formateur",
+          "relPath": "/Sessions_Data/Session 3 - Cas pratique + Pierre 220626/Session 3 Toutes les vidéos/1 Présentation du formateur.mp4"
+        },
+        {
+          "id": 2,
+          "filename": "2 Présentation apprenant & questions 1.mp4",
+          "title": "2 Présentation apprenant & questions 1",
+          "cleanTitle": "Présentation apprenant & questions 1",
+          "relPath": "/Sessions_Data/Session 3 - Cas pratique + Pierre 220626/Session 3 Toutes les vidéos/2 Présentation apprenant & questions 1.mp4"
+        },
+        {
+          "id": 3,
+          "filename": "3 Présentation apprenant & questions 2.mp4",
+          "title": "3 Présentation apprenant & questions 2",
+          "cleanTitle": "Présentation apprenant & questions 2",
+          "relPath": "/Sessions_Data/Session 3 - Cas pratique + Pierre 220626/Session 3 Toutes les vidéos/3 Présentation apprenant & questions 2.mp4"
+        },
+        {
+          "id": 4,
+          "filename": "4 Présentation apprenant & questions 3.mp4",
+          "title": "4 Présentation apprenant & questions 3",
+          "cleanTitle": "Présentation apprenant & questions 3",
+          "relPath": "/Sessions_Data/Session 3 - Cas pratique + Pierre 220626/Session 3 Toutes les vidéos/4 Présentation apprenant & questions 3.mp4"
+        },
+        {
+          "id": 5,
+          "filename": "5 Conclusion et évolution possible.mp4",
+          "title": "5 Conclusion et évolution possible",
+          "cleanTitle": "Conclusion et évolution possible",
+          "relPath": "/Sessions_Data/Session 3 - Cas pratique + Pierre 220626/Session 3 Toutes les vidéos/5 Conclusion et évolution possible.mp4"
+        }
+      ],
+      "replayVideo": null,
+      "docx": {
+        "filename": "Fiche de révision - 220626.docx",
+        "relPath": "/Sessions_Data/Session 3 - Cas pratique + Pierre 220626/Fiche de révision - 220626.docx"
+      },
+      "docxContentPreview": "Titre de la session\n\nLancement de la formation IA : cas pratiques, organisation et préparation des projets\n\nDate de la session\n\n22 juin 2026\n\nRésumé exécutif\n\n🎯 L’objectif de la session est de lancer officiellement la phase pratique de la formation en intelligence artificielle en présentant le formateur, les modalités pédagogiques et les différents cas d’usage des participants. Elle vise également à s'assurer que chaque projet dispose d'une orientation claire avant le démarrage des ateliers de développement.\n\n👉 La session présente les projets portés par chaque entreprise et les besoins métiers associés. Les échanges portent principalement sur la structuration des données, le choix des outils (Baserow, Celestory, IA, No Code, Vibe Coding), les contraintes techniques (hébergement local, souveraineté des données, traitement d'images, automatisation) ainsi que l'organisation des prochaines séances pratiques. Les participants sont invités à préparer leur environnement de travail et à poursuivre la collecte des données nécessaires à leurs futurs développements.\n\nPoints clés de la session\n\nPrésentation de Pierre, nouveau formateur spécialisé en intelligence artificielle souveraine.\n\nLa fo"
+    },
+    {
+      "id": "session-4",
+      "number": 4,
+      "folder": "Session 4 - Pierre 1 - 010726",
+      "title": "Fondations IA, LLM & Changement de Paradigme",
+      "date": "01 Juillet 2026",
+      "formateur": "Pierre Lacombe",
+      "description": "Transformers, tokens, multimodalité, open source vs propriétaire, du CLI au langage naturel, tool calling et API.",
+      "isAssetised": true,
+      "status": "ASSETISE",
+      "microVideosCount": 12,
+      "microVideos": [
+        {
+          "id": 1,
+          "filename": "1 Intro.mp4",
+          "title": "1 Intro",
+          "cleanTitle": "Intro",
+          "relPath": "/Sessions_Data/Session 4 - Pierre 1 - 010726/Session 4 Toutes les vidéo/1 Intro.mp4"
+        },
+        {
+          "id": 2,
+          "filename": "2 Tour de table.mp4",
+          "title": "2 Tour de table",
+          "cleanTitle": "Tour de table",
+          "relPath": "/Sessions_Data/Session 4 - Pierre 1 - 010726/Session 4 Toutes les vidéo/2 Tour de table.mp4"
+        },
+        {
+          "id": 3,
+          "filename": "3 Introduction à l'IA générative et fonctionnement des LLM (GPT, Transformers, Tokens).mp4",
+          "title": "3 Introduction à l'IA générative et fonctionnement des LLM (GPT, Transformers, Tokens)",
+          "cleanTitle": "Introduction à l'IA générative et fonctionnement des LLM (GPT, Transformers, Tokens)",
+          "relPath": "/Sessions_Data/Session 4 - Pierre 1 - 010726/Session 4 Toutes les vidéo/3 Introduction à l'IA générative et fonctionnement des LLM (GPT, Transformers, Tokens).mp4"
+        },
+        {
+          "id": 4,
+          "filename": "4 Multimodalité, Open AI et la révolution Chat.mp4",
+          "title": "4 Multimodalité, Open AI et la révolution Chat",
+          "cleanTitle": "Multimodalité, Open AI et la révolution Chat",
+          "relPath": "/Sessions_Data/Session 4 - Pierre 1 - 010726/Session 4 Toutes les vidéo/4 Multimodalité, Open AI et la révolution Chat.mp4"
+        },
+        {
+          "id": 5,
+          "filename": "5 Diffusion virale, modèles propriétaires vs Open Source et enjeux géopolitiques.mp4",
+          "title": "5 Diffusion virale, modèles propriétaires vs Open Source et enjeux géopolitiques",
+          "cleanTitle": "Diffusion virale, modèles propriétaires vs Open Source et enjeux géopolitiques",
+          "relPath": "/Sessions_Data/Session 4 - Pierre 1 - 010726/Session 4 Toutes les vidéo/5 Diffusion virale, modèles propriétaires vs Open Source et enjeux géopolitiques.mp4"
+        },
+        {
+          "id": 6,
+          "filename": "6 Le changement de paradigme des interfaces - du Terminal (CLI) au Langage Naturel.mp4",
+          "title": "6 Le changement de paradigme des interfaces - du Terminal (CLI) au Langage Naturel",
+          "cleanTitle": "Le changement de paradigme des interfaces - du Terminal (CLI) au Langage Naturel",
+          "relPath": "/Sessions_Data/Session 4 - Pierre 1 - 010726/Session 4 Toutes les vidéo/6 Le changement de paradigme des interfaces - du Terminal (CLI) au Langage Naturel.mp4"
+        },
+        {
+          "id": 7,
+          "filename": "7 La démocratisation du code et la création d'outils sur mesure.mp4",
+          "title": "7 La démocratisation du code et la création d'outils sur mesure",
+          "cleanTitle": "La démocratisation du code et la création d'outils sur mesure",
+          "relPath": "/Sessions_Data/Session 4 - Pierre 1 - 010726/Session 4 Toutes les vidéo/7 La démocratisation du code et la création d'outils sur mesure.mp4"
+        },
+        {
+          "id": 8,
+          "filename": "8 Les logiciels SaaS et l'évolution vers le Cloud.mp4",
+          "title": "8 Les logiciels SaaS et l'évolution vers le Cloud",
+          "cleanTitle": "Les logiciels SaaS et l'évolution vers le Cloud",
+          "relPath": "/Sessions_Data/Session 4 - Pierre 1 - 010726/Session 4 Toutes les vidéo/8 Les logiciels SaaS et l'évolution vers le Cloud.mp4"
+        },
+        {
+          "id": 9,
+          "filename": "9 Le nerf de la guerre - La puissance de calcul.mp4",
+          "title": "9 Le nerf de la guerre - La puissance de calcul",
+          "cleanTitle": "Le nerf de la guerre - La puissance de calcul",
+          "relPath": "/Sessions_Data/Session 4 - Pierre 1 - 010726/Session 4 Toutes les vidéo/9 Le nerf de la guerre - La puissance de calcul.mp4"
+        },
+        {
+          "id": 10,
+          "filename": "10 L'évolution technologique - du Tool calling aux API et à l'automatisation.mp4",
+          "title": "10 L'évolution technologique - du Tool calling aux API et à l'automatisation",
+          "cleanTitle": "L'évolution technologique - du Tool calling aux API et à l'automatisation",
+          "relPath": "/Sessions_Data/Session 4 - Pierre 1 - 010726/Session 4 Toutes les vidéo/10 L'évolution technologique - du Tool calling aux API et à l'automatisation.mp4"
+        },
+        {
+          "id": 11,
+          "filename": "11 Standardisation, No-code et Cloud Coworking.mp4",
+          "title": "11 Standardisation, No-code et Cloud Coworking",
+          "cleanTitle": "Standardisation, No-code et Cloud Coworking",
+          "relPath": "/Sessions_Data/Session 4 - Pierre 1 - 010726/Session 4 Toutes les vidéo/11 Standardisation, No-code et Cloud Coworking.mp4"
+        },
+        {
+          "id": 12,
+          "filename": "12 Conclusion.mp4",
+          "title": "12 Conclusion",
+          "cleanTitle": "Conclusion",
+          "relPath": "/Sessions_Data/Session 4 - Pierre 1 - 010726/Session 4 Toutes les vidéo/12 Conclusion.mp4"
+        }
+      ],
+      "replayVideo": null,
+      "docx": {
+        "filename": "Fiche de révision - 030726.docx",
+        "relPath": "/Sessions_Data/Session 4 - Pierre 1 - 010726/Fiche de révision - 030726.docx"
+      },
+      "docxContentPreview": "Titre de la session\n\nFondamentaux de l'IA générative : fonctionnement, modèles et enjeux de souveraineté \n\nDate de la session\n\n22 juin 2026\n\nRésumé exécutif\n\n🎯 L'objectif de la session est de comprendre les principes fondamentaux de l'intelligence artificielle générative avant d'entamer le développement des solutions métiers des participants. La session pose les bases indispensables pour distinguer les différents types d'IA, comprendre leur fonctionnement et identifier les enjeux liés à leur utilisation dans un contexte professionnel. \n\n👉 La session présente l'évolution récente de l'IA générative depuis l'apparition de ChatGPT, le fonctionnement des grands modèles de langage (LLM), la notion de probabilités dans les réponses générées ainsi que les concepts de tokens, Transformers et multimodalité. Elle explique également les différences entre modèles propriétaires et modèles souverains, les enjeux de qualité des données (« Garbage In, Garbage Out »), ainsi que les nouvelles possibilités offertes par les IA capables d'interagir directement avec les systèmes informatiques. Les projets des différents participants sont également présentés afin d'adapter les futurs ateliers à leurs beso"
+    },
+    {
+      "id": "session-5",
+      "number": 5,
+      "folder": "Session 5 - Pierre 2 - 060726",
+      "title": "Bases de Données Relationnelles & Baserow",
+      "date": "06 Juillet 2026",
+      "formateur": "Pierre Lacombe",
+      "description": "Excel vs BDD, modélisation relationnelle, CRUD, formules avancées, rollups, liens de tables et sécurisation des données.",
+      "isAssetised": true,
+      "status": "ASSETISE",
+      "microVideosCount": 19,
+      "microVideos": [
+        {
+          "id": 1,
+          "filename": "1 Intro.mp4",
+          "title": "1 Intro",
+          "cleanTitle": "Intro",
+          "relPath": "/Sessions_Data/Session 5 - Pierre 2 - 060726/Session 5 toutes les vidéos/1 Intro.mp4"
+        },
+        {
+          "id": 2,
+          "filename": "2 Comment sont enregistrés les données des apprenants.mp4",
+          "title": "2 Comment sont enregistrés les données des apprenants",
+          "cleanTitle": "Comment sont enregistrés les données des apprenants",
+          "relPath": "/Sessions_Data/Session 5 - Pierre 2 - 060726/Session 5 toutes les vidéos/2 Comment sont enregistrés les données des apprenants.mp4"
+        },
+        {
+          "id": 3,
+          "filename": "3 Différences entre Excel et base données.mp4",
+          "title": "3 Différences entre Excel et base données",
+          "cleanTitle": "Différences entre Excel et base données",
+          "relPath": "/Sessions_Data/Session 5 - Pierre 2 - 060726/Session 5 toutes les vidéos/3 Différences entre Excel et base données.mp4"
+        },
+        {
+          "id": 4,
+          "filename": "4 Introduction à baserow et à l'interface.mp4",
+          "title": "4 Introduction à baserow et à l'interface",
+          "cleanTitle": "Introduction à baserow et à l'interface",
+          "relPath": "/Sessions_Data/Session 5 - Pierre 2 - 060726/Session 5 toutes les vidéos/4 Introduction à baserow et à l'interface.mp4"
+        },
+        {
+          "id": 5,
+          "filename": "5 Tableurs (excel) vs bases de données relationnelles.mp4",
+          "title": "5 Tableurs (excel) vs bases de données relationnelles",
+          "cleanTitle": "Tableurs (excel) vs bases de données relationnelles",
+          "relPath": "/Sessions_Data/Session 5 - Pierre 2 - 060726/Session 5 toutes les vidéos/5 Tableurs (excel) vs bases de données relationnelles.mp4"
+        },
+        {
+          "id": 6,
+          "filename": "6 Structure d'une table - les champs (colonnes) et le champ principal.mp4",
+          "title": "6 Structure d'une table - les champs (colonnes) et le champ principal",
+          "cleanTitle": "Structure d'une table - les champs (colonnes) et le champ principal",
+          "relPath": "/Sessions_Data/Session 5 - Pierre 2 - 060726/Session 5 toutes les vidéos/6 Structure d'une table - les champs (colonnes) et le champ principal.mp4"
+        },
+        {
+          "id": 7,
+          "filename": "7 Les enregistrements (lignes) et l'identifiant unique (id).mp4",
+          "title": "7 Les enregistrements (lignes) et l'identifiant unique (id)",
+          "cleanTitle": "Les enregistrements (lignes) et l'identifiant unique (id)",
+          "relPath": "/Sessions_Data/Session 5 - Pierre 2 - 060726/Session 5 toutes les vidéos/7 Les enregistrements (lignes) et l'identifiant unique (id).mp4"
+        },
+        {
+          "id": 8,
+          "filename": "8 Les natures de champs - le texte (brut et enrichi).mp4",
+          "title": "8 Les natures de champs - le texte (brut et enrichi)",
+          "cleanTitle": "Les natures de champs - le texte (brut et enrichi)",
+          "relPath": "/Sessions_Data/Session 5 - Pierre 2 - 060726/Session 5 toutes les vidéos/8 Les natures de champs - le texte (brut et enrichi).mp4"
+        },
+        {
+          "id": 9,
+          "filename": "9 Les natures de champs - les nombres, les dates et les booléens.mp4",
+          "title": "9 Les natures de champs - les nombres, les dates et les booléens",
+          "cleanTitle": "Les natures de champs - les nombres, les dates et les booléens",
+          "relPath": "/Sessions_Data/Session 5 - Pierre 2 - 060726/Session 5 toutes les vidéos/9 Les natures de champs - les nombres, les dates et les booléens.mp4"
+        },
+        {
+          "id": 10,
+          "filename": "10 Les listes déroulantes (sélections uniques et multiples).mp4",
+          "title": "10 Les listes déroulantes (sélections uniques et multiples)",
+          "cleanTitle": "Les listes déroulantes (sélections uniques et multiples)",
+          "relPath": "/Sessions_Data/Session 5 - Pierre 2 - 060726/Session 5 toutes les vidéos/10 Les listes déroulantes (sélections uniques et multiples).mp4"
+        },
+        {
+          "id": 11,
+          "filename": "11 Les filtres et tris.mp4",
+          "title": "11 Les filtres et tris",
+          "cleanTitle": "Les filtres et tris",
+          "relPath": "/Sessions_Data/Session 5 - Pierre 2 - 060726/Session 5 toutes les vidéos/11 Les filtres et tris.mp4"
+        },
+        {
+          "id": 12,
+          "filename": "12 Les vues personnalisées et formules.mp4",
+          "title": "12 Les vues personnalisées et formules",
+          "cleanTitle": "Les vues personnalisées et formules",
+          "relPath": "/Sessions_Data/Session 5 - Pierre 2 - 060726/Session 5 toutes les vidéos/12 Les vues personnalisées et formules.mp4"
+        },
+        {
+          "id": 13,
+          "filename": "13 Resume, unique, distribution, fichier, floor, téléphone.mp4",
+          "title": "13 Resume, unique, distribution, fichier, floor, téléphone",
+          "cleanTitle": "Resume, unique, distribution, fichier, floor, téléphone",
+          "relPath": "/Sessions_Data/Session 5 - Pierre 2 - 060726/Session 5 toutes les vidéos/13 Resume, unique, distribution, fichier, floor, téléphone.mp4"
+        },
+        {
+          "id": 14,
+          "filename": "14 Liens entre les tables et champs rapportés.mp4",
+          "title": "14 Liens entre les tables et champs rapportés",
+          "cleanTitle": "Liens entre les tables et champs rapportés",
+          "relPath": "/Sessions_Data/Session 5 - Pierre 2 - 060726/Session 5 toutes les vidéos/14 Liens entre les tables et champs rapportés.mp4"
+        },
+        {
+          "id": 15,
+          "filename": "15 Les champs liés (rollup), les classements et les champs automatiques.mp4",
+          "title": "15 Les champs liés (rollup), les classements et les champs automatiques",
+          "cleanTitle": "Les champs liés (rollup), les classements et les champs automatiques",
+          "relPath": "/Sessions_Data/Session 5 - Pierre 2 - 060726/Session 5 toutes les vidéos/15 Les champs liés (rollup), les classements et les champs automatiques.mp4"
+        },
+        {
+          "id": 16,
+          "filename": "16 La manipulation des données - les 4 opérations crud.mp4",
+          "title": "16 La manipulation des données - les 4 opérations crud",
+          "cleanTitle": "La manipulation des données - les 4 opérations crud",
+          "relPath": "/Sessions_Data/Session 5 - Pierre 2 - 060726/Session 5 toutes les vidéos/16 La manipulation des données - les 4 opérations crud.mp4"
+        },
+        {
+          "id": 17,
+          "filename": "17 Les champs d'utilisateurs, de mots de passe et l'uuid.mp4",
+          "title": "17 Les champs d'utilisateurs, de mots de passe et l'uuid",
+          "cleanTitle": "Les champs d'utilisateurs, de mots de passe et l'uuid",
+          "relPath": "/Sessions_Data/Session 5 - Pierre 2 - 060726/Session 5 toutes les vidéos/17 Les champs d'utilisateurs, de mots de passe et l'uuid.mp4"
+        },
+        {
+          "id": 18,
+          "filename": "18 Les formules cas pratique pour un système d'identification.mp4",
+          "title": "18 Les formules cas pratique pour un système d'identification",
+          "cleanTitle": "Les formules cas pratique pour un système d'identification",
+          "relPath": "/Sessions_Data/Session 5 - Pierre 2 - 060726/Session 5 toutes les vidéos/18 Les formules cas pratique pour un système d'identification.mp4"
+        },
+        {
+          "id": 19,
+          "filename": "19 Questions de fin.mp4",
+          "title": "19 Questions de fin",
+          "cleanTitle": "Questions de fin",
+          "relPath": "/Sessions_Data/Session 5 - Pierre 2 - 060726/Session 5 toutes les vidéos/19 Questions de fin.mp4"
+        }
+      ],
+      "replayVideo": null,
+      "docx": {
+        "filename": "Fiche de révision - 060726.docx",
+        "relPath": "/Sessions_Data/Session 5 - Pierre 2 - 060726/Fiche de révision - 060726.docx"
+      },
+      "docxContentPreview": "Baserow : comprendre les bases de données relationnelles et structurer ses données\n\nDate de la session\n\n6 juillet 2026\n\nRésumé exécutif\n\nL'objectif de la session est de comprendre les principes de fonctionnement d'une base de données relationnelle et d'acquérir les bases nécessaires à la modélisation des données avant la création des applications IA. La session compare le fonctionnement d'un tableur traditionnel avec celui d'une base de données afin de mettre en évidence les avantages d'une organisation structurée des informations.\n\nElle présente les notions de backend, frontend, source de vérité, champ principal, enregistrement et types de champs. Une démonstration de Baserow permet de découvrir l'organisation d'une base de données, la création de tables, les différents formats de données et les premières règles de conception. L'ensemble vise à fournir aux participants les bases indispensables pour construire une architecture de données fiable, évolutive et adaptée à leur projet.\n\nPoints clés de la session\n\nUne base de données relationnelle organise les données de manière plus structurée qu'un tableur. \n\nUne source de vérité garantit qu'une seule version fiable des données est uti"
+    },
+    {
+      "id": "session-6",
+      "number": 6,
+      "folder": "Session 6 - Pierre 3 - 130726",
+      "title": "Architecture Avancée & Automatisation",
+      "date": "13 Juillet 2026",
+      "formateur": "Pierre Lacombe",
+      "description": "Flux de données complexes, connexions webhook, logique métier et préparation aux cas concrets en production.",
+      "isAssetised": false,
+      "status": "REPLAY_BRUT",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "replayVideo": {
+        "filename": "GMT20260713-183510_Recording_2750x1342.mp4",
+        "relPath": "/Sessions_Data/Session 6 - Pierre 3 - 130726/GMT20260713-183510_Recording_2750x1342.mp4"
+      },
+      "docx": null,
+      "docxContentPreview": ""
+    },
+    {
+      "id": "session-7",
+      "number": 7,
+      "folder": "Session 7 - Pierre 4 - 200726",
+      "title": "Intégration d'Agents & Workflows No-Code",
+      "date": "20 Juillet 2026",
+      "formateur": "Pierre Lacombe",
+      "description": "Déploiement d'agents IA, interconnexions API et orchestration de services cloud.",
+      "isAssetised": false,
+      "status": "REPLAY_BRUT",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "replayVideo": {
+        "filename": "GMT20260720-185729_Recording_2636x1396.mp4",
+        "relPath": "/Sessions_Data/Session 7 - Pierre 4 - 200726/GMT20260720-185729_Recording_2636x1396.mp4"
+      },
+      "docx": {
+        "filename": "Fiche de révision - 200726.docx",
+        "relPath": "/Sessions_Data/Session 7 - Pierre 4 - 200726/Fiche de révision - 200726.docx"
+      },
+      "docxContentPreview": "FICHE DE RÉVISION Date : 20 juillet 2026\n\nConcevoir le front-end d'une application avec Celestory\n\n🎯 Résumé exécutif\n\nL'objectif de cette session est de découvrir Celestory, l'outil utilisé pour concevoir le front-end d'une application, c'est-à-dire la partie visible et interactive destinée aux utilisateurs. Après avoir construit le back-end avec Baserow lors des séances précédentes, les participants apprennent à imaginer le parcours utilisateur et à transformer leur modèle de données en une application fonctionnelle.\n\nLa session présente les principales fonctionnalités de Celestory : les modèles (templates), les composants, le système no-code, les différents types d'interfaces et la logique de navigation entre les écrans. Les participants découvrent également comment structurer une application autour d'un parcours utilisateur cohérent avant d'aborder progressivement les variables, la personnalisation des contenus et la connexion avec la base de données.\n\nEnfin, la séance est largement consacrée à l'accompagnement des projets des participants. Chaque équipe échange avec le formateur sur l'architecture de sa future application, les profils d'utilisateurs, les données à collecter et "
+    },
+    {
+      "id": "session-8",
+      "number": 8,
+      "folder": "Session 8 - Pierre 5 - 270726",
+      "title": "Design d'Interfaces & Expérience Utilisateur IA",
+      "date": "27 Juillet 2026",
+      "formateur": "Pierre Lacombe",
+      "description": "Conception d'écrans pour applications dopées à l'IA, ergonomie et fluidité des interactions conversationnelles.",
+      "isAssetised": false,
+      "status": "REPLAY_BRUT",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "replayVideo": {
+        "filename": "GMT20260727-190209_Recording_2582x1428.mp4",
+        "relPath": "/Sessions_Data/Session 8 - Pierre 5 - 270726/GMT20260727-190209_Recording_2582x1428.mp4"
+      },
+      "docx": {
+        "filename": "Fiche de révision - 270726.docx",
+        "relPath": "/Sessions_Data/Session 8 - Pierre 5 - 270726/Fiche de révision - 270726.docx"
+      },
+      "docxContentPreview": "Connexion Celestory – Baserow : API, MCP et variables\n\nDate : 27 juillet 2026\n\nRésumé exécutif\n\nCette séance est consacrée à la mise en relation entre Celestory et Baserow. Les participants découvrent comment connecter leur application à une base de données grâce aux API et aux jetons d'accès. La formation introduit également le protocole MCP, les principes des intégrations entre outils et la manipulation des variables nécessaires au développement d'applications interactives. La seconde partie de la séance illustre ces notions à travers la construction d'un quiz dynamique.\n\nPoints clés\n\nUne intégration permet à plusieurs outils de communiquer entre eux. \n\nLe protocole MCP facilite la connexion entre assistants IA et services compatibles. \n\nUne API constitue le point de communication entre deux applications. \n\nLes API Tokens authentifient les échanges avec une base de données. \n\nCelestory peut lire et écrire dans Baserow après configuration. \n\nLes variables stockent temporairement les informations saisies par l'utilisateur. \n\nLes blocs interactifs exploitent ces variables pour personnaliser le comportement de l'application. \n\nLa création d'un quiz permet de mettre en pratique les no"
+    },
+    {
+      "id": "session-9",
+      "number": 9,
+      "folder": "Session 9 - Pierre 6 - 030826",
+      "title": "Contexte IA : Personnalisation, Données et Identité",
+      "date": "03 Août 2026",
+      "formateur": "Pierre Lacombe",
+      "description": "Systèmes probabilistes, compression de contexte, prompt du Roast, chartes graphiques Markdown (getdesign.md), SVG et Vibe Coding.",
+      "isAssetised": true,
+      "status": "ASSETISE",
+      "microVideosCount": 11,
+      "microVideos": [
+        {
+          "id": 1,
+          "filename": "1 - Introduction.mp4",
+          "title": "1 - Introduction",
+          "cleanTitle": "Introduction",
+          "relPath": "/Sessions_Data/Session 9 - Pierre 6 - 030826/Session 9/1 - Introduction.mp4"
+        },
+        {
+          "id": 2,
+          "filename": "2 -  Les modèles d_IA et la notion de contexte.mp4",
+          "title": "2 -  Les modèles d_IA et la notion de contexte",
+          "cleanTitle": "Les modèles d_IA et la notion de contexte",
+          "relPath": "/Sessions_Data/Session 9 - Pierre 6 - 030826/Session 9/2 -  Les modèles d_IA et la notion de contexte.mp4"
+        },
+        {
+          "id": 3,
+          "filename": "3 - Le lexique, le style littéraire.mp4",
+          "title": "3 - Le lexique, le style littéraire",
+          "cleanTitle": "Le lexique, le style littéraire",
+          "relPath": "/Sessions_Data/Session 9 - Pierre 6 - 030826/Session 9/3 - Le lexique, le style littéraire.mp4"
+        },
+        {
+          "id": 4,
+          "filename": "4 - L_exercice du Roast.mp4",
+          "title": "4 - L_exercice du Roast",
+          "cleanTitle": "L_exercice du Roast",
+          "relPath": "/Sessions_Data/Session 9 - Pierre 6 - 030826/Session 9/4 - L_exercice du Roast.mp4"
+        },
+        {
+          "id": 5,
+          "filename": "5 - Personnalisation syle littéraire par l_analyse et la collecte de contexte.mp4",
+          "title": "5 - Personnalisation syle littéraire par l_analyse et la collecte de contexte",
+          "cleanTitle": "Personnalisation syle littéraire par l_analyse et la collecte de contexte",
+          "relPath": "/Sessions_Data/Session 9 - Pierre 6 - 030826/Session 9/5 - Personnalisation syle littéraire par l_analyse et la collecte de contexte.mp4"
+        },
+        {
+          "id": 6,
+          "filename": "6 - La charte graphique et le Markdown.mp4",
+          "title": "6 - La charte graphique et le Markdown",
+          "cleanTitle": "La charte graphique et le Markdown",
+          "relPath": "/Sessions_Data/Session 9 - Pierre 6 - 030826/Session 9/6 - La charte graphique et le Markdown.mp4"
+        },
+        {
+          "id": 7,
+          "filename": "7 - Les données (CSV, JSON) et la génération de code.mp4",
+          "title": "7 - Les données (CSV, JSON) et la génération de code",
+          "cleanTitle": "Les données (CSV, JSON) et la génération de code",
+          "relPath": "/Sessions_Data/Session 9 - Pierre 6 - 030826/Session 9/7 - Les données (CSV, JSON) et la génération de code.mp4"
+        },
+        {
+          "id": 8,
+          "filename": "8 - Les formats graphiques, SVG et Figma.mp4",
+          "title": "8 - Les formats graphiques, SVG et Figma",
+          "cleanTitle": "Les formats graphiques, SVG et Figma",
+          "relPath": "/Sessions_Data/Session 9 - Pierre 6 - 030826/Session 9/8 - Les formats graphiques, SVG et Figma.mp4"
+        },
+        {
+          "id": 9,
+          "filename": "9-1 Vibe Coding et Graphisme par l_IA.mp4",
+          "title": "9-1 Vibe Coding et Graphisme par l_IA",
+          "cleanTitle": "1 Vibe Coding et Graphisme par l_IA",
+          "relPath": "/Sessions_Data/Session 9 - Pierre 6 - 030826/Session 9/9-1 Vibe Coding et Graphisme par l_IA.mp4"
+        },
+        {
+          "id": 10,
+          "filename": "9-2 Vibe Coding et Graphisme par l_IA.mp4",
+          "title": "9-2 Vibe Coding et Graphisme par l_IA",
+          "cleanTitle": "2 Vibe Coding et Graphisme par l_IA",
+          "relPath": "/Sessions_Data/Session 9 - Pierre 6 - 030826/Session 9/9-2 Vibe Coding et Graphisme par l_IA.mp4"
+        },
+        {
+          "id": 11,
+          "filename": "10 - Conclusion et consignes pour la suite.mp4",
+          "title": "10 - Conclusion et consignes pour la suite",
+          "cleanTitle": "Conclusion et consignes pour la suite",
+          "relPath": "/Sessions_Data/Session 9 - Pierre 6 - 030826/Session 9/10 - Conclusion et consignes pour la suite.mp4"
+        }
+      ],
+      "replayVideo": {
+        "filename": "GMT20260803-182405_Recording_2982x1482.mp4",
+        "relPath": "/Sessions_Data/Session 9 - Pierre 6 - 030826/GMT20260803-182405_Recording_2982x1482.mp4"
+      },
+      "docx": {
+        "filename": "Fiche de révision 030826.docx",
+        "relPath": "/Sessions_Data/Session 9 - Pierre 6 - 030826/Fiche de révision 030826.docx"
+      },
+      "docxContentPreview": "Contexte IA : personnalisation, données et identité du projet\n\nDate de la session 3 août 2026\n\nRésumé exécutif\n\nL’objectif de la session est de comprendre comment construire le contexte d’un projet d’intelligence artificielle afin de guider le modèle vers des productions adaptées à l’entreprise, au projet et à l’expérience recherchée. Le formateur introduit le fonctionnement des modèles d’IA comme des systèmes probabilistes issus d’un entraînement sur de grandes quantités de données, puis montre l’importance du contexte fourni au modèle.\n\nLa session présente différentes informations pouvant constituer ce contexte : activité professionnelle, style d’écriture, identité et charte graphique, design system, documents, tableaux et données structurées. Des exercices réalisés avec les IA utilisées par les participants montrent comment les échanges antérieurs peuvent permettre au modèle d’identifier certains traits ou caractéristiques du style de son utilisateur.\n\nLa séance approfondit ensuite la manière de formaliser ces informations dans des formats exploitables par les modèles de langage, notamment Markdown. Elle montre enfin que texte, données, éléments graphiques et code peuvent être c"
+    },
+    {
+      "id": "session-10",
+      "number": 10,
+      "folder": "Session10 - Pierre 7 - 100826",
+      "title": "Perfectionnement & Cas Métiers",
+      "date": "10 Août 2026",
+      "formateur": "Pierre Lacombe",
+      "description": "Résolution de blocages techniques sur les projets apprenants et intégration des briques IA.",
+      "isAssetised": false,
+      "status": "REPLAY_BRUT",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "replayVideo": {
+        "filename": "GMT20260810-182754_Recording_2810x1352.mp4",
+        "relPath": "/Sessions_Data/Session10 - Pierre 7 - 100826/GMT20260810-182754_Recording_2810x1352.mp4"
+      },
+      "docx": {
+        "filename": "Fiche de révision 100826.docx",
+        "relPath": "/Sessions_Data/Session10 - Pierre 7 - 100826/Fiche de révision 100826.docx"
+      },
+      "docxContentPreview": "Modèles IA : multimodalité, RAG et choix des ressources\n\nDate de la session - 10 août 2026\n\nRésumé exécutif\n\nL’objectif de la session est de comprendre les différentes catégories de modèles d’intelligence artificielle, leurs capacités et les ressources qu’ils nécessitent afin de choisir une solution adaptée à chaque usage. La séance présente plusieurs évolutions récentes concernant la génération de texte, d’images, de vidéos et d’audio, ainsi que les modèles capables de combiner plusieurs modalités.\n\nUne partie importante de la session est consacrée au RAG (Retrieval-Augmented Generation). À partir de NotebookLM, le formateur explique comment des documents peuvent être ajoutés, transformés puis indexés dans une base de données vectorielle afin qu’un modèle puisse rechercher des informations dans cette base de connaissances. Il rappelle toutefois les limites de cette approche : consommation de ressources, sélection partielle des informations et possibilité d’hallucinations.\n\nLa session aborde enfin les arbitrages nécessaires dans un projet IA : choisir le modèle en fonction de la tâche, maîtriser la consommation de tokens, organiser correctement ses sources et conserver un contexte "
+    },
+    {
+      "id": "session-11",
+      "number": 11,
+      "folder": "Session11 - Pierre 8 - 170826",
+      "title": "Industrialisation & Optimisation",
+      "date": "17 Août 2026",
+      "formateur": "Pierre Lacombe",
+      "description": "Scalabilité, gestion des erreurs, sécurité et tests utilisateurs des applications.",
+      "isAssetised": false,
+      "status": "REPLAY_BRUT",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "replayVideo": {
+        "filename": "GMT20260817-184644_Recording_3172x1564.mp4",
+        "relPath": "/Sessions_Data/Session11 - Pierre 8 - 170826/GMT20260817-184644_Recording_3172x1564.mp4"
+      },
+      "docx": {
+        "filename": "Fiche de révision 240826.docx",
+        "relPath": "/Sessions_Data/Session11 - Pierre 8 - 170826/Fiche de révision 240826.docx"
+      },
+      "docxContentPreview": "FICHE DE RÉVISIONCas pratique : de Baserow à une application fonctionnelle\n\nDate de la session - 24 août 2026\n\nRésumé exécutif\n\nL’objectif de la session est de mettre en application les notions travaillées pendant la formation à partir du projet de Diane, consacré à la création d’un outil d’aide à l’analyse d’offres. La séance part de sa base Baserow, composée de plusieurs tables déjà structurées, afin de montrer comment ces données peuvent servir directement à la construction d’une application. \n\nLa base est reconstruite dans l’environnement de travail afin de pouvoir exploiter sa structure, construire les interfaces et tester la robustesse de l’application. Le travail permet ensuite de faire évoluer l’interface, notamment avec Google Stitch, utilisé pour générer des propositions de design à partir des données existantes et d’un design system précis. Ces propositions visuelles peuvent ensuite être reprises pour poursuivre la construction de l’application.\n\nLa session approfondit également le parcours des données entre Baserow et l’application : récupération des informations existantes, affichage dans l’interface, traitement puis enregistrement des résultats. Cette logique est nota"
+    },
+    {
+      "id": "session-12",
+      "number": 12,
+      "folder": "Session12 - Pierre 9 - 240826",
+      "title": "Revue des Livrables & Débogage Live",
+      "date": "24 Août 2026",
+      "formateur": "Pierre Lacombe",
+      "description": "Atelier pratique de revues de code, corrections en direct et finalisation des MVP apprenants.",
+      "isAssetised": false,
+      "status": "REPLAY_BRUT",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "replayVideo": {
+        "filename": "GMT20260824-183822_Recording_2430x1516.mp4",
+        "relPath": "/Sessions_Data/Session12 - Pierre 9 - 240826/GMT20260824-183822_Recording_2430x1516.mp4"
+      },
+      "docx": {
+        "filename": "Fiche de révision 310826.docx",
+        "relPath": "/Sessions_Data/Session12 - Pierre 9 - 240826/Fiche de révision 310826.docx"
+      },
+      "docxContentPreview": "De l'application IA au projet opérationnel : finalisation, tests et préparation à la certification\n\nDate de la session : 31 août 2026\n\nRésumé exécutif\n\nCette dernière session collective marque une évolution importante du parcours : les apprenants passent désormais de la phase de construction accompagnée en groupe à une phase de finalisation individuelle de leur solution IA.\n\nLa séance a permis de revenir sur l'évolution des modèles d'intelligence artificielle, leurs infrastructures et les différences entre grands modèles, petits modèles et approches souveraines. L'IA ne doit toutefois pas être considérée comme une solution autonome ou « miracle » : elle agit avant tout comme un accélérateur d'une expertise et d'un processus métier déjà compris. \n\nUne partie importante de la session a été consacrée à la mise en œuvre concrète des projets. Les démonstrations ont permis d'observer comment une application peut progressivement passer d'une idée ou d'une base de données à une solution utilisable.\n\nLa séance a également rappelé l'importance de comprendre les éléments produits par l'IA, de les sauvegarder et de tester régulièrement les différentes versions d'une solution. Cette démarche pe"
+    },
+    {
+      "id": "session-13",
+      "number": 13,
+      "folder": "Session13 - Pierre 10 - 310826",
+      "title": "Préparation aux Évaluations & Bilan Final",
+      "date": "31 Août 2026",
+      "formateur": "Pierre Lacombe",
+      "description": "Soutenance blanche, alignement sur les critères du référentiel de compétences et clôture du parcours.",
+      "isAssetised": false,
+      "status": "REPLAY_BRUT",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "replayVideo": {
+        "filename": "GMT20260831-190316_Recording_2750x1338.mp4",
+        "relPath": "/Sessions_Data/Session13 - Pierre 10 - 310826/GMT20260831-190316_Recording_2750x1338.mp4"
+      },
+      "docx": {
+        "filename": "Fiche de révision 240826.docx",
+        "relPath": "/Sessions_Data/Session13 - Pierre 10 - 310826/Fiche de révision 240826.docx"
+      },
+      "docxContentPreview": "Cas pratique : de Baserow à une application fonctionnelle \n\nDate de la session – 24 août 2026\n\nRésumé exécutif\n\nL’objectif de la session est de comprendre les évolutions des modèles d’intelligence artificielle et les infrastructures nécessaires à leur fonctionnement afin de choisir une solution adaptée à son projet. La séance met en perspective la course à la puissance de calcul des grands acteurs de l’IA et les ressources nécessaires au développement et à l’utilisation des modèles.\n\nLa session présente également une autre approche reposant sur la frugalité et l’utilisation de modèles plus petits ou spécialisés. Elle montre qu’un modèle très puissant n’est pas nécessairement le plus pertinent pour chaque tâche et que le choix doit être réalisé en fonction du besoin, des ressources disponibles et de l’environnement dans lequel la solution doit fonctionner.\n\nLa séance aborde ensuite les agents autonomes et leur capacité à interagir avec un environnement informatique lorsqu’ils disposent des accès nécessaires. Cette approche est mise en perspective avec le MCP et l’accès à des outils spécifiques. Enfin, les échanges introduisent les questions liées aux modèles locaux, à la souverainet"
+    }
+  ]
+}

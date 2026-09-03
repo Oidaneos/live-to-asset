@@ -1,0 +1,867 @@
+{
+  "ses-0": {
+    "title": "Session d'Accueil & Cadrage Initial",
+    "subtitle": "Installation du cadre de promotion, prise en main de Digiforma, posture d'apprentissage et feuille de route vers la certification",
+    "formateur": "Milène PAUL (Coordination Pédagogique) & Alain-Franck VALERO (Direction OIDANEOS)",
+    "date": "01 Juin 2026",
+    "duree": "2h00 de Live",
+    "intro": "Cette séance inaugurale constitue la pierre angulaire de l'ensemble du parcours de formation « Concepteur & Développeur d'Applications IA No-Code ». Loin d'une simple réunion administrative, elle installe le contrat pédagogique, l'état d'esprit collaboratif et la discipline méthodologique nécessaires pour transformer des porteurs de projets en concepteurs d'applications opérationnelles. \n\nLe constat d'Alain-Franck Valero et de Milène Paul dès l'ouverture : la réussite dans le développement IA No-Code ne dépend pas d'un bagage mathématique ou informatique préalable, mais d'une rigueur absolue dans la formalisation des besoins, la régularité du travail personnel et la capacité à documenter pas à pas sa progression dans son journal de bord.",
+    "sections_theoriques": [
+      {
+        "title": "Le modèle d'apprentissage hybride synchrone / asynchrone",
+        "content": "La formation s'articule autour d'une boucle pédagogique en 3 temps interdépendants :\n1. Les séances synchrones (les lundis soirs) : 2 heures intensives d'immersion technique, de démonstrations en direct, de confrontation aux cas réels et d'échanges interactifs.\n2. Le travail asynchrone autonome : l'expérimentation immédiate sur ses propres outils, le visionnage ciblé des micro-vidéos découpées par Vincent et la résolution d'exercices pratiques.\n3. La capitalisation par le Journal de Bord : documenter chaque blocage rencontré, chaque choix d'architecture No-Code et chaque prompt validé. Ce journal n'est pas un accessoire : c'est la pièce maîtresse soumise au jury final pour prouver la maîtrise des compétences du titre professionnel."
+      },
+      {
+        "title": "L'écosystème institutionnel & le référentiel de compétences Qualiopi",
+        "content": "Les exigences du titre professionnel imposent de valider des blocs de compétences étanches :\n- Bloc 1 : Analyse des besoins métiers et cadrage fonctionnel d'une solution d'automatisation.\n- Bloc 2 : Modélisation des architectures de données relationnelles et paramétrage des règles de gestion.\n- Bloc 3 : Intégration des modèles d'intelligence artificielle générative (LLM, vision, audio) via API et connecteurs.\n- Bloc 4 : Déploiement, ergonomie utilisateur (UI/UX) et soutenance technique devant un jury d'experts.\nLa plateforme Digiforma assure la traçabilité intégrale exigée par les financeurs (OPCO, Région, France Travail) : assiduité, évaluations de positionnement, questionnaires de satisfaction à chaud et dépôts officiels des livrables."
+      },
+      {
+        "title": "La dynamique de cohorte et l'émulation entre pairs",
+        "content": "Dans un domaine en mutation hebdomadaire comme l'intelligence artificielle, l'isolement est le premier facteur d'abandon. La promotion forme une communauté d'entraide active : partage des pépites découvertes dans les chats, relecture croisée des prototypes et soutien technique continu sur le groupe WhatsApp dédié."
+      }
+    ],
+    "cas_pratiques": [
+      {
+        "title": "Passation du test de pré-évaluation et diagnostic individuel",
+        "detail": "À 00:47:34 de la séance, Alain-Franck Valero transmet à chaque stagiaire le lien vers le questionnaire d'auto-positionnement. Cet audit initial mesure la familiarité avec les concepts numériques (formats tabulaires, logique booléenne, outils cloud) pour permettre aux formateurs d'adapter la granularité de leurs explications lors des futures sessions."
+      },
+      {
+        "title": "Configuration guidée de l'espace apprenant Digiforma",
+        "detail": "Vérification individualisée des accès stagiaires : activation des identifiants, localisation de l'onglet 'Documents & Replays', accès aux feuilles de présence dématérialisées et repérage de l'espace de dépôt des devoirs hebdomadaires."
+      },
+      {
+        "title": "Tour de table des ambitions et premier pitch de projet",
+        "detail": "Chaque participant formule en 2 minutes son idée d'application : automatisation d'un processus administratif, chatbot expert de relation client, outil de génération de fiches de révision ou simulateur conversationnel interactif."
+      }
+    ],
+    "outils": [
+      "Digiforma",
+      "Zoom Live",
+      "WhatsApp Promotion 2026",
+      "Google Workspace",
+      "Notion (Journal de Bord)"
+    ],
+    "chat_highlights": [
+      {
+        "time": "00:47:34",
+        "author": "Alain-Franck Valero",
+        "content": "On vient d'envoyer le lien de pré-évaluation par email."
+      },
+      {
+        "time": "00:51:14",
+        "author": "Alain-Franck Valero",
+        "content": "Dites-moi ceux qui n'ont pas encore leurs accès Digiforma svp."
+      },
+      {
+        "time": "01:17:00",
+        "author": "Milène PAUL",
+        "content": "Pour toute question pédagogique ou administrative : hello@milenepaul.com"
+      }
+    ],
+    "checklist": [
+      "Confirmer la validation de son accès complet à la plateforme Digiforma",
+      "Compléter obligatoirement le questionnaire d'évaluation initiale de positionnement",
+      "Rejoindre le canal de communication WhatsApp de la promotion IA 2026",
+      "Créer la première page de son Journal de Bord (Notion, Google Docs ou Word)",
+      "Rédiger un paragraphe résumant l'intention métier de son application pour la Session 1"
+    ],
+    "downloadUrls": {
+      "docxUrl": "/Guides_Pedagogiques/Guide_Pedagogique_Complet_Session_0.docx",
+      "docxFilename": "Guide_Pedagogique_Complet_Session_0.docx"
+    }
+  },
+  "ses-1": {
+    "title": "Session 1 : Cadrage des Cas Pratiques & Préparation Certification",
+    "subtitle": "Méthode de sélection d'un cas d'usage viable, architecture fonctionnelle sur Celestory et structuration des données",
+    "formateur": "Milène PAUL (Coordination) & Alain-Franck VALERO",
+    "date": "08 Juin 2026",
+    "duree": "2h00 de Live",
+    "intro": "Cette première session technique plonge immédiatement les apprenants dans le vif de la matière : comment passer d'une idée vague à un cahier des charges fonctionnel prêt pour le développement No-Code. Milène et Alain démontrent qu'une application IA performante n'est jamais le fruit du hasard, mais d'une décomposition chirurgicale des besoins utilisateurs et des flux d'information.",
+    "sections_theoriques": [
+      {
+        "title": "La grille d'évaluation d'un cas d'usage par le jury de certification",
+        "content": "Le jury officiel n'attend pas une application 'gadget' mais une solution répondant à 4 critères rigoureux :\n1. Pertinence du besoin métier : le projet doit résoudre un irritant ou une inefficacité opérationnelle avérée dans un secteur professionnel identifié.\n2. Clarté de la chaîne de valeur No-Code : justification du choix des outils retenus (pourquoi Celestory pour l'interaction ? pourquoi une base relationnelle ? pourquoi tel modèle de langage ?).\n3. Gestion de la dynamicité des données : l'application doit être capable de recevoir des saisies utilisateurs, de les stocker, de les modifier et de renvoyer un calcul ou une recommandation personnalisée.\n4. Rigueur du journal de bord : traçabilité des versions, des erreurs surmontées et des arbitrages de conception."
+      },
+      {
+        "title": "Architecture en graphe vs programmation linéaire : L'approche Celestory",
+        "content": "Milène introduit la logique de conception nodale de Celestory :\n- Contrairement à un formulaire linéaire classique (Typeform, Google Forms), une application moderne est un graphe d'états où chaque réponse de l'utilisateur influence dynamiquement la suite du parcours.\n- Notion de variables d'état : isoler ce qui appartient au profil de l'utilisateur (nom, score, préférences) de ce qui appartient à la logique système (règles de transition, calculs de score)."
+      },
+      {
+        "title": "La frontière entre données statiques et données dynamiques",
+        "content": "Alain insiste sur un principe d'ingénierie fondamental :\n- Les données statiques (textes explicatifs, images de fond, labels de boutons) sont intégrées directement dans les blocs visuels de l'interface.\n- Les données dynamiques (historique des interactions, données calculées par l'IA, informations d'identification) doivent obligatoirement être externalisées dans une base de données structurée pour pouvoir être auditées et réutilisées."
+      }
+    ],
+    "cas_pratiques": [
+      {
+        "title": "Autopsie du projet d'Alain comme cas d'école professionnel",
+        "detail": "Présentation pas-à-pas de l'application développée par Alain : analyse du persona cible, cartographie des flux d'écrans, démonstration de la capture des réponses et déclenchement d'un diagnostic personnalisé. Ce cas concret sert de modèle de référence pour les livrables attendus de la promotion."
+      },
+      {
+        "title": "Création de son premier graphe conditionnel sur Celestory",
+        "detail": "Atelier guidé de prise en main : création d'un projet, positionnement des blocs de départ, liaison de nœuds décisionnels conditionnés par un choix utilisateur (IF / ELSE), et prévisualisation instantanée sur simulateur web et mobile."
+      },
+      {
+        "title": "Ébauche de la table de données initiale",
+        "detail": "Identification sur papier ou tableur des 5 attributs indispensables à collecter pour chaque utilisateur afin de préparer l'interconnexion avec les bases de données relationnelles."
+      }
+    ],
+    "outils": [
+      "Celestory Studio",
+      "Google Sheets (Maquette de données)",
+      "Miro / Whimsical (Graphes fonctionnels)",
+      "Digiforma"
+    ],
+    "chat_highlights": [
+      {
+        "time": "00:28:10",
+        "author": "Milène",
+        "content": "Bien vérifier que votre cas pratique est directement ancré dans un contexte métier concret."
+      },
+      {
+        "time": "00:45:12",
+        "author": "Alain Valero",
+        "content": "Pensez à isoler dès maintenant les données fixes des données variables dans votre prototype."
+      },
+      {
+        "time": "01:12:45",
+        "author": "Milène",
+        "content": "Pensez à faire des captures d'écran de vos premiers blocs pour enrichir votre journal de bord."
+      }
+    ],
+    "checklist": [
+      "Finaliser la rédaction de la fiche de cadrage de son cas d'usage (problème, cible, solution)",
+      "Créer et valider son espace projet sur Celestory.io",
+      "Dessiner le schéma arborescent complet du parcours utilisateur (minimum 3 embranchements)",
+      "Lister les variables indispensables qui seront enregistrées dans la base de données",
+      "Consigner les choix de conception effectués dans la section 2 de son Journal de Bord"
+    ],
+    "downloadUrls": {
+      "docxUrl": "/Guides_Pedagogiques/Guide_Pedagogique_Complet_Session_1.docx",
+      "docxFilename": "Guide_Pedagogique_Complet_Session_1.docx"
+    }
+  },
+  "ses-2": {
+    "title": "Session 2 : Cas Pratiques Celestory & Journal de Bord",
+    "subtitle": "Maîtrise des variables dynamiques, boucles d'interaction et consolidation du Journal de Bord pour l'examen",
+    "formateur": "Milène PAUL (Coordination)",
+    "date": "15 Juin 2026",
+    "duree": "2h00 de Live",
+    "intro": "Une séance charnière dédiée à la fiabilisation technique des premiers prototypes interactifs. Milène accompagne les apprenants dans la résolution des blocages logiques fréquents et sanctuarise le Journal de Bord comme outil de valorisation des compétences.",
+    "sections_theoriques": [
+      {
+        "title": "Typologie et portée des variables dans une application No-Code",
+        "content": "Comprendre la nature des variables est indispensable pour éviter les comportements aberrants :\n- Variables scalaires (Texte, Nombre, Booléen) : stocker une valeur unique (ex: prénom, âge, score_atteint = VRAI/FAUX).\n- Variables de session vs persistantes : les variables temporaires s'effacent au rafraîchissement de la page, tandis que les variables persistantes doivent être sauvegardées en base pour retrouver l'état du stagiaire lors de sa prochaine connexion.\n- La convention de nommage : bannir les espaces et accents dans les noms de variables (`score_quiz` et non `score du quiz !`) pour garantir la compatibilité universelle avec les futures requêtes API."
+      },
+      {
+        "title": "La rédaction méthodique du Journal de Bord",
+        "content": "Milène décortique les attentes précises du jury sur ce livrable contractuel :\n- Ne pas se contenter de décrire le résultat final, mais documenter le cheminement : « Quel était le problème ? », « Quelles hypothèses ont été testées ? », « Pourquoi cette solution No-Code a-t-elle été retenue plutôt qu'une autre ? ».\n- Chaque difficulté surmontée est une preuve de compétence en ingénierie : un journal trop parfait sans aucune erreur documentée est suspect pour un examinateur aguerri."
+      }
+    ],
+    "cas_pratiques": [
+      {
+        "title": "Débogage en direct d'un scénario Celestory bloqué",
+        "detail": "Analyse d'un bug récurrent soumis par un apprenant : une variable mal typée empêchait la condition de redirection de se déclencher. Démonstration de l'outil d'inspection de Celestory pour visualiser la valeur des variables en temps réel."
+      },
+      {
+        "title": "Mise en place d'un système de scoring dynamique",
+        "detail": "Configuration d'un quiz à embranchements multiples où chaque réponse correcte incrémente un compteur global `points_total = points_total + 10`, débouchant sur des écrans de restitution différenciés selon le palier atteint."
+      }
+    ],
+    "outils": [
+      "Celestory Studio",
+      "Notion / Word (Journal de bord)",
+      "Figma"
+    ],
+    "chat_highlights": [
+      {
+        "time": "00:19:22",
+        "author": "Milène",
+        "content": "Notez chaque blocage technique et la solution trouvée directement dans votre journal de bord."
+      },
+      {
+        "time": "00:38:40",
+        "author": "Milène",
+        "content": "Toujours tester votre scénario avec des valeurs limites (ex: score égal à 0 ou négatif)."
+      }
+    ],
+    "checklist": [
+      "Implémenter au minimum 3 variables dynamiques fonctionnelles dans son scénario Celestory",
+      "Mettre en place une condition logique stricte orientant vers 2 parcours distincts",
+      "Documenter au moins un cas de débogage réel dans son journal de bord avec capture d'écran",
+      "Tester son scénario sur un smartphone pour valider la lisibilité des boutons"
+    ],
+    "downloadUrls": {
+      "docxUrl": "/Guides_Pedagogiques/Guide_Pedagogique_Complet_Session_2.docx",
+      "docxFilename": "Guide_Pedagogique_Complet_Session_2.docx"
+    }
+  },
+  "ses-3": {
+    "title": "Session 3 : Présentation des Projets & Arrivée de Pierre",
+    "subtitle": "Soutenance flash des apprenants, revue critique d'architecture et transmission de relais vers l'expertise IA avancée",
+    "formateur": "Milène PAUL & Pierre LACOMBE (Expert IA)",
+    "date": "22 Juin 2026",
+    "duree": "2h00 de Live",
+    "intro": "Session à fort enjeu marquant la fin du premier tiers de la formation. Chaque stagiaire pitche son prototype interactif devant le groupe et bénéficie pour la première fois du regard affûté de Pierre Lacombe, qui rejoint le cursus pour piloter le déploiement des modèles d'IA et des bases de données professionnelles.",
+    "sections_theoriques": [
+      {
+        "title": "L'exercice du Pitch Technique (Format Soutenance Officielle)",
+        "content": "Milène et Pierre cadrent la structure d'une présentation percutante en 5 minutes chrono :\n1. La promesse de valeur : quel irritant réel l'application règle-t-elle ?\n2. La démonstration utilisateur : pas de blabla théorique, un flux live testé sous les yeux des spectateurs.\n3. L'architecture sous le capot : explicitation des variables, des embranchements et des données manipulées.\n4. Les prochaines étapes : quelles briques d'IA et quelles tables relationnelles viendront décupler la puissance de l'outil."
+      },
+      {
+        "title": "Le principe de frugalité No-Code de Pierre Lacombe",
+        "content": "Dès sa première intervention, Pierre martèle une règle d'or d'ingénierie : « Le meilleur outil n'est pas le plus complexe, mais celui qui demande le moins de maintenance et consomme le moins de ressources ». Ne cherchez pas à brancher une IA générative là où une simple règle logique conditionnelle suffit : l'IA doit être réservée à la valeur ajoutée cognitive (synthèse, personnalisation, raisonnement flou)."
+      }
+    ],
+    "cas_pratiques": [
+      {
+        "title": "Passage en revue des prototypes de la cohorte",
+        "detail": "Soutenance des projets d'Alain, d'Anthony et des autres stagiaires. Analyse en direct des points forts (ergonomie, clarté du propos) et des vulnérabilités (trop de texte par écran, absence de persistance des données)."
+      },
+      {
+        "title": "Diagnostic d'éligibilité IA de chaque projet",
+        "detail": "Pierre passe au crible chaque cas d'usage pour identifier la brique IA idoine : génération de texte contextuel, classification automatique de demandes, transcription audio ou requêtage en langage naturel."
+      }
+    ],
+    "outils": [
+      "Celestory Studio",
+      "Baserow Preview",
+      "Claude 3.5 Sonnet",
+      "ChatGPT Plus"
+    ],
+    "chat_highlights": [
+      {
+        "time": "00:14:05",
+        "author": "Pierre Lacombe",
+        "content": "Bienvenue à tous ! Hâte de découvrir vos cas d'usage et de booster vos architectures No-Code."
+      },
+      {
+        "time": "01:02:40",
+        "author": "Pierre Lacombe",
+        "content": "Ne cherchez pas à tout coder : le meilleur outil est celui qui demande le moins de maintenance."
+      }
+    ],
+    "checklist": [
+      "Noter l'ensemble des retours critiques formulés par Pierre et Milène sur son prototype",
+      "Nettoyer son arborescence Celestory pour la rendre parfaitement lisible",
+      "Définir avec précision la tâche cognitive exacte qui sera déléguée à l'IA dans les prochaines sessions"
+    ],
+    "downloadUrls": {
+      "docxUrl": "/Guides_Pedagogiques/Guide_Pedagogique_Complet_Session_3.docx",
+      "docxFilename": "Guide_Pedagogique_Complet_Session_3.docx"
+    }
+  },
+  "ses-4": {
+    "title": "Session 4 : Fondations IA, LLM & Changement de Paradigme",
+    "subtitle": "Fonctionnement profond des Transformers, tokens, multimodalité, tool calling, GPU et passage du terminal au langage naturel",
+    "formateur": "Pierre LACOMBE (Expert IA)",
+    "date": "01 Juillet 2026",
+    "duree": "2h00 de Live",
+    "intro": "Une masterclass théorique et pratique de premier ordre. Pierre Lacombe démonte le mythe de la 'pensée' artificielle pour révéler la mécanique mathématique des grands modèles de langage. Comprendre les fondations des Transformers est le seul moyen de concevoir des applications fiables sans subir les hallucinations.",
+    "sections_theoriques": [
+      {
+        "title": "L'architecture Transformer & le calcul probabiliste de Tokens",
+        "content": "Pierre décortique la révolution de l'article fondateur « Attention Is All You Need » (2017) :\n- Un modèle de langage ne manipule jamais de mots entiers, mais des tokens (fragments syllabiques). En moyenne, 1 token ≈ 4 caractères, et 1 000 tokens ≈ 750 mots en anglais (un peu moins en français).\n- Mécanisme d'attention : le modèle calcule la corrélation statistique entre tous les tokens présents dans la fenêtre de contexte pour prédire le token suivant le plus probable.\n- La notion de température : régler la température à 0 produit une réponse déterministe et reproductible (idéale pour extraire du JSON ou du code). Une température à 0.7 ou 1.0 introduit de la diversité probabiliste (pour de la créativité ou du brainstorming)."
+      },
+      {
+        "title": "Du Terminal (CLI) au Langage Naturel : Le nouveau paradigme",
+        "content": "Historiquement, pour piloter un ordinateur, l'humain devait apprendre la syntaxe de la machine (lignes de commande, assembleur, C, Python). Avec les LLM, c'est la machine qui s'est adaptée au langage naturel humain. Le prompt devient une spécification logicielle : plus vos instructions sont rigoureuses, structurées et sans ambiguïté, plus le résultat est prédictible."
+      },
+      {
+        "title": "Économie des LLM : Propriétaire vs Open Source & Guerre des GPU",
+        "content": "Pierre analyse les rapports de force industriels :\n- Les modèles propriétaires (OpenAI GPT-4o, Anthropic Claude 3.5 Sonnet, Google Gemini) : hébergés sur des fermes de calcul colossales (puces Nvidia H100/B200), accessibles via API payante au token.\n- Les modèles ouverts (Meta Llama 3, Mistral Large, DeepSeek, Qwen) : téléchargeables et déployables sur ses propres serveurs pour garantir la souveraineté et la confidentialité des données sensibles."
+      },
+      {
+        "title": "Le Tool Calling (Function Calling) : Des bras et des jambes pour l'IA",
+        "content": "Un modèle isolé ne sait que produire du texte. Le Tool Calling lui permet d'interagir avec l'extérieur : l'IA détecte qu'elle a besoin d'une information extérieure (météo, cours de bourse, recherche en base de données), génère un appel de fonction au format JSON strict, attend la réponse du système et formule une synthèse enrichie."
+      }
+    ],
+    "cas_pratiques": [
+      {
+        "title": "Calcul de consommation de tokens et dimensionnement budgétaire",
+        "detail": "Exercice de chiffrage réel : estimation du coût mensuel d'une application de service client traitant 1 000 requêtes de 2 000 tokens par jour sur Claude Sonnet vs Claude Haiku vs GPT-4o-mini."
+      },
+      {
+        "title": "Formatage d'un prompt imposant une sortie en JSON strict",
+        "detail": "Démonstration de prompting d'ingénierie : interdire tout texte de politesse et forcer le modèle à répondre exclusivement par un tableau JSON validable par un programme No-Code."
+      }
+    ],
+    "outils": [
+      "OpenAI Platform",
+      "Anthropic Console (Claude 3.5)",
+      "Hugging Face Hub",
+      "Postman / cURL",
+      "Make"
+    ],
+    "chat_highlights": [
+      {
+        "time": "00:09:57",
+        "author": "Alain Valero",
+        "content": "N'hésitez pas à mettre vos caméras pour la session de Pierre !"
+      },
+      {
+        "time": "00:45:18",
+        "author": "Pierre Lacombe",
+        "content": "Le token n'est pas un mot complet : c'est une sous-unité syllabique mathématique."
+      },
+      {
+        "time": "01:12:30",
+        "author": "Pierre Lacombe",
+        "content": "Le Tool Calling transforme le chatbot passif en orchestrateur autonome de processus métiers."
+      }
+    ],
+    "checklist": [
+      "Créer son compte développeur sur la console OpenAI ou Anthropic",
+      "Générer une clé API sécurisée et tester un premier appel en cURL ou Postman",
+      "Rédiger un prompt système avec rôle d'expert, contraintes négatives et format de sortie JSON imposé",
+      "Consigner l'analyse coût/performance des modèles dans son Journal de Bord"
+    ],
+    "downloadUrls": {
+      "docxUrl": "/Guides_Pedagogiques/Guide_Pedagogique_Complet_Session_4.docx",
+      "docxFilename": "Guide_Pedagogique_Complet_Session_4.docx"
+    }
+  },
+  "ses-5": {
+    "title": "Session 5 : Bases de Données Relationnelles & Baserow",
+    "subtitle": "Pourquoi Excel n'est pas une base de données : Modélisation, clés primaires (UUID), relations 1-N, CRUD, rollups et formules",
+    "formateur": "Pierre LACOMBE",
+    "date": "06 Juillet 2026",
+    "duree": "2h00 de Live",
+    "intro": "Séance capitale pour la pérennité de n'importe quel projet applicatif. Pierre Lacombe démontre pourquoi 90% des prototypes No-Code s'effondrent lorsqu'ils tentent d'utiliser un tableur comme mémoire de stockage, et enseigne les règles strictes de la modélisation relationnelle dans Baserow.",
+    "sections_theoriques": [
+      {
+        "title": "Tableur (Excel) vs Base de Données Relationnelle : La rupture conceptuelle",
+        "content": "Pierre rappelle les limites rédhibitoires d'un tableur pour une application en production :\n- Le tableur est permissif : une colonne peut mélanger du texte, des nombres et des dates sans contrôle d'intégrité.\n- La redondance destructrice : dans un tableur, pour enregistrer qu'un étudiant a suivi 5 séances, on duplique son nom, son email et son téléphone 5 fois. Si son email change, le risque d'incohérence est quasi-certain.\n- La base relationnelle sépare les entités : une table `Apprenants` unique, une table `Séances` unique, et une table de liaison `Émargements` qui associe les deux sans aucune duplication d'information."
+      },
+      {
+        "title": "Clés Primaires (UUID) et Clés Étrangères",
+        "content": "Pourquoi ne jamais identifier un utilisateur par son nom ou son adresse email :\n- Les homonymes existent, et un utilisateur peut changer d'adresse email au cours de sa scolarité.\n- Utilisation de l'UUID (Universally Unique Identifier) : une chaîne hexadécimale aléatoire de 128 bits garantissant l'unicité mondiale absolue de chaque enregistrement.\n- La clé étrangère : le champ qui, dans la table fille, stocke l'UUID de la table mère pour matérialiser le lien relationnel 1-N."
+      },
+      {
+        "title": "Le cycle universel CRUD (Create, Read, Update, Delete)",
+        "content": "Les 4 opérations atomiques qui structurent toute application informatique :\n- Create : insérer un nouvel utilisateur ou une nouvelle note.\n- Read : requêter et filtrer des lignes selon des critères précis (ex: 'les étudiants absents à la session 5').\n- Update : mettre à jour un statut ou incrémenter un score.\n- Delete : archiver ou supprimer un enregistrement dans le respect du RGPD."
+      },
+      {
+        "title": "Champs avancés : Lookups, Rollups et Formules conditionnelles",
+        "content": "Exploiter la puissance de Baserow :\n- Champ lié (Lookup) : rapatrier instantanément une information de la table parente sans duplication.\n- Champ agrégé (Rollup) : calculer automatiquement la moyenne des notes, le nombre total de séances suivies ou la somme des heures réalisées.\n- Formules logiques : utiliser des expressions conditionnelles `if(field('score') >= 10, 'Validé', 'Rattrapage')` directement au cœur de la base."
+      }
+    ],
+    "cas_pratiques": [
+      {
+        "title": "Création en direct de la base de données de formation sous Baserow",
+        "detail": "Pierre modélise sous les yeux des apprenants l'architecture complète : Table `Stagiaires` (Nom, Prénom, Email, UUID) liée en 1-N à la Table `Émargements`, elle-même liée à la Table `Séances`."
+      },
+      {
+        "title": "Paramétrage de vues filtrées et de permissions",
+        "detail": "Création d'une vue Kanban pour le suivi des livrables de projet, d'une vue Galerie pour l'annuaire de la cohorte et configuration de filtres stricts masquant les données confidentielles."
+      }
+    ],
+    "outils": [
+      "Baserow Cloud / Self-Hosted",
+      "PostgreSQL",
+      "Airtable (Comparatif)",
+      "JSON Formatter"
+    ],
+    "chat_highlights": [
+      {
+        "time": "00:41:17",
+        "author": "Anthony MACAL",
+        "content": "Déjà utilisé dans mes projets professionnels précédents !"
+      },
+      {
+        "time": "00:51:41",
+        "author": "Anthony MACAL",
+        "content": "Clé primaire"
+      },
+      {
+        "time": "01:15:00",
+        "author": "Pierre Lacombe",
+        "content": "Le rollup permet d'agréger les données de tables liées sans dupliquer une seule ligne de données."
+      }
+    ],
+    "checklist": [
+      "Créer son workspace personnel sur Baserow",
+      "Modéliser au minimum 2 tables interdépendantes reliées par un lien relationnel",
+      "Configurer au moins un champ de type Rollup et un champ de type Formule",
+      "Créer une vue filtrée répondant à un besoin métier de son projet",
+      "Générer un token API avec les permissions adéquates pour les futurs branchements"
+    ],
+    "downloadUrls": {
+      "docxUrl": "/Guides_Pedagogiques/Guide_Pedagogique_Complet_Session_5.docx",
+      "docxFilename": "Guide_Pedagogique_Complet_Session_5.docx"
+    }
+  },
+  "ses-6": {
+    "title": "Session 6 : Architecture Avancée & Automatisation",
+    "subtitle": "Flux de données événementiels, webhooks, connexions d'API Baserow et gestion des erreurs en production",
+    "formateur": "Pierre LACOMBE",
+    "date": "13 Juillet 2026",
+    "duree": "2h00 de Live",
+    "intro": "Après avoir posé la mémoire avec Baserow, cette séance installe le système nerveux de l'application : comment faire communiquer la base de données avec des services tiers et des modèles d'IA sans intervention humaine grâce aux webhooks et aux orchestrateurs de flux.",
+    "sections_theoriques": [
+      {
+        "title": "Le paradigme événementiel (Event-Driven Architecture)",
+        "content": "Pierre explique pourquoi le polling (interroger un serveur toutes les 5 secondes pour savoir s'il y a du nouveau) est obsolète :\n- Il consomme inutilement du quota d'API et sature les serveurs.\n- Le Webhook inverse le flux : dès qu'une action survient dans Baserow (ex: 'Nouveau devoir déposé'), Baserow envoie instantanément une requête HTTP POST vers l'URL configurée avec les données fraîches en payload JSON."
+      },
+      {
+        "title": "Gestion de la résilience et des codes de statut HTTP",
+        "content": "Règles d'or pour un système qui ne plante pas en silence :\n- Code 200/201 : l'opération a réussi.\n- Code 400/422 : erreur dans la requête (JSON mal formé, champ obligatoire manquant).\n- Code 429 : Rate Limit dépassé (vous appelez l'API OpenAI trop vite, il faut temporiser avec un retry exponentiel).\n- Code 500 : le serveur distant a planté, il faut stocker l'événement dans une file d'attente (Dead Letter Queue) pour le rejouer plus tard."
+      }
+    ],
+    "cas_pratiques": [
+      {
+        "title": "Création d'un webhook Baserow vers un outil d'automatisation",
+        "detail": "Démonstration de la capture en temps réel d'un formulaire stagiaire déclenchant l'analyse automatique du texte par un modèle LLM et la mise à jour immédiate de la ligne dans Baserow."
+      }
+    ],
+    "outils": [
+      "Baserow Webhooks",
+      "Make",
+      "Postman",
+      "Claude 3.5 Sonnet"
+    ],
+    "chat_highlights": [
+      {
+        "time": "00:36:12",
+        "author": "Coordinatrice OIDANEOS",
+        "content": "Oui, les webhooks sont compatibles avec toutes les formules cloud."
+      },
+      {
+        "time": "01:24:00",
+        "author": "Pierre Lacombe",
+        "content": "Pensez toujours au timeout de vos requêtes externes : 30 secondes maximum."
+      }
+    ],
+    "checklist": [
+      "Configurer un webhook sur sa table Baserow",
+      "Tester la réception du payload JSON dans son outil de flux (Make ou n8n)",
+      "Vérifier la bonne écriture de la réponse de l'IA dans la table de destination"
+    ],
+    "downloadUrls": {
+      "docxUrl": "/Guides_Pedagogiques/Guide_Pedagogique_Complet_Session_6.docx",
+      "docxFilename": "Guide_Pedagogique_Complet_Session_6.docx"
+    }
+  },
+  "ses-7": {
+    "title": "Session 7 : Intégration d'Agents & Workflows No-Code",
+    "subtitle": "Design responsive, méthodologie agile, posture du Product Owner et programmation visuelle",
+    "formateur": "Pierre LACOMBE & Milène PAUL",
+    "date": "20 Juillet 2026",
+    "duree": "2h00 de Live",
+    "intro": "Séance de convergence entre rigueur technique et posture professionnelle. Milène et Pierre transmettent les réflexes indispensables du Product Owner pour mener un projet agile centré sur l'expérience utilisateur réelle.",
+    "sections_theoriques": [
+      {
+        "title": "Design Responsive : Adapter aux 3 formats d'écrans",
+        "content": "Une application IA ne se consulte plus uniquement sur un écran de bureau :\n- Les stagiaires et managers y accèdent sur mobile dans les transports, sur tablette en réunion ou sur grand écran au bureau.\n- Penser Mobile-First : hiérarchiser l'information essentielle pour qu'elle s'affiche sans défilement horizontal ni boutons microscopiques."
+      },
+      {
+        "title": "La méthode Agile appliquée au No-Code",
+        "content": "Bannir le modèle en V : itérer par cycles courts d'une semaine. Livrer un MVP (Minimum Viable Product) imparfait mais fonctionnel, le tester auprès de vrais utilisateurs, et enrichir les fonctionnalités selon les retours mesurés."
+      },
+      {
+        "title": "La posture du Product Owner (P.O)",
+        "content": "Le PO est l'avocat de l'utilisateur final et le garant de la viabilité économique du projet. Il arbitre en permanence entre la complexité technique et la valeur métier immédiate."
+      }
+    ],
+    "cas_pratiques": [
+      {
+        "title": "Labellisation et étiquetage sémantique dans Celestory",
+        "detail": "À 00:40:24, Milène guide les apprenants dans la pose d'étiquettes logiques pour classer dynamiquement les profils d'utilisateurs et déclencher des branches de conversation ciblées."
+      }
+    ],
+    "outils": [
+      "Celestory.io",
+      "Figma Responsive",
+      "Trello / Notion Agile Board"
+    ],
+    "chat_highlights": [
+      {
+        "time": "00:21:43",
+        "author": "Milène PAUL",
+        "content": "Design responsive : Design qui s'adapte à l'ordinateur, la tablette ou smartphone."
+      },
+      {
+        "time": "00:22:39",
+        "author": "Milène PAUL",
+        "content": "Accéder à votre compte sur celestory.io."
+      },
+      {
+        "time": "00:25:16",
+        "author": "Milène PAUL",
+        "content": "Développement agile : adapter progressivement aux besoins des utilisateurs."
+      },
+      {
+        "time": "00:26:08",
+        "author": "Milène PAUL",
+        "content": "P.O (Product Owner) : celui qui conçoit la machine, le produit, le service."
+      },
+      {
+        "time": "00:40:24",
+        "author": "Milène PAUL",
+        "content": "Labelliser dans Celestory : poser des 'étiquettes' qui créent des catégories d'utilisateurs."
+      }
+    ],
+    "checklist": [
+      "Auditer l'affichage de son application sur mobile et tablette",
+      "Mettre en place au moins 3 labels de segmentation dans son graphe",
+      "Rédiger la vision produit de son application selon la grille du Product Owner"
+    ],
+    "downloadUrls": {
+      "docxUrl": "/Guides_Pedagogiques/Guide_Pedagogique_Complet_Session_7.docx",
+      "docxFilename": "Guide_Pedagogique_Complet_Session_7.docx"
+    }
+  },
+  "ses-8": {
+    "title": "Session 8 : Design d'Interfaces & Expérience Utilisateur IA",
+    "subtitle": "Conception d'écrans pour applications dopées à l'IA, saisie intégrée au fil conducteur et réduction de la charge cognitive",
+    "formateur": "Pierre LACOMBE & Milène PAUL",
+    "date": "27 Juillet 2026",
+    "duree": "2h00 de Live",
+    "intro": "L'ergonomie d'une application IA obéit à des règles psychologiques bien particulières : comment rassurer l'utilisateur face à un résultat généré, lui donner la main pour corriger et masquer la latence des modèles.",
+    "sections_theoriques": [
+      {
+        "title": "Le principe de la saisie intégrée au fil conducteur",
+        "content": "Pierre démontre comment éviter la rupture d'attention : l'utilisateur ne doit pas être renvoyé vers une page tierce pour saisir une donnée. La saisie doit s'opérer directement dans le flux conversationnel ou contextuel du composant actif."
+      },
+      {
+        "title": "Donner le sentiment de contrôle à l'utilisateur (Human-in-the-loop)",
+        "content": "Ne jamais imposer le résultat d'un LLM sans validation humaine : toujours offrir un bouton 'Régénérer avec d'autres critères', 'Modifier le texte manuellement' ou 'Copier dans le presse-papier'."
+      }
+    ],
+    "cas_pratiques": [
+      {
+        "title": "Intégration d'un composant de mise à jour en direct",
+        "detail": "Configuration d'un bloc de mise à jour des détails d'un profil apprenant avec validation visuelle instantanée."
+      }
+    ],
+    "outils": [
+      "Celestory UI",
+      "Figma",
+      "Tailwind CSS",
+      "Lucide Icons"
+    ],
+    "chat_highlights": [
+      {
+        "time": "00:33:15",
+        "author": "Pierre Lacombe",
+        "content": "L'utilisateur ne doit jamais se demander si l'application est bloquée ou en train de calculer."
+      }
+    ],
+    "checklist": [
+      "Ajouter des indicateurs visuels de chargement sur toutes les requêtes IA",
+      "Proposer un bouton de modification manuelle des textes générés",
+      "Harmoniser les contrastes et les marges selon les standards d'accessibilité"
+    ],
+    "downloadUrls": {
+      "docxUrl": "/Guides_Pedagogiques/Guide_Pedagogique_Complet_Session_8.docx",
+      "docxFilename": "Guide_Pedagogique_Complet_Session_8.docx"
+    }
+  },
+  "ses-9": {
+    "title": "Session 9 : Contexte IA : Personnalisation, Données et Identité du Projet",
+    "subtitle": "⭐ Guide Pilote d'Excellence — LLM probabiliste, exercice du Roast, efficience du Markdown (vs Word/PDF), getdesign.md et Vibe Coding en SVG",
+    "formateur": "Pierre LACOMBE (Expert IA) & Milène PAUL (Coordination)",
+    "date": "03 Août 2026",
+    "duree": "2h00 de Live",
+    "intro": "La séance tournant de l'ensemble de la formation. Jusqu'ici, nous avons appris à manipuler les outils de façon isolée (interroger ChatGPT, brancher Baserow, créer des embranchements Celestory). Cette Session 9 marque le passage du 'bricolage avec des prompts' à la conception d'applications professionnelles, cohérentes et sur-mesure.\n\nLe constat fondateur de Pierre Lacombe : si vous ne donnez aucun contexte à un LLM, il vous répondra toujours de manière générique, fade et impersonnelle. Pour qu'une IA produise du contenu ou du code qui ressemble à votre marque ou votre entreprise, vous devez lui injecter un contexte rigoureux et maîtrisé.",
+    "sections_theoriques": [
+      {
+        "title": "Décryptage Théorique : Comment un LLM 'pense'-t-il réellement ?",
+        "content": "Un modèle de langage (GPT-4o, Claude 3.5 Sonnet, Gemini) ne possède aucune conscience ni intentionnalité humaine. C'est un compresseur de données probabiliste géant issu de l'ingestion de milliards de pages web.\nQuand vous lui soumettez un texte, son unique travail mathématique est de calculer : « Quel est le token le plus probable qui vient ensuite ? ».\nSans contexte spécifique, la loi des grands nombres produit un texte moyen, sans âme. En lui fournissant un contexte dense (vos interdits lexicaux, vos valeurs, votre persona, votre charte de ton), vous contraignez l'espace des probabilités : le modèle est forcé de choisir les mots rares et spécifiques qui correspondent exactement à votre identité de marque."
+      },
+      {
+        "title": "L'Exercice du Roast Positif : Extraire son style par effet miroir",
+        "content": "Au cours de la séance (à 00:56:39), Milène partage le prompt officiel exécuté en direct par Pierre et les apprenants : « Fais un roast positif sur tout ce que tu sais de moi ».\nPourquoi cet exercice est génial pédagogiquement ?\nDans la tradition américaine, un 'roast' est un discours taquin qui se moque affectueusement de quelqu'un en amplifiant ses manies.\nPuisque vous utilisez votre compte IA depuis des semaines, le modèle a mémorisé dans son historique vos tics de langage, vos doutes récurrents et vos sujets favoris.\nEn lui demandant ce roast, l'IA crache le morceau et vous renvoie le miroir exact de votre profil.\nMéthode d'exploitation immédiate : demandez-lui dans la foulée : « À partir de cette analyse, formalise mon guide de style en 10 règles strictes pour mes futures générations de contenu »."
+      },
+      {
+        "title": "Efficience des Tokens : Pourquoi le Markdown (.md) est le format roi pour l'IA",
+        "content": "Pierre met en garde contre une hérésie d'ingénierie récurrente : injecter des fichiers PDF ou Word comme contexte d'un LLM.\n- Le PDF (.pdf) : nécessite un OCR ou un parsing graphique lourd, consomme des milliers de tokens inutiles, détruit l'alignement des colonnes et ralentit les temps de réponse.\n- Le Word (.docx) : archive binaire encombrée de métadonnées invisibles (historique des révisions, styles Word) superflues pour le modèle.\n- Le Markdown (.md) : texte pur universel (#, -, **, |). Zéro gaspillage de tokens, interprété nativement à 100% par tous les LLMs. C'est le format standard absolu de l'ingénierie IA."
+      },
+      {
+        "title": "L'Outil getdesign.md & Le Vibe Coding en SVG Vectoriel",
+        "content": "Partagé dans le chat à 01:18:19 : https://getdesign.md/. Cet outil permet de générer une charte graphique complète en Markdown pur (palettes hexadécimales, typographies, espacements) à copier-coller dans le prompt système de vos modèles.\nPour les visuels, Pierre préconise le Vibe Coding en SVG : demander au modèle de générer du code vectoriel <svg> plutôt que des images PNG lourdes et figées. Le SVG est du texte pur que vous pouvez éditer, redimensionner à l'infini et animer en direct sans perte de qualité."
+      }
+    ],
+    "cas_pratiques": [
+      {
+        "title": "Exécution en direct du prompt du Roast sur son profil",
+        "detail": "Test immédiat sur ChatGPT ou Claude, analyse des tournures favorites de l'IA et extraction de sa charte éditoriale personnelle."
+      },
+      {
+        "title": "Formalisation d'un design system complet avec getdesign.md",
+        "detail": "Création de la palette OIDANEOS (Violet #6D28A6, Rose #D6398F) et injection du fichier Markdown dans le contexte d'un composant web."
+      },
+      {
+        "title": "Génération et intégration d'une icône vectorielle SVG par l'IA",
+        "detail": "Demande à Claude de produire le code XML d'un badge de certification vectoriel et inclusion directe dans la page sans image matricielle."
+      }
+    ],
+    "outils": [
+      "Claude 3.5 Sonnet",
+      "ChatGPT Plus",
+      "getdesign.md",
+      "Baserow (Données CSV/JSON)",
+      "SVG Vectoriel",
+      "Figma"
+    ],
+    "chat_highlights": [
+      {
+        "time": "00:46:53",
+        "author": "Alain Valero",
+        "content": "Hello tout le monde, bienvenue pour cette session charnière !"
+      },
+      {
+        "time": "00:56:39",
+        "author": "Milène PAUL",
+        "content": "Prompt : Fais un roast positif sur tout ce que tu sais de moi."
+      },
+      {
+        "time": "01:18:19",
+        "author": "Pierre Lacombe",
+        "content": "Ressource : https://getdesign.md/ pour générer vos chartes graphiques en Markdown léger."
+      }
+    ],
+    "checklist": [
+      "Exécuter le prompt du Roast sur son profil Claude ou ChatGPT",
+      "Extraire son guide de style en 10 règles éditoriales pour son entreprise",
+      "Générer sa charte graphique en Markdown pur via getdesign.md",
+      "Vérifier que ses tables de données Baserow sont exportables en CSV/JSON propre",
+      "Créer au moins un élément graphique en SVG généré par l'IA"
+    ],
+    "downloadUrls": {
+      "docxUrl": "/Guides_Pedagogiques/Guide_Pedagogique_Complet_Session_9.docx",
+      "docxFilename": "Guide_Pedagogique_Complet_Session_9.docx"
+    }
+  },
+  "ses-10": {
+    "title": "Session 10 : Perfectionnement, RAG & Outils Multimodaux",
+    "subtitle": "Architectures RAG (Retrieval Augmented Generation), Speech-to-Text avec Whisper, Google AI Studio et fenêtres de contexte géantes",
+    "formateur": "Pierre LACOMBE & Milène PAUL",
+    "date": "10 Août 2026",
+    "duree": "2h00 de Live",
+    "intro": "Cette séance propulse les stagiaires dans l'état de l'art des technologies d'augmentation des LLMs : comment éradiquer définitivement les hallucinations grâce au RAG et exploiter la multimodalité (audio, vidéo) pour transformer des médias bruts en connaissances exploitables.",
+    "sections_theoriques": [
+      {
+        "title": "Le RAG (Retrieval Augmented Generation) : La fin des hallucinations",
+        "content": "Milène et Pierre détaillent l'architecture RAG :\n- Les limites du modèle brut : les connaissances d'un LLM s'arrêtent à sa date d'entraînement et il ne connaît rien des données privées de votre entreprise.\n- Le fonctionnement du RAG : lorsqu'une question est posée, le système effectue d'abord une recherche sémantique vectorielle dans vos documents internes (PDF, fiches de cours, procédures), extrait les 3 paragraphes les plus pertinents, et les injecte dans le prompt du LLM avec l'ordre formel : 'Réponds UNIQUEMENT à partir des extraits fournis ci-dessus'."
+      },
+      {
+        "title": "Speech-to-Text avec Whisper & Transcription automatique",
+        "content": "Comprendre le modèle Whisper d'OpenAI :\n- Un modèle open source entraîné sur 680 000 heures d'enregistrements audio multilingues.\n- Capacité de transcrire avec un taux d'erreur inférieur à 3%, même avec des accents régionaux ou du bruit ambiant.\n- Génération native de fichiers horodatés (.vtt, .srt) indispensables pour synchroniser le texte avec la vidéo dans une plateforme Live-to-Asset."
+      },
+      {
+        "title": "Google AI Studio & Les fenêtres de contexte à 2 millions de tokens",
+        "content": "Pierre démontre la puissance de Google AI Studio pour les développeurs :\n- Capacité d'ingérer 1 heure entière de vidéo ou 500 pages de PDF d'un seul bloc dans Gemini 1.5 Pro sans découpage préalable, permettant de poser des questions complexes sur l'ensemble du média en direct."
+      }
+    ],
+    "cas_pratiques": [
+      {
+        "title": "Transcription et synthèse d'un fichier audio en direct",
+        "detail": "Passage d'un enregistrement audio brut dans Whisper, extraction des points clés et génération automatique d'une fiche de révision structurée."
+      },
+      {
+        "title": "Test de requêtage documentaire dans Google AI Studio",
+        "detail": "Téléversement d'un document volumineux et interrogation ciblée pour vérifier que les réponses citent avec exactitude les pages sources."
+      }
+    ],
+    "outils": [
+      "OpenAI Whisper",
+      "Google AI Studio (Gemini 1.5 Pro)",
+      "RAG Vector Store",
+      "GPT Live 1"
+    ],
+    "chat_highlights": [
+      {
+        "time": "01:06:12",
+        "author": "Milène PAUL",
+        "content": "Retrieval Augmented Generation (RAG) : technique pour brancher une base documentaire sur le LLM."
+      },
+      {
+        "time": "01:11:29",
+        "author": "Milène PAUL",
+        "content": "Whisper : Outil speech-to-text qui génère des transcriptions audios horodatées."
+      },
+      {
+        "time": "01:13:55",
+        "author": "Milène PAUL",
+        "content": "Google AI Studio : outil initialement dédié aux développeurs pour la transcription et l'analyse vidéo."
+      },
+      {
+        "time": "01:32:06",
+        "author": "Alain Valero",
+        "content": "La précision du multimodal en direct est bluffante !"
+      }
+    ],
+    "checklist": [
+      "Tester Google AI Studio en déposant un fichier audio ou vidéo de test",
+      "Comprendre l'articulation entre Embeddings et base vectorielle dans le RAG",
+      "Sélectionner les documents de référence qui alimenteront l'IA de son projet"
+    ],
+    "downloadUrls": {
+      "docxUrl": "/Guides_Pedagogiques/Guide_Pedagogique_Complet_Session_10.docx",
+      "docxFilename": "Guide_Pedagogique_Complet_Session_10.docx"
+    }
+  },
+  "ses-11": {
+    "title": "Session 11 : Industrialisation, Scalabilité & Sécurité",
+    "subtitle": "Panorama géopolitique de l'IA (modèles chinois DeepSeek/Qwen, 2.8T de paramètres), sécurisation des clés d'API et supervision FinOps",
+    "formateur": "Pierre LACOMBE",
+    "date": "17 Août 2026",
+    "duree": "2h00 de Live",
+    "intro": "Une session de haute volée technique et stratégique. Pierre dresse l'état des lieux de la guerre technologique mondiale entre modèles américains et chinois, et détaille les mesures d'ingénierie indispensables pour passer son prototype en production sécurisée.",
+    "sections_theoriques": [
+      {
+        "title": "La montée en puissance des modèles chinois : DeepSeek, Qwen et Moonshot",
+        "content": "Pierre décortique la déferlante des architectures ouvertes chinoises :\n- DeepSeek et Qwen (Alibaba) rivalisent directement avec GPT-4o pour un coût de calcul divisé par 5 à 10.\n- L'annonce de modèles colossaux à 2,8 trilliards de paramètres : comment l'optimisation mathématique (Mixture of Experts - MoE) permet d'activer uniquement une fraction des neurones par token pour préserver l'efficience énergétique."
+      },
+      {
+        "title": "Sécurité absolue des clés d'API et variables d'environnement",
+        "content": "Règle d'or absolue pour la certification :\n- Ne jamais insérer une clé d'API (sk-...) dans du code HTML ou JavaScript visible dans le navigateur : des bots automatisés scannent le web en continu et vident votre solde en moins de 10 minutes.\n- Utiliser un backend intermédiaire (Edge Function, Supabase, Vercel Serverless) ou des proxies sécurisés pour masquer vos secrets d'infrastructure."
+      }
+    ],
+    "cas_pratiques": [
+      {
+        "title": "Audit de vulnérabilité d'un prototype",
+        "detail": "Inspection pas-à-pas des requêtes réseau dans la console développeur du navigateur pour s'assurer qu'aucune clé privée ne fuite côté client."
+      }
+    ],
+    "outils": [
+      "DeepSeek API",
+      "Qwen (Hugging Face)",
+      "Supabase / Vercel Edge Functions",
+      "OpenAI Usage Controls"
+    ],
+    "chat_highlights": [
+      {
+        "time": "00:50:46",
+        "author": "Alain Valero",
+        "content": "J'arrive café !"
+      },
+      {
+        "time": "01:05:00",
+        "author": "Pierre Lacombe",
+        "content": "Une clé API exposée dans le front-end est compromise en moins de 10 minutes par les crawlers du web."
+      }
+    ],
+    "checklist": [
+      "Auditer l'ensemble de ses prototypes pour éliminer toute clé API en clair",
+      "Mettre en place un plafond budgétaire mensuel strict sur chaque console d'API",
+      "Tester l'intégration d'un modèle open source économique pour les tâches simples"
+    ],
+    "downloadUrls": {
+      "docxUrl": "/Guides_Pedagogiques/Guide_Pedagogique_Complet_Session_11.docx",
+      "docxFilename": "Guide_Pedagogique_Complet_Session_11.docx"
+    }
+  },
+  "ses-12": {
+    "title": "Session 12 : Revue des Livrables & Débogage Live",
+    "subtitle": "Atelier pratique de revues collectives, prototypage instantané du design vs de l'application, et préparation de la soutenance",
+    "formateur": "Pierre LACOMBE & Milène PAUL",
+    "date": "24 Août 2026",
+    "duree": "2h00 de Live",
+    "intro": "Dernière ligne droite avant les soutenances officielles. Pierre et Milène organisent un atelier intensif de revue de code et de prototypes en direct avec Diane, Anthony, Alain et Erwan pour gommer les dernières frictions d'expérience utilisateur.",
+    "sections_theoriques": [
+      {
+        "title": "Prototype de Design vs Prototype Applicatif : La distinction cruciale",
+        "content": "Pierre alerte sur une confusion fréquente :\n- Un prototype de design (Figma, v0.dev, mockups statiques) valide les couleurs, les dispositions et le flux visuel.\n- Un prototype applicatif valide la robustesse de la logique : la donnée est-elle bien enregistrée dans Baserow ? Le webhook a-t-il bien renvoyé la réponse ? L'application gère-t-elle la perte de connexion ? Le jury certifie un prototype applicatif fonctionnel, pas un simple dessin d'écran."
+      },
+      {
+        "title": "La grille d'évaluation officielle du certificateur",
+        "content": "Milène passe en revue les critères éliminatoires de l'examen : la capacité à justifier ses choix techniques, l'exhaustivité du Journal de Bord et la démonstration en direct d'un cas d'usage complet sans crash."
+      }
+    ],
+    "cas_pratiques": [
+      {
+        "title": "Débogage live sur les projets de Diane et d'Anthony",
+        "detail": "Résolution collective d'un problème de rafraîchissement d'interface et optimisation des temps de latence sur les requêtes d'IA."
+      }
+    ],
+    "outils": [
+      "Inspecteur Navigateur",
+      "Baserow",
+      "Celestory",
+      "Notion Journal de Bord"
+    ],
+    "chat_highlights": [
+      {
+        "time": "00:25:01",
+        "author": "Alain Valero",
+        "content": "Hello tout le monde, dernière ligne droite avant les soutenances !"
+      },
+      {
+        "time": "00:48:30",
+        "author": "Pierre Lacombe",
+        "content": "Si une requête échoue, vérifiez toujours le format de date ou la présence de guillemets dans votre JSON."
+      }
+    ],
+    "checklist": [
+      "Effectuer un test de bout en bout de son application en conditions réelles",
+      "Mettre à jour son journal de bord avec les derniers correctifs apportés",
+      "Préparer son support de présentation pour la soutenance blanche de la Session 13"
+    ],
+    "downloadUrls": {
+      "docxUrl": "/Guides_Pedagogiques/Guide_Pedagogique_Complet_Session_12.docx",
+      "docxFilename": "Guide_Pedagogique_Complet_Session_12.docx"
+    }
+  },
+  "ses-13": {
+    "title": "Session 13 : Préparation aux Évaluations & Bilan Final",
+    "subtitle": "Soutenance blanche, Passkeys vs clés API, actualisation du Journal de Bord par l'IA et clôture officielle du cursus",
+    "formateur": "Pierre LACOMBE, Milène PAUL & Alain-Franck VALERO",
+    "date": "31 Août 2026",
+    "duree": "2h00 de Live",
+    "intro": "L'apothéose du parcours de formation. Les apprenants présentent leurs soutenances blanches, valident la conformité de leurs dossiers avec les exigences du certificateur et découvrent comment exploiter l'IA pour automatiser la tenue et la synthèse de leurs propres compétences professionnelles.",
+    "sections_theoriques": [
+      {
+        "title": "L'art de la soutenance devant le jury (15 min chrono)",
+        "content": "Alain et Pierre distillent le tempo idéal pour captiver les examinateurs :\n- 3 minutes : Le contexte métier, l'irritant initial et les objectifs quantifiés.\n- 7 minutes : La démonstration live sans filet (montrer l'interface, la saisie, le traitement IA et la persistance en base de données).\n- 5 minutes : Recul critique, difficultés techniques surmontées (grâce au Journal de Bord) et feuille de route d'évolution commerciale ou organisationnelle."
+      },
+      {
+        "title": "Actualisation continue du Journal de Bord par l'IA",
+        "content": "La méthode partagée par Alain Valero à 00:32:25 :\n- Donner à un LLM l'ensemble de ses notes brutes et lui demander d'extraire la matrice des compétences acquises alignée mot pour mot sur le référentiel officiel du titre professionnel. Un gain de temps inestimable pour valoriser chaque heure de pratique."
+      },
+      {
+        "title": "Sécurité moderne : Les Passkeys et l'authentification sans mot de passe",
+        "content": "Pierre conclut sur les évolutions d'authentification : remplacement des mots de passe traditionnels vulnérables par des clés cryptographiques biométriques (Passkeys / FIDO2) intégrées nativement aux systèmes d'exploitation."
+      }
+    ],
+    "cas_pratiques": [
+      {
+        "title": "Passage en conditions réelles des soutenances blanches",
+        "detail": "Simulation complète de passage devant jury blanc pour Diane, Anthony, Erwan et les autres apprenants, avec debriefing technique et conseils de posture par les formateurs."
+      }
+    ],
+    "outils": [
+      "Support de Soutenance",
+      "Application Finale No-Code",
+      "Journal de Bord Certifié",
+      "Digiforma"
+    ],
+    "chat_highlights": [
+      {
+        "time": "00:26:21",
+        "author": "Alain Valero",
+        "content": "Nous avons maintenant les accès d'Erwan et d'Anthony Morvan."
+      },
+      {
+        "time": "00:32:25",
+        "author": "Alain Valero",
+        "content": "On devrait profiter d'un moment de la session pour remontrer le journal de bord et même l'actualiser via une IA pour chacun."
+      },
+      {
+        "time": "01:08:16",
+        "author": "Alain Valero",
+        "content": "Diane et Antho avec vos applis, vous êtes déjà prêts pour le journal de bord et le jury !"
+      }
+    ],
+    "checklist": [
+      "Valider la complétude de son dossier de projet sur Digiforma",
+      "Exporter et signer la version finale de son Journal de Bord",
+      "Vérifier que le lien public de son application fonctionne sans compte développeur",
+      "Répéter sa soutenance de 15 minutes avec un chronomètre en main"
+    ],
+    "downloadUrls": {
+      "docxUrl": "/Guides_Pedagogiques/Guide_Pedagogique_Complet_Session_13.docx",
+      "docxFilename": "Guide_Pedagogique_Complet_Session_13.docx"
+    }
+  }
+}

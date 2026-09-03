@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-full bg-[#FBF9FD] text-[#1A1435]">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OIDANEOS — Espace Formation IA & No-Code (Live-to-Asset)</title>
+  
+  <!-- Tailwind CSS & Lucide Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            oidaneos: {
+              purple: '#6D28A6',
+              purpleDeep: '#4E1D82',
+              magenta: '#9B3AA0',
+              pink: '#D6398F',
+              ink: '#1A1435',
+              body: '#504A69',
+              muted: '#8E88A6',
+              lav50: '#FBF9FD',
+              lav100: '#F3EEFB',
+              lav200: '#E7DDF7',
+              line: '#ECE5F6',
+            }
+          },
+          boxShadow: {
+            'card': '0 12px 32px -12px rgba(109, 40, 166, 0.08)',
+            'card-hover': '0 20px 40px -15px rgba(109, 40, 166, 0.16)',
+            'btn': '0 8px 20px -6px rgba(214, 57, 143, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    code, pre { font-family: 'JetBrains Mono', monospace; }
+    .bg-grad-oidaneos { background: linear-gradient(90deg, #6D28A6 0%, #9B3AA0 55%, #D6398F 100%); }
+    .text-grad {
+      background: linear-gradient(90deg, #6D28A6 0%, #9B3AA0 55%, #D6398F 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .custom-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+    .custom-scroll::-webkit-scrollbar-track { background: transparent; }
+    .custom-scroll::-webkit-scrollbar-thumb { background: #D8CBEF; border-radius: 9999px; }
+    .custom-scroll::-webkit-scrollbar-thumb:hover { background: #9B3AA0; }
+  </style>
+</head>
+<body class="h-full flex flex-col antialiased selection:bg-oidaneos-pink selection:text-white custom-scroll bg-[#FBF9FD]">
+
+  <!-- ================= TOPBAR BRANDÉE OIDANEOS ================= -->
+  <header class="bg-white sticky top-0 z-40 border-b border-oidaneos-line px-4 lg:px-8 py-3 flex items-center justify-between shadow-sm">
+    <div class="flex items-center gap-4">
+      <a href="#" onclick="showHomeView(); return false;" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-grad-oidaneos flex items-center justify-center font-black text-white shadow-btn text-lg group-hover:scale-105 transition">
+          O
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-extrabold tracking-tight text-oidaneos-ink text-xl">OIDANEOS</span>
+            <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase rounded-full bg-oidaneos-lav100 text-oidaneos-purple border border-oidaneos-line">
+              Live-to-Asset
+            </span>
+          </div>
+          <p class="text-xs text-oidaneos-muted font-medium">Plateforme Pédagogique & Micro-Modules</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Actions Droite -->
+    <div class="flex items-center gap-3">
+      <button onclick="showHomeView()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple text-xs font-bold transition">
+        <i data-lucide="layout-grid" class="w-4 h-4"></i>
+        <span>Toutes les sessions (14)</span>
+      </button>
+
+      <div class="h-5 w-px bg-oidaneos-line hidden sm:block"></div>
+
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-full bg-grad-oidaneos flex items-center justify-center font-bold text-white text-xs shadow-sm">
+          AV
+        </div>
+        <div class="text-left hidden sm:block">
+          <div class="text-xs font-bold text-oidaneos-ink">Alain Valero</div>
+          <div class="text-[10px] text-oidaneos-muted font-medium">Promotion IA 2026</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= CONTENEUR PRINCIPAL ================= -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 lg:p-8 space-y-8">
+
+    <!-- ========================================================================= -->
+    <!--                       1. ÉCRAN ACCUEIL : MES SESSIONS                     -->
+    <!-- ========================================================================= -->
+    <div id="viewHome" class="space-y-8 animate-fade-in">
+      
+      <!-- En-tête de bienvenue & Indicateurs -->
+      <div class="bg-white rounded-3xl p-6 lg:p-8 border border-oidaneos-line shadow-card flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative overflow-hidden">
+        <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-gradient-to-br from-oidaneos-purple/10 via-oidaneos-pink/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="space-y-3 relative max-w-2xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-oidaneos-lav100 text-oidaneos-purple text-xs font-bold">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Promotion IA No-Code 2026 • 14 Séances & Guides Étalons Approfondis
+          </div>
+          <h1 class="text-2xl lg:text-3xl font-black text-oidaneos-ink tracking-tight">
+            Concepteur & Développeur d'Applications IA No-Code
+          </h1>
+          <p class="text-sm text-oidaneos-body leading-relaxed">
+            Chaque séance en direct est transformée en <strong>micro-vidéos ciblées</strong> découpées par Vincent, accompagnée d'un <strong>Guide Pédagogique Étalon complet et approfondi</strong> extrait du transcript, et des <strong>fiches de révision officielles</strong> en format Word.
+          </p>
+        </div>
+
+        <!-- Badges Statistiques -->
+        <div class="relative shrink-0 flex flex-col sm:flex-row lg:flex-col items-start lg:items-end justify-center gap-3">
+          <div class="p-3.5 rounded-2xl bg-emerald-50/80 border border-emerald-200/80 flex items-center gap-3">
+            <div class="w-8 h-8 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-bold text-sm">
+              7
+            </div>
+            <div>
+              <div class="text-xs font-bold text-emerald-900">Sessions Assetisées</div>
+              <div class="text-[10px] text-emerald-700">65 micro-vidéos découpées</div>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-amber-50/80 border border-amber-200/80 flex items-center gap-3">
+            <div class="w-8 h-8 rounded-xl bg-amber-500 text-white flex items-center justify-center font-bold text-sm">
+              7
+            </div>
+            <div>
+              <div class="text-xs font-bold text-amber-900">Replays en cours</div>
+              <div class="text-[10px] text-amber-700">Découpage Vincent en cours</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filtres et Grille des Sessions -->
+      <div class="space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-1">
+          <div>
+            <h2 class="text-lg font-black text-oidaneos-ink flex items-center gap-2">
+              <i data-lucide="folder-kanban" class="w-5 h-5 text-oidaneos-pink"></i>
+              Programme Complet des Séances
+            </h2>
+            <p class="text-xs text-oidaneos-muted">Sélectionnez une session pour accéder aux vidéos, au guide étalon complet et aux téléchargements Word</p>
+          </div>
+
+          <!-- Boutons Filtres -->
+          <div class="flex items-center gap-2 bg-white p-1 rounded-2xl border border-oidaneos-line shadow-sm self-start">
+            <button onclick="setFilter('ALL')" id="filter-ALL" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-oidaneos-lav100 text-oidaneos-purple transition">
+              Toutes (14)
+            </button>
+            <button onclick="setFilter('ASSETISE')" id="filter-ASSETISE" class="px-3 py-1.5 rounded-xl text-xs font-bold text-oidaneos-muted hover:text-oidaneos-purple transition">
+              Assetisées (7)
+            </button>
+            <button onclick="setFilter('REPLAY')" id="filter-REPLAY" class="px-3 py-1.5 rounded-xl text-xs font-bold text-oidaneos-muted hover:text-oidaneos-purple transition">
+              Replays bruts (7)
+            </button>
+          </div>
+        </div>
+
+        <div id="sessionsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========================================================================= -->
+    <!--          2. ÉCRAN SÉANCE : LECTEUR + PLAYLIST + GUIDE ÉTALON + CHAT       -->
+    <!-- ========================================================================= -->
+    <div id="viewSession" class="hidden space-y-6 animate-fade-in">
+
+      <!-- Barre supérieure de navigation avec Sélecteur Dynamique de Session -->
+      <div class="bg-white rounded-2xl p-4 border border-oidaneos-line shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+        
+        <div class="flex items-center gap-3 flex-wrap">
+          <button onclick="showHomeView()" class="inline-flex items-center gap-1.5 text-xs font-bold text-oidaneos-purple hover:text-oidaneos-pink transition group">
+            <i data-lucide="arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition"></i>
+            <span>Toutes les sessions</span>
+          </button>
+          
+          <span class="text-oidaneos-line">|</span>
+
+          <!-- Dropdown sélecteur de séance -->
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold text-oidaneos-muted hidden sm:inline">Changer de séance :</span>
+            <select id="sessionDropdown" onchange="onSessionDropdownChange(this.value)" class="bg-oidaneos-lav50 hover:bg-oidaneos-lav100 border border-oidaneos-line rounded-xl px-3 py-1.5 text-xs font-extrabold text-oidaneos-ink focus:outline-none focus:ring-2 focus:ring-oidaneos-purple cursor-pointer transition">
+              <!-- Dynamically populated -->
+            </select>
+          </div>
+        </div>
+
+        <!-- Navigation Précédent / Suivant -->
+        <div class="flex items-center gap-2 self-end md:self-auto">
+          <button id="btnPrevSession" onclick="navigateSession(-1)" class="px-3 py-1.5 rounded-xl bg-oidaneos-lav50 hover:bg-oidaneos-lav100 border border-oidaneos-line text-xs font-bold text-oidaneos-purple disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1 transition">
+            <i data-lucide="chevron-left" class="w-3.5 h-3.5"></i>
+            <span>Précédente</span>
+          </button>
+          <button id="btnNextSession" onclick="navigateSession(1)" class="px-3 py-1.5 rounded-xl bg-oidaneos-lav50 hover:bg-oidaneos-lav100 border border-oidaneos-line text-xs font-bold text-oidaneos-purple disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1 transition">
+            <span>Suivante</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- En-tête de la séance active -->
+      <div class="space-y-1.5">
+        <div class="flex items-center gap-2 flex-wrap">
+          <span id="sessionStatusBadge" class="px-2.5 py-0.5 text-[10px] font-bold uppercase rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+            Session Assetisée
+          </span>
+          <span id="sessionMetaInfo" class="text-xs font-semibold text-oidaneos-muted">
+            Date • Formateur
+          </span>
+        </div>
+        <h2 id="sessionTitleMain" class="text-2xl font-black text-oidaneos-ink tracking-tight">
+          Titre de la séance
+        </h2>
+        <p id="sessionDescMain" class="text-xs text-oidaneos-body max-w-3xl leading-relaxed">
+          Description
+        </p>
+      </div>
+
+      <!-- ================= GRILLE VIDÉO (8 COLS) + PLAYLIST (4 COLS) ================= -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Colonne Gauche : Lecteur Vidéo + Titre du module -->
+        <div class="lg:col-span-8 space-y-4">
+          <div class="bg-black rounded-3xl overflow-hidden shadow-2xl border border-slate-800 relative group aspect-video">
+            <video id="playerVideo" controls preload="metadata" class="w-full h-full object-contain bg-black">
+              <source id="playerVideoSource" src="" type="video/mp4">
+              Votre navigateur ne prend pas en charge la vidéo HTML5.
+            </video>
+          </div>
+
+          <!-- Informations sur la capsule active -->
+          <div class="p-5 rounded-2xl bg-white border border-oidaneos-line shadow-card flex items-center justify-between gap-4">
+            <div class="space-y-1">
+              <div class="flex items-center gap-2">
+                <span id="currentVideoBadge" class="px-2.5 py-0.5 text-[10px] font-bold rounded-full bg-oidaneos-lav100 text-oidaneos-purple border border-oidaneos-line">
+                  Micro-Vidéo
+                </span>
+                <span id="currentVideoIndexTag" class="text-[11px] font-mono text-oidaneos-pink font-bold">#1</span>
+              </div>
+              <h3 id="currentVideoTitle" class="text-base font-extrabold text-oidaneos-ink">
+                Titre de la vidéo
+              </h3>
+              <p id="currentVideoDesc" class="text-xs text-oidaneos-body">
+                Description de la vidéo
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Colonne Droite : Playlist des Micro-Vidéos Découpées -->
+        <div class="lg:col-span-4 bg-white rounded-3xl p-5 border border-oidaneos-line shadow-card flex flex-col h-[500px]">
+          
+          <div class="pb-3 border-b border-oidaneos-line space-y-1">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xs font-black text-oidaneos-ink flex items-center gap-1.5 uppercase tracking-wider">
+                <i data-lucide="list-video" class="w-4 h-4 text-oidaneos-pink"></i>
+                <span id="playlistHeaderTitle">Modules de la séance</span>
+              </h3>
+              <span id="playlistCountBadge" class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-oidaneos-lav100 text-oidaneos-purple">
+                0 vidéos
+              </span>
+            </div>
+            <p id="playlistSubtext" class="text-[11px] text-oidaneos-muted">
+              Découpé et séquencé par Vincent
+            </p>
+          </div>
+
+          <!-- Liste scrollable des vidéos -->
+          <div id="playlistContainer" class="flex-1 overflow-y-auto space-y-2 pt-3 pr-1 custom-scroll">
+            <!-- Dynamically populated -->
+          </div>
+
+          <!-- Replay intégral si disponible -->
+          <div id="replaySectionBox" class="pt-3 border-t border-oidaneos-line mt-2">
+            <!-- Dynamically populated -->
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ================= 3. LE GUIDE ÉTALON APPROFONDI (8 COLS) + OUTILS & CHAT (4 COLS) ================= -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-4">
+        
+        <!-- Colonne Gauche : Article Pédagogique d'Excellence (8 cols) -->
+        <div class="lg:col-span-8 bg-white rounded-3xl p-7 lg:p-9 border border-oidaneos-line shadow-card space-y-8" id="guideEtalonContainer">
+          <!-- Dynamically populated by renderGuideEtalon() -->
+        </div>
+
+        <!-- Colonne Droite : Outils Clés & Éléments du Chat (4 cols) -->
+        <div class="lg:col-span-4 space-y-6">
+          
+          <!-- Boîte : Outils & Technologies Manipulés -->
+          <div class="bg-white rounded-3xl p-6 border border-oidaneos-line shadow-card space-y-4">
+            <div class="flex items-center gap-2 text-xs font-bold text-oidaneos-purple">
+              <i data-lucide="cpu" class="w-4 h-4 text-oidaneos-pink"></i>
+              <span class="uppercase tracking-wider">Outils & Technologies Clés</span>
+            </div>
+            <div id="toolsContainer" class="flex flex-wrap gap-2">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Boîte : Éléments & Ressources du Chat Zoom -->
+          <div class="bg-white rounded-3xl p-6 border border-oidaneos-line shadow-card space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2 text-xs font-bold text-oidaneos-purple">
+                <i data-lucide="message-square-code" class="w-4 h-4 text-oidaneos-pink"></i>
+                <span class="uppercase tracking-wider">Éléments & Liens du Chat</span>
+              </div>
+              <span id="chatCountBadge" class="text-[10px] text-oidaneos-muted font-mono">Live</span>
+            </div>
+            <div id="chatHighlightsContainer" class="space-y-3 max-h-80 overflow-y-auto pr-1 custom-scroll">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Boîte : Checklist d'Action Stagiaire -->
+          <div class="bg-white rounded-3xl p-6 border border-oidaneos-line shadow-card space-y-4">
+            <div class="flex items-center gap-2 text-xs font-bold text-emerald-800">
+              <i data-lucide="check-square" class="w-4 h-4 text-emerald-600"></i>
+              <span class="uppercase tracking-wider">Checklist d'Action Stagiaire</span>
+            </div>
+            <div id="checklistContainer" class="space-y-2.5 text-xs text-oidaneos-body">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ================= DONNÉES ET LOGIQUE JAVASCRIPT ================= -->
+  <script>
+    let catalogData = null;
+    let guidesData = null;
+    let currentFilter = 'ALL';
+    let currentSessionId = 'ses-9';
+    let currentVideoIdx = 0;
+
+    // Initialisation
+    document.addEventListener("DOMContentLoaded", async () => {
+      try {
+        const [catRes, guideRes] = await Promise.all([
+          fetch('/sessions_catalog.json'),
+          fetch('/guides_etalon.json')
+        ]);
+        catalogData = await catRes.json();
+        guidesData = await guideRes.json();
+      } catch (err) {
+        console.error("Erreur de chargement des données:", err);
+      }
+
+      lucide.createIcons();
+      renderSessionsGrid();
+      populateSessionDropdown();
+    });
+
+    // --- FILTRAGE DE LA GRILLE D'ACCUEIL ---
+    function setFilter(filter) {
+      currentFilter = filter;
+      ['ALL', 'ASSETISE', 'REPLAY'].forEach(f => {
+        const btn = document.getElementById('filter-' + f);
+        if (f === filter) {
+          btn.className = "px-3 py-1.5 rounded-xl text-xs font-bold bg-oidaneos-lav100 text-oidaneos-purple transition shadow-sm";
+        } else {
+          btn.className = "px-3 py-1.5 rounded-xl text-xs font-bold text-oidaneos-muted hover:text-oidaneos-purple transition";
+        }
+      });
+      renderSessionsGrid();
+    }
+
+    // --- RENDERING DE LA GRILLE DES SESSIONS ---
+    function renderSessionsGrid() {
+      if (!catalogData) return;
+      const grid = document.getElementById("sessionsGrid");
+      
+      const filtered = catalogData.sessions.filter(s => {
+        if (currentFilter === 'ASSETISE') return s.isAssetised;
+        if (currentFilter === 'REPLAY') return !s.isAssetised;
+        return true;
+      });
+
+      grid.innerHTML = filtered.map(s => {
+        const isS9 = s.id === 'ses-9';
+        return `
+          <div onclick="openSession('${s.id}')" 
+               class="bg-white rounded-3xl p-6 border ${isS9 ? 'border-oidaneos-pink ring-2 ring-oidaneos-pink/20 shadow-card-hover' : 'border-oidaneos-line shadow-card hover:border-oidaneos-purple/40'} transition flex flex-col justify-between space-y-4 group cursor-pointer hover:-translate-y-0.5">
+            
+            <div class="space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <span class="px-2.5 py-0.5 text-[10px] font-bold uppercase rounded-full ${s.isAssetised ? 'bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-1' : 'bg-amber-50 text-amber-700 border border-amber-200'}">
+                  ${s.isAssetised ? '<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>Assetisé' : 'Replay Brut'}
+                </span>
+                <span class="text-xs text-oidaneos-muted font-medium">${s.date || '2026'}</span>
+              </div>
+
+              <div>
+                <div class="text-[11px] font-bold text-oidaneos-pink uppercase tracking-wider">
+                  ${s.number === 0 ? "Session d'Accueil" : `Session ${s.number}`} ${isS9 ? '• ⭐ Référence Pilote' : ''}
+                </div>
+                <h3 class="text-base font-extrabold text-oidaneos-ink group-hover:text-oidaneos-purple transition line-clamp-2 mt-0.5">
+                  ${s.title}
+                </h3>
+              </div>
+
+              <p class="text-xs text-oidaneos-body line-clamp-2 leading-relaxed">
+                ${s.description}
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-oidaneos-line flex items-center justify-between text-xs font-bold ${s.isAssetised ? 'text-oidaneos-purple' : 'text-amber-700'}">
+              <span class="flex items-center gap-1.5">
+                <i data-lucide="${s.isAssetised ? 'film' : 'video'}" class="w-4 h-4 text-oidaneos-pink"></i>
+                <span>${s.isAssetised ? `${s.microVideosCount} micro-vidéos` : '1 replay intégral 2h'}</span>
+              </span>
+              <span class="text-[10px] font-bold text-oidaneos-purple bg-oidaneos-lav100 px-2 py-0.5 rounded-md border border-oidaneos-line flex items-center gap-1">
+                <i data-lucide="file-text" class="w-3 h-3 text-oidaneos-pink"></i>
+                <span>Guide Word (.DOCX)</span>
+              </span>
+            </div>
+
+          </div>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    // --- POPULER LE DROPDOWN DE NAVIGATION SÉANCE ---
+    function populateSessionDropdown() {
+      if (!catalogData) return;
+      const select = document.getElementById("sessionDropdown");
+      select.innerHTML = catalogData.sessions.map(s => `
+        <option value="${s.id}">
+          ${s.number === 0 ? "Accueil" : `Session ${s.number}`} : ${s.title.substring(0, 38)}... (${s.isAssetised ? `${s.microVideosCount} clips` : 'Replay'})
+        </option>
+      `).join('');
+    }
+
+    // --- NAVIGATION VUES ---
+    function showHomeView() {
+      document.getElementById("viewHome").classList.remove("hidden");
+      document.getElementById("viewSession").classList.add("hidden");
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function onSessionDropdownChange(newId) {
+      openSession(newId);
+    }
+
+    function navigateSession(direction) {
+      if (!catalogData) return;
+      const idx = catalogData.sessions.findIndex(s => s.id === currentSessionId);
+      const nextIdx = idx + direction;
+      if (nextIdx >= 0 && nextIdx < catalogData.sessions.length) {
+        openSession(catalogData.sessions[nextIdx].id);
+      }
+    }
+
+    // --- OUVERTURE D'UNE SÉANCE ---
+    function openSession(sessionId) {
+      currentSessionId = sessionId;
+      const session = catalogData.sessions.find(s => s.id === sessionId);
+      if (!session) return;
+
+      document.getElementById("viewHome").classList.add("hidden");
+      document.getElementById("viewSession").classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Sync Dropdown
+      const dropdown = document.getElementById("sessionDropdown");
+      dropdown.value = sessionId;
+
+      // Sync Prev/Next buttons
+      const curIdx = catalogData.sessions.findIndex(s => s.id === sessionId);
+      document.getElementById("btnPrevSession").disabled = (curIdx === 0);
+      document.getElementById("btnNextSession").disabled = (curIdx === catalogData.sessions.length - 1);
+
+      // Meta session
+      const badge = document.getElementById("sessionStatusBadge");
+      if (session.isAssetised) {
+        badge.className = "px-2.5 py-0.5 text-[10px] font-bold uppercase rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200";
+        badge.textContent = `🟢 Session Assetisée • ${session.microVideosCount} micro-vidéos`;
+      } else {
+        badge.className = "px-2.5 py-0.5 text-[10px] font-bold uppercase rounded-full bg-amber-50 text-amber-700 border border-amber-200";
+        badge.textContent = `🟡 Format Replay Brut • En cours de découpage`;
+      }
+
+      document.getElementById("sessionMetaInfo").textContent = `${session.date || '2026'} • ${session.formateur}`;
+      document.getElementById("sessionTitleMain").textContent = (session.number === 0 ? "Accueil : " : `Session ${session.number} : `) + session.title;
+      document.getElementById("sessionDescMain").textContent = session.description;
+
+      // Header playlist
+      document.getElementById("playlistHeaderTitle").textContent = session.isAssetised ? "Modules Découpés" : "Enregistrement Live";
+      document.getElementById("playlistCountBadge").textContent = session.isAssetised ? `${session.microVideosCount} vidéos` : "1 replay";
+      document.getElementById("playlistSubtext").textContent = session.isAssetised 
+        ? "Séquencé par Vincent pour un apprentissage fluide" 
+        : "Replay intégral en attendant le travail de Vincent";
+
+      // Render Playlist
+      renderPlaylist(session);
+
+      // Render Guide Étalon & Sidebar Widgets (Tools, Chat, Checklist)
+      renderGuideEtalon(session);
+
+      // Load 1st video
+      if (session.isAssetised && session.microVideos.length > 0) {
+        loadVideo(0);
+      } else if (session.replayVideo) {
+        loadReplay();
+      }
+
+      lucide.createIcons();
+    }
+
+    // --- RENDERING PLAYLIST D'UNE SÉANCE ---
+    function renderPlaylist(session) {
+      const container = document.getElementById("playlistContainer");
+      const replayBox = document.getElementById("replaySectionBox");
+
+      if (session.isAssetised && session.microVideos.length > 0) {
+        container.innerHTML = session.microVideos.map((vid, idx) => `
+          <div onclick="loadVideo(${idx})" 
+               id="playlist-item-${idx}" 
+               class="p-3 rounded-2xl ${idx === 0 ? 'bg-oidaneos-lav100 border-oidaneos-purple/40' : 'bg-white hover:bg-oidaneos-lav50 border-oidaneos-line'} border transition cursor-pointer flex items-center justify-between gap-3 group">
+            <div class="flex items-center gap-2.5 min-w-0">
+              <div class="w-7 h-7 rounded-xl ${idx === 0 ? 'bg-grad-oidaneos text-white' : 'bg-oidaneos-lav100 text-oidaneos-purple'} font-black text-xs flex items-center justify-center shrink-0">
+                ${vid.id}
+              </div>
+              <div class="min-w-0">
+                <div class="text-xs font-bold text-oidaneos-ink group-hover:text-oidaneos-purple transition truncate">
+                  ${vid.cleanTitle}
+                </div>
+                <div class="text-[10px] text-oidaneos-muted">Micro-vidéo • Vincent</div>
+              </div>
+            </div>
+            <i data-lucide="play" class="w-3.5 h-3.5 text-oidaneos-pink shrink-0"></i>
+          </div>
+        `).join('');
+      } else {
+        container.innerHTML = `
+          <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-200/80 space-y-2">
+            <div class="flex items-center gap-2 text-amber-800 font-bold text-xs">
+              <i data-lucide="clock" class="w-4 h-4"></i>
+              <span>Découpage en cours</span>
+            </div>
+            <p class="text-[11px] text-amber-900 leading-relaxed">
+              Vincent prépare actuellement le découpage en micro-vidéos pour cette session. Vous disposez ci-dessous du <strong>replay intégral</strong> avec sa transcription.
+            </p>
+          </div>
+        `;
+      }
+
+      // Replay Option Box
+      if (session.replayVideo) {
+        replayBox.innerHTML = `
+          <div onclick="loadReplay()" id="playlist-item-replay" class="p-3 rounded-2xl bg-oidaneos-lav50 hover:bg-oidaneos-lav100 border border-oidaneos-line transition cursor-pointer flex items-center justify-between gap-3 group">
+            <div class="flex items-center gap-2.5">
+              <div class="w-7 h-7 rounded-xl bg-oidaneos-pink/10 text-oidaneos-pink font-bold text-xs flex items-center justify-center shrink-0">
+                <i data-lucide="video" class="w-3.5 h-3.5"></i>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-oidaneos-ink group-hover:text-oidaneos-pink transition">
+                  Replay Intégral Live
+                </div>
+                <div class="text-[10px] text-oidaneos-muted">Format long original • ~2h</div>
+              </div>
+            </div>
+            <span class="text-[10px] font-bold text-oidaneos-purple bg-white px-2 py-0.5 rounded-md border border-oidaneos-line">
+              Replay
+            </span>
+          </div>
+        `;
+      } else {
+        replayBox.innerHTML = '';
+      }
+    }
+
+    // --- CHARGEMENT MICRO-VIDÉO ---
+    function loadVideo(idx) {
+      currentVideoIdx = idx;
+      const session = catalogData.sessions.find(s => s.id === currentSessionId);
+      if (!session || !session.microVideos[idx]) return;
+
+      const vid = session.microVideos[idx];
+      const player = document.getElementById("playerVideo");
+      
+      player.src = vid.relPath;
+      player.load();
+      player.play().catch(() => {});
+
+      document.getElementById("currentVideoBadge").textContent = "Micro-Vidéo";
+      document.getElementById("currentVideoBadge").className = "px-2.5 py-0.5 text-[10px] font-bold rounded-full bg-oidaneos-lav100 text-oidaneos-purple border border-oidaneos-line";
+      document.getElementById("currentVideoIndexTag").textContent = `Module #${vid.id}`;
+      document.getElementById("currentVideoTitle").textContent = vid.title;
+      document.getElementById("currentVideoDesc").textContent = `Séquence pédagogique extraite de la ${session.number === 0 ? "Session d'Accueil" : `Session ${session.number}`}.`;
+
+      // Update active highlight in playlist
+      document.querySelectorAll("#playlistContainer > div").forEach((el, i) => {
+        el.className = "p-3 rounded-2xl bg-white hover:bg-oidaneos-lav50 border border-oidaneos-line transition cursor-pointer flex items-center justify-between gap-3 group";
+      });
+      const activeEl = document.getElementById(`playlist-item-${idx}`);
+      if (activeEl) {
+        activeEl.className = "p-3 rounded-2xl bg-oidaneos-lav100 border border-oidaneos-purple/40 transition cursor-pointer flex items-center justify-between gap-3 group shadow-sm";
+      }
+
+      const replayEl = document.getElementById("playlist-item-replay");
+      if (replayEl) {
+        replayEl.className = "p-3 rounded-2xl bg-oidaneos-lav50 hover:bg-oidaneos-lav100 border border-oidaneos-line transition cursor-pointer flex items-center justify-between gap-3 group";
+      }
+    }
+
+    // --- CHARGEMENT DU REPLAY INTÉGRAL ---
+    function loadReplay() {
+      currentVideoIdx = -1;
+      const session = catalogData.sessions.find(s => s.id === currentSessionId);
+      if (!session || !session.replayVideo) return;
+
+      const player = document.getElementById("playerVideo");
+      player.src = session.replayVideo.relPath;
+      player.load();
+      player.play().catch(() => {});
+
+      document.getElementById("currentVideoBadge").textContent = "Replay Live";
+      document.getElementById("currentVideoBadge").className = "px-2.5 py-0.5 text-[10px] font-bold rounded-full bg-amber-50 text-amber-700 border border-amber-200";
+      document.getElementById("currentVideoIndexTag").textContent = "Format Long";
+      document.getElementById("currentVideoTitle").textContent = `Replay Intégral — ${session.title}`;
+      document.getElementById("currentVideoDesc").textContent = `Enregistrement complet du live Zoom (avec ${session.formateur}).`;
+
+      document.querySelectorAll("#playlistContainer > div").forEach(el => {
+        el.className = "p-3 rounded-2xl bg-white hover:bg-oidaneos-lav50 border border-oidaneos-line transition cursor-pointer flex items-center justify-between gap-3 group";
+      });
+      const replayEl = document.getElementById("playlist-item-replay");
+      if (replayEl) {
+        replayEl.className = "p-3 rounded-2xl bg-oidaneos-lav100 border border-oidaneos-purple/40 transition cursor-pointer flex items-center justify-between gap-3 group shadow-sm";
+      }
+    }
+
+    // --- RENDERING DU GUIDE ÉTALON APPROFONDI & WIDGETS ---
+    function renderGuideEtalon(session) {
+      const guideKey = session.number === 0 ? "ses-0" : `ses-${session.number}`;
+      const guide = (guidesData && guidesData[guideKey]) ? guidesData[guideKey] : null;
+
+      const guideContainer = document.getElementById("guideEtalonContainer");
+      const toolsContainer = document.getElementById("toolsContainer");
+      const chatContainer = document.getElementById("chatHighlightsContainer");
+      const checklistContainer = document.getElementById("checklistContainer");
+
+      // 1. POPULER LES OUTILS CLÉS
+      const tools = (guide && guide.outils) ? guide.outils : ["IA & No-Code", "Baserow", "Celestory"];
+      toolsContainer.innerHTML = tools.map(t => `
+        <span class="px-2.5 py-1 rounded-xl bg-oidaneos-lav50 border border-oidaneos-line text-xs font-semibold text-oidaneos-ink flex items-center gap-1.5 shadow-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-oidaneos-pink"></span>
+          <span>${t}</span>
+        </span>
+      `).join('');
+
+      // 2. POPULER LES ÉLÉMENTS ET LIENS DU CHAT
+      const chats = (guide && guide.chat_highlights) ? guide.chat_highlights : [];
+      if (chats.length > 0) {
+        chatContainer.innerHTML = chats.map(c => `
+          <div class="p-3 rounded-2xl bg-oidaneos-lav50 border border-oidaneos-line space-y-1 hover:border-oidaneos-purple/30 transition">
+            <div class="flex items-center justify-between text-[10px]">
+              <span class="font-bold text-oidaneos-purple">${c.author}</span>
+              <span class="font-mono text-oidaneos-muted">${c.time}</span>
+            </div>
+            <p class="text-xs text-oidaneos-body leading-relaxed select-all">
+              ${c.content.includes("http") ? c.content.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" class="text-oidaneos-pink underline font-bold">$1</a>') : c.content}
+            </p>
+          </div>
+        `).join('');
+      } else {
+        chatContainer.innerHTML = `<p class="text-xs text-oidaneos-muted italic">Aucun lien particulier dans le chat de cette séance.</p>`;
+      }
+
+      // 3. POPULER LA CHECKLIST STAGIAIRE
+      const checklist = (guide && guide.checklist) ? guide.checklist : [
+        "Visionner les micro-vidéos ou le replay",
+        "Renseigner ses avancées dans le journal de bord",
+        "Préparer ses questions pour la séance suivante"
+      ];
+      checklistContainer.innerHTML = checklist.map((item, idx) => `
+        <label class="flex items-start gap-2.5 cursor-pointer group">
+          <input type="checkbox" ${idx === 0 ? 'checked' : ''} class="mt-0.5 rounded text-oidaneos-purple focus:ring-0 cursor-pointer">
+          <span class="group-hover:text-oidaneos-purple transition leading-snug">${item}</span>
+        </label>
+      `).join('');
+
+      // 4. RENDRE L'ARTICLE PÉDAGOGIQUE CENTRAL
+      if (!guide) {
+        guideContainer.innerHTML = `
+          <div class="space-y-4">
+            <h2 class="text-xl font-bold text-oidaneos-ink">${session.title}</h2>
+            <p class="text-xs text-oidaneos-body">${session.description}</p>
+          </div>
+        `;
+        return;
+      }
+
+      // Liens de téléchargement DOCX :
+      // 1. Guide Étalon Approfondi (.DOCX)
+      // 2. Fiche de Révision Officielle (.DOCX)
+      const guideDocxUrl = guide.downloadUrls ? guide.downloadUrls.docxUrl : `/Guides_Pedagogiques/Guide_Pedagogique_Complet_Session_${guideKey.replace('ses-', '').capitalize()}.docx`;
+      const guideDocxName = guide.downloadUrls ? guide.downloadUrls.docxFilename : `Guide_${guideKey}.docx`;
+      const officialDocxUrl = session.docx ? session.docx.relPath : null;
+
+      const isS9 = session.id === 'ses-9';
+
+      guideContainer.innerHTML = `
+        <!-- En-tête Guide Étalon avec DEUX BOUTONS WORD DISTINCTS -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-oidaneos-line">
+          <div class="space-y-1.5 max-w-xl">
+            <div class="flex items-center gap-2">
+              <span class="px-3 py-1 text-[11px] font-extrabold uppercase rounded-full bg-oidaneos-lav100 text-oidaneos-purple border border-oidaneos-line flex items-center gap-1.5">
+                <i data-lucide="book-open-check" class="w-3.5 h-3.5 text-oidaneos-pink"></i>
+                <span>Guide Pédagogique Étalon Approfondi</span>
+              </span>
+              <span class="text-xs text-oidaneos-muted">• Issu du transcript intégral (2h)</span>
+            </div>
+            <h2 class="text-xl lg:text-2xl font-black text-oidaneos-ink">
+              ${guide.title}
+            </h2>
+            <p class="text-xs text-oidaneos-purple font-semibold leading-relaxed">
+              ${guide.subtitle}
+            </p>
+          </div>
+
+          <!-- Boutons de Téléchargement Word -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 shrink-0">
+            <a href="${guideDocxUrl}" download="${guideDocxName}" class="px-4 py-2.5 rounded-xl bg-grad-oidaneos text-white text-xs font-bold transition flex items-center justify-center gap-2 shadow-btn hover:opacity-95 group">
+              <i data-lucide="file-text" class="w-4 h-4 text-pink-200 group-hover:scale-110 transition"></i>
+              <span>Guide Étalon (.DOCX)</span>
+            </a>
+            ${officialDocxUrl ? `
+              <a href="${officialDocxUrl}" download class="px-4 py-2.5 rounded-xl bg-white hover:bg-oidaneos-lav50 text-oidaneos-purple text-xs font-bold border border-oidaneos-line transition flex items-center justify-center gap-2 shadow-sm group">
+                <i data-lucide="file-check" class="w-4 h-4 text-oidaneos-pink group-hover:scale-110 transition"></i>
+                <span>Fiche Révision (.DOCX)</span>
+              </a>
+            ` : ''}
+          </div>
+        </div>
+
+        <!-- Section 1 : Cadrage & Enjeux de la séance -->
+        <div class="space-y-3">
+          <h3 class="text-base font-extrabold text-oidaneos-ink flex items-center gap-2">
+            <span class="w-6 h-6 rounded-lg bg-oidaneos-lav100 text-oidaneos-purple text-xs flex items-center justify-center font-black">1</span>
+            Cadrage Pédagogique & Pourquoi cette Séance est Déterminante
+          </h3>
+          <p class="text-xs sm:text-sm text-oidaneos-body leading-relaxed whitespace-pre-line">
+            ${guide.intro}
+          </p>
+        </div>
+
+        <!-- Section 2 : Grand Décryptage Théorique & Notions Fondamentales -->
+        <div class="space-y-4 pt-2">
+          <h3 class="text-base font-extrabold text-oidaneos-ink flex items-center gap-2">
+            <span class="w-6 h-6 rounded-lg bg-oidaneos-lav100 text-oidaneos-purple text-xs flex items-center justify-center font-black">2</span>
+            Grand Décryptage Théorique & Notions Fondamentales
+          </h3>
+          <div class="space-y-3.5">
+            ${guide.sections_theoriques.map((st, idx) => `
+              <div class="p-5 rounded-2xl bg-oidaneos-lav50 border border-oidaneos-line space-y-2 hover:border-oidaneos-purple/40 transition">
+                <div class="font-extrabold text-oidaneos-ink text-sm flex items-center gap-2">
+                  <span class="w-5 h-5 rounded-full bg-oidaneos-purple/10 text-oidaneos-purple text-[11px] font-black flex items-center justify-center">2.${idx + 1}</span>
+                  <span>${st.title}</span>
+                </div>
+                <div class="text-xs text-oidaneos-body leading-relaxed whitespace-pre-line">
+                  ${st.content}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        ${isS9 ? `
+          <!-- Callout Spécifique Session 9 : Prompt du Roast -->
+          <div class="p-6 rounded-3xl bg-gradient-to-br from-oidaneos-purpleDeep to-oidaneos-purple text-white space-y-4 shadow-card">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 text-[10px] font-extrabold rounded-full bg-white/20 text-white uppercase tracking-wider">
+                  Exercice Clé du Live
+                </span>
+                <span class="text-xs text-white/80">Partagé par Milène</span>
+              </div>
+              <span class="text-xs font-mono text-white/70">Chat Zoom 00:56:39</span>
+            </div>
+
+            <div class="space-y-2">
+              <h4 class="text-lg font-black text-white">Le Prompt du "Roast Positif"</h4>
+              <p class="text-xs text-white/80 leading-relaxed">
+                Demandez à l'IA avec laquelle vous travaillez depuis plusieurs semaines de vous renvoyer le miroir exact de vos habitudes professionnelles.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-black/30 border border-white/10 flex items-center justify-between gap-4">
+              <code class="text-xs text-pink-200 font-mono select-all">
+                "Fais un roast positif sur tout ce que tu sais de moi."
+              </code>
+              <button onclick="copyPromptRoast()" class="px-3.5 py-1.5 rounded-xl bg-white text-oidaneos-purple hover:bg-oidaneos-pink hover:text-white transition text-xs font-black shrink-0 shadow-sm">
+                Copier le prompt
+              </button>
+            </div>
+
+            <p class="text-[11px] text-white/70 leading-relaxed">
+              💡 <strong>Méthode d'exploitation :</strong> Demandez ensuite : <em>« À partir de cette analyse, formalise mon guide de style en 10 règles strictes pour mes futurs contenus. »</em>
+            </p>
+          </div>
+
+          <!-- Tableau Comparatif Tokens Markdown vs PDF/Word -->
+          <div class="space-y-3 pt-2">
+            <h3 class="text-base font-extrabold text-oidaneos-ink flex items-center gap-2">
+              <span class="w-6 h-6 rounded-lg bg-oidaneos-lav100 text-oidaneos-purple text-xs flex items-center justify-center font-black">2.5</span>
+              Efficience des Tokens : Pourquoi le Markdown surpasse le PDF
+            </h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-xs text-left border border-oidaneos-line rounded-2xl overflow-hidden">
+                <thead class="bg-oidaneos-lav100 text-oidaneos-ink font-bold">
+                  <tr>
+                    <th class="p-3">Format</th>
+                    <th class="p-3">Traitement par l'IA</th>
+                    <th class="p-3">Verdict Technique</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-oidaneos-line text-oidaneos-body">
+                  <tr>
+                    <td class="p-3 font-bold text-red-600">PDF (.pdf)</td>
+                    <td class="p-3">Parsing graphique et OCR nécessaires. Surconsommation massive de tokens.</td>
+                    <td class="p-3 font-semibold text-red-600">❌ À bannir en contexte récurrent</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-bold text-amber-600">Word (.docx)</td>
+                    <td class="p-3">Fichier binaire encombré de métadonnées invisibles inutiles au modèle.</td>
+                    <td class="p-3 font-semibold text-amber-600">⚠️ À éviter</td>
+                  </tr>
+                  <tr class="bg-emerald-50/50">
+                    <td class="p-3 font-bold text-emerald-700">Markdown (.md)</td>
+                    <td class="p-3">Texte pur ultra-léger. Compréhension native à 100% sans gaspillage de tokens.</td>
+                    <td class="p-3 font-bold text-emerald-700">✅ Standard d'ingénierie IA</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- Section 3 : Cas Pratiques & Travaux Réalisés -->
+        <div class="space-y-3 pt-2">
+          <h3 class="text-base font-extrabold text-oidaneos-ink flex items-center gap-2">
+            <span class="w-6 h-6 rounded-lg bg-oidaneos-lav100 text-oidaneos-purple text-xs flex items-center justify-center font-black">3</span>
+            Cas Pratiques & Méthodologie Appliquée
+          </h3>
+          <div class="space-y-3">
+            ${guide.cas_pratiques.map((cp, idx) => `
+              <div class="p-4 rounded-2xl bg-white border border-oidaneos-line space-y-1.5 hover:border-oidaneos-pink/30 transition shadow-sm">
+                <div class="font-bold text-oidaneos-ink text-xs flex items-center gap-2">
+                  <i data-lucide="terminal" class="w-3.5 h-3.5 text-oidaneos-purple"></i>
+                  <span>Cas pratique ${idx + 1} — ${cp.title}</span>
+                </div>
+                <p class="text-xs text-oidaneos-body leading-relaxed whitespace-pre-line">
+                  ${cp.detail}
+                </p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        ${session.docxContentPreview ? `
+          <!-- Extrait de la Fiche de Révision Officielle -->
+          <div class="space-y-3 pt-2">
+            <h3 class="text-base font-extrabold text-oidaneos-ink flex items-center gap-2">
+              <i data-lucide="file-text" class="w-4 h-4 text-oidaneos-pink"></i>
+              Aperçu des Notes de la Fiche de Révision
+            </h3>
+            <div class="p-5 rounded-2xl bg-oidaneos-lav50 border border-oidaneos-line text-xs text-oidaneos-body leading-relaxed whitespace-pre-line max-h-52 overflow-y-auto custom-scroll">
+              ${session.docxContentPreview}
+            </div>
+          </div>
+        ` : ''}
+      `;
+
+      lucide.createIcons();
+    }
+
+    // --- COPIER LE PROMPT DU ROAST ---
+    function copyPromptRoast() {
+      navigator.clipboard.writeText("Fais un roast positif sur tout ce que tu sais de moi.");
+      alert("✅ Prompt copié dans le presse-papier !");
+    }
+  </script>
+</body>
+</html>

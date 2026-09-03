@@ -1,0 +1,18 @@
+{
+  "name": "oidaneos-elearning",
+  "version": "1.0.0",
+  "description": "Plateforme d'apprentissage et de streaming Live-to-Asset OIDANEOS",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "oidaneos",
+    "elearning",
+    "live-to-asset",
+    "ia",
+    "no-code"
+  ],
+  "author": "Alain Valero - OIDANEOS",
+  "license": "UNLICENSED"
+}
