@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Copie des fichiers applicatifs et guides
 COPY package.json ./
-COPY server.js prototype.html index.html* sessions_catalog.json guides_etalon.json ./
+COPY server.js index.html sessions_catalog.json guides_etalon.json ./
 COPY Guides_Pedagogiques ./Guides_Pedagogiques
 
 # Création du dossier Sessions_Data
