@@ -171,6 +171,12 @@
         <span class="sm:hidden">14 Sessions</span>
       </button>
 
+      <button onclick="showProgramView()" class="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-xl bg-grad-oidaneos text-white text-xs font-extrabold shadow-btn hover:opacity-95 transition">
+        <i data-lucide="target" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-pink-200"></i>
+        <span class="hidden sm:inline">Programme & Compétences</span>
+        <span class="sm:hidden">Programme</span>
+      </button>
+
       <!-- Badge Promo & Déconnexion Mobile -->
       <button onclick="handleLock()" title="Changer de session / Déconnexion" class="p-1.5 sm:px-2.5 sm:py-1.5 rounded-xl bg-oidaneos-lav50 hover:bg-oidaneos-lav100 border border-oidaneos-line text-oidaneos-muted hover:text-oidaneos-pink transition text-xs font-semibold flex items-center gap-1.5">
         <i data-lucide="lock" class="w-3.5 h-3.5 text-oidaneos-purple"></i>
@@ -194,10 +200,10 @@
         <div class="space-y-3 relative max-w-2xl">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-oidaneos-lav100 text-oidaneos-purple text-xs font-bold">
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            Promotion IA No-Code 2026 • 14 Séances & Guides Étalons Approfondis
+            Promotion IA IT Juin 2026 • 14 Séances & Guides Étalons Approfondis
           </div>
           <h1 class="text-2xl lg:text-3xl font-black text-oidaneos-ink tracking-tight">
-            Concepteur & Développeur d'Applications IA No-Code
+            Concepteur & Développeur de Solutions d'Intelligence Artificielle
           </h1>
           <p class="text-sm text-oidaneos-body leading-relaxed">
             Chaque séance en direct est transformée en <strong>micro-vidéos ciblées</strong> découpées par Vincent, accompagnée d'un <strong>Guide Pédagogique Étalon complet et approfondi</strong> extrait du transcript, et des <strong>fiches de révision officielles</strong> en format Word.
@@ -207,18 +213,18 @@
         <!-- Badges Statistiques -->
         <div class="relative shrink-0 flex flex-col sm:flex-row lg:flex-col items-start lg:items-end justify-center gap-3">
           <div class="p-3.5 rounded-2xl bg-emerald-50/80 border border-emerald-200/80 flex items-center gap-3">
-            <div class="w-8 h-8 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-bold text-sm">
-              7
+            <div id="statAssetisedCount" class="w-8 h-8 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-bold text-sm">
+              8
             </div>
             <div>
               <div class="text-xs font-bold text-emerald-900">Sessions Assetisées</div>
-              <div class="text-[10px] text-emerald-700">65 micro-vidéos découpées</div>
+              <div id="statMicroVideosCount" class="text-[10px] text-emerald-700">82 micro-vidéos découpées</div>
             </div>
           </div>
 
           <div class="p-3.5 rounded-2xl bg-amber-50/80 border border-amber-200/80 flex items-center gap-3">
-            <div class="w-8 h-8 rounded-xl bg-amber-500 text-white flex items-center justify-center font-bold text-sm">
-              7
+            <div id="statReplaysCount" class="w-8 h-8 rounded-xl bg-amber-500 text-white flex items-center justify-center font-bold text-sm">
+              6
             </div>
             <div>
               <div class="text-xs font-bold text-amber-900">Replays en cours</div>
@@ -245,10 +251,10 @@
               Toutes (14)
             </button>
             <button onclick="setFilter('ASSETISE')" id="filter-ASSETISE" class="px-3 py-1.5 rounded-xl text-xs font-bold text-oidaneos-muted hover:text-oidaneos-purple transition">
-              Assetisées (7)
+              Assetisées (8)
             </button>
             <button onclick="setFilter('REPLAY')" id="filter-REPLAY" class="px-3 py-1.5 rounded-xl text-xs font-bold text-oidaneos-muted hover:text-oidaneos-purple transition">
-              Replays bruts (7)
+              Replays bruts (6)
             </button>
           </div>
         </div>
@@ -259,6 +265,460 @@
       </div>
 
     </div>
+
+    <!-- ========================================================================= -->
+    <!--            NOUVELLE VUE : PROGRAMME & RÉFÉRENTIEL COMPÉTENCES (150H)       -->
+    <!-- ========================================================================= -->
+    <div id="viewProgram" class="space-y-10 hidden animate-fade-in">
+      
+      <!-- En-tête Bannière Programme & Référentiel -->
+      <div class="bg-white rounded-3xl p-6 lg:p-8 border border-oidaneos-line shadow-card relative overflow-hidden flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div class="absolute -right-16 -bottom-16 w-80 h-80 bg-gradient-to-br from-oidaneos-purple/15 via-oidaneos-pink/15 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="space-y-3 relative max-w-2xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-oidaneos-lav100 text-oidaneos-purple text-xs font-bold">
+            <i data-lucide="award" class="w-4 h-4 text-oidaneos-pink"></i>
+            <span>Formation Certifiante • Référentiel Officiel d'Évaluation</span>
+          </div>
+          <h1 class="text-2xl lg:text-3xl font-black text-oidaneos-ink tracking-tight">
+            Programme de Formation & Grille des 9 Compétences Clés
+          </h1>
+          <p class="text-sm text-oidaneos-body leading-relaxed">
+            Consultez le programme officiel en <strong>4 Modules certifiants</strong> et découvrez les critères exacts vérifiés par le jury lors de votre soutenance. Utilisez cette boussole pour structurer votre <strong>Journal de Bord</strong> et décrocher <strong>100% de compétences validées</strong>.
+          </p>
+        </div>
+
+        <div class="relative shrink-0 flex flex-col sm:flex-row lg:flex-col items-stretch lg:items-end justify-center gap-3">
+          <button onclick="showHomeView()" class="px-5 py-3 rounded-2xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple text-xs font-extrabold transition flex items-center justify-center gap-2 shadow-sm">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            <span>Retour aux cours vidéos</span>
+          </button>
+          <div class="px-4 py-2.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold flex items-center gap-2">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
+            <span>Taux de réussite cible : 100%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= VOLET 1 : LES 4 MODULES DU PROGRAMME (150H) ================= -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-xl font-black text-oidaneos-ink flex items-center gap-2.5">
+              <span class="w-8 h-8 rounded-xl bg-oidaneos-purple text-white flex items-center justify-center font-bold text-sm shadow-sm">1</span>
+              <span>Le Programme de Formation Théorique & Pratique</span>
+            </h2>
+            <p class="text-xs text-oidaneos-muted mt-0.5">Structuration pédagogique en 4 blocs d'apprentissage intensifs</p>
+          </div>
+          
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- Module 1 -->
+          <div class="bg-white rounded-3xl p-6 border border-oidaneos-line shadow-card space-y-4 hover:border-oidaneos-purple/40 transition">
+            <div class="flex items-center justify-between border-b border-oidaneos-line pb-3">
+              <div class="flex items-center gap-2.5">
+                <span class="px-3 py-1 rounded-full bg-grad-oidaneos text-white text-xs font-extrabold">Module 1</span>
+                <h3 class="text-base font-extrabold text-oidaneos-ink">Données & Préparation</h3>
+              </div>
+            </div>
+            <ul class="space-y-2 text-xs text-oidaneos-body">
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-oidaneos-pink mt-1.5 shrink-0"></span><span><strong>Traitement et nettoyage des données :</strong> parsing, déduplication et normalisation des flux bruts.</span></li>
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-oidaneos-pink mt-1.5 shrink-0"></span><span><strong>Structurer ses données pour l'IA :</strong> schémas relationnels, formats JSON, CSV et bases documentaires.</span></li>
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-oidaneos-pink mt-1.5 shrink-0"></span><span><strong>Utile vs Bruit :</strong> filtrage des signaux faibles, réduction du bruit et feature engineering.</span></li>
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-oidaneos-pink mt-1.5 shrink-0"></span><span><strong>RGPD & Conformité :</strong> cadre légal, anonymisation et gestion des données personnelles.</span></li>
+            </ul>
+            <div class="pt-2 border-t border-oidaneos-line flex items-center justify-between text-[11px]">
+              <span class="text-oidaneos-muted font-medium">🎯 Valide les compétences :</span>
+              <span class="font-extrabold text-oidaneos-purple bg-oidaneos-lav100 px-2.5 py-0.5 rounded-lg">C1 (Besoins) & C3 (Préparation)</span>
+            </div>
+          </div>
+
+          <!-- Module 2 -->
+          <div class="bg-white rounded-3xl p-6 border border-oidaneos-line shadow-card space-y-4 hover:border-oidaneos-purple/40 transition">
+            <div class="flex items-center justify-between border-b border-oidaneos-line pb-3">
+              <div class="flex items-center gap-2.5">
+                <span class="px-3 py-1 rounded-full bg-grad-oidaneos text-white text-xs font-extrabold">Module 2</span>
+                <h3 class="text-base font-extrabold text-oidaneos-ink">Modélisation & Apprentissage</h3>
+              </div>
+            </div>
+            <ul class="space-y-2 text-xs text-oidaneos-body">
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-oidaneos-pink mt-1.5 shrink-0"></span><span><strong>Fonctionnement réel des LLMs :</strong> architectures Transformer (GPT, Claude, Mistral), tokens et contexte.</span></li>
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-oidaneos-pink mt-1.5 shrink-0"></span><span><strong>Choisir le bon modèle :</strong> comparaison des performances, coûts et contraintes d'inférence.</span></li>
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-oidaneos-pink mt-1.5 shrink-0"></span><span><strong>Prompting avancé :</strong> méta-prompting, few-shot, chaînes de pensée pour des résultats précis.</span></li>
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-oidaneos-pink mt-1.5 shrink-0"></span><span><strong>Agents IA & No-Code / AutoML :</strong> automatisation de workflows et conception sans code complexe.</span></li>
+            </ul>
+            <div class="pt-2 border-t border-oidaneos-line flex items-center justify-between text-[11px]">
+              <span class="text-oidaneos-muted font-medium">🎯 Valide les compétences :</span>
+              <span class="font-extrabold text-oidaneos-purple bg-oidaneos-lav100 px-2.5 py-0.5 rounded-lg">C4 (Modèle) & C5 (Prompting/Optimisation)</span>
+            </div>
+          </div>
+
+          <!-- Module 3 -->
+          <div class="bg-white rounded-3xl p-6 border border-oidaneos-line shadow-card space-y-4 hover:border-oidaneos-purple/40 transition">
+            <div class="flex items-center justify-between border-b border-oidaneos-line pb-3">
+              <div class="flex items-center gap-2.5">
+                <span class="px-3 py-1 rounded-full bg-grad-oidaneos text-white text-xs font-extrabold">Module 3</span>
+                <h3 class="text-base font-extrabold text-oidaneos-ink">Éthique, Enjeux & Performance</h3>
+              </div>
+            </div>
+            <ul class="space-y-2 text-xs text-oidaneos-body">
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-oidaneos-pink mt-1.5 shrink-0"></span><span><strong>IA Act, RGPD & IA Frugale :</strong> règles du jeu européennes, sobriété numérique et empreinte carbone.</span></li>
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-oidaneos-pink mt-1.5 shrink-0"></span><span><strong>Mesurer & optimiser la performance :</strong> indicateurs de précision, temps de réponse et analyse de rentabilité.</span></li>
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-oidaneos-pink mt-1.5 shrink-0"></span><span><strong>Éviter les hallucinations & biais :</strong> techniques de Grounding strict et validation Human-in-the-Loop.</span></li>
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-oidaneos-pink mt-1.5 shrink-0"></span><span><strong>Souveraineté numérique :</strong> modèles français et européens (Mistral, OVHcloud, hébergement souverain).</span></li>
+            </ul>
+            <div class="pt-2 border-t border-oidaneos-line flex items-center justify-between text-[11px]">
+              <span class="text-oidaneos-muted font-medium">🎯 Valide les compétences :</span>
+              <span class="font-extrabold text-oidaneos-purple bg-oidaneos-lav100 px-2.5 py-0.5 rounded-lg">C2 (Éthique & Risques) & C8 (Performance)</span>
+            </div>
+          </div>
+
+          <!-- Module 4 -->
+          <div class="bg-white rounded-3xl p-6 border border-oidaneos-line shadow-card space-y-4 hover:border-oidaneos-purple/40 transition">
+            <div class="flex items-center justify-between border-b border-oidaneos-line pb-3">
+              <div class="flex items-center gap-2.5">
+                <span class="px-3 py-1 rounded-full bg-grad-oidaneos text-white text-xs font-extrabold">Module 4</span>
+                <h3 class="text-base font-extrabold text-oidaneos-ink">Industrialisation & Déploiement</h3>
+              </div>
+            </div>
+            <ul class="space-y-2 text-xs text-oidaneos-body">
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-oidaneos-pink mt-1.5 shrink-0"></span><span><strong>Déployer en environnement réel :</strong> mise en production sur serveur dédié, conteneurs Docker et Cloud privé.</span></li>
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-oidaneos-pink mt-1.5 shrink-0"></span><span><strong>Documenter & architecturer votre projet :</strong> formalisation du schéma d'architecture et du journal de bord.</span></li>
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-oidaneos-pink mt-1.5 shrink-0"></span><span><strong>Workflows opérationnels & MLOps :</strong> automatisation continue, gestion des versions et maintenance.</span></li>
+              <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-oidaneos-pink mt-1.5 shrink-0"></span><span><strong>Présentation devant le jury :</strong> préparation de la soutenance orale (20 min pitch + 40 min questions).</span></li>
+            </ul>
+            <div class="pt-2 border-t border-oidaneos-line flex items-center justify-between text-[11px]">
+              <span class="text-oidaneos-muted font-medium">🎯 Valide les compétences :</span>
+              <span class="font-extrabold text-oidaneos-purple bg-oidaneos-lav100 px-2.5 py-0.5 rounded-lg">C6 (Intégration), C7 (Architecture) & C9 (Amélioration)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= VOLET 2 : LA GRILLE OFFICIELLE DU JURY (C1 À C9) ================= -->
+      <div class="space-y-6">
+        <div>
+          <h2 class="text-xl font-black text-oidaneos-ink flex items-center gap-2.5">
+            <span class="w-8 h-8 rounded-xl bg-oidaneos-pink text-white flex items-center justify-center font-bold text-sm shadow-sm">2</span>
+            <span>Grille Officielle d'Évaluation du Jury : Les 9 Compétences Clés (C1 à C9)</span>
+          </h2>
+          <p class="text-xs text-oidaneos-muted mt-0.5">Voici exactement ce que les évaluateurs vérifient dans votre dossier et lors de votre oral</p>
+        </div>
+
+        <div class="space-y-4">
+          
+          <!-- C1 -->
+          <div class="bg-white rounded-3xl p-6 border border-oidaneos-line shadow-card space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-oidaneos-line pb-3">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-xl bg-oidaneos-lav100 text-oidaneos-purple font-black text-xs flex items-center justify-center shrink-0">C1</span>
+                <h3 class="text-sm sm:text-base font-extrabold text-oidaneos-ink">Identifier un jeu de données pour répondre aux besoins métiers et aux cas d'usage</h3>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-extrabold shrink-0 w-fit">Critère Majeur</span>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 text-xs">
+              <div class="space-y-1.5">
+                <span class="font-bold text-oidaneos-purple">Ce que le jury vérifie obligatoirement :</span>
+                <ul class="space-y-1 text-oidaneos-body list-disc list-inside">
+                  <li>Les besoins métiers et cas d'usage sont correctement décrits.</li>
+                  <li>Les données a priori pertinentes (et nécessaires a minima) sont identifiées.</li>
+                  <li>L'existence, la disponibilité et l'accès des données sont vérifiés.</li>
+                  <li>Des solutions alternatives sont envisagées en cas d'indisponibilité.</li>
+                </ul>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-oidaneos-lav50 border border-oidaneos-line space-y-1">
+                <span class="font-bold text-oidaneos-ink flex items-center gap-1.5"><i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i><span>Conseil :</span></span>
+                <p class="text-oidaneos-body leading-relaxed">Décrivez précisément votre matière source (ex: fichiers vidéos, exports CSV, formulaires) et pourquoi ce jeu de données résout un vrai problème dans votre entreprise.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- C2 -->
+          <div class="bg-white rounded-3xl p-6 border border-oidaneos-line shadow-card space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-oidaneos-line pb-3">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-xl bg-oidaneos-lav100 text-oidaneos-purple font-black text-xs flex items-center justify-center shrink-0">C2</span>
+                <h3 class="text-sm sm:text-base font-extrabold text-oidaneos-ink">Identifier les risques éthiques et sociétaux (RGPD, Biais & Réglementation)</h3>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-extrabold shrink-0 w-fit">Critère Majeur</span>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 text-xs">
+              <div class="space-y-1.5">
+                <span class="font-bold text-oidaneos-purple">Ce que le jury vérifie obligatoirement :</span>
+                <ul class="space-y-1 text-oidaneos-body list-disc list-inside">
+                  <li>Les chartes éthiques européennes et françaises sont connues et appliquées.</li>
+                  <li>Les biais potentiels ou existants sont identifiés et neutralisés.</li>
+                  <li>Les risques éthiques et légaux sont portés à la connaissance des parties prenantes.</li>
+                </ul>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-oidaneos-lav50 border border-oidaneos-line space-y-1">
+                <span class="font-bold text-oidaneos-ink flex items-center gap-1.5"><i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i><span>Conseil :</span></span>
+                <p class="text-oidaneos-body leading-relaxed">Montrez comment vous avez anonymisé les données de vos utilisateurs/clients et comment vous évitez la fuite de données vers des serveurs tiers non sécurisés.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- C3 -->
+          <div class="bg-white rounded-3xl p-6 border border-oidaneos-line shadow-card space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-oidaneos-line pb-3">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-xl bg-oidaneos-lav100 text-oidaneos-purple font-black text-xs flex items-center justify-center shrink-0">C3</span>
+                <h3 class="text-sm sm:text-base font-extrabold text-oidaneos-ink">Préparer les données pour renforcer leur intégrité et leur pertinence</h3>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-extrabold shrink-0 w-fit">Critère Majeur</span>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 text-xs">
+              <div class="space-y-1.5">
+                <span class="font-bold text-oidaneos-purple">Ce que le jury vérifie obligatoirement :</span>
+                <ul class="space-y-1 text-oidaneos-body list-disc list-inside">
+                  <li>Les données sont correctement nommées, formatées et nettoyées.</li>
+                  <li>Les données altérées ou non pertinentes sont supprimées (fichiers vides, doublons).</li>
+                  <li>Le choix du modèle de stockage (object storage, base relationnelle, document) est justifié.</li>
+                  <li>Le cycle de vie du jeu de données est documenté.</li>
+                </ul>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-oidaneos-lav50 border border-oidaneos-line space-y-1">
+                <span class="font-bold text-oidaneos-ink flex items-center gap-1.5"><i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i><span>Conseil :</span></span>
+                <p class="text-oidaneos-body leading-relaxed">Expliquez les étapes de votre pipeline : parsing des données, passage en JSON/SQL propre et suppression des fichiers inutiles pour économiser l'espace.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- C4 -->
+          <div class="bg-white rounded-3xl p-6 border border-oidaneos-line shadow-card space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-oidaneos-line pb-3">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-xl bg-oidaneos-lav100 text-oidaneos-purple font-black text-xs flex items-center justify-center shrink-0">C4</span>
+                <h3 class="text-sm sm:text-base font-extrabold text-oidaneos-ink">Choisir un modèle IA adapté, performant et éco-conçu</h3>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-extrabold shrink-0 w-fit">Critère Majeur</span>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 text-xs">
+              <div class="space-y-1.5">
+                <span class="font-bold text-oidaneos-purple">Ce que le jury vérifie obligatoirement :</span>
+                <ul class="space-y-1 text-oidaneos-body list-disc list-inside">
+                  <li>La démarche scientifique de sélection du modèle est documentée.</li>
+                  <li>Les contraintes en matière d'éco-conception (consommation de tokens, coût) sont prises en compte.</li>
+                  <li>Le modèle d'apprentissage choisi est cohérent avec les résultats attendus.</li>
+                </ul>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-oidaneos-lav50 border border-oidaneos-line space-y-1">
+                <span class="font-bold text-oidaneos-ink flex items-center gap-1.5"><i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i><span>Conseil :</span></span>
+                <p class="text-oidaneos-body leading-relaxed">Justifiez pourquoi vous avez choisi tel LLM ou tel algorithme (ex: Claude 3.5 Sonnet pour sa finesse de synthèse, Mistral pour la souveraineté, ou Markdown pour économiser 45% de tokens).</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- C5 -->
+          <div class="bg-white rounded-3xl p-6 border border-oidaneos-line shadow-card space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-oidaneos-line pb-3">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-xl bg-oidaneos-lav100 text-oidaneos-purple font-black text-xs flex items-center justify-center shrink-0">C5</span>
+                <h3 class="text-sm sm:text-base font-extrabold text-oidaneos-ink">Entraîner et optimiser le modèle (Prompting, Hyperparamètres & Feature Engineering)</h3>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-extrabold shrink-0 w-fit">Critère Majeur</span>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 text-xs">
+              <div class="space-y-1.5">
+                <span class="font-bold text-oidaneos-purple">Ce que le jury vérifie obligatoirement :</span>
+                <ul class="space-y-1 text-oidaneos-body list-disc list-inside">
+                  <li>Le modèle est optimisé suivant le contexte du projet.</li>
+                  <li>Le travail de feature engineering ou d'ingénierie de prompt est documenté.</li>
+                  <li>Les hyperparamètres (température, top_p, règles système) sont décrits.</li>
+                </ul>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-oidaneos-lav50 border border-oidaneos-line space-y-1">
+                <span class="font-bold text-oidaneos-ink flex items-center gap-1.5"><i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i><span>Conseil :</span></span>
+                <p class="text-oidaneos-body leading-relaxed">Montrez vos prompts réels, vos règles d'interdiction d'hallucination et vos tests comparatifs dans votre journal de bord.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- C6 -->
+          <div class="bg-white rounded-3xl p-6 border border-oidaneos-line shadow-card space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-oidaneos-line pb-3">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-xl bg-oidaneos-lav100 text-oidaneos-purple font-black text-xs flex items-center justify-center shrink-0">C6</span>
+                <h3 class="text-sm sm:text-base font-extrabold text-oidaneos-ink">Implémenter la solution en intégrant les briques techniques (Déploiement & CI/CD)</h3>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-extrabold shrink-0 w-fit">Critère Majeur</span>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 text-xs">
+              <div class="space-y-1.5">
+                <span class="font-bold text-oidaneos-purple">Ce que le jury vérifie obligatoirement :</span>
+                <ul class="space-y-1 text-oidaneos-body list-disc list-inside">
+                  <li>Le processus de livraison et de déploiement continu est mis en œuvre.</li>
+                  <li>Le versionning (Git) est implémenté.</li>
+                  <li>Les besoins d'intégration logicielle sont documentés.</li>
+                </ul>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-oidaneos-lav50 border border-oidaneos-line space-y-1">
+                <span class="font-bold text-oidaneos-ink flex items-center gap-1.5"><i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i><span>Conseil :</span></span>
+                <p class="text-oidaneos-body leading-relaxed">Présentez votre environnement de travail (GitHub, Docker, serveur d'application) et la façon dont votre solution est mise à disposition des utilisateurs finaux.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- C7 -->
+          <div class="bg-white rounded-3xl p-6 border border-oidaneos-line shadow-card space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-oidaneos-line pb-3">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-xl bg-oidaneos-lav100 text-oidaneos-purple font-black text-xs flex items-center justify-center shrink-0">C7</span>
+                <h3 class="text-sm sm:text-base font-extrabold text-oidaneos-ink">Concevoir et évaluer l'architecture cible et ses contraintes</h3>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-extrabold shrink-0 w-fit">Critère Majeur</span>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 text-xs">
+              <div class="space-y-1.5">
+                <span class="font-bold text-oidaneos-purple">Ce que le jury vérifie obligatoirement :</span>
+                <ul class="space-y-1 text-oidaneos-body list-disc list-inside">
+                  <li>Les principales architectures et leurs contraintes sont connues.</li>
+                  <li>Les contraintes économiques (coûts serveurs, licences) sont arbitrées.</li>
+                  <li>Les acteurs métiers et techniques sont sollicités pour dimensionner l'architecture.</li>
+                </ul>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-oidaneos-lav50 border border-oidaneos-line space-y-1">
+                <span class="font-bold text-oidaneos-ink flex items-center gap-1.5"><i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i><span>Conseil :</span></span>
+                <p class="text-oidaneos-body leading-relaxed">Insérez un schéma d'architecture clair dans votre journal de bord (flux de données, frontend, backend, stockage) pour illustrer votre démarche de concepteur.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- C8 -->
+          <div class="bg-white rounded-3xl p-6 border border-oidaneos-line shadow-card space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-oidaneos-line pb-3">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-xl bg-oidaneos-lav100 text-oidaneos-purple font-black text-xs flex items-center justify-center shrink-0">C8</span>
+                <h3 class="text-sm sm:text-base font-extrabold text-oidaneos-ink">Mesurer la performance et les impacts de la solution IA</h3>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-extrabold shrink-0 w-fit">Critère Majeur</span>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 text-xs">
+              <div class="space-y-1.5">
+                <span class="font-bold text-oidaneos-purple">Ce que le jury vérifie obligatoirement :</span>
+                <ul class="space-y-1 text-oidaneos-body list-disc list-inside">
+                  <li>Des indicateurs de performance (KPIs) adaptés sont définis.</li>
+                  <li>La performance réelle de la solution est mesurée grâce au suivi des indicateurs.</li>
+                </ul>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-oidaneos-lav50 border border-oidaneos-line space-y-1">
+                <span class="font-bold text-oidaneos-ink flex items-center gap-1.5"><i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i><span>Conseil :</span></span>
+                <p class="text-oidaneos-body leading-relaxed">Donnez des chiffres concrets de gain de temps ou d'efficacité (ex: temps de recherche divisé par 18, taux de satisfaction des utilisateurs ou réduction des erreurs manuelles).</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- C9 -->
+          <div class="bg-white rounded-3xl p-6 border border-oidaneos-line shadow-card space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-oidaneos-line pb-3">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-xl bg-oidaneos-lav100 text-oidaneos-purple font-black text-xs flex items-center justify-center shrink-0">C9</span>
+                <h3 class="text-sm sm:text-base font-extrabold text-oidaneos-ink">Adopter une démarche d'amélioration continue et de maintenance (MLOps)</h3>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-extrabold shrink-0 w-fit">Critère Majeur</span>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 text-xs">
+              <div class="space-y-1.5">
+                <span class="font-bold text-oidaneos-purple">Ce que le jury vérifie obligatoirement :</span>
+                <ul class="space-y-1 text-oidaneos-body list-disc list-inside">
+                  <li>Un système d'évaluation et de mise à jour régulier du modèle est prévu.</li>
+                  <li>Les risques d'obsolescence et de dérive de performance sont anticipés.</li>
+                  <li>Une périodicité d'évaluation continue est formalisée.</li>
+                </ul>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-oidaneos-lav50 border border-oidaneos-line space-y-1">
+                <span class="font-bold text-oidaneos-ink flex items-center gap-1.5"><i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i><span>Conseil :</span></span>
+                <p class="text-oidaneos-body leading-relaxed">Présentez votre feuille de route pour les évolutions futures (V2, nouvelles cohortes, réévaluation des prompts avec les nouveaux modèles d'IA).</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ================= TÉLÉCHARGEMENT DES MODÈLES OFFICIELS ================= -->
+      <div class="bg-gradient-to-r from-oidaneos-purpleDeep via-oidaneos-purple to-oidaneos-magenta rounded-3xl p-6 sm:p-8 text-white shadow-card space-y-6 relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/20 pb-5">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider rounded-full bg-white/20 text-white border border-white/30 flex items-center gap-1.5">
+                <i data-lucide="file-check-2" class="w-3.5 h-3.5 text-pink-200"></i>
+                <span>Ressources Pédagogiques Officielles</span>
+              </span>
+              <span class="text-xs text-white/80">• Format Word (.DOCX) Modifiable</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-black text-white">
+              Modèles Types & Dossiers de Certification à Télécharger
+            </h2>
+            <p class="text-xs text-white/80 leading-relaxed max-w-2xl">
+              Téléchargez les trames étalons d'ingénierie pour rédiger vos livrables professionnels et préparer sereinement votre passage devant le jury d'évaluation.
+            </p>
+          </div>
+
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="px-3.5 py-1.5 rounded-xl bg-black/25 text-pink-200 text-xs font-bold font-mono">3 Modèles .DOCX</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Modèle 1 : Synthèse Vierge / Fictive -->
+          <a href="/Modeles_Certification_Stagiaires/Modele_Type_Synthese_Projet_Certification_IA.docx" download="Modele_Type_Synthese_Projet_Certification_IA.docx" class="p-5 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 transition group flex flex-col justify-between gap-4 backdrop-blur-sm shadow-sm hover:scale-[1.02]">
+            <div class="space-y-2">
+              <div class="w-10 h-10 rounded-xl bg-white text-oidaneos-purple flex items-center justify-center font-bold text-lg shadow-sm group-hover:scale-110 transition">
+                <i data-lucide="file-text" class="w-5 h-5 text-oidaneos-pink"></i>
+              </div>
+              <h3 class="text-sm font-extrabold text-white">1. Modèle Type de Synthèse (2 pages)</h3>
+              <p class="text-xs text-white/80 leading-relaxed">
+                Trame générique et anonymisée : cadrage du problème métier, solution IA cible, 4 blocs de compétences et calcul du ROI.
+              </p>
+            </div>
+            <div class="flex items-center justify-between text-xs font-bold text-pink-200 pt-2 border-t border-white/15">
+              <span>Télécharger (.docx)</span>
+              <i data-lucide="download" class="w-4 h-4 group-hover:translate-y-0.5 transition"></i>
+            </div>
+          </a>
+
+          <!-- Modèle 2 : Journal de Bord Vierge / Fictif -->
+          <a href="/Modeles_Certification_Stagiaires/Modele_Type_Journal_de_Bord_Certification_IA.docx" download="Modele_Type_Journal_de_Bord_Certification_IA.docx" class="p-5 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 transition group flex flex-col justify-between gap-4 backdrop-blur-sm shadow-sm hover:scale-[1.02]">
+            <div class="space-y-2">
+              <div class="w-10 h-10 rounded-xl bg-white text-oidaneos-purple flex items-center justify-center font-bold text-lg shadow-sm group-hover:scale-110 transition">
+                <i data-lucide="book-marked" class="w-5 h-5 text-oidaneos-purple"></i>
+              </div>
+              <h3 class="text-sm font-extrabold text-white">2. Modèle Type Journal de Bord</h3>
+              <p class="text-xs text-white/80 leading-relaxed">
+                Trame d'ingénierie complète avec sections à remplir : cycle de vie des données, benchmarks LLM, prompts système, architecture et MLOps.
+              </p>
+            </div>
+            <div class="flex items-center justify-between text-xs font-bold text-pink-200 pt-2 border-t border-white/15">
+              <span>Télécharger (.docx)</span>
+              <i data-lucide="download" class="w-4 h-4 group-hover:translate-y-0.5 transition"></i>
+            </div>
+          </a>
+
+          <!-- Modèle 3 : Grille Compétences & Oral Vierge / Fictive -->
+          <a href="/Modeles_Certification_Stagiaires/Modele_Type_Grille_9_Competences_et_Soutenance_Orale.docx" download="Modele_Type_Grille_9_Competences_et_Soutenance_Orale.docx" class="p-5 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 transition group flex flex-col justify-between gap-4 backdrop-blur-sm shadow-sm hover:scale-[1.02]">
+            <div class="space-y-2">
+              <div class="w-10 h-10 rounded-xl bg-white text-oidaneos-purple flex items-center justify-center font-bold text-lg shadow-sm group-hover:scale-110 transition">
+                <i data-lucide="award" class="w-5 h-5 text-oidaneos-pink"></i>
+              </div>
+              <h3 class="text-sm font-extrabold text-white">3. Modèle Grille 9 Compétences & Oral</h3>
+              <p class="text-xs text-white/80 leading-relaxed">
+                Trame générique de préparation au grand oral : structure de pitch de 20 min et check-list des critères d'évaluation C1 à C9.
+              </p>
+            </div>
+            <div class="flex items-center justify-between text-xs font-bold text-pink-200 pt-2 border-t border-white/15">
+              <span>Télécharger (.docx)</span>
+              <i data-lucide="download" class="w-4 h-4 group-hover:translate-y-0.5 transition"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
 
     <!-- ========================================================================= -->
     <!--          2. ÉCRAN SÉANCE : LECTEUR + PLAYLIST + GUIDE ÉTALON + CHAT       -->
@@ -312,7 +772,13 @@
         <h2 id="sessionTitleMain" class="text-2xl font-black text-oidaneos-ink tracking-tight">
           Titre de la séance
         </h2>
-        <p id="sessionDescMain" class="text-xs text-oidaneos-body max-w-3xl leading-relaxed">
+        
+        <!-- Badges Modules & Compétences Clés de la séance -->
+        <div id="sessionBadgesContainer" class="flex items-center gap-2 flex-wrap pt-0.5">
+          <!-- Dynamically populated -->
+        </div>
+
+        <p id="sessionDescMain" class="text-xs text-oidaneos-body max-w-3xl leading-relaxed pt-1">
           Description
         </p>
       </div>
@@ -401,7 +867,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-4">
         
         <!-- Colonne Gauche : Article Pédagogique d'Excellence (8 cols) -->
-        <div id="colGuide" class="lg:col-span-8 bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-7 lg:p-9 border border-oidaneos-line shadow-card space-y-6 sm:space-y-8" id="guideEtalonContainer">
+        <div id="guideEtalonContainer" class="lg:col-span-8 bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-7 lg:p-9 border border-oidaneos-line shadow-card space-y-6 sm:space-y-8">
           <!-- Dynamically populated by renderGuideEtalon() -->
         </div>
 
@@ -497,6 +963,22 @@
       if (!catalogData) return;
       const grid = document.getElementById("sessionsGrid");
       
+      const assetised = catalogData.sessions.filter(s => s.isAssetised).length;
+      const replays = catalogData.sessions.length - assetised;
+      const totalVideos = catalogData.sessions.reduce((acc, s) => acc + (s.microVideosCount || 0), 0);
+      
+      const elAssetised = document.getElementById("statAssetisedCount");
+      if (elAssetised) elAssetised.textContent = assetised;
+      const elVideos = document.getElementById("statMicroVideosCount");
+      if (elVideos) elVideos.textContent = `${totalVideos} micro-vidéos découpées`;
+      const elReplays = document.getElementById("statReplaysCount");
+      if (elReplays) elReplays.textContent = replays;
+      
+      const btnAssetise = document.getElementById("filter-ASSETISE");
+      if (btnAssetise) btnAssetise.textContent = `Assetisées (${assetised})`;
+      const btnReplay = document.getElementById("filter-REPLAY");
+      if (btnReplay) btnReplay.textContent = `Replays bruts (${replays})`;
+
       const filtered = catalogData.sessions.filter(s => {
         if (currentFilter === 'ASSETISE') return s.isAssetised;
         if (currentFilter === 'REPLAY') return !s.isAssetised;
@@ -524,6 +1006,22 @@
                 <h3 class="text-base font-extrabold text-oidaneos-ink group-hover:text-oidaneos-purple transition line-clamp-2 mt-0.5">
                   ${s.title}
                 </h3>
+              </div>
+
+              <!-- Tags Programme & Compétences Clés -->
+              <div class="flex items-center gap-1.5 flex-wrap pt-0.5">
+                ${(s.modules || []).map(m => `
+                  <span class="px-2 py-0.5 text-[10px] font-bold rounded-lg bg-oidaneos-lav100 text-oidaneos-purple border border-oidaneos-line flex items-center gap-1">
+                    <i data-lucide="book-open" class="w-3 h-3 text-oidaneos-purple"></i>
+                    ${m}
+                  </span>
+                `).join('')}
+                ${(s.competenceDetails || []).map(c => `
+                  <span class="px-2 py-0.5 text-[10px] font-extrabold rounded-lg bg-pink-50 text-pink-700 border border-pink-200 flex items-center gap-1">
+                    <i data-lucide="award" class="w-3 h-3 text-oidaneos-pink"></i>
+                    ${c}
+                  </span>
+                `).join('')}
               </div>
 
               <p class="text-xs text-oidaneos-body line-clamp-2 leading-relaxed">
@@ -562,9 +1060,25 @@
 
     // --- NAVIGATION VUES ---
     function showHomeView() {
-      document.getElementById("viewHome").classList.remove("hidden");
-      document.getElementById("viewSession").classList.add("hidden");
+      const vHome = document.getElementById("viewHome");
+      const vSession = document.getElementById("viewSession");
+      const vProgram = document.getElementById("viewProgram");
+      if (vSession) vSession.classList.add("hidden");
+      if (vProgram) vProgram.classList.add("hidden");
+      if (vHome) vHome.classList.remove("hidden");
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function showProgramView() {
+      const vHome = document.getElementById("viewHome");
+      const vSession = document.getElementById("viewSession");
+      const vProgram = document.getElementById("viewProgram");
+      if (vHome) vHome.classList.add("hidden");
+      if (vSession) vSession.classList.add("hidden");
+      if (vProgram) vProgram.classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (window.lucide) lucide.createIcons();
     }
 
     function onSessionDropdownChange(newId) {
@@ -586,6 +1100,8 @@
       const session = catalogData.sessions.find(s => s.id === sessionId);
       if (!session) return;
 
+      const vProg = document.getElementById("viewProgram");
+      if (vProg) vProg.classList.add("hidden");
       document.getElementById("viewHome").classList.add("hidden");
       document.getElementById("viewSession").classList.remove("hidden");
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -612,6 +1128,29 @@
       document.getElementById("sessionMetaInfo").textContent = `${session.date || '2026'} • ${session.formateur}`;
       document.getElementById("sessionTitleMain").textContent = (session.number === 0 ? "Accueil : " : `Session ${session.number} : `) + session.title;
       document.getElementById("sessionDescMain").textContent = session.description;
+
+      // Render Badges in Session Header
+      const badgesContainer = document.getElementById("sessionBadgesContainer");
+      if (badgesContainer) {
+        let badgesHtml = '';
+        if (session.modules && session.modules.length > 0) {
+          badgesHtml += session.modules.map(m => `
+            <span class="px-2.5 py-1 rounded-xl bg-oidaneos-lav100 text-oidaneos-purple text-xs font-bold border border-oidaneos-line flex items-center gap-1.5 shadow-sm">
+              <i data-lucide="book-open" class="w-3.5 h-3.5 text-oidaneos-purple"></i>
+              <span>${m}</span>
+            </span>
+          `).join('');
+        }
+        if (session.competenceDetails && session.competenceDetails.length > 0) {
+          badgesHtml += session.competenceDetails.map(c => `
+            <span class="px-2.5 py-1 rounded-xl bg-pink-50 text-pink-700 text-xs font-extrabold border border-pink-200 flex items-center gap-1.5 shadow-sm">
+              <i data-lucide="award" class="w-3.5 h-3.5 text-oidaneos-pink"></i>
+              <span>🎯 ${c}</span>
+            </span>
+          `).join('');
+        }
+        badgesContainer.innerHTML = badgesHtml;
+      }
 
       // Header playlist
       document.getElementById("playlistHeaderTitle").textContent = session.isAssetised ? "Modules Découpés" : "Enregistrement Live";
@@ -823,8 +1362,13 @@
       // Liens de téléchargement DOCX :
       // 1. Guide Étalon Approfondi (.DOCX)
       // 2. Fiche de Révision Officielle (.DOCX)
-      const guideDocxUrl = guide.downloadUrls ? guide.downloadUrls.docxUrl : `/Guides_Pedagogiques/Guide_Pedagogique_Complet_Session_${guideKey.replace('ses-', '').capitalize()}.docx`;
-      const guideDocxName = guide.downloadUrls ? guide.downloadUrls.docxFilename : `Guide_${guideKey}.docx`;
+      const sessionNum = session.number !== undefined ? session.number : (session.id === 'accueil' ? 0 : 9);
+      const guideDocxUrl = (guide && guide.downloadUrls && guide.downloadUrls.docxUrl) 
+        ? guide.downloadUrls.docxUrl 
+        : `/Guides_Pedagogiques/Guide_Pedagogique_Complet_Session_${sessionNum}.docx`;
+      const guideDocxName = (guide && guide.downloadUrls && guide.downloadUrls.docxFilename) 
+        ? guide.downloadUrls.docxFilename 
+        : `Guide_Pedagogique_Session_${sessionNum}.docx`;
       const officialDocxUrl = session.docx ? session.docx.relPath : null;
 
       const isS9 = session.id === 'ses-9';
