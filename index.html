@@ -56,6 +56,18 @@
     .custom-scroll::-webkit-scrollbar-thumb { background: #D8CBEF; border-radius: 9999px; }
     .custom-scroll::-webkit-scrollbar-thumb:hover { background: #9B3AA0; }
   </style>
+
+  <style>
+    /* Smooth touch scrolling & Mobile Polish */
+    html { -webkit-tap-highlight-color: transparent; scroll-behavior: smooth; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    @media (max-width: 640px) {
+      .touch-target { min-height: 44px; }
+      .mobile-p-tight { padding: 1rem !important; }
+    }
+  </style>
+
 </head>
 <body class="h-full flex flex-col antialiased selection:bg-oidaneos-pink selection:text-white custom-scroll bg-[#FBF9FD]">
 
@@ -86,38 +98,43 @@
         </p>
       </div>
 
-      <!-- Formulaire de code -->
+      <!-- Formulaire de code sécurisé (sans indice ni suggestion) -->
       <form onsubmit="handleUnlock(event)" class="space-y-3">
         <div class="relative">
           <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-oidaneos-muted">
-            <i data-lucide="key-round" class="w-4 h-4"></i>
+            <i data-lucide="lock" class="w-4 h-4"></i>
           </div>
           <input 
-            type="text" 
+            type="password" 
             id="sessionCodeInput" 
-            placeholder="Ex : IA2026 ou PASI2026" 
-            class="w-full pl-10 pr-4 py-3 rounded-xl border border-oidaneos-line bg-oidaneos-lav50 text-oidaneos-ink placeholder-oidaneos-muted text-sm font-bold focus:outline-none focus:ring-2 focus:ring-oidaneos-pink/50 focus:border-oidaneos-pink uppercase transition"
+            placeholder="Entrez votre code de session..." 
+            class="w-full pl-10 pr-10 py-3 rounded-xl border border-oidaneos-line bg-oidaneos-lav50 text-oidaneos-ink placeholder-oidaneos-muted text-sm font-bold focus:outline-none focus:ring-2 focus:ring-oidaneos-pink/50 focus:border-oidaneos-pink transition"
             required
-            autocomplete="off"
+            autocomplete="new-password"
+            autocorrect="off"
+            spellcheck="false"
             autofocus
           />
+          <button type="button" onclick="togglePasswordVisibility()" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-oidaneos-muted hover:text-oidaneos-purple transition">
+            <i data-lucide="eye" id="eyeIcon" class="w-4 h-4"></i>
+          </button>
         </div>
 
         <div id="accessErrorMsg" class="hidden text-xs font-bold text-red-600 bg-red-50 p-2.5 rounded-xl border border-red-200">
-          ❌ Code de promotion incorrect. Veuillez vérifier auprès de votre formateur.
+          ❌ Code de session incorrect. Veuillez vérifier auprès de votre formateur.
         </div>
 
         <button 
           type="submit" 
           class="w-full py-3 px-4 rounded-xl bg-grad-oidaneos text-white font-extrabold text-sm shadow-btn hover:opacity-95 hover:scale-[1.01] active:scale-[0.99] transition flex items-center justify-center gap-2">
-          <span>Déverrouiller l'accès</span>
+          <span>Accéder aux cours</span>
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </button>
       </form>
 
       <!-- Liens utiles et retour -->
       <div class="pt-3 border-t border-oidaneos-line/60 flex items-center justify-between text-xs text-oidaneos-muted">
-        <span class="text-[11px]">Promo IA 2026 / PASI</span>
+        <span class="text-[11px] font-medium text-oidaneos-muted">Accès réservé aux apprenants</span>
         <a href="https://oidaneos.com" class="font-bold text-oidaneos-purple hover:text-oidaneos-pink flex items-center gap-1 transition">
           <span>Oidaneos.com</span>
           <i data-lucide="external-link" class="w-3 h-3"></i>
@@ -127,43 +144,38 @@
   </div>
 
 
-  <!-- ================= TOPBAR BRANDÉE OIDANEOS ================= -->
-  <header class="bg-white sticky top-0 z-40 border-b border-oidaneos-line px-4 lg:px-8 py-3 flex items-center justify-between shadow-sm">
-    <div class="flex items-center gap-4">
-      <a href="#" onclick="showHomeView(); return false;" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-grad-oidaneos flex items-center justify-center font-black text-white shadow-btn text-lg group-hover:scale-105 transition">
+  <!-- ================= TOPBAR BRANDÉE OIDANEOS (MOBILE-OPTIMIZED) ================= -->
+  <header class="bg-white sticky top-0 z-40 border-b border-oidaneos-line px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-between shadow-sm">
+    <div class="flex items-center gap-2 sm:gap-4">
+      <a href="#" onclick="showHomeView(); return false;" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-grad-oidaneos flex items-center justify-center font-black text-white shadow-btn text-base sm:text-lg group-hover:scale-105 transition shrink-0">
           O
         </div>
         <div>
-          <div class="flex items-center gap-2">
-            <span class="font-extrabold tracking-tight text-oidaneos-ink text-xl">OIDANEOS</span>
-            <span class="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase rounded-full bg-oidaneos-lav100 text-oidaneos-purple border border-oidaneos-line">
-              Live-to-Asset
+          <div class="flex items-center gap-1.5">
+            <span class="font-extrabold tracking-tight text-oidaneos-ink text-base sm:text-xl">OIDANEOS</span>
+            <span class="px-1.5 sm:px-2 py-0.5 text-[9px] sm:text-[10px] font-bold uppercase rounded-full bg-oidaneos-lav100 text-oidaneos-purple border border-oidaneos-line">
+              Live
             </span>
           </div>
-          <p class="text-xs text-oidaneos-muted font-medium">Plateforme Pédagogique & Micro-Modules</p>
+          <p class="text-[10px] sm:text-xs text-oidaneos-muted font-medium truncate max-w-[140px] sm:max-w-none">E-Learning & Guides</p>
         </div>
       </a>
     </div>
 
     <!-- Actions Droite -->
-    <div class="flex items-center gap-3">
-      <button onclick="showHomeView()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple text-xs font-bold transition">
-        <i data-lucide="layout-grid" class="w-4 h-4"></i>
-        <span>Toutes les sessions (14)</span>
+    <div class="flex items-center gap-2 sm:gap-3">
+      <button onclick="showHomeView()" class="inline-flex items-center gap-1 px-2.5 sm:px-3.5 py-1.5 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple text-xs font-bold transition">
+        <i data-lucide="layout-grid" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+        <span class="hidden sm:inline">Toutes les sessions (14)</span>
+        <span class="sm:hidden">14 Sessions</span>
       </button>
 
-      <div class="h-5 w-px bg-oidaneos-line hidden sm:block"></div>
-
-      <div class="flex items-center gap-2.5">
-        <div class="w-8 h-8 rounded-full bg-grad-oidaneos flex items-center justify-center font-bold text-white text-xs shadow-sm">
-          AV
-        </div>
-        <div class="text-left hidden sm:block">
-          <div class="text-xs font-bold text-oidaneos-ink">Alain Valero</div>
-          <div class="text-[10px] text-oidaneos-muted font-medium">Promotion IA 2026</div>
-        </div>
-      </div>
+      <!-- Badge Promo & Déconnexion Mobile -->
+      <button onclick="handleLock()" title="Changer de session / Déconnexion" class="p-1.5 sm:px-2.5 sm:py-1.5 rounded-xl bg-oidaneos-lav50 hover:bg-oidaneos-lav100 border border-oidaneos-line text-oidaneos-muted hover:text-oidaneos-pink transition text-xs font-semibold flex items-center gap-1.5">
+        <i data-lucide="lock" class="w-3.5 h-3.5 text-oidaneos-purple"></i>
+        <span class="hidden md:inline text-[11px] font-bold text-oidaneos-ink" id="currentPromoBadge">IA 2026</span>
+      </button>
     </div>
   </header>
 
@@ -309,7 +321,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
         
         <!-- Colonne Gauche : Lecteur Vidéo + Titre du module -->
-        <div class="lg:col-span-8 space-y-4">
+        <div id="colVideoPlayer" class="lg:col-span-8 space-y-4">
           <div class="bg-black rounded-3xl overflow-hidden shadow-2xl border border-slate-800 relative group aspect-video">
             <video id="playerVideo" controls preload="metadata" class="w-full h-full object-contain bg-black">
               <source id="playerVideoSource" src="" type="video/mp4">
@@ -334,10 +346,27 @@
               </p>
             </div>
           </div>
+
+      <!-- Sélecteur d'Onglets Mobile (Visible uniquement sur Smartphone / Tablette) -->
+      <div class="lg:hidden flex items-center gap-1 p-1 bg-white rounded-2xl border border-oidaneos-line shadow-sm overflow-x-auto no-scrollbar">
+        <button onclick="switchMobileTab('video-guide')" id="mTab-video-guide" class="flex-1 min-w-[120px] py-2 px-3 rounded-xl bg-oidaneos-purple text-white text-xs font-extrabold flex items-center justify-center gap-1.5 transition">
+          <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+          <span>Cours & Vidéo</span>
+        </button>
+        <button onclick="switchMobileTab('playlist')" id="mTab-playlist" class="flex-1 min-w-[110px] py-2 px-3 rounded-xl bg-transparent text-oidaneos-body hover:bg-oidaneos-lav50 text-xs font-bold flex items-center justify-center gap-1.5 transition">
+          <i data-lucide="list-video" class="w-3.5 h-3.5"></i>
+          <span>Playlists</span>
+        </button>
+        <button onclick="switchMobileTab('tools-chat')" id="mTab-tools-chat" class="flex-1 min-w-[110px] py-2 px-3 rounded-xl bg-transparent text-oidaneos-body hover:bg-oidaneos-lav50 text-xs font-bold flex items-center justify-center gap-1.5 transition">
+          <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+          <span>Chat & Liens</span>
+        </button>
+      </div>
+
         </div>
 
         <!-- Colonne Droite : Playlist des Micro-Vidéos Découpées -->
-        <div class="lg:col-span-4 bg-white rounded-3xl p-5 border border-oidaneos-line shadow-card flex flex-col h-[500px]">
+        <div id="colPlaylist" class="lg:col-span-4 bg-white rounded-3xl p-4 sm:p-5 border border-oidaneos-line shadow-card flex flex-col lg:h-[500px] max-h-96 lg:max-h-none">
           
           <div class="pb-3 border-b border-oidaneos-line space-y-1">
             <div class="flex items-center justify-between">
@@ -372,12 +401,12 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-4">
         
         <!-- Colonne Gauche : Article Pédagogique d'Excellence (8 cols) -->
-        <div class="lg:col-span-8 bg-white rounded-3xl p-7 lg:p-9 border border-oidaneos-line shadow-card space-y-8" id="guideEtalonContainer">
+        <div id="colGuide" class="lg:col-span-8 bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-7 lg:p-9 border border-oidaneos-line shadow-card space-y-6 sm:space-y-8" id="guideEtalonContainer">
           <!-- Dynamically populated by renderGuideEtalon() -->
         </div>
 
         <!-- Colonne Droite : Outils Clés & Éléments du Chat (4 cols) -->
-        <div class="lg:col-span-4 space-y-6">
+        <div id="colSidebar" class="lg:col-span-4 space-y-6">
           
           <!-- Boîte : Outils & Technologies Manipulés -->
           <div class="bg-white rounded-3xl p-6 border border-oidaneos-line shadow-card space-y-4">
