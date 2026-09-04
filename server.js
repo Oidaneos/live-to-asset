@@ -21,14 +21,14 @@ const MIME_TYPES = {
 };
 
 const server = http.createServer((req, res) => {
-  let reqUrl = '/prototype.html';
+  let reqUrl = '/index.html';
   try {
     reqUrl = decodeURIComponent(req.url.split('?')[0]);
   } catch (e) {
     reqUrl = req.url.split('?')[0];
   }
   if (reqUrl === '/' || reqUrl === '') {
-    reqUrl = '/prototype.html';
+    reqUrl = fs.existsSync(path.join(BASE_DIR, 'index.html')) ? '/index.html' : '/prototype.html';
   }
 
   let filePath = path.join(BASE_DIR, reqUrl);
