@@ -59,6 +59,74 @@
 </head>
 <body class="h-full flex flex-col antialiased selection:bg-oidaneos-pink selection:text-white custom-scroll bg-[#FBF9FD]">
 
+  <!-- ================= NIVEAU 1 : ÉCRAN D'ACCÈS SÉCURISÉ PROMOTION ================= -->
+  <div id="accessGateModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-oidaneos-ink/80 backdrop-blur-md transition-all duration-300">
+    <div class="w-full max-w-md bg-white rounded-3xl shadow-2xl border border-oidaneos-line overflow-hidden p-6 sm:p-8 space-y-6 text-center transform transition-all">
+      <!-- Logo et Badge -->
+      <div class="flex flex-col items-center gap-3">
+        <div class="w-14 h-14 rounded-2xl bg-grad-oidaneos flex items-center justify-center font-black text-white shadow-btn text-2xl">
+          O
+        </div>
+        <div>
+          <div class="flex items-center justify-center gap-2">
+            <span class="font-black tracking-tight text-oidaneos-ink text-2xl">OIDANEOS</span>
+            <span class="px-2.5 py-0.5 text-[10px] font-bold tracking-wider uppercase rounded-full bg-oidaneos-lav100 text-oidaneos-purple border border-oidaneos-line">
+              E-Learning
+            </span>
+          </div>
+          <p class="text-xs text-oidaneos-muted font-medium mt-0.5">Espace Apprenants & Formateurs (Live-to-Asset)</p>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="space-y-1.5">
+        <h2 class="text-lg font-extrabold text-oidaneos-ink">Accès Sécurisé à vos Cours</h2>
+        <p class="text-xs text-oidaneos-body leading-relaxed">
+          Veuillez saisir le code de session de votre promotion pour déverrouiller les vidéos et les guides étalons.
+        </p>
+      </div>
+
+      <!-- Formulaire de code -->
+      <form onsubmit="handleUnlock(event)" class="space-y-3">
+        <div class="relative">
+          <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-oidaneos-muted">
+            <i data-lucide="key-round" class="w-4 h-4"></i>
+          </div>
+          <input 
+            type="text" 
+            id="sessionCodeInput" 
+            placeholder="Ex : IA2026 ou PASI2026" 
+            class="w-full pl-10 pr-4 py-3 rounded-xl border border-oidaneos-line bg-oidaneos-lav50 text-oidaneos-ink placeholder-oidaneos-muted text-sm font-bold focus:outline-none focus:ring-2 focus:ring-oidaneos-pink/50 focus:border-oidaneos-pink uppercase transition"
+            required
+            autocomplete="off"
+            autofocus
+          />
+        </div>
+
+        <div id="accessErrorMsg" class="hidden text-xs font-bold text-red-600 bg-red-50 p-2.5 rounded-xl border border-red-200">
+          ❌ Code de promotion incorrect. Veuillez vérifier auprès de votre formateur.
+        </div>
+
+        <button 
+          type="submit" 
+          class="w-full py-3 px-4 rounded-xl bg-grad-oidaneos text-white font-extrabold text-sm shadow-btn hover:opacity-95 hover:scale-[1.01] active:scale-[0.99] transition flex items-center justify-center gap-2">
+          <span>Déverrouiller l'accès</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </form>
+
+      <!-- Liens utiles et retour -->
+      <div class="pt-3 border-t border-oidaneos-line/60 flex items-center justify-between text-xs text-oidaneos-muted">
+        <span class="text-[11px]">Promo IA 2026 / PASI</span>
+        <a href="https://oidaneos.com" class="font-bold text-oidaneos-purple hover:text-oidaneos-pink flex items-center gap-1 transition">
+          <span>Oidaneos.com</span>
+          <i data-lucide="external-link" class="w-3 h-3"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
   <!-- ================= TOPBAR BRANDÉE OIDANEOS ================= -->
   <header class="bg-white sticky top-0 z-40 border-b border-oidaneos-line px-4 lg:px-8 py-3 flex items-center justify-between shadow-sm">
     <div class="flex items-center gap-4">
@@ -912,6 +980,70 @@
       navigator.clipboard.writeText("Fais un roast positif sur tout ce que tu sais de moi.");
       alert("✅ Prompt copié dans le presse-papier !");
     }
-  </script>
+  
+    // ================= GESTION DE L'ACCÈS NIVEAU 1 (CODE PROMOTION) =================
+    const VALID_CODES = {
+      'IA2026': 'Promotion IA 2026',
+      'IA-2026': 'Promotion IA 2026',
+      'IA 2026': 'Promotion IA 2026',
+      'PASI2026': 'Promotion PASI Cybersécurité',
+      'PASI-2026': 'Promotion PASI Cybersécurité',
+      'PASI': 'Promotion PASI Cybersécurité',
+      'OIDANEOS': 'Espace OIDANEOS (Accès Global)',
+      'OIDANEOS2026': 'Espace OIDANEOS (Accès Global)',
+      'ADMIN': 'Accès Formateur / Admin'
+    };
+
+    function checkAuthStatus() {
+      const isAuth = localStorage.getItem('oidaneos_auth_unlocked');
+      const promo = localStorage.getItem('oidaneos_promo_name') || 'Promotion IA 2026';
+      const modal = document.getElementById('accessGateModal');
+      const badge = document.getElementById('currentPromoBadge');
+
+      if (isAuth === 'true') {
+        if (modal) modal.classList.add('hidden');
+        if (badge) badge.innerText = promo;
+      } else {
+        if (modal) modal.classList.remove('hidden');
+      }
+    }
+
+    function handleUnlock(e) {
+      e.preventDefault();
+      const input = document.getElementById('sessionCodeInput');
+      const errorMsg = document.getElementById('accessErrorMsg');
+      const cleanCode = input.value.trim().toUpperCase();
+
+      if (VALID_CODES[cleanCode]) {
+        const promoName = VALID_CODES[cleanCode];
+        localStorage.setItem('oidaneos_auth_unlocked', 'true');
+        localStorage.setItem('oidaneos_promo_name', promoName);
+        
+        errorMsg.classList.add('hidden');
+        const modal = document.getElementById('accessGateModal');
+        if (modal) modal.classList.add('hidden');
+        
+        const badge = document.getElementById('currentPromoBadge');
+        if (badge) badge.innerText = promoName;
+      } else {
+        errorMsg.classList.remove('hidden');
+        input.classList.add('border-red-500', 'bg-red-50');
+      }
+    }
+
+    function handleLock() {
+      if (confirm("Voulez-vous verrouiller l'accès ou changer de code de promotion ?")) {
+        localStorage.removeItem('oidaneos_auth_unlocked');
+        localStorage.removeItem('oidaneos_promo_name');
+        location.reload();
+      }
+    }
+
+    // Run auth check on init
+    window.addEventListener('DOMContentLoaded', () => {
+      checkAuthStatus();
+    });
+
+</script>
 </body>
 </html>
