@@ -863,5 +863,54 @@
       "docxUrl": "/Guides_Pedagogiques/Guide_Pedagogique_Complet_Session_13.docx",
       "docxFilename": "Guide_Pedagogique_Complet_Session_13.docx"
     }
+  },
+  "ses-sept-0": {
+    "titre": "Guide Pédagogique — Pré-rentrée Promotion Septembre 2026",
+    "date": "02 Septembre 2026",
+    "formateur": "Alain Valero, Milène & Pierre Lacombe",
+    "outils": [
+      "Digiforma",
+      "Celestory",
+      "Baserow",
+      "Claude / ChatGPT"
+    ],
+    "chat_highlights": [
+      {
+        "time": "00:27:51",
+        "author": "Milène (Coordination)",
+        "content": "Accès Digiforma : https://2921201453.digiforma.net/ts/3058334"
+      },
+      {
+        "time": "00:30:20",
+        "author": "Milène (Coordination)",
+        "content": "Plateforme Celestory : celestory.io"
+      },
+      {
+        "time": "00:43:42",
+        "author": "Pierre Lacombe",
+        "content": "Base de données stagiaires : https://baserow.fr.nocodespacelab.com/login"
+      }
+    ],
+    "checklist": [
+      "Compléter son auto-évaluation de positionnement initial (C1 à C9)",
+      "Renseigner le questionnaire de cadrage de son cas pratique d'entreprise",
+      "Vérifier ses accès à Digiforma et à l'espace Baserow",
+      "Préparer ses questions pour la Session 1 du 9 septembre"
+    ],
+    "resume": "Accueil officiel de la promotion de Septembre 2026. Présentation du déroulement pédagogique, des outils (Digiforma, Celestory, Baserow) et cadrage des cas pratiques individuels pour la certification.",
+    "sections": [
+      {
+        "titre": "1. Accueil & Tour de Table",
+        "contenu": "Prise de contact avec les nouveaux apprenants, présentation des formateurs et des objectifs de montée en compétences sur la conception et l'implémentation de solutions d'IA."
+      },
+      {
+        "titre": "2. Présentation des Outils & Espaces de Travail",
+        "contenu": "Prise en main de Digiforma pour les émargements et évaluations, accès à la plateforme Celestory pour le prototypage applicatif, et configuration de l'espace Baserow pour la gestion des bases de données."
+      },
+      {
+        "titre": "3. Cadrage du Projet Métier & Démarche de Certification",
+        "contenu": "Chaque apprenant identifie son projet d'entreprise (ex: automatisation documentaire, agents IA, analyses AMDEC) qui servira de fil rouge tout au long des 14 séances pour valider les 9 compétences du jury."
+      }
+    ]
   }
 }

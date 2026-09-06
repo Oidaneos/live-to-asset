@@ -1,0 +1,249 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//OIDANEOS//Formation Certification IA IT//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:OIDANEOS — Promotion IA IT (Septembre 2026)
+X-WR-TIMEZONE:America/Guadeloupe
+X-WR-CALDESC:Planning officiel des 14 sessions et de la certification professionnelle IT IA OIDANEOS.
+BEGIN:VEVENT
+UID:oidaneos-ia-2026-ses-0@elearning.oidaneos.com
+DTSTAMP:20260906T192553Z
+DTSTART;TZID=America/Guadeloupe:20260902T140000
+DTEND;TZID=America/Guadeloupe:20260902T160000
+SUMMARY:OIDANEOS IA — Pré-rentrée, Cadrage & Diagnostic Initial
+DESCRIPTION:Accueil, cadrage des cas d'usage métiers, diagnostic initial T0.\n\nFormateur(s) : Alain VALERO, Milène & Pierre\nPlateforme LMS : https://elearning.oidaneos.com\nLien Zoom direct : https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1
+LOCATION:Classe Virtuelle Zoom OIDANEOS (https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1)
+STATUS:CONFIRMED
+ORGANIZER;CN="OIDANEOS Formation":mailto:contact@oidaneos.com
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Rappel : Dans 30 min commence votre cours OIDANEOS : Pré-rentrée, Cadrage & Diagnostic Initial
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:oidaneos-ia-2026-ses-1@elearning.oidaneos.com
+DTSTAMP:20260906T192553Z
+DTSTART;TZID=America/Guadeloupe:20260911T080000
+DTEND;TZID=America/Guadeloupe:20260911T100000
+SUMMARY:OIDANEOS IA — Session 1 : Cas Pratiques Métiers & Structuration des Données
+DESCRIPTION:Collecte, nettoyage et préparation des données sources pour l'IA (C1, C3).\n\nFormateur(s) : Pierre Lacombe & Alain Valero\nPlateforme LMS : https://elearning.oidaneos.com\nLien Zoom direct : https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1
+LOCATION:Classe Virtuelle Zoom OIDANEOS (https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1)
+STATUS:CONFIRMED
+ORGANIZER;CN="OIDANEOS Formation":mailto:contact@oidaneos.com
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Rappel : Dans 30 min commence votre cours OIDANEOS : Session 1 : Cas Pratiques Métiers & Structuration des Données
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:oidaneos-ia-2026-ses-2@elearning.oidaneos.com
+DTSTAMP:20260906T192553Z
+DTSTART;TZID=America/Guadeloupe:20260918T080000
+DTEND;TZID=America/Guadeloupe:20260918T100000
+SUMMARY:OIDANEOS IA — Session 2 : ⭐ Examen Blanc & Soutenances Promo Juin 2026
+DESCRIPTION:Session d'immersion jury : passage des soutenances blanches de la promotion de Juin.\n\nFormateur(s) : Pierre Lacombe & Alain Valero\nPlateforme LMS : https://elearning.oidaneos.com\nLien Zoom direct : https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1
+LOCATION:Classe Virtuelle Zoom OIDANEOS (https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1)
+STATUS:CONFIRMED
+ORGANIZER;CN="OIDANEOS Formation":mailto:contact@oidaneos.com
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Rappel : Dans 30 min commence votre cours OIDANEOS : Session 2 : ⭐ Examen Blanc & Soutenances Promo Juin 2026
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:oidaneos-ia-2026-ses-3@elearning.oidaneos.com
+DTSTAMP:20260906T192553Z
+DTSTART;TZID=America/Guadeloupe:20260925T080000
+DTEND;TZID=America/Guadeloupe:20260925T100000
+SUMMARY:OIDANEOS IA — Session 3 : Architectures Transformers & Choix de Modèles LLM
+DESCRIPTION:Fonctionnement des modèles, tokens, context window et critères de choix (C4).\n\nFormateur(s) : Pierre Lacombe\nPlateforme LMS : https://elearning.oidaneos.com\nLien Zoom direct : https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1
+LOCATION:Classe Virtuelle Zoom OIDANEOS (https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1)
+STATUS:CONFIRMED
+ORGANIZER;CN="OIDANEOS Formation":mailto:contact@oidaneos.com
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Rappel : Dans 30 min commence votre cours OIDANEOS : Session 3 : Architectures Transformers & Choix de Modèles LLM
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:oidaneos-ia-2026-ses-4@elearning.oidaneos.com
+DTSTAMP:20260906T192553Z
+DTSTART;TZID=America/Guadeloupe:20261002T080000
+DTEND;TZID=America/Guadeloupe:20261002T100000
+SUMMARY:OIDANEOS IA — Session 4 : Prompt Engineering Avancé & Grounding
+DESCRIPTION:Techniques avancées de prompting, agents et élimination des hallucinations (C5).\n\nFormateur(s) : Pierre Lacombe\nPlateforme LMS : https://elearning.oidaneos.com\nLien Zoom direct : https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1
+LOCATION:Classe Virtuelle Zoom OIDANEOS (https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1)
+STATUS:CONFIRMED
+ORGANIZER;CN="OIDANEOS Formation":mailto:contact@oidaneos.com
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Rappel : Dans 30 min commence votre cours OIDANEOS : Session 4 : Prompt Engineering Avancé & Grounding
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:oidaneos-ia-2026-ses-5@elearning.oidaneos.com
+DTSTAMP:20260906T192553Z
+DTSTART;TZID=America/Guadeloupe:20261009T080000
+DTEND;TZID=America/Guadeloupe:20261009T100000
+SUMMARY:OIDANEOS IA — Session 5 : Conception de Pipeline de Données & APIs
+DESCRIPTION:Interfaçage logiciel, flux automatisés et traitement de données non structurées (C6).\n\nFormateur(s) : Pierre Lacombe\nPlateforme LMS : https://elearning.oidaneos.com\nLien Zoom direct : https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1
+LOCATION:Classe Virtuelle Zoom OIDANEOS (https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1)
+STATUS:CONFIRMED
+ORGANIZER;CN="OIDANEOS Formation":mailto:contact@oidaneos.com
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Rappel : Dans 30 min commence votre cours OIDANEOS : Session 5 : Conception de Pipeline de Données & APIs
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:oidaneos-ia-2026-ses-6@elearning.oidaneos.com
+DTSTAMP:20260906T192553Z
+DTSTART;TZID=America/Guadeloupe:20261016T080000
+DTEND;TZID=America/Guadeloupe:20261016T100000
+SUMMARY:OIDANEOS IA — Session 6 : Intégration No-Code / Code & Briques Logicielles
+DESCRIPTION:Déploiement d'interfaces applicatives et assistants métier (C6).\n\nFormateur(s) : Pierre Lacombe\nPlateforme LMS : https://elearning.oidaneos.com\nLien Zoom direct : https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1
+LOCATION:Classe Virtuelle Zoom OIDANEOS (https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1)
+STATUS:CONFIRMED
+ORGANIZER;CN="OIDANEOS Formation":mailto:contact@oidaneos.com
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Rappel : Dans 30 min commence votre cours OIDANEOS : Session 6 : Intégration No-Code / Code & Briques Logicielles
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:oidaneos-ia-2026-ses-7@elearning.oidaneos.com
+DTSTAMP:20260906T192553Z
+DTSTART;TZID=America/Guadeloupe:20261023T080000
+DTEND;TZID=America/Guadeloupe:20261023T100000
+SUMMARY:OIDANEOS IA — Session 7 : Risques Éthiques, RGPD & Réglementation IA Act
+DESCRIPTION:Gouvernance des données, conformité européenne et audits de sécurité (C2).\n\nFormateur(s) : Alain Valero & Pierre Lacombe\nPlateforme LMS : https://elearning.oidaneos.com\nLien Zoom direct : https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1
+LOCATION:Classe Virtuelle Zoom OIDANEOS (https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1)
+STATUS:CONFIRMED
+ORGANIZER;CN="OIDANEOS Formation":mailto:contact@oidaneos.com
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Rappel : Dans 30 min commence votre cours OIDANEOS : Session 7 : Risques Éthiques, RGPD & Réglementation IA Act
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:oidaneos-ia-2026-ses-8@elearning.oidaneos.com
+DTSTAMP:20260906T192553Z
+DTSTART;TZID=America/Guadeloupe:20261030T080000
+DTEND;TZID=America/Guadeloupe:20261030T100000
+SUMMARY:OIDANEOS IA — Session 8 : Architecture Cible & Dimensionnement Infrastructure
+DESCRIPTION:Dimensionnement des pipelines, latence, coûts et scalabilité (C7).\n\nFormateur(s) : Pierre Lacombe\nPlateforme LMS : https://elearning.oidaneos.com\nLien Zoom direct : https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1
+LOCATION:Classe Virtuelle Zoom OIDANEOS (https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1)
+STATUS:CONFIRMED
+ORGANIZER;CN="OIDANEOS Formation":mailto:contact@oidaneos.com
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Rappel : Dans 30 min commence votre cours OIDANEOS : Session 8 : Architecture Cible & Dimensionnement Infrastructure
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:oidaneos-ia-2026-ses-9@elearning.oidaneos.com
+DTSTAMP:20260906T192553Z
+DTSTART;TZID=America/Guadeloupe:20261106T080000
+DTEND;TZID=America/Guadeloupe:20261106T100000
+SUMMARY:OIDANEOS IA — Session 9 : Mesure de la Performance & ROI Métier
+DESCRIPTION:Indicateurs de performance, métriques d'évaluation et calcul du ROI (C8).\n\nFormateur(s) : Pierre Lacombe & Alain Valero\nPlateforme LMS : https://elearning.oidaneos.com\nLien Zoom direct : https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1
+LOCATION:Classe Virtuelle Zoom OIDANEOS (https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1)
+STATUS:CONFIRMED
+ORGANIZER;CN="OIDANEOS Formation":mailto:contact@oidaneos.com
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Rappel : Dans 30 min commence votre cours OIDANEOS : Session 9 : Mesure de la Performance & ROI Métier
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:oidaneos-ia-2026-ses-10@elearning.oidaneos.com
+DTSTAMP:20260906T192553Z
+DTSTART;TZID=America/Guadeloupe:20261113T080000
+DTEND;TZID=America/Guadeloupe:20261113T100000
+SUMMARY:OIDANEOS IA — Session 10 : Amélioration Continue & MLOps
+DESCRIPTION:Maintenance des modèles, réentraînement et monitoring opérationnel (C9).\n\nFormateur(s) : Pierre Lacombe\nPlateforme LMS : https://elearning.oidaneos.com\nLien Zoom direct : https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1
+LOCATION:Classe Virtuelle Zoom OIDANEOS (https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1)
+STATUS:CONFIRMED
+ORGANIZER;CN="OIDANEOS Formation":mailto:contact@oidaneos.com
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Rappel : Dans 30 min commence votre cours OIDANEOS : Session 10 : Amélioration Continue & MLOps
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:oidaneos-ia-2026-ses-11@elearning.oidaneos.com
+DTSTAMP:20260906T192553Z
+DTSTART;TZID=America/Guadeloupe:20261120T080000
+DTEND;TZID=America/Guadeloupe:20261120T100000
+SUMMARY:OIDANEOS IA — Session 11 : Revue Critique du Journal de Bord & Cas d'École
+DESCRIPTION:Finalisation du Journal de Bord et vérification des 4 blocs de compétences.\n\nFormateur(s) : Pierre Lacombe & Alain Valero\nPlateforme LMS : https://elearning.oidaneos.com\nLien Zoom direct : https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1
+LOCATION:Classe Virtuelle Zoom OIDANEOS (https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1)
+STATUS:CONFIRMED
+ORGANIZER;CN="OIDANEOS Formation":mailto:contact@oidaneos.com
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Rappel : Dans 30 min commence votre cours OIDANEOS : Session 11 : Revue Critique du Journal de Bord & Cas d'École
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:oidaneos-ia-2026-ses-12@elearning.oidaneos.com
+DTSTAMP:20260906T192553Z
+DTSTART;TZID=America/Guadeloupe:20261127T080000
+DTEND;TZID=America/Guadeloupe:20261127T100000
+SUMMARY:OIDANEOS IA — Session 12 : Répétition Générale & Techniques de Soutenance
+DESCRIPTION:Pitch de présentation, diaporama officiel et gestion du temps jury.\n\nFormateur(s) : Pierre Lacombe & Alain Valero\nPlateforme LMS : https://elearning.oidaneos.com\nLien Zoom direct : https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1
+LOCATION:Classe Virtuelle Zoom OIDANEOS (https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1)
+STATUS:CONFIRMED
+ORGANIZER;CN="OIDANEOS Formation":mailto:contact@oidaneos.com
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Rappel : Dans 30 min commence votre cours OIDANEOS : Session 12 : Répétition Générale & Techniques de Soutenance
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:oidaneos-ia-2026-ses-13@elearning.oidaneos.com
+DTSTAMP:20260906T192553Z
+DTSTART;TZID=America/Guadeloupe:20261204T080000
+DTEND;TZID=America/Guadeloupe:20261204T100000
+SUMMARY:OIDANEOS IA — Session 13 : Examen Blanc Final & Clôture de Formation
+DESCRIPTION:Dernier examen blanc en conditions réelles, débriefing et validation T1.\n\nFormateur(s) : Pierre Lacombe & Alain Valero\nPlateforme LMS : https://elearning.oidaneos.com\nLien Zoom direct : https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1
+LOCATION:Classe Virtuelle Zoom OIDANEOS (https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1)
+STATUS:CONFIRMED
+ORGANIZER;CN="OIDANEOS Formation":mailto:contact@oidaneos.com
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Rappel : Dans 30 min commence votre cours OIDANEOS : Session 13 : Examen Blanc Final & Clôture de Formation
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:oidaneos-ia-2026-ses-14@elearning.oidaneos.com
+DTSTAMP:20260906T192553Z
+DTSTART;TZID=America/Guadeloupe:20261211T083000
+DTEND;TZID=America/Guadeloupe:20261211T163000
+SUMMARY:OIDANEOS IA — 🎓 Grand Oral de Certification — Jury Officiel IT IA
+DESCRIPTION:Soutenance officielle de certification professionnelle (45 min par candidat) devant le jury national.\n\nFormateur(s) : Jury National Certificateur IT IA & OIDANEOS\nPlateforme LMS : https://elearning.oidaneos.com\nLien Zoom direct : https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1
+LOCATION:Classe Virtuelle Zoom OIDANEOS (https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1)
+STATUS:CONFIRMED
+ORGANIZER;CN="OIDANEOS Formation":mailto:contact@oidaneos.com
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Rappel : Dans 30 min commence votre cours OIDANEOS : 🎓 Grand Oral de Certification — Jury Officiel IT IA
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -8,12 +8,10 @@ WORKDIR /app
 COPY package.json ./
 
 # Copie des fichiers applicatifs du dépôt Git
-COPY server.js index.html sessions_catalog.json guides_etalon.json ./
-COPY Guides_Pedagogiques ./Guides_Pedagogiques
-COPY Modeles_Certification_Stagiaires ./Modeles_Certification_Stagiaires
+COPY server.js index.html sessions_catalog.json sessions_catalog_septembre.json guides_etalon.json Planning_Formation_IA_OIDANEOS_Septembre_2026.ics ./
 
-# Création du point de montage pour le volume des vidéos Sessions_Data
-RUN mkdir -p /app/Sessions_Data
+# Création des points de montage pour les volumes vidéos Sessions_Data
+RUN mkdir -p /app/Sessions_Data /app/Sessions_Data_Septembre_2026
 
 # Exposition du port
 EXPOSE 3000

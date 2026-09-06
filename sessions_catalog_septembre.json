@@ -1,0 +1,330 @@
+{
+  "promotionId": "septembre-2026",
+  "promotionName": "Promotion IA IT — Septembre 2026",
+  "formationTitle": "Concepteur & Développeur de Solutions d'Intelligence Artificielle",
+  "status": "EN_COURS",
+  "startDate": "02 Septembre 2026",
+  "endDate": "04 Décembre 2026",
+  "zoomUrl": "https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1",
+  "schedule": "Tous les vendredis de 08h00 à 10h00 (Heure de Guadeloupe)",
+  "totalSessions": 14,
+  "activeSession": 0,
+  "sessions": [
+    {
+      "id": "ses-sept-0",
+      "number": 0,
+      "folder": "Accueil - Pre-rentree 020926",
+      "title": "Pré-rentrée, Cadrage & Diagnostic Initial",
+      "date": "Mercredi 02 Septembre 2026",
+      "formateur": "Alain Valero, Milène & Pierre Lacombe",
+      "description": "Accueil des nouveaux apprenants, tour de table, cadrage des objectifs, présentation de Digiforma, Celestory, Baserow et consignes d'entrée.",
+      "isAssetised": false,
+      "status": "REPLAY_BRUT",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "replayVideo": {
+        "filename": "GMT20260902-140304_Recording_1920x1080.mp4",
+        "relPath": "/Sessions_Data_Septembre_2026/Accueil - Pre-rentree 020926/GMT20260902-140304_Recording_1920x1080.mp4"
+      },
+      "vtt": "/Sessions_Data_Septembre_2026/Accueil - Pre-rentree 020926/GMT20260902-140304_Recording.transcript.vtt",
+      "chat": "/Sessions_Data_Septembre_2026/Accueil - Pre-rentree 020926/GMT20260902-140304_RecordingnewChat.txt",
+      "modules": [
+        "Cadrage & Diagnostic"
+      ],
+      "competences": [
+        "C1"
+      ],
+      "competenceDetails": [
+        "C1 (Besoins & Cadrage initial)"
+      ]
+    },
+    {
+      "id": "ses-sept-1",
+      "number": 1,
+      "title": "Cas Pratiques Métiers & Structuration des Données",
+      "date": "Vendredi 11 Septembre 2026 (08h - 10h)",
+      "formateur": "Pierre Lacombe / Alain Valero",
+      "description": "Cadrage approfondi des cas d'usage (ex: ACKARAIB maintenance ascenseurs) et modélisation de base.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "modules": [
+        "Module 1 : Données"
+      ],
+      "competences": [
+        "C1",
+        "C3"
+      ],
+      "competenceDetails": [
+        "C1 (Besoins métiers)",
+        "C3 (Données sources)"
+      ]
+    },
+    {
+      "id": "ses-sept-2",
+      "number": 2,
+      "title": "⭐ Session Spéciale : Examen Blanc & Soutenances Promo Juin 2026",
+      "date": "Vendredi 18 Septembre 2026 (08h - 10h)",
+      "formateur": "Pierre Lacombe & Alain Valero",
+      "description": "Session immersive exceptionnelle : les stagiaires de la promotion de Juin présentent leur projet en conditions réelles d'examen blanc devant le jury.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "isSpecialEvent": true,
+      "microVideosCount": 0,
+      "microVideos": [],
+      "modules": [
+        "Module 1 & 4",
+        "Immersion Jury"
+      ],
+      "competences": [
+        "C1",
+        "C7",
+        "Grand Oral"
+      ],
+      "competenceDetails": [
+        "C1 (Besoins)",
+        "C7 (Architecture)",
+        "Immersion Soutenance Blanche"
+      ]
+    },
+    {
+      "id": "ses-sept-3",
+      "number": 3,
+      "title": "Architectures Transformers & Choix de Modèles LLM",
+      "date": "Vendredi 25 Septembre 2026 (08h - 10h)",
+      "formateur": "Pierre Lacombe",
+      "description": "Comprendre le fonctionnement des LLMs, tokens, context window et critères de sélection.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "modules": [
+        "Module 2 : Modélisation"
+      ],
+      "competences": [
+        "C4"
+      ],
+      "competenceDetails": [
+        "C4 (Choix du modèle IA)"
+      ]
+    },
+    {
+      "id": "ses-sept-4",
+      "number": 4,
+      "title": "Prompting Avancé, Few-Shot & Méta-Prompts",
+      "date": "Vendredi 02 Octobre 2026 (08h - 10h)",
+      "formateur": "Pierre Lacombe",
+      "description": "Techniques d'ingénierie de prompt pour éliminer les hallucinations et structurer des réponses fiables.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "modules": [
+        "Module 2 : Modélisation"
+      ],
+      "competences": [
+        "C5"
+      ],
+      "competenceDetails": [
+        "C5 (Ingénierie de Prompt)"
+      ]
+    },
+    {
+      "id": "ses-sept-5",
+      "number": 5,
+      "title": "Bases de Données & Airtable / Baserow",
+      "date": "Vendredi 09 Octobre 2026 (08h - 10h)",
+      "formateur": "Pierre Lacombe",
+      "description": "Mise en place de bases de données relationnelles, formules, filtres et vues personnalisées.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "modules": [
+        "Module 1 : Données"
+      ],
+      "competences": [
+        "C3"
+      ],
+      "competenceDetails": [
+        "C3 (Structuration des données)"
+      ]
+    },
+    {
+      "id": "ses-sept-6",
+      "number": 6,
+      "title": "Automatisation de Workflows & APIs",
+      "date": "Vendredi 16 Octobre 2026 (08h - 10h)",
+      "formateur": "Pierre Lacombe",
+      "description": "Connexion d'APIs, webhooks et automatisation de pipelines de données.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "modules": [
+        "Module 4 : Industrialisation"
+      ],
+      "competences": [
+        "C6"
+      ],
+      "competenceDetails": [
+        "C6 (Intégration & Automatisation)"
+      ]
+    },
+    {
+      "id": "ses-sept-7",
+      "number": 7,
+      "title": "Agents IA & Systèmes Multi-Agents",
+      "date": "Vendredi 23 Octobre 2026 (08h - 10h)",
+      "formateur": "Pierre Lacombe",
+      "description": "Conception d'agents autonomes pour la collecte et le traitement d'informations.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "modules": [
+        "Module 2 : Modélisation"
+      ],
+      "competences": [
+        "C5"
+      ],
+      "competenceDetails": [
+        "C5 (Agents IA & Orchestration)"
+      ]
+    },
+    {
+      "id": "ses-sept-8",
+      "number": 8,
+      "title": "Éthique, RGPD & IA Act Européen",
+      "date": "Vendredi 30 Octobre 2026 (08h - 10h)",
+      "formateur": "Pierre Lacombe",
+      "description": "Cadre légal, gestion des risques éthiques, anonymisation et conformité Qualiopi.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "modules": [
+        "Module 3 : Éthique"
+      ],
+      "competences": [
+        "C2"
+      ],
+      "competenceDetails": [
+        "C2 (Éthique & Réglementation)"
+      ]
+    },
+    {
+      "id": "ses-sept-9",
+      "number": 9,
+      "title": "Contexte IA, Grounding & Gestion des Biais",
+      "date": "Vendredi 06 Novembre 2026 (08h - 10h)",
+      "formateur": "Pierre Lacombe",
+      "description": "Injection de contexte strict pour une précision maximale et réduction des coûts de tokens.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "modules": [
+        "Module 2",
+        "Module 3"
+      ],
+      "competences": [
+        "C5",
+        "C8"
+      ],
+      "competenceDetails": [
+        "C5 (Grounding)",
+        "C8 (Précision/KPIs)"
+      ]
+    },
+    {
+      "id": "ses-sept-10",
+      "number": 10,
+      "title": "Architecture Applicative & Déploiement Cloud",
+      "date": "Vendredi 13 Novembre 2026 (08h - 10h)",
+      "formateur": "Pierre Lacombe",
+      "description": "Conception de l'architecture technique, serveurs, conteneurs et intégration frontend.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "modules": [
+        "Module 4 : Industrialisation"
+      ],
+      "competences": [
+        "C7"
+      ],
+      "competenceDetails": [
+        "C7 (Architecture cible)"
+      ]
+    },
+    {
+      "id": "ses-sept-11",
+      "number": 11,
+      "title": "Mesure de la Performance & Calcul du ROI",
+      "date": "Vendredi 20 Novembre 2026 (08h - 10h)",
+      "formateur": "Pierre Lacombe",
+      "description": "Définition des indicateurs clés de performance et évaluation des gains métiers.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "modules": [
+        "Module 3 : Performance"
+      ],
+      "competences": [
+        "C8"
+      ],
+      "competenceDetails": [
+        "C8 (Mesure Performance & ROI)"
+      ]
+    },
+    {
+      "id": "ses-sept-12",
+      "number": 12,
+      "title": "Débogage Live & Finalisation des Prototypes",
+      "date": "Vendredi 27 Novembre 2026 (08h - 10h)",
+      "formateur": "Pierre Lacombe",
+      "description": "Atelier pratique de correction de code, interfaces Stitch/Figma et finalisation.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "modules": [
+        "Module 4 : Industrialisation"
+      ],
+      "competences": [
+        "C6",
+        "C9"
+      ],
+      "competenceDetails": [
+        "C6 (Intégration)",
+        "C9 (MLOps)"
+      ]
+    },
+    {
+      "id": "ses-sept-13",
+      "number": 13,
+      "title": "Répétition Générale & Préparation Soutenance Orale",
+      "date": "Vendredi 04 Décembre 2026 (08h - 10h)",
+      "formateur": "Pierre Lacombe / Alain Valero",
+      "description": "Passage d'examen blanc individuel, entraînement au pitch de 20 min et validation des 9 compétences.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "modules": [
+        "Module 4 : Déploiement"
+      ],
+      "competences": [
+        "C9",
+        "Oral C1-C9"
+      ],
+      "competenceDetails": [
+        "C9 (Maintenance)",
+        "Grand Oral Certification (C1-C9)"
+      ]
+    }
+  ]
+}

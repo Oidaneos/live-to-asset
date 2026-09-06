@@ -16,8 +16,10 @@ const MIME_TYPES = {
   '.mp4': 'video/mp4',
   '.m4a': 'audio/mp4',
   '.vtt': 'text/vtt; charset=utf-8',
+  '.pdf': 'application/pdf',
   '.docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-  '.md': 'text/markdown; charset=utf-8'
+  '.md': 'text/markdown; charset=utf-8',
+  '.ics': 'text/calendar; charset=utf-8'
 };
 
 const server = http.createServer((req, res) => {
@@ -28,7 +30,7 @@ const server = http.createServer((req, res) => {
     reqUrl = req.url.split('?')[0];
   }
   if (reqUrl === '/' || reqUrl === '') {
-    reqUrl = fs.existsSync(path.join(BASE_DIR, 'index.html')) ? '/index.html' : '/prototype.html';
+    reqUrl = '/index.html';
   }
 
   let filePath = path.join(BASE_DIR, reqUrl);

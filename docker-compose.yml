@@ -14,6 +14,7 @@ services:
       - NODE_ENV=production
     volumes:
       - ./Sessions_Data:/app/Sessions_Data:ro
+      - ./Sessions_Data_Septembre_2026:/app/Sessions_Data_Septembre_2026:ro
       - ./Guides_Pedagogiques:/app/Guides_Pedagogiques:ro
     labels:
       - "traefik.enable=true"
