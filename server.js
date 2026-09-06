@@ -33,6 +33,38 @@ const server = http.createServer((req, res) => {
     reqUrl = '/index.html';
   }
 
+  if (reqUrl === '/debug' || reqUrl === '/api/debug') {
+    function listFilesRecursively(dir, depth = 0, maxDepth = 4) {
+      if (depth > maxDepth || !fs.existsSync(dir)) return [];
+      let results = [];
+      try {
+        const list = fs.readdirSync(dir);
+        for (const item of list) {
+          const full = path.join(dir, item);
+          const rel = path.relative(BASE_DIR, full);
+          try {
+            const stat = fs.statSync(full);
+            if (stat.isDirectory()) {
+              results.push({ type: 'dir', path: rel, children: listFilesRecursively(full, depth + 1, maxDepth) });
+            } else {
+              results.push({ type: 'file', path: rel, size: (stat.size / 1024 / 1024).toFixed(2) + ' MB' });
+            }
+          } catch(e) {
+            results.push({ type: 'error', path: rel, error: e.message });
+          }
+        }
+      } catch(e) {
+        results.push({ type: 'error', path: dir, error: e.message });
+      }
+      return results;
+    }
+
+    const tree = listFilesRecursively(BASE_DIR);
+    res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+    res.end(JSON.stringify({ baseDir: BASE_DIR, tree }, null, 2));
+    return;
+  }
+
   let targetPath = path.join(BASE_DIR, reqUrl);
 
   // Security check to avoid directory traversal outside workspace
