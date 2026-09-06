@@ -43,13 +43,16 @@ const server = http.createServer((req, res) => {
   }
 
   // Fallback candidates for video and session files
+  const cleanReq = reqUrl.replace(/^\/Sessions_Data_Septembre_2026\//, '').replace(/^\/Sessions_Data\//, '').replace(/^\//, '');
   const candidates = [
     targetPath,
     path.join(BASE_DIR, reqUrl.normalize('NFC')),
     path.join(BASE_DIR, reqUrl.normalize('NFD')),
-    path.join(BASE_DIR, 'Sessions_Data', reqUrl.replace(/^\/Sessions_Data_Septembre_2026\//, '')),
-    path.join(BASE_DIR, 'Sessions_Data', 'Sessions_Data_Septembre_2026', reqUrl.replace(/^\/Sessions_Data_Septembre_2026\//, '')),
-    path.join(BASE_DIR, 'Sessions_Data', reqUrl.replace(/^\//, ''))
+    path.join(BASE_DIR, 'Sessions_Data', cleanReq),
+    path.join(BASE_DIR, 'Sessions_Data', 'Sessions_Data_Septembre_2026', cleanReq),
+    path.join(BASE_DIR, 'Sessions_Data', 'Sessions_Data', cleanReq),
+    path.join(BASE_DIR, 'Sessions_Data', 'Sessions_Data', 'Sessions_Data_Septembre_2026', cleanReq),
+    path.join(BASE_DIR, 'Sessions_Data_Septembre_2026', cleanReq)
   ];
 
   let filePath = null;
