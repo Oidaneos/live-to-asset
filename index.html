@@ -112,21 +112,20 @@
 
       <!-- Badge Promo & Déconnexion Mobile -->
             <!-- Sélecteur de Promotion -->
-      <div class="flex items-center gap-1.5 bg-oidaneos-lav50 px-2.5 py-1 rounded-2xl border border-oidaneos-line">
+      <div id="promoSelectorContainer" class="flex items-center gap-1.5 bg-oidaneos-lav50 px-2.5 py-1 rounded-2xl border border-oidaneos-line">
         <i data-lucide="graduation-cap" class="w-4 h-4 text-oidaneos-pink shrink-0"></i>
         <select id="promoSelector" onchange="onPromotionChange(this.value)" class="bg-transparent text-oidaneos-ink text-xs font-bold border-none focus:outline-none cursor-pointer">
-          <option value="juin-2026" selected>🎓 Promo Juin 2026 (Jury 14 Séances)</option>
-          <option value="septembre-2026">🎓 Promo Septembre 2026 (En cours)</option>
+          <option value="juin-2026" selected>🎓 Promo Juin 2026 (Archive 14 Séances)</option>
         </select>
       </div>
 
       <!-- Espace Utilisateur Connecté (Privé ou Formateur) -->
       <div id="userHeaderBadgeContainer" class="hidden flex items-center gap-2 bg-white px-3 py-1.5 rounded-2xl border border-oidaneos-line shadow-sm">
         <div id="headerUserAvatar" class="w-6 h-6 rounded-full bg-grad-oidaneos text-white text-[10px] font-black flex items-center justify-center shrink-0">
-          ML
+          --
         </div>
         <div class="flex items-center gap-1.5">
-          <span id="headerUserName" class="text-xs font-extrabold text-oidaneos-ink max-w-[140px] sm:max-w-[200px] truncate">Murielle LAPILUS</span>
+          <span id="headerUserName" class="text-xs font-extrabold text-oidaneos-ink max-w-[140px] sm:max-w-[200px] truncate">Espace Apprenant</span>
           <span id="headerUserRoleBadge" class="hidden px-2 py-0.5 rounded-full bg-oidaneos-purple text-white text-[9px] font-extrabold uppercase">Formateur</span>
         </div>
 
@@ -1852,11 +1851,23 @@
         avatar: "AV",
         color: "from-purple-600 to-pink-600"
       },
-      "pierre@oidaneos.com": {
-        email: "pierre@oidaneos.com",
-        name: "Pierre",
+      "pie.lacombe@gmail.com": {
+        email: "pie.lacombe@gmail.com",
+        name: "Pierre LACOMBE",
         firstname: "Pierre",
-        lastname: "Formateur",
+        lastname: "LACOMBE",
+        phone: "+590 690 64 93 18",
+        role: "Expert IA & Formateur Technique",
+        company: "OIDANEOS",
+        isTrainer: true,
+        avatar: "PL",
+        color: "from-blue-700 to-indigo-700"
+      },
+      "pierre@oidaneos.com": {
+        email: "pie.lacombe@gmail.com",
+        name: "Pierre LACOMBE",
+        firstname: "Pierre",
+        lastname: "LACOMBE",
         phone: "+590 690 64 93 18",
         role: "Expert IA & Formateur Technique",
         company: "OIDANEOS",
@@ -2080,8 +2091,8 @@
       }
     };
 
-    let loggedInUserEmail = 'alain@oidaneos.com';
-    let currentInspectedLearnerEmail = 'ackaraib@orange.fr';
+    let loggedInUserEmail = null;
+    let currentInspectedLearnerEmail = null;
 
     // =========================================================================
     //   INITIALISATION DE L'APPLICATION
@@ -2106,15 +2117,16 @@
         console.log("♻️ Reboot effectué : Toutes les fiches apprenants sont réinitialisées à zéro.");
       }
 
-        // Initialisation par défaut : Promotion Juin 2026 (Fixe et Conforme)
+        // Initialisation par défaut : Promotion Septembre 2026 (En cours)
         const urlParams = new URLSearchParams(window.location.search);
         const promoParam = urlParams.get('promo');
         const emailParam = urlParams.get('email');
+        const savedPromo = localStorage.getItem('oidaneos_auth_promo');
 
-        if (promoParam === 'septembre' || emailParam) {
-          onPromotionChange('septembre-2026');
-        } else {
+        if (promoParam === 'juin' || promoParam === 'juin-2026' || savedPromo === 'juin-2026') {
           onPromotionChange('juin-2026');
+        } else {
+          onPromotionChange('septembre-2026');
         }
       } catch (err) {
         console.error("Erreur de chargement des catalogues JSON:", err);
@@ -2124,11 +2136,44 @@
       if (window.lucide) lucide.createIcons();
     });
 
+    function updatePromoSelectorUI() {
+      const selector = document.getElementById('promoSelector');
+      if (!selector) return;
+
+      if (loggedInUserEmail) {
+        selector.innerHTML = `
+          <option value="septembre-2026" ${currentPromo === 'septembre-2026' ? 'selected' : ''}>🎓 Promo Septembre 2026 (En cours)</option>
+          <option value="juin-2026" ${currentPromo === 'juin-2026' ? 'selected' : ''}>🎓 Promo Juin 2026 (Archive 14 Séances)</option>
+        `;
+        selector.disabled = false;
+      } else {
+        selector.innerHTML = `
+          <option value="juin-2026" selected>🎓 Promo Juin 2026 (Archive 14 Séances)</option>
+        `;
+        selector.disabled = true;
+      }
+    }
+
     // --- CHANGEMENT DE PROMOTION (SÉPARATION STRICTE JUIN 2026 vs SEPTEMBRE 2026) ---
     function onPromotionChange(promoId) {
+      if (promoId === 'septembre-2026' && !loggedInUserEmail) {
+        // Utilisateur connecté par code uniquement (ex: IA2026) -> Bloquer Septembre et demander email
+        const modal = document.getElementById('accessGateModal');
+        if (modal) {
+          modal.classList.remove('hidden');
+          const input = document.getElementById('accessGateInput');
+          if (input) {
+            input.value = '';
+            input.focus();
+          }
+        }
+        updatePromoSelectorUI();
+        return;
+      }
+
       currentPromo = promoId;
-      const selector = document.getElementById('promoSelector');
-      if (selector) selector.value = promoId;
+      localStorage.setItem('oidaneos_auth_promo', promoId);
+      updatePromoSelectorUI();
 
       const zoomBanner = document.getElementById('zoomBannerContainer');
       const btnEval = document.getElementById('btnNavEvaluations');
@@ -2146,7 +2191,10 @@
 
         // 2. AFFICHER LES BOUTONS & BADGES SPÉCIFIQUES SEPTEMBRE
         if (btnEval) btnEval.classList.remove('hidden');
-        if (userBadge) userBadge.classList.remove('hidden');
+        if (userBadge) {
+          if (loggedInUserEmail) userBadge.classList.remove('hidden');
+          else userBadge.classList.add('hidden');
+        }
         if (btnLogout) btnLogout.classList.remove('hidden');
 
         // 3. TEXTES HERO BANNER POUR SEPTEMBRE
@@ -2161,10 +2209,16 @@
         // 1. MASQUER LE DIRECT ZOOM (Juin est terminé)
         if (zoomBanner) zoomBanner.classList.add('hidden');
 
-        // 2. MASQUER LES ÉLÉMENTS SEPTEMBRE EN VUE JUIN
-        if (btnEval) btnEval.classList.add('hidden');
-        if (userBadge) userBadge.classList.add('hidden');
-        if (btnLogout) btnLogout.classList.add('hidden');
+        // 2. ÉLÉMENTS SPÉCIFIQUES : L'apprenant connecté conserve son accès complet
+        if (btnEval) {
+          if (loggedInUserEmail) btnEval.classList.remove('hidden');
+          else btnEval.classList.add('hidden');
+        }
+        if (userBadge) {
+          if (loggedInUserEmail) userBadge.classList.remove('hidden');
+          else userBadge.classList.add('hidden');
+        }
+        if (btnLogout) btnLogout.classList.remove('hidden');
 
         // 3. TEXTES HERO BANNER POUR JUIN
         if (heroTag) heroTag.innerHTML = '<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Promotion IA IT Juin 2026 • 14 Séances & Guides Étalons Approfondis';
@@ -2824,7 +2878,130 @@
       localStorage.setItem('oidaneos_learner_' + email, JSON.stringify(data));
     }
 
-    
+    function checkMagicLinkAndAuth() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const emailParam = urlParams.get('email');
+      const promoParam = urlParams.get('promo');
+      const codeParam = urlParams.get('code');
+      const resetParam = urlParams.get('reset') || urlParams.get('logout') || urlParams.get('deconnexion');
+      const modal = document.getElementById('accessGateModal');
+
+      // 0. Forced Reset / Logout via URL (?reset=1 or ?logout=1)
+      if (resetParam) {
+        localStorage.clear();
+        sessionStorage.clear();
+        loggedInUserEmail = null;
+        currentInspectedLearnerEmail = null;
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState({}, document.title, window.location.pathname);
+        }
+        const userBadge = document.getElementById('userHeaderBadgeContainer');
+        if (userBadge) userBadge.classList.add('hidden');
+        if (modal) {
+          modal.classList.remove('hidden');
+          const input = document.getElementById('accessGateInput');
+          const errBox = document.getElementById('accessGateErrorMsg');
+          if (errBox) errBox.classList.add('hidden');
+          if (input) {
+            input.value = '';
+            setTimeout(() => input.focus(), 150);
+          }
+        }
+        return;
+      }
+
+      // 1. Direct Magic Link via Email query parameter (?email=...)
+      if (emailParam) {
+        const rawEmail = emailParam.trim().toLowerCase();
+        let matchedUser = ALL_USERS_DATABASE[rawEmail];
+        if (!matchedUser) {
+          if (rawEmail === 'alain' || rawEmail === 'alain@oidaneos' || rawEmail === 'alain@oidaneos.com') matchedUser = ALL_USERS_DATABASE['alain@oidaneos.com'];
+          else if (rawEmail === 'pierre' || rawEmail === 'lacombe' || rawEmail === 'pierre@oidaneos.com' || rawEmail === 'pie.lacombe@gmail.com' || rawEmail === 'pie.lacombe') matchedUser = ALL_USERS_DATABASE['pie.lacombe@gmail.com'];
+          else if (rawEmail === 'milene' || rawEmail === 'milenepaul' || rawEmail === 'milene@oidaneos.com' || rawEmail === 'hello@milenepaul.com') matchedUser = ALL_USERS_DATABASE['hello@milenepaul.com'];
+          else if (rawEmail === 'murielle' || rawEmail === 'ackaraib') matchedUser = ALL_USERS_DATABASE['ackaraib@orange.fr'];
+          else if (rawEmail === 'mailys') matchedUser = ALL_USERS_DATABASE['mamalylys2323@gmail.com'];
+          else if (rawEmail === 'gwenaelle') matchedUser = ALL_USERS_DATABASE['gwenaelle.davrain1@gmail.com'];
+          else if (rawEmail === 'ruben' || rawEmail === 'ishanoa') matchedUser = ALL_USERS_DATABASE['babzwayne@gmail.com'];
+        }
+
+        if (matchedUser) {
+          localStorage.setItem('oidaneos_auth_promo', 'septembre-2026');
+          performLogin(matchedUser.email);
+          onPromotionChange('septembre-2026');
+          if (modal) modal.classList.add('hidden');
+          return;
+        }
+      }
+
+      // 2. Direct link for Juin 2026 (?promo=juin or ?code=juin...)
+      const juneCodes = ['ia2026', 'ia-2026', 'ia_2026', 'ia 2026', 'ia', 'juin', 'juin2026', 'juin-2026', 'oidaneos', 'oidaneos2026', 'live2026', 'atlas2026', 'elearning2026', 'promo-juin'];
+      if ((promoParam && promoParam.startsWith('juin')) || (codeParam && (juneCodes.includes(codeParam.toLowerCase().trim()) || codeParam.toLowerCase().replace(/[-_ ]/g, '') === 'ia2026'))) {
+        localStorage.setItem('oidaneos_auth_promo', 'juin-2026');
+        localStorage.removeItem('oidaneos_auth_email');
+        onPromotionChange('juin-2026');
+        if (modal) modal.classList.add('hidden');
+        return;
+      }
+
+      // 3. Saved localStorage session check
+      const savedEmail = localStorage.getItem('oidaneos_auth_email');
+      const savedPromo = localStorage.getItem('oidaneos_auth_promo');
+
+      if (savedEmail && ALL_USERS_DATABASE[savedEmail]) {
+        performLogin(savedEmail);
+        onPromotionChange(savedPromo === 'juin-2026' ? 'juin-2026' : 'septembre-2026');
+        if (modal) modal.classList.add('hidden');
+        return;
+      }
+
+      if (savedPromo === 'juin-2026') {
+        onPromotionChange('juin-2026');
+        if (modal) modal.classList.add('hidden');
+        return;
+      }
+
+      // 4. Default: User is NOT authenticated -> show access gate modal
+      if (modal) {
+        modal.classList.remove('hidden');
+        const input = document.getElementById('accessGateInput');
+        if (input) {
+          input.value = '';
+          setTimeout(() => input.focus(), 200);
+        }
+      }
+    }
+
+    function handleLogout() {
+      // Clear all stored auth tokens & user session
+      localStorage.clear();
+      sessionStorage.clear();
+      loggedInUserEmail = null;
+      currentInspectedLearnerEmail = null;
+
+      // Clean query string from browser URL without refresh
+      if (window.history && window.history.replaceState) {
+        const cleanUrl = window.location.origin + window.location.pathname;
+        window.history.replaceState({}, document.title, cleanUrl);
+      }
+
+      // Reset Header UI
+      const userBadge = document.getElementById('userHeaderBadgeContainer');
+      if (userBadge) userBadge.classList.add('hidden');
+
+      // Display access gate modal
+      const modal = document.getElementById('accessGateModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        const input = document.getElementById('accessGateInput');
+        const errBox = document.getElementById('accessGateErrorMsg');
+        if (errBox) errBox.classList.add('hidden');
+        if (input) {
+          input.value = '';
+          input.focus();
+        }
+      }
+    }
+
     function handleAccessFormSubmit(e) {
       if (e) e.preventDefault();
       const input = document.getElementById('accessGateInput');
@@ -2842,9 +3019,10 @@
       }
 
       // Codes valides pour la promotion Juin 2026
-      const juneCodes = ['juin', 'juin2026', 'juin-2026', 'oidaneos', 'oidaneos2026', 'live2026', 'atlas2026', 'elearning2026', 'promo-juin'];
+      const juneCodes = ['ia2026', 'ia-2026', 'ia_2026', 'ia 2026', 'ia', 'juin', 'juin2026', 'juin-2026', 'oidaneos', 'oidaneos2026', 'live2026', 'atlas2026', 'elearning2026', 'promo-juin'];
+      const normalizedInput = rawVal.replace(/[-_ ]/g, '');
 
-      if (juneCodes.includes(rawVal)) {
+      if (juneCodes.includes(rawVal) || normalizedInput === 'ia2026' || normalizedInput === 'juin2026') {
         if (errBox) errBox.classList.add('hidden');
         localStorage.setItem('oidaneos_auth_promo', 'juin-2026');
         localStorage.removeItem('oidaneos_auth_email');
@@ -2857,9 +3035,9 @@
       // Vérification Email / Alias pour la promotion Septembre 2026
       let matchedUser = ALL_USERS_DATABASE[rawVal];
       if (!matchedUser) {
-        if (rawVal === 'alain' || rawVal === 'alain@oidaneos') matchedUser = ALL_USERS_DATABASE['alain@oidaneos.com'];
-        else if (rawVal === 'pierre' || rawVal === 'lacombe') matchedUser = ALL_USERS_DATABASE['pierre@oidaneos.com'];
-        else if (rawVal === 'milene' || rawVal === 'milenepaul') matchedUser = ALL_USERS_DATABASE['hello@milenepaul.com'];
+        if (rawVal === 'alain' || rawVal === 'alain@oidaneos' || rawVal === 'alain@oidaneos.com') matchedUser = ALL_USERS_DATABASE['alain@oidaneos.com'];
+        else if (rawVal === 'pierre' || rawVal === 'lacombe' || rawVal === 'pierre@oidaneos.com' || rawVal === 'pie.lacombe@gmail.com' || rawVal === 'pie.lacombe') matchedUser = ALL_USERS_DATABASE['pie.lacombe@gmail.com'];
+        else if (rawVal === 'milene' || rawVal === 'milenepaul' || rawVal === 'milene@oidaneos.com' || rawVal === 'hello@milenepaul.com') matchedUser = ALL_USERS_DATABASE['hello@milenepaul.com'];
         else if (rawVal === 'murielle' || rawVal === 'ackaraib') matchedUser = ALL_USERS_DATABASE['ackaraib@orange.fr'];
         else if (rawVal === 'mailys') matchedUser = ALL_USERS_DATABASE['mamalylys2323@gmail.com'];
         else if (rawVal === 'gwenaelle') matchedUser = ALL_USERS_DATABASE['gwenaelle.davrain1@gmail.com'];
@@ -2869,8 +3047,8 @@
       if (matchedUser) {
         if (errBox) errBox.classList.add('hidden');
         localStorage.setItem('oidaneos_auth_promo', 'septembre-2026');
-        onPromotionChange('septembre-2026');
         performLogin(matchedUser.email);
+        onPromotionChange('septembre-2026');
         return;
       }
 
@@ -2888,6 +3066,9 @@
 
       const modal = document.getElementById('accessGateModal');
       if (modal) modal.classList.add('hidden');
+
+      const userBadge = document.getElementById('userHeaderBadgeContainer');
+      if (userBadge) userBadge.classList.remove('hidden');
 
       updateHeaderUserUI(user);
 
@@ -4110,7 +4291,7 @@ Diplôme : OK`;
 
 
   <!-- ================= MODAL ACCÈS SÉCURISÉ AUX COURS (CODE JUIN / EMAIL SEPTEMBRE) ================= -->
-  <div id="accessGateModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in">
+  <div id="accessGateModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in">
     <div class="bg-white w-full max-w-md rounded-3xl border border-oidaneos-line shadow-2xl overflow-hidden p-6 sm:p-8 space-y-6 text-center">
       
       <!-- Logo Icon Badge -->
