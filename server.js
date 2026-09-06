@@ -33,21 +33,46 @@ const server = http.createServer((req, res) => {
     reqUrl = '/index.html';
   }
 
-  let filePath = path.join(BASE_DIR, reqUrl);
+  let targetPath = path.join(BASE_DIR, reqUrl);
 
   // Security check to avoid directory traversal outside workspace
-  if (!filePath.startsWith(BASE_DIR)) {
+  if (!targetPath.startsWith(BASE_DIR)) {
     res.writeHead(403);
     res.end('Forbidden');
     return;
   }
 
-  fs.stat(filePath, (err, stats) => {
-    if (err || !stats.isFile()) {
-      res.writeHead(404);
-      res.end('Fichier non trouvé');
-      return;
-    }
+  // Fallback candidates for video and session files
+  const candidates = [
+    targetPath,
+    path.join(BASE_DIR, reqUrl.normalize('NFC')),
+    path.join(BASE_DIR, reqUrl.normalize('NFD')),
+    path.join(BASE_DIR, 'Sessions_Data', reqUrl.replace(/^\/Sessions_Data_Septembre_2026\//, '')),
+    path.join(BASE_DIR, 'Sessions_Data', 'Sessions_Data_Septembre_2026', reqUrl.replace(/^\/Sessions_Data_Septembre_2026\//, '')),
+    path.join(BASE_DIR, 'Sessions_Data', reqUrl.replace(/^\//, ''))
+  ];
+
+  let filePath = null;
+  let stats = null;
+
+  for (const cand of candidates) {
+    try {
+      if (fs.existsSync(cand)) {
+        const s = fs.statSync(cand);
+        if (s.isFile()) {
+          filePath = cand;
+          stats = s;
+          break;
+        }
+      }
+    } catch(e) {}
+  }
+
+  if (!filePath || !stats) {
+    res.writeHead(404);
+    res.end('Fichier non trouvé');
+    return;
+  }
 
     const ext = path.extname(filePath).toLowerCase();
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
@@ -84,7 +109,6 @@ const server = http.createServer((req, res) => {
       res.writeHead(200, { 'Content-Type': contentType });
       fs.createReadStream(filePath).pipe(res);
     }
-  });
 });
 
 server.listen(PORT, () => {
