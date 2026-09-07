@@ -59,90 +59,107 @@
 
   <style>
     /* Smooth touch scrolling & Mobile Polish */
-    html { -webkit-tap-highlight-color: transparent; scroll-behavior: smooth; }
+    html, body { 
+      overflow-x: hidden; 
+      width: 100%; 
+      max-width: 100vw; 
+      -webkit-tap-highlight-color: transparent; 
+      scroll-behavior: smooth; 
+    }
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     @media (max-width: 640px) {
       .touch-target { min-height: 44px; }
-      .mobile-p-tight { padding: 1rem !important; }
+      .mobile-p-tight { padding: 0.875rem !important; }
     }
   </style>
 
 </head>
 <body class="h-full flex flex-col antialiased selection:bg-oidaneos-pink selection:text-white custom-scroll bg-[#FBF9FD]">
 
-      <!-- ================= TOPBAR BRANDÉE OIDANEOS (MOBILE-OPTIMIZED) ================= -->
-  <header class="bg-white sticky top-0 z-40 border-b border-oidaneos-line px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-between shadow-sm">
-    <div class="flex items-center gap-2 sm:gap-4">
-      <a href="#" onclick="showHomeView(); return false;" class="flex items-center gap-2.5 group">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-grad-oidaneos flex items-center justify-center font-black text-white shadow-btn text-base sm:text-lg group-hover:scale-105 transition shrink-0">
+  <!-- ================= TOPBAR BRANDÉE OIDANEOS (TIER 1 : LOGO & COMPTE) ================= -->
+  <header class="bg-white sticky top-0 z-40 border-b border-oidaneos-line shadow-xs">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between gap-3">
+      
+      <!-- Brand Logo -->
+      <a href="#" onclick="showHomeView(); return false;" class="flex items-center gap-2 sm:gap-3 group shrink-0 min-w-0">
+        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-grad-oidaneos flex items-center justify-center font-black text-white shadow-btn text-sm sm:text-lg group-hover:scale-105 transition shrink-0">
           O
         </div>
-        <div>
+        <div class="min-w-0">
           <div class="flex items-center gap-1.5">
-            <span class="font-extrabold tracking-tight text-oidaneos-ink text-base sm:text-xl">OIDANEOS</span>
-            <span class="px-1.5 sm:px-2 py-0.5 text-[9px] sm:text-[10px] font-bold uppercase rounded-full bg-oidaneos-lav100 text-oidaneos-purple border border-oidaneos-line">
+            <span class="font-extrabold tracking-tight text-oidaneos-ink text-sm sm:text-lg truncate">OIDANEOS</span>
+            <span class="px-1.5 py-0.5 text-[9px] font-extrabold uppercase rounded-full bg-oidaneos-lav100 text-oidaneos-purple border border-oidaneos-line shrink-0">
               Live
             </span>
           </div>
-          <p class="text-[10px] sm:text-xs text-oidaneos-muted font-medium truncate max-w-[140px] sm:max-w-none">E-Learning & Guides</p>
+          <p class="text-[10px] text-oidaneos-muted font-medium truncate hidden sm:block">E-Learning & Guides</p>
         </div>
       </a>
+
+      <!-- Actions Droite : Utilisateur & Quitter -->
+      <div class="flex items-center gap-2 shrink-0">
+        
+        <!-- Espace Utilisateur Connecté -->
+        <div id="userHeaderBadgeContainer" class="hidden flex items-center gap-1.5 sm:gap-2 bg-oidaneos-lav50 px-2 sm:px-3 py-1 rounded-xl border border-oidaneos-line">
+          <div id="headerUserAvatar" class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-grad-oidaneos text-white text-[9px] sm:text-[10px] font-black flex items-center justify-center shrink-0">
+            --
+          </div>
+          <div class="flex items-center gap-1 min-w-0">
+            <span id="headerUserName" class="text-[11px] sm:text-xs font-extrabold text-oidaneos-ink max-w-[90px] sm:max-w-[160px] truncate">Espace Apprenant</span>
+            <span id="headerUserRoleBadge" class="hidden px-1.5 py-0.5 rounded-full bg-oidaneos-purple text-white text-[8px] font-extrabold uppercase shrink-0">Formateur</span>
+          </div>
+
+          <!-- Sélecteur Formateur (Superviseur Alain, Pierre, Milène) -->
+          <select id="trainerLearnerSelector" onchange="trainerSelectLearner(this.value)" class="hidden bg-white text-oidaneos-purple text-[10px] sm:text-xs font-extrabold border border-oidaneos-line rounded-lg px-1.5 py-0.5 focus:outline-none cursor-pointer max-w-[110px] sm:max-w-none truncate">
+            <option value="ackaraib@orange.fr">Murielle (ACKARAIB)</option>
+            <option value="mamalylys2323@gmail.com">Mailys (ACKARAIB)</option>
+            <option value="gwenaelle.davrain1@gmail.com">Gwenaelle (ACKARAIB)</option>
+            <option value="babzwayne@gmail.com">Ruben (Ishanoa)</option>
+          </select>
+        </div>
+
+        <!-- Bouton Déconnexion / Quitter -->
+        <button id="btnLogoutBtn" onclick="handleLogout()" title="Se déconnecter / Changer d'email" class="p-1.5 sm:px-2.5 sm:py-1.5 rounded-xl bg-oidaneos-lav50 hover:bg-pink-50 hover:text-red-600 border border-oidaneos-line text-oidaneos-muted transition text-xs font-semibold flex items-center gap-1.5 cursor-pointer shrink-0">
+          <i data-lucide="log-out" class="w-3.5 h-3.5 text-oidaneos-pink shrink-0"></i>
+          <span class="hidden sm:inline">Quitter</span>
+        </button>
+
+      </div>
     </div>
 
-    <!-- Actions Droite -->
-    <div class="flex items-center gap-2 sm:gap-3">
-      <button onclick="showHomeView()" id="btnNavHome" class="inline-flex items-center gap-1 px-2.5 sm:px-3.5 py-1.5 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple text-xs font-bold transition">
-        <i data-lucide="layout-grid" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
-        <span class="hidden sm:inline">Toutes les sessions (14)</span>
-        <span class="sm:hidden">14 Sessions</span>
-      </button>
+    <!-- ================= SUB-NAV BAR (TIER 2 : NAVIGATION & SÉLECTEUR DE PROMOTION) ================= -->
+    <div class="bg-gray-50/90 border-t border-oidaneos-line/60">
+      <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-1.5 flex items-center justify-between gap-2 overflow-x-auto no-scrollbar">
+        
+        <!-- Onglets Navigation -->
+        <nav class="flex items-center gap-1 sm:gap-2 shrink-0">
+          <button onclick="showHomeView()" id="btnNavHome" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple text-xs font-bold transition shrink-0">
+            <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
+            <span id="btnNavHomeLabel">Toutes les sessions (13)</span>
+          </button>
 
-      <button onclick="showProgramView()" id="btnNavProgram" class="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple text-xs font-bold border border-oidaneos-line transition">
-        <i data-lucide="target" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-oidaneos-pink"></i>
-        <span class="hidden sm:inline">Programme & Compétences</span>
-        <span class="sm:hidden">Programme</span>
-      </button>
+          <button onclick="showProgramView()" id="btnNavProgram" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-oidaneos-lav100 text-oidaneos-body hover:text-oidaneos-purple text-xs font-bold border border-oidaneos-line transition shrink-0">
+            <i data-lucide="target" class="w-3.5 h-3.5 text-oidaneos-pink"></i>
+            <span>Programme & Compétences</span>
+          </button>
 
-      <button onclick="showEvaluationsView()" id="btnNavEvaluations" class="hidden inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-xl bg-grad-oidaneos text-white text-xs font-extrabold shadow-btn hover:opacity-95 transition">
-        <i data-lucide="clipboard-check" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-pink-200"></i>
-        <span class="hidden sm:inline">Évaluations & Qualité</span>
-        <span class="sm:hidden">Qualité</span>
-      </button>
+          <button onclick="showEvaluationsView()" id="btnNavEvaluations" class="hidden inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-grad-oidaneos text-white text-xs font-extrabold shadow-btn hover:opacity-95 transition shrink-0">
+            <i data-lucide="clipboard-check" class="w-3.5 h-3.5 text-pink-200"></i>
+            <span>Évaluations & Qualité</span>
+          </button>
+        </nav>
 
-      <!-- Badge Promo & Déconnexion Mobile -->
-            <!-- Sélecteur de Promotion -->
-      <div id="promoSelectorContainer" class="flex items-center gap-1.5 bg-oidaneos-lav50 px-2.5 py-1 rounded-2xl border border-oidaneos-line">
-        <i data-lucide="graduation-cap" class="w-4 h-4 text-oidaneos-pink shrink-0"></i>
-        <select id="promoSelector" onchange="onPromotionChange(this.value)" class="bg-transparent text-oidaneos-ink text-xs font-bold border-none focus:outline-none cursor-pointer">
-          <option value="juin-2026" selected>🎓 Promo Juin 2026 (Archive 14 Séances)</option>
-        </select>
-      </div>
-
-      <!-- Espace Utilisateur Connecté (Privé ou Formateur) -->
-      <div id="userHeaderBadgeContainer" class="hidden flex items-center gap-2 bg-white px-3 py-1.5 rounded-2xl border border-oidaneos-line shadow-sm">
-        <div id="headerUserAvatar" class="w-6 h-6 rounded-full bg-grad-oidaneos text-white text-[10px] font-black flex items-center justify-center shrink-0">
-          --
-        </div>
-        <div class="flex items-center gap-1.5">
-          <span id="headerUserName" class="text-xs font-extrabold text-oidaneos-ink max-w-[140px] sm:max-w-[200px] truncate">Espace Apprenant</span>
-          <span id="headerUserRoleBadge" class="hidden px-2 py-0.5 rounded-full bg-oidaneos-purple text-white text-[9px] font-extrabold uppercase">Formateur</span>
+        <!-- Sélecteur de Promotion Compact -->
+        <div id="promoSelectorContainer" class="flex items-center gap-1.5 bg-white px-2.5 py-1 rounded-xl border border-oidaneos-line shrink-0 shadow-xs">
+          <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-oidaneos-pink shrink-0"></i>
+          <select id="promoSelector" onchange="onPromotionChange(this.value)" class="bg-transparent text-oidaneos-ink text-[11px] sm:text-xs font-bold border-none focus:outline-none cursor-pointer">
+            <option value="septembre-2026" selected>🎓 Promo Septembre 2026 (En cours)</option>
+            <option value="juin-2026">🎓 Promo Juin 2026 (Archive 14 Séances)</option>
+          </select>
         </div>
 
-        <!-- Sélecteur Formateur (Visible UNIQUEMENT pour Alain, Pierre et Milène) -->
-        <select id="trainerLearnerSelector" onchange="trainerSelectLearner(this.value)" class="hidden bg-oidaneos-lav50 text-oidaneos-purple text-xs font-extrabold border border-oidaneos-line rounded-lg px-2 py-1 focus:outline-none cursor-pointer">
-          <option value="ackaraib@orange.fr">Vue : Murielle LAPILUS (ACKARAIB)</option>
-          <option value="mamalylys2323@gmail.com">Vue : Mailys DAVRAIN (ACKARAIB)</option>
-          <option value="gwenaelle.davrain1@gmail.com">Vue : Gwenaelle POUMAROUX (ACKARAIB)</option>
-          <option value="babzwayne@gmail.com">Vue : Ruben MEL (Ishanoa)</option>
-        </select>
       </div>
-
-      <!-- Bouton Déconnexion -->
-      <button id="btnLogoutBtn" onclick="handleLogout()" title="Se déconnecter / Changer d'email" class="p-1.5 sm:px-2.5 sm:py-1.5 rounded-xl bg-oidaneos-lav50 hover:bg-pink-50 hover:text-red-600 border border-oidaneos-line text-oidaneos-muted transition text-xs font-semibold flex items-center gap-1.5">
-        <i data-lucide="log-out" class="w-3.5 h-3.5 text-oidaneos-pink"></i>
-        <span class="hidden sm:inline">Quitter</span>
-      </button>
     </div>
   </header>
 
@@ -2372,17 +2389,17 @@
 
       if (btnHome) {
         if (activeView === 'home') {
-          btnHome.className = "inline-flex items-center gap-1 px-2.5 sm:px-3.5 py-1.5 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple text-xs font-bold transition";
+          btnHome.className = "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple text-xs font-bold transition shrink-0";
         } else {
-          btnHome.className = "inline-flex items-center gap-1 px-2.5 sm:px-3.5 py-1.5 rounded-xl bg-white hover:bg-oidaneos-lav50 text-oidaneos-purple text-xs font-bold border border-oidaneos-line transition shadow-sm";
+          btnHome.className = "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-oidaneos-lav100 text-oidaneos-body hover:text-oidaneos-purple text-xs font-bold border border-oidaneos-line transition shrink-0";
         }
       }
 
       if (btnProg) {
         if (activeView === 'program') {
-          btnProg.className = "inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-xl bg-grad-oidaneos text-white text-xs font-extrabold shadow-btn hover:opacity-95 transition";
+          btnProg.className = "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-grad-oidaneos text-white text-xs font-extrabold shadow-btn hover:opacity-95 transition shrink-0";
         } else {
-          btnProg.className = "inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple text-xs font-bold border border-oidaneos-line transition";
+          btnProg.className = "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-oidaneos-lav100 text-oidaneos-body hover:text-oidaneos-purple text-xs font-bold border border-oidaneos-line transition shrink-0";
         }
       }
 
@@ -2392,9 +2409,9 @@
         } else {
           btnEval.classList.remove('hidden');
           if (activeView === 'evaluations') {
-            btnEval.className = "inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-xl bg-grad-oidaneos text-white text-xs font-extrabold shadow-btn hover:opacity-95 transition ring-2 ring-oidaneos-pink/40";
+            btnEval.className = "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-grad-oidaneos text-white text-xs font-extrabold shadow-btn hover:opacity-95 transition shrink-0";
           } else {
-            btnEval.className = "inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple text-xs font-bold border border-oidaneos-line transition";
+            btnEval.className = "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-oidaneos-lav100 text-oidaneos-body hover:text-oidaneos-purple text-xs font-bold border border-oidaneos-line transition shrink-0";
           }
         }
       }
@@ -2441,13 +2458,7 @@
       if (vProgram) vProgram.classList.add("hidden");
       if (vEval) vEval.classList.remove("hidden");
 
-      // Button styles
-      const btnHome = document.getElementById("btnNavHome");
-      const btnProg = document.getElementById("btnNavProgram");
-      const btnEval = document.getElementById("btnNavEvaluations");
-      if (btnProg) btnProg.className = "inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple text-xs font-bold border border-oidaneos-line transition";
-      if (btnEval) btnEval.className = "inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-xl bg-grad-oidaneos text-white text-xs font-extrabold shadow-btn hover:opacity-95 transition";
-
+      updateNavButtons('evaluations');
       syncActiveLearnerView(currentInspectedLearnerEmail || 'ackaraib@orange.fr');
       window.scrollTo({ top: 0, behavior: 'smooth' });
       if (window.lucide) lucide.createIcons();
@@ -2973,33 +2984,15 @@
 
     function handleLogout() {
       // Clear all stored auth tokens & user session
-      localStorage.clear();
-      sessionStorage.clear();
+      try {
+        localStorage.clear();
+        sessionStorage.clear();
+      } catch(e) {}
       loggedInUserEmail = null;
       currentInspectedLearnerEmail = null;
 
-      // Clean query string from browser URL without refresh
-      if (window.history && window.history.replaceState) {
-        const cleanUrl = window.location.origin + window.location.pathname;
-        window.history.replaceState({}, document.title, cleanUrl);
-      }
-
-      // Reset Header UI
-      const userBadge = document.getElementById('userHeaderBadgeContainer');
-      if (userBadge) userBadge.classList.add('hidden');
-
-      // Display access gate modal
-      const modal = document.getElementById('accessGateModal');
-      if (modal) {
-        modal.classList.remove('hidden');
-        const input = document.getElementById('accessGateInput');
-        const errBox = document.getElementById('accessGateErrorMsg');
-        if (errBox) errBox.classList.add('hidden');
-        if (input) {
-          input.value = '';
-          input.focus();
-        }
-      }
+      // Force full reload on clean reset URL
+      window.location.href = window.location.origin + window.location.pathname + '?reset=1';
     }
 
     function handleAccessFormSubmit(e) {
