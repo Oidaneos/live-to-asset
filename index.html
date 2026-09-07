@@ -136,7 +136,7 @@
         <nav class="flex items-center gap-1 sm:gap-2 shrink-0">
           <button onclick="showHomeView()" id="btnNavHome" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple text-xs font-bold transition shrink-0">
             <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
-            <span id="btnNavHomeLabel">Toutes les sessions (13)</span>
+            <span id="btnNavHomeLabel">Toutes les sessions (14)</span>
           </button>
 
           <button onclick="showProgramView()" id="btnNavProgram" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-oidaneos-lav100 text-oidaneos-body hover:text-oidaneos-purple text-xs font-bold border border-oidaneos-line transition shrink-0">
@@ -203,8 +203,8 @@
               6
             </div>
             <div>
-              <div class="text-xs font-extrabold text-amber-950">Replays Disponibles</div>
-              <div class="text-[11px] font-medium text-amber-700">En cours de découpage</div>
+              <div id="statReplaysTitle" class="text-xs font-extrabold text-amber-950">Replays Disponibles</div>
+              <div id="statReplaysSub" class="text-[11px] font-medium text-amber-700">En cours de découpage</div>
             </div>
           </div>
         </div>
@@ -2273,29 +2273,41 @@
       const grid = document.getElementById("sessionsGrid");
       if (!grid) return;
       
+      const totalSessionsCount = catalogData.sessions.length;
       const assetised = catalogData.sessions.filter(s => s.isAssetised).length;
-      const replays = catalogData.sessions.length - assetised;
+      const replaysAvailable = catalogData.sessions.filter(s => !s.isAssetised && s.status === 'REPLAY_BRUT').length;
+      const upcomingCount = catalogData.sessions.filter(s => s.status === 'A_VENIR').length;
       const totalVideos = catalogData.sessions.reduce((acc, s) => acc + (s.microVideosCount || 0), 0);
       
       const elAssetised = document.getElementById("statAssetisedCount");
       if (elAssetised) elAssetised.textContent = assetised;
       const elVideos = document.getElementById("statMicroVideosCount");
       if (elVideos) elVideos.textContent = `${totalVideos} micro-vidéos découpées`;
+      
       const elReplays = document.getElementById("statReplaysCount");
-      if (elReplays) elReplays.textContent = replays;
+      const statReplaysTitle = document.getElementById("statReplaysTitle");
+      const statReplaysSub = document.getElementById("statReplaysSub");
+      
+      if (currentPromo === 'septembre-2026') {
+        if (elReplays) elReplays.textContent = replaysAvailable;
+        if (statReplaysTitle) statReplaysTitle.textContent = "Replay Disponible";
+        if (statReplaysSub) statReplaysSub.textContent = `1 dispo • ${upcomingCount} séances en direct à venir`;
+      } else {
+        if (elReplays) elReplays.textContent = replaysAvailable;
+        if (statReplaysTitle) statReplaysTitle.textContent = "Replays Disponibles";
+        if (statReplaysSub) statReplaysSub.textContent = "En cours de découpage";
+      }
       
       const btnAll = document.getElementById("filter-ALL");
-      if (btnAll) btnAll.textContent = `Toutes (${currentPromo === 'septembre-2026' ? '13' : '14'})`;
+      if (btnAll) btnAll.textContent = `Toutes (${totalSessionsCount})`;
       const btnAssetise = document.getElementById("filter-ASSETISE");
       if (btnAssetise) btnAssetise.textContent = `Assetisées (${assetised})`;
       const btnReplay = document.getElementById("filter-REPLAY");
-      if (btnReplay) btnReplay.textContent = `Replays bruts (${replays})`;
+      if (btnReplay) btnReplay.textContent = currentPromo === 'septembre-2026' ? `Replay & Directs (${replaysAvailable + upcomingCount})` : `Replays bruts (${replaysAvailable})`;
 
       const btnHome = document.getElementById('btnNavHome');
       if (btnHome) {
-        btnHome.innerHTML = currentPromo === 'septembre-2026'
-          ? '<i data-lucide="layout-grid" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i><span class="hidden sm:inline">Toutes les sessions (13)</span><span class="sm:hidden">13 Sessions</span>'
-          : '<i data-lucide="layout-grid" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i><span class="hidden sm:inline">Toutes les sessions (14)</span><span class="sm:hidden">14 Sessions</span>';
+        btnHome.innerHTML = `<i data-lucide="layout-grid" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i><span class="hidden sm:inline">Toutes les sessions (${totalSessionsCount})</span><span class="sm:hidden">${totalSessionsCount} Sessions</span>`;
       }
 
       let filtered = catalogData.sessions;
