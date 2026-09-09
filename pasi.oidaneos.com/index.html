@@ -180,28 +180,22 @@
       </nav>
 
       <!-- Profil & Espace Apprenant / Formateur -->
-      <div class="flex items-center gap-2.5">
+      <div class="flex items-center gap-2">
         <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-2xl border border-pasi-line shadow-xs">
           <div id="userAvatar" class="w-7 h-7 rounded-xl grad-pasi text-white text-xs font-black flex items-center justify-center shrink-0 shadow-xs">
             AV
           </div>
           <div class="block text-left">
             <select id="userSelector" onchange="switchUser(this.value)" class="bg-transparent text-slate-900 text-xs font-bold border-none focus:outline-none cursor-pointer max-w-[150px] sm:max-w-none truncate">
-              <optgroup label="🎓 Formateurs & Administration">
-                <option value="alain@oidaneos.com">Alain VALERO (Formateur / Admin & Stagiaire)</option>
-                <option value="guillaume.carayon@aconcia.fr">Guillaume CARAYON (Lead Formateur SSI)</option>
-                <option value="hello@milenepaul.com">Milène PAUL (Coordination & Admin)</option>
-              </optgroup>
-              <optgroup label="💼 Stagiaires Promotion Septembre 2026">
-                <option value="didier.chelza@gmail.com">Didier CHELZA (Cabinet Didier CHELZA)</option>
-                <option value="fabrice.pognon@gmail.com">Fabrice POGNON (Services IT)</option>
-                <option value="sebastien.thams@gmail.com">Sébastien THAMS (ISP)</option>
-                <option value="naim.delannay@gmail.com">Naim DELANNAY (ISP)</option>
-                <option value="anthony.macal@gmail.com">Anthony MACAL (ISP)</option>
-              </optgroup>
             </select>
+            <span id="userStaticBadge" class="hidden text-xs font-bold text-slate-900 truncate"></span>
           </div>
         </div>
+        <!-- Bouton Déconnexion -->
+        <button onclick="handlePasiLogout()" title="Changer d'utilisateur / Se déconnecter" class="p-1.5 sm:px-2.5 sm:py-1.5 rounded-xl bg-purple-50 hover:bg-pink-50 hover:text-red-600 border border-purple-200 text-purple-900 transition text-xs font-semibold flex items-center gap-1.5">
+          <i data-lucide="log-out" class="w-3.5 h-3.5 text-purple-600"></i>
+          <span class="hidden sm:inline">Quitter</span>
+        </button>
       </div>
     </div>
   </header>
@@ -3300,6 +3294,13 @@
       <i data-lucide="folder-down" class="w-4 h-4 mb-0.5"></i>
       <span>Asynchrone</span>
     </button>
+    <button onclick="handlePasiLogout()" title="Se déconnecter" class="flex flex-col items-center justify-center py-1.5 px-1.5 rounded-xl text-rose-600 hover:bg-rose-50 transition flex-1 text-[10px] font-bold">
+      <i data-lucide="log-out" class="w-4 h-4 mb-0.5 text-rose-500"></i>
+      <span>Quitter</span>
+    </button>
+      <i data-lucide="folder-down" class="w-4 h-4 mb-0.5"></i>
+      <span>Asynchrone</span>
+    </button>
   </nav>
 
 
@@ -3696,6 +3697,30 @@
         reglementSigne: false,
         justificatifs: { cni: null, diploma: null },
         scoresT0: [5.0, 4.0, 5.0, 6.0, 5.0, 4.5, 4.0, 4.5, 5.0, 6.0]
+      },
+      "guillaume.carayon@gmail.com": {
+        name: "Guillaume CARAYON",
+        prenom: "Guillaume",
+        nom: "CARAYON",
+        email: "guillaume.carayon@aconcia.fr",
+        tel: "guillaume.carayon@aconcia.fr",
+        role: "formateur",
+        situation: "Lead Formateur SSI (ACONCIA)",
+        metier: "Lead Formateur SSI & Auditeur Cyber",
+        entreprise: "ACONCIA / OIDANEOS",
+        experience: "12 ans",
+        diplome: "Ingénieur SSI / Lead Auditor ISO 27001",
+        adresse: "France & Antilles",
+        scoreT0: 9.8,
+        scoreT1: 10.0,
+        conventionStatus: "Convention Formateur",
+        conventionBadgeClass: "bg-purple-100 text-purple-900",
+        conventionDetails: "🎓 Contrat de Prestation Formateur SSI",
+        conventionSignee: false,
+        droitImageSigne: false,
+        reglementSigne: true,
+        justificatifs: { cni: null, diploma: null },
+        scoresT0: [10, 10, 10, 9.5, 10, 9.5, 10, 10, 9.5, 10]
       },
       "guillaume.carayon@aconcia.fr": {
         name: "Guillaume CARAYON",
@@ -5021,6 +5046,124 @@
     }
 
     
+    
+    let loggedInPasiEmail = null;
+
+    function populateUserDropdown(authEmail) {
+      const selectEl = document.getElementById('userSelector');
+      const staticBadge = document.getElementById('userStaticBadge');
+      if (!selectEl) return;
+
+      const authUser = PASI_LEARNERS_DATABASE[authEmail] || PASI_LEARNERS_DATABASE['alain@oidaneos.com'];
+      const isMilene = (authEmail === 'hello@milenepaul.com' || (authUser.role === 'coordination'));
+      const isGuillaume = (authEmail === 'guillaume.carayon@aconcia.fr' || authEmail === 'guillaume.carayon@gmail.com' || authUser.role === 'formateur');
+      const isAlain = (authEmail === 'alain@oidaneos.com');
+      const isLearner = (!isMilene && !isGuillaume && !isAlain);
+
+      let optionsHtml = '';
+
+      if (isMilene) {
+        // Milène voit UNIQUEMENT sa propre vue + les stagiaires (PAS Alain ni Guillaume)
+        if (staticBadge) staticBadge.classList.add('hidden');
+        selectEl.classList.remove('hidden');
+        optionsHtml += '<optgroup label="📋 Mon Espace Coordination">';
+        optionsHtml += '<option value="hello@milenepaul.com">👑 Milène PAUL (Coordination & Admin Qualiopi)</option>';
+        optionsHtml += '</optgroup>';
+        optionsHtml += '<optgroup label="💼 Stagiaires Promotion Septembre 2026">';
+        optionsHtml += '<option value="didier.chelza@gmail.com">Vue : Didier CHELZA (Cabinet Didier CHELZA)</option>';
+        optionsHtml += '<option value="fabrice.pognon@gmail.com">Vue : Fabrice POGNON (Services IT)</option>';
+        optionsHtml += '<option value="sebastien.thams@gmail.com">Vue : Sébastien THAMS (ISP)</option>';
+        optionsHtml += '<option value="naim.delannay@gmail.com">Vue : Naim DELANNAY (ISP)</option>';
+        optionsHtml += '<option value="anthony.macal@gmail.com">Vue : Anthony MACAL (ISP)</option>';
+        optionsHtml += '</optgroup>';
+      } else if (isGuillaume) {
+        // Guillaume voit UNIQUEMENT sa propre vue + les stagiaires (PAS Alain ni Milène)
+        if (staticBadge) staticBadge.classList.add('hidden');
+        selectEl.classList.remove('hidden');
+        optionsHtml += '<optgroup label="🎓 Mon Espace Formateur Expert">';
+        optionsHtml += '<option value="guillaume.carayon@aconcia.fr">👑 Guillaume CARAYON (Lead Formateur SSI)</option>';
+        optionsHtml += '</optgroup>';
+        optionsHtml += '<optgroup label="💼 Stagiaires Promotion Septembre 2026">';
+        optionsHtml += '<option value="didier.chelza@gmail.com">Vue : Didier CHELZA (Cabinet Didier CHELZA)</option>';
+        optionsHtml += '<option value="fabrice.pognon@gmail.com">Vue : Fabrice POGNON (Services IT)</option>';
+        optionsHtml += '<option value="sebastien.thams@gmail.com">Vue : Sébastien THAMS (ISP)</option>';
+        optionsHtml += '<option value="naim.delannay@gmail.com">Vue : Naim DELANNAY (ISP)</option>';
+        optionsHtml += '<option value="anthony.macal@gmail.com">Vue : Anthony MACAL (ISP)</option>';
+        optionsHtml += '</optgroup>';
+      } else if (isAlain) {
+        // Alain est Administrateur & Formateur & Stagiaire : vue globale
+        if (staticBadge) staticBadge.classList.add('hidden');
+        selectEl.classList.remove('hidden');
+        optionsHtml += '<optgroup label="🎓 Formateurs & Administration">';
+        optionsHtml += '<option value="alain@oidaneos.com">Alain VALERO (Directeur & Stagiaire Certifiant)</option>';
+        optionsHtml += '<option value="guillaume.carayon@aconcia.fr">Guillaume CARAYON (Lead Formateur SSI)</option>';
+        optionsHtml += '<option value="hello@milenepaul.com">Milène PAUL (Coordination & Admin)</option>';
+        optionsHtml += '</optgroup>';
+        optionsHtml += '<optgroup label="💼 Stagiaires Promotion Septembre 2026">';
+        optionsHtml += '<option value="didier.chelza@gmail.com">Didier CHELZA (Cabinet Didier CHELZA)</option>';
+        optionsHtml += '<option value="fabrice.pognon@gmail.com">Fabrice POGNON (Services IT)</option>';
+        optionsHtml += '<option value="sebastien.thams@gmail.com">Sébastien THAMS (ISP)</option>';
+        optionsHtml += '<option value="naim.delannay@gmail.com">Naim DELANNAY (ISP)</option>';
+        optionsHtml += '<option value="anthony.macal@gmail.com">Anthony MACAL (ISP)</option>';
+        optionsHtml += '</optgroup>';
+      } else {
+        // Élève / Stagiaire : Sélecteur désactivé, l'élève ne voit STRICTEMENT que son propre espace
+        selectEl.classList.add('hidden');
+        if (staticBadge) {
+          staticBadge.classList.remove('hidden');
+          staticBadge.textContent = authUser.prenom + ' ' + authUser.nom + ' (' + (authUser.entreprise || 'Stagiaire') + ')';
+        }
+        optionsHtml = '<option value="' + authUser.email + '">' + authUser.name + '</option>';
+      }
+
+      selectEl.innerHTML = optionsHtml;
+      selectEl.value = authUser.email;
+    }
+
+    function handlePasiEmailLogin(e) {
+      if (e) e.preventDefault();
+      const input = document.getElementById('pasiLoginEmailInput');
+      const err = document.getElementById('pasiLoginErrorMsg');
+      const raw = (input ? input.value : '').trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+      let matchedEmail = null;
+      if (raw.includes('milene') || raw.includes('paul')) matchedEmail = 'hello@milenepaul.com';
+      else if (raw.includes('guillaume') || raw.includes('carayon') || raw.includes('aconcia')) matchedEmail = 'guillaume.carayon@aconcia.fr';
+      else if (raw.includes('alain') || raw.includes('valero') || raw.includes('oidaneos')) matchedEmail = 'alain@oidaneos.com';
+      else if (raw.includes('didier') || raw.includes('chelza')) matchedEmail = 'didier.chelza@gmail.com';
+      else if (raw.includes('fabrice') || raw.includes('pognon')) matchedEmail = 'fabrice.pognon@gmail.com';
+      else if (raw.includes('sebastien') || raw.includes('thams')) matchedEmail = 'sebastien.thams@gmail.com';
+      else if (raw.includes('naim') || raw.includes('delannay')) matchedEmail = 'naim.delannay@gmail.com';
+      else if (raw.includes('anthony') || raw.includes('macal')) matchedEmail = 'anthony.macal@gmail.com';
+      else if (PASI_LEARNERS_DATABASE[raw]) matchedEmail = raw;
+
+      if (matchedEmail && PASI_LEARNERS_DATABASE[matchedEmail]) {
+        if (err) err.classList.add('hidden');
+        performPasiLogin(matchedEmail);
+      } else {
+        if (err) err.classList.remove('hidden');
+      }
+    }
+
+    function performPasiLogin(email) {
+      loggedInPasiEmail = email;
+      localStorage.setItem('pasi_auth_email', email);
+
+      const modal = document.getElementById('pasiAccessGateModal');
+      if (modal) modal.classList.add('hidden');
+
+      populateUserDropdown(email);
+      switchUser(email);
+    }
+
+    function handlePasiLogout() {
+      localStorage.removeItem('pasi_auth_email');
+      const modal = document.getElementById('pasiAccessGateModal');
+      if (modal) modal.classList.remove('hidden');
+      const input = document.getElementById('pasiLoginEmailInput');
+      if (input) { input.value = ''; input.focus(); }
+    }
+
     function switchUser(email) {
       if (!email || !PASI_LEARNERS_DATABASE[email]) return;
       currentSelectedLearnerEmail = email;
@@ -7276,6 +7419,40 @@
           Fermer la lecture
         </button>
       </div>
+    </div>
+  </div>
+
+
+  <!-- ================= MODAL DE CONNEXION / ACCÈS PASI CYBERSÉCURITÉ ================= -->
+  <div id="pasiAccessGateModal" class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md hidden flex items-center justify-center p-4 animate-fade-in">
+    <div class="bg-white rounded-3xl w-full max-w-md overflow-hidden shadow-2xl border border-purple-200 flex flex-col" onclick="event.stopPropagation()">
+      <div class="p-6 bg-gradient-to-r from-purple-900 to-indigo-950 text-white text-center space-y-2">
+        <div class="w-12 h-12 rounded-2xl bg-white/10 text-white flex items-center justify-center font-black mx-auto shadow-md">
+          <i data-lucide="shield-check" class="w-6 h-6 text-pink-400"></i>
+        </div>
+        <h2 class="text-lg font-black text-white">OIDANEOS — Espace PASI</h2>
+        <p class="text-xs text-purple-200">Certification Piloter & Animer la Sécurité Informatique</p>
+      </div>
+
+      <form onsubmit="handlePasiEmailLogin(event)" class="p-6 space-y-4 bg-slate-50/50">
+        <div class="space-y-1.5">
+          <label class="block text-xs font-bold text-slate-800">Votre adresse email (Stagiaire ou Formateur) :</label>
+          <input type="email" id="pasiLoginEmailInput" placeholder="ex: milene@..., didier@..., guillaume@..." required class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 font-semibold text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-purple-600 shadow-xs">
+          <p id="pasiLoginErrorMsg" class="hidden text-xs text-red-600 font-bold mt-1 flex items-center gap-1">
+            <i data-lucide="alert-circle" class="w-3.5 h-3.5"></i>
+            <span>Email non reconnu pour la session PASI Septembre 2026.</span>
+          </p>
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-purple-800 to-indigo-900 text-white font-extrabold text-xs uppercase tracking-wider hover:opacity-95 transition shadow-md flex items-center justify-center gap-2 cursor-pointer">
+          <span>Accéder à mon Espace PASI</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 text-pink-300"></i>
+        </button>
+
+        <div class="pt-3 border-t border-slate-200 text-center">
+          <p class="text-[11px] text-slate-500 font-medium">Session Septembre 2026 • 12 Séances en direct & Hub Asynchrone</p>
+        </div>
+      </form>
     </div>
   </div>
 
