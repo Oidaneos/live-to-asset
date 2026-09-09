@@ -18,11 +18,15 @@ const MIME_TYPES = {
   '.vtt': 'text/vtt; charset=utf-8',
   '.pdf': 'application/pdf',
   '.docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  '.pptx': 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
   '.md': 'text/markdown; charset=utf-8',
   '.ics': 'text/calendar; charset=utf-8'
 };
 
 const server = http.createServer((req, res) => {
+  const host = (req.headers.host || '').toLowerCase();
+  const isPasi = host.includes('pasi');
+
   let reqUrl = '/index.html';
   try {
     reqUrl = decodeURIComponent(req.url.split('?')[0]);
@@ -61,11 +65,18 @@ const server = http.createServer((req, res) => {
 
     const tree = listFilesRecursively(BASE_DIR);
     res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
-    res.end(JSON.stringify({ baseDir: BASE_DIR, tree }, null, 2));
+    res.end(JSON.stringify({ baseDir: BASE_DIR, isPasi, host, tree }, null, 2));
     return;
   }
 
-  let targetPath = path.join(BASE_DIR, reqUrl);
+  let targetPath = isPasi 
+    ? (reqUrl === '/index.html' ? path.join(BASE_DIR, 'pasi.oidaneos.com', 'index.html') : path.join(BASE_DIR, 'pasi.oidaneos.com', reqUrl))
+    : path.join(BASE_DIR, reqUrl);
+
+  // Fallback if targetPath doesn't exist on pasi subfolder
+  if (isPasi && !fs.existsSync(targetPath)) {
+    targetPath = path.join(BASE_DIR, reqUrl);
+  }
 
   // Security check to avoid directory traversal outside workspace
   if (!targetPath.startsWith(BASE_DIR)) {
@@ -85,6 +96,18 @@ const server = http.createServer((req, res) => {
     path.join(BASE_DIR, 'Sessions_Data_Septembre_2026', baseNameReq),
     path.join(BASE_DIR, 'Sessions_Data', cleanReq),
     path.join(BASE_DIR, 'Sessions_Data', baseNameReq),
+    path.join(BASE_DIR, 'Guides_PASI', cleanReq),
+    path.join(BASE_DIR, 'Guides_PASI', baseNameReq),
+    path.join(BASE_DIR, 'Contenus_Pedagogiques_PASI', cleanReq),
+    path.join(BASE_DIR, 'Contenus_Pedagogiques_PASI', baseNameReq),
+    path.join(BASE_DIR, 'Webinaires live - pasi session 1', cleanReq),
+    path.join(BASE_DIR, 'Webinaires live - pasi session 1', baseNameReq),
+    path.join(BASE_DIR, 'Sessions_PASI', cleanReq),
+    path.join(BASE_DIR, 'Sessions_PASI', baseNameReq),
+    path.join(BASE_DIR, 'Sessions_PASI', 'Webinaires live - pasi session 1', cleanReq),
+    path.join(BASE_DIR, 'Sessions_PASI', 'Sessions_Pasi_Septembre_2026', cleanReq),
+    path.join(BASE_DIR, 'Sessions_PASI', 'Contenus pédagogiques pasi', cleanReq),
+    path.join(BASE_DIR, 'Sessions_Data', 'Sessions_PASI', cleanReq),
     path.join(BASE_DIR, 'Sessions_Data', 'Sessions_Data_Septembre_2026', cleanReq),
     path.join(BASE_DIR, 'Sessions_Data', 'Sessions_Data', cleanReq),
     path.join(BASE_DIR, 'Sessions_Data', 'Sessions_Data', 'Sessions_Data_Septembre_2026', cleanReq)
@@ -104,6 +127,27 @@ const server = http.createServer((req, res) => {
         }
       }
     } catch(e) {}
+  }
+
+  // Deep search in Webinaires live subdirectories if not found yet
+  if (!filePath) {
+    const webinairesDir = path.join(BASE_DIR, 'Webinaires live - pasi session 1');
+    if (fs.existsSync(webinairesDir)) {
+      try {
+        const subdirs = fs.readdirSync(webinairesDir);
+        for (const sub of subdirs) {
+          const subPath = path.join(webinairesDir, sub);
+          if (fs.statSync(subPath).isDirectory()) {
+            const cand = path.join(subPath, baseNameReq);
+            if (fs.existsSync(cand) && fs.statSync(cand).isFile()) {
+              filePath = cand;
+              stats = fs.statSync(cand);
+              break;
+            }
+          }
+        }
+      } catch(e) {}
+    }
   }
 
   if (!filePath || !stats) {
