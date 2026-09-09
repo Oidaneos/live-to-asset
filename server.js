@@ -129,24 +129,48 @@ const server = http.createServer((req, res) => {
     } catch(e) {}
   }
 
-  // Deep search in Webinaires live subdirectories if not found yet
-  if (!filePath) {
-    const webinairesDir = path.join(BASE_DIR, 'Webinaires live - pasi session 1');
-    if (fs.existsSync(webinairesDir)) {
+  // Deep recursive search for media and document files if not found directly
+  if (!filePath && (baseNameReq.endsWith('.mp4') || baseNameReq.endsWith('.m4a') || baseNameReq.endsWith('.pdf') || baseNameReq.endsWith('.docx') || baseNameReq.endsWith('.vtt'))) {
+    function searchFileRecursive(dir, targetName, maxDepth = 6) {
+      if (maxDepth <= 0 || !fs.existsSync(dir)) return null;
       try {
-        const subdirs = fs.readdirSync(webinairesDir);
-        for (const sub of subdirs) {
-          const subPath = path.join(webinairesDir, sub);
-          if (fs.statSync(subPath).isDirectory()) {
-            const cand = path.join(subPath, baseNameReq);
-            if (fs.existsSync(cand) && fs.statSync(cand).isFile()) {
-              filePath = cand;
-              stats = fs.statSync(cand);
-              break;
+        const entries = fs.readdirSync(dir, { withFileTypes: true });
+        for (const entry of entries) {
+          const full = path.join(dir, entry.name);
+          if (entry.isDirectory()) {
+            const found = searchFileRecursive(full, targetName, maxDepth - 1);
+            if (found) return found;
+          } else if (entry.isFile()) {
+            const entryLow = entry.name.toLowerCase();
+            const targetLow = targetName.toLowerCase();
+            if (entryLow === targetLow ||
+                entry.name.normalize('NFC').toLowerCase() === targetName.normalize('NFC').toLowerCase() ||
+                entry.name.normalize('NFD').toLowerCase() === targetName.normalize('NFD').toLowerCase()) {
+              return full;
             }
           }
         }
-      } catch(e) {}
+      } catch (e) {}
+      return null;
+    }
+
+    const searchRoots = [
+      path.join(BASE_DIR, 'Sessions_Data'),
+      path.join(BASE_DIR, 'Sessions_PASI'),
+      path.join(BASE_DIR, 'Webinaires live - pasi session 1'),
+      path.join(BASE_DIR, 'Contenus pédagogiques pasi'),
+      path.join(BASE_DIR, 'Sessions_Pasi_Septembre_2026'),
+      path.join(BASE_DIR, 'pasi.oidaneos.com'),
+      BASE_DIR
+    ];
+
+    for (const root of searchRoots) {
+      const found = searchFileRecursive(root, baseNameReq);
+      if (found) {
+        filePath = found;
+        stats = fs.statSync(found);
+        break;
+      }
     }
   }
 
