@@ -1,0 +1,947 @@
+{
+  "sessions": [
+    {
+      "id": "sep-1",
+      "number": 1,
+      "title": "Accueil & Pré-rentrée — Cadrage Pédagogique & Parcours PASI",
+      "bloc": "Bloc 1 : Fondamentaux & Cadrage",
+      "compCode": "C1 à C10",
+      "compTitle": "Cadrage Général du Référentiel PASI",
+      "duration": "60 min",
+      "isReplayAvailable": true,
+      "videoUrl": "/Sessions_Pasi_Septembre_2026/pasi_replay_session_01_accueil/GMT20260902-180343_Recording_1920x1080.mp4",
+      "docxUrl": "/Guides_Pedagogiques_PASI/Guide_Pedagogique_PASI_Septembre_Session_1.docx",
+      "pdfUrl": "/Webinaires live - pasi session 1/Day 1/20260105_Lancement-Formation-PASI.pdf",
+      "transcriptUrl": null,
+      "dateFormatted": "Mercredi 2 Septembre 2026",
+      "dateShort": "02/09/2026",
+      "tools": [
+        "Plateforme E-Learning",
+        "Digiforma",
+        "Zoom Pro",
+        "Grille Jury 46 Critères"
+      ],
+      "cadrage": "Cette séance inaugurale pose les bases de votre parcours certifiant certifiant. Elle permet d'appréhender les attentes des jurys présidés par Patrice Chelim, la structuration des 4 Blocs de compétences et la méthode de validation des 46 critères professionnels.",
+      "sections": [
+        {
+          "title": "1.1 Cadrage Pédagogique & Parcours de Certification",
+          "content": "Présentation des 4 Blocs certifiants (Fondamentaux, Supervision, Remédiation, Gestion de crise), de la méthodologie de travail hebdomadaire en classe virtuelle (mercredis 14h-16h) et du rythme d'apprentissage asynchrone."
+        },
+        {
+          "title": "1.2 Modalités d'Évaluation & Soutenance Jury",
+          "content": "Détail de la grille des 10 Compétences officielles (C1 à C10) et des 46 critères d'évaluation. Explication de la constitution du dossier professionnel et du déroulement de l'épreuve orale finale."
+        },
+        {
+          "title": "1.3 Déploiement des Outils & Espaces Collaboratifs",
+          "content": "Prise en main du hub de ressources, accès aux replays bruts, fiches révision Word et documentation de référence du cas fil rouge d'entreprise."
+        }
+      ],
+      "checklist": [
+        "Vérifier son accès à la plateforme et au calendrier Zoom récurrent (.ICS)",
+        "Consulter le règlement intérieur et le référentiel des 4 Blocs ",
+        "Compléter son diagnostic initial de positionnement"
+      ],
+      "chatItems": [],
+      "description": "Cette séance inaugurale pose les bases de votre parcours certifiant certifiant. Elle permet d'appréhender les attentes des jurys présidés par Patrice Chelim, la structuration des 4 Blocs de compétences et la méthode de validation des 46 critères professionnels.",
+      "hideCasPratique": true
+    },
+    {
+      "id": "sep-2",
+      "number": 2,
+      "title": "Module 1.1 — Fondamentaux de la SSI et des réseaux",
+      "bloc": "Bloc 1 : Fondamentaux de la SSI (42h)",
+      "compCode": "C1",
+      "compTitle": "État des lieux du SI & Classification DICP",
+      "duration": "120-180 min",
+      "isReplayAvailable": false,
+      "videoUrl": null,
+      "docxUrl": "/Guides_Pedagogiques_PASI/Guide_Pedagogique_PASI_Septembre_Session_2.docx",
+      "pdfUrl": null,
+      "transcriptUrl": null,
+      "dateFormatted": "Mercredi 9 Septembre 2026",
+      "dateShort": "09/09/2026",
+      "tools": [
+        "Wireshark",
+        "Nmap",
+        "Cartographie Réseau",
+        "Matrice DICP",
+        "Modèle OSI"
+      ],
+      "cadrage": "Maîtriser les concepts fondamentaux de la sécurité des systèmes d'information, les protocoles de communication et la méthode de classification des actifs selon les critères Disponibilité, Intégrité, Confidentialité et Preuve (DICP).",
+      "sections": [
+        {
+          "title": "2.1 Les Piliers DICP et la Classification des Actifs",
+          "content": "Définition rigoureuse des critères Disponibilité, Intégrité, Confidentialité et Traçabilité/Preuve. Méthode de cotation des actifs d'information et détermination des seuils de criticité métier."
+        },
+        {
+          "title": "2.2 Fondamentaux des Réseaux & Protocoles de Communication",
+          "content": "Analyse approfondie du modèle OSI (couches 1 à 7) et de la pile TCP/IP. Identification des vulnérabilités inhérentes aux protocoles non chiffrés (HTTP, Telnet, FTP) et principes d'encapsulation."
+        },
+        {
+          "title": "2.3 Cartographie du Système d'Information",
+          "content": "Méthodologie d'inventaire des composants matériels, logiciels, serveurs et flux d'interconnexion. Établissement du schéma directeur de sécurité et cartographie des zones de confiance."
+        }
+      ],
+      "checklist": [
+        "Télécharger la fiche révision Word du Module 1.1",
+        "Établir la matrice de criticité DICP sur un périmètre applicatif",
+        "Identifier les 5 protocoles critiques à sécuriser en priorité"
+      ],
+      "chatItems": [],
+      "description": "Maîtriser les concepts fondamentaux de la sécurité des systèmes d'information, les protocoles de communication et la méthode de classification des actifs selon les critères Disponibilité, Intégrité, Confidentialité et Preuve (DICP)."
+    },
+    {
+      "id": "sep-3",
+      "number": 3,
+      "title": "Authentification forte : MFA, gestion des mots de passe et bonnes pratiques",
+      "bloc": "Bloc 1 : Fondamentaux de la SSI (42h)",
+      "compCode": "C5 & C8",
+      "compTitle": "Sécurisation des Actifs & Sensibilisation",
+      "duration": "120-180 min",
+      "isReplayAvailable": false,
+      "videoUrl": null,
+      "docxUrl": "/Guides_Pedagogiques_PASI/Guide_Pedagogique_PASI_Septembre_Session_3.docx",
+      "pdfUrl": null,
+      "transcriptUrl": null,
+      "dateFormatted": "Mercredi 16 Septembre 2026",
+      "dateShort": "16/09/2026",
+      "tools": [
+        "MFA / TOTP",
+        "KeePassXC",
+        "Bitwarden",
+        "FIDO2 / U2F",
+        "Politique GPO"
+      ],
+      "cadrage": "L'authentification est la première ligne de défense du SI. Cette session détaille l'implémentation du MFA, les standards cryptographiques de stockage des mots de passe et les protocoles modernes d'authentification.",
+      "sections": [
+        {
+          "title": "3.1 Authentification Multi-Facteurs (MFA) & Protocoles FIDO2",
+          "content": "Les 3 facteurs d'authentification (ce que je sais, ce que j'ai, ce que je suis). Vulnérabilités du MFA par SMS et supériorité des clés matérielles FIDO2/WebAuthn et applications TOTP."
+        },
+        {
+          "title": "3.2 Politique de Mots de Passe & Gestionnaires de Secrets",
+          "content": "Recommandations de l'ANSSI et de la CNIL (entropie minimale, longueur vs complexité). Déploiement de gestionnaires de mots de passe d'entreprise et élimination des mots de passe par défaut."
+        },
+        {
+          "title": "3.3 Attaques d'Authentification & Contre-Mesures",
+          "content": "Mécanismes d'attaques par force brute, credential stuffing, password spraying et interception de tokens de session. Mise en place de seuils de verrouillage et de supervision active."
+        }
+      ],
+      "checklist": [
+        "Activer l'authentification MFA sur tous les comptes à privilèges",
+        "Déployer un gestionnaire de mots de passe sécurisé",
+        "Formaliser la charte utilisateur d'hygiène des identifiants"
+      ],
+      "chatItems": [],
+      "description": "L'authentification est la première ligne de défense du SI. Cette session détaille l'implémentation du MFA, les standards cryptographiques de stockage des mots de passe et les protocoles modernes d'authentification."
+    },
+    {
+      "id": "sep-4",
+      "number": 4,
+      "title": "Analyse des risques SSI : identification, évaluation et traitement",
+      "bloc": "Bloc 1 : Fondamentaux de la SSI (42h)",
+      "compCode": "C2",
+      "compTitle": "Évaluation des Risques de Sécurité",
+      "duration": "120-180 min",
+      "isReplayAvailable": false,
+      "videoUrl": null,
+      "docxUrl": "/Guides_Pedagogiques_PASI/Guide_Pedagogique_PASI_Septembre_Session_4.docx",
+      "pdfUrl": null,
+      "transcriptUrl": null,
+      "dateFormatted": "Mercredi 23 Septembre 2026",
+      "dateShort": "23/09/2026",
+      "tools": [
+        "EBIOS RM (ANSSI)",
+        "CISO Assistant",
+        "Outil PIA CNIL",
+        "Directive NIS 2",
+        "Matrice CVSS"
+      ],
+      "cadrage": "L'analyse des risques permet d'orienter les investissements de sécurité. Cette session transmet la méthodologie EBIOS Risk Manager de l'ANSSI et son articulation avec le RGPD et la directive NIS 2.",
+      "sections": [
+        {
+          "title": "4.1 Méthodologie EBIOS Risk Manager (Les 5 Ateliers)",
+          "content": "Cadrage et socle de sécurité, sources de risque, scénarios stratégiques, scénarios opérationnels et traitement des risques résiduels. Alignement avec la norme ISO 27005."
+        },
+        {
+          "title": "4.2 Cadre Réglementaire : NIS 2, RGPD & OIV/OSE",
+          "content": "Périmètre des entités essentielles et importantes (EE/EI) sous NIS 2. Obligations de notification des incidents sous 24h/72h et analyse d'impact sur la vie privée (AIPD/PIA)."
+        },
+        {
+          "title": "4.3 Élaboration de la Matrice de Risques & Plan de Traitement",
+          "content": "Calcul de la vraisemblance et de la gravité. Définition des 4 options de traitement : réduction, transfert, évitement ou acceptation formelle par la direction."
+        }
+      ],
+      "checklist": [
+        "Tester le simulateur national MonEspaceNIS2 de l'ANSSI",
+        "Télécharger l'outil PIA open-source de la CNIL",
+        "Construire une grille d'analyse de risques sur le cas CLINISANTÉ"
+      ],
+      "chatItems": [],
+      "description": "L'analyse des risques permet d'orienter les investissements de sécurité. Cette session transmet la méthodologie EBIOS Risk Manager de l'ANSSI et son articulation avec le RGPD et la directive NIS 2."
+    },
+    {
+      "id": "sep-5",
+      "number": 5,
+      "title": "SIEM : collecte, corrélation et détection des événements de sécurité",
+      "bloc": "Bloc 2 : Supervision & Détection (70h)",
+      "compCode": "C5 & C6",
+      "compTitle": "Supervision SIEM & Analyse des Événements",
+      "duration": "120-180 min",
+      "isReplayAvailable": false,
+      "videoUrl": null,
+      "docxUrl": "/Guides_Pedagogiques_PASI/Guide_Pedagogique_PASI_Septembre_Session_5.docx",
+      "pdfUrl": null,
+      "transcriptUrl": null,
+      "dateFormatted": "Mercredi 30 Septembre 2026",
+      "dateShort": "30/09/2026",
+      "tools": [
+        "Splunk",
+        "Elastic SIEM",
+        "Wazuh",
+        "Syslog-ng",
+        "Règles Sigma"
+      ],
+      "cadrage": "Centraliser et corréler les journaux d'événements pour détecter les attaques en temps réel. Mise en œuvre opérationnelle d'un SIEM et construction de règles de corrélation adaptées.",
+      "sections": [
+        {
+          "title": "5.1 Architecture SIEM & Collecte Centralisée des Logs",
+          "content": "Collecteurs d'événements (Syslog, Windows Event Forwarding, agents EDR). Normalisation des logs au format CEF/LEEF/ECS et indexation temporelle."
+        },
+        {
+          "title": "5.2 Règles de Corrélation & Détection d'Anomalies",
+          "content": "Détection des comportements suspects : élévation anormale de privilèges, scans réseau internes, multiples échecs d'authentification suivis d'un succès (brute-force réussi)."
+        },
+        {
+          "title": "5.3 Traçabilité, Conservation Légale & Preuve Numérique",
+          "content": "Exigences légales de rétention des logs (durée minimale de 6 mois à 1 an selon ANSSI/RGPD), horodatage certifié (NTP sécurisé) et intégrité des journaux."
+        }
+      ],
+      "checklist": [
+        "Identifier les sources de logs indispensables (AD, Firewall, EDR, Serveurs Web)",
+        "Définir 3 règles de corrélation prioritaires",
+        "Vérifier la politique de rétention et de sauvegarde des journaux"
+      ],
+      "chatItems": [],
+      "description": "Centraliser et corréler les journaux d'événements pour détecter les attaques en temps réel. Mise en œuvre opérationnelle d'un SIEM et construction de règles de corrélation adaptées."
+    },
+    {
+      "id": "sep-6",
+      "number": 6,
+      "title": "Threat intelligence : sources, qualification et exploitation des menaces",
+      "bloc": "Bloc 2 : Supervision & Détection (70h)",
+      "compCode": "C10",
+      "compTitle": "Veille Technique & Threat Intelligence (CTI)",
+      "duration": "120-180 min",
+      "isReplayAvailable": false,
+      "videoUrl": null,
+      "docxUrl": "/Guides_Pedagogiques_PASI/Guide_Pedagogique_PASI_Septembre_Session_6.docx",
+      "pdfUrl": null,
+      "transcriptUrl": null,
+      "dateFormatted": "Mercredi 7 Octobre 2026",
+      "dateShort": "07/10/2026",
+      "tools": [
+        "MISP Platform",
+        "AlienVault OTX",
+        "CERT-FR / ANSSI",
+        "MITRE ATT&CK",
+        "VirusTotal"
+      ],
+      "cadrage": "Anticiper les cyberattaques grâce à la Threat Intelligence. Collecte, qualification et partage d'indicateurs de compromission (IoC) pour adapter la posture défensive de l'entreprise.",
+      "sections": [
+        {
+          "title": "6.1 Les Niveaux de Cyber Threat Intelligence (CTI)",
+          "content": "CTI stratégique (tendances géopolitiques, secteurs ciblés), tactique (TTPs des attaquants via le framework MITRE ATT&CK) et opérationnelle/technique (adresses IP, hashs, domaines malveillants)."
+        },
+        {
+          "title": "6.2 Exploitation des Flux & Plateformes de Partage",
+          "content": "Intégration des flux CERT-FR, OpenCTI et MISP. Automatisation de l'injection des IoC dans les règles de filtrage des pare-feux et des sondes SIEM."
+        },
+        {
+          "title": "6.3 Modélisation de la Menace & Attribution",
+          "content": "Pyramide de la douleur de David Bianco (Pyramid of Pain) : de la difficulté de modifier un hash à la complexité d'altérer les tactiques et procédures (TTPs)."
+        }
+      ],
+      "checklist": [
+        "Consulter les derniers bulletins d'alerte et avis de sécurité du CERT-FR",
+        "Explorer la matrice MITRE ATT&CK sur les scénarios ransomware",
+        "Rédiger une note de synthèse de veille hebdomadaire"
+      ],
+      "chatItems": [],
+      "description": "Anticiper les cyberattaques grâce à la Threat Intelligence. Collecte, qualification et partage d'indicateurs de compromission (IoC) pour adapter la posture défensive de l'entreprise."
+    },
+    {
+      "id": "sep-7",
+      "number": 7,
+      "title": "Détection des intrusions : IDS, IPS et surveillance des activités suspectes",
+      "bloc": "Bloc 2 : Supervision & Détection (70h)",
+      "compCode": "C5 & C6",
+      "compTitle": "Détection des Intrusions (IDS/IPS)",
+      "duration": "120-180 min",
+      "isReplayAvailable": false,
+      "videoUrl": null,
+      "docxUrl": "/Guides_Pedagogiques_PASI/Guide_Pedagogique_PASI_Septembre_Session_7.docx",
+      "pdfUrl": null,
+      "transcriptUrl": null,
+      "dateFormatted": "Mercredi 14 Octobre 2026",
+      "dateShort": "14/10/2026",
+      "tools": [
+        "Suricata",
+        "Snort",
+        "Zeek",
+        "Sondes ANSSI",
+        "Wireshark"
+      ],
+      "cadrage": "Analyser le trafic réseau en profondeur pour intercepter les flux malveillants avant qu'ils n'atteignent les cibles sensibles. Implémentation de sondes IDS/IPS et règles de détection.",
+      "sections": [
+        {
+          "title": "7.1 Principes des Systèmes de Détection & Prévention (IDS vs IPS)",
+          "content": "Différence entre écoute passive (port mirroring / TAP réseau) et positionnement en coupure (inline). Détection par signatures vs détection par anomalies comportementales."
+        },
+        {
+          "title": "7.2 Écriture & Déploiement de Règles de Détection",
+          "content": "Syntaxe des règles Suricata/Snort : en-têtes (action, protocole, IPs, ports), options de charge utile (content, pcre, flow), gestion des faux positifs."
+        },
+        {
+          "title": "7.3 Intégration dans la Chaîne d'Alerte Opérationnelle",
+          "content": "Transmission des alertes réseau vers le SIEM / SOC et déclenchement automatique d'actions de remédiation (blocage IP temporaire au niveau pare-feu)."
+        }
+      ],
+      "checklist": [
+        "Analyser une capture réseau PCAP avec Wireshark",
+        "Écrire une règle de détection pour intercepter un scan Nmap",
+        "Tester la chaîne d'alerte de l'IDS vers le tableau de bord"
+      ],
+      "chatItems": [],
+      "description": "Analyser le trafic réseau en profondeur pour intercepter les flux malveillants avant qu'ils n'atteignent les cibles sensibles. Implémentation de sondes IDS/IPS et règles de détection."
+    },
+    {
+      "id": "sep-8",
+      "number": 8,
+      "title": "Tableaux de bord sécurité : indicateurs, reporting et pilotage SSI",
+      "bloc": "Bloc 1 : Fondamentaux & Gouvernance (42h)",
+      "compCode": "C3",
+      "compTitle": "Tableaux de Bord SSI & Arbitrage Budgétaire",
+      "duration": "120-180 min",
+      "isReplayAvailable": false,
+      "videoUrl": null,
+      "docxUrl": "/Guides_Pedagogiques_PASI/Guide_Pedagogique_PASI_Septembre_Session_8.docx",
+      "pdfUrl": null,
+      "transcriptUrl": null,
+      "dateFormatted": "Mercredi 21 Octobre 2026",
+      "dateShort": "21/10/2026",
+      "tools": [
+        "KPIs SSI",
+        "Tableau de Bord Gouvernance",
+        "Matrice d'Arbitrage",
+        "Reporting COMEX"
+      ],
+      "cadrage": "Traduire la posture de cybersécurité en indicateurs mesurables et intelligibles pour la direction générale. Justifier les budgets et piloter les plans de remédiation.",
+      "sections": [
+        {
+          "title": "8.1 Choix des Indicateurs Clés de Performance (KPIs & KRIs)",
+          "content": "Métriques opérationnelles (taux de postes patchés, temps moyen de détection MTTD / résolution MTTR, taux de clic aux tests phishing) et métriques de gouvernance."
+        },
+        {
+          "title": "8.2 Conception du Tableau de Bord Décisionnel",
+          "content": "Structuration d'un tableau de bord par audience : vue technique pour les équipes SI, vue synthétique et financière pour le Comité de Direction (COMEX)."
+        },
+        {
+          "title": "8.3 Argumentation & Défense du Budget Cybersécurité",
+          "content": "Calcul du retour sur investissement en sécurité (ROSI), démonstration de l'évitement de coûts liés aux rançongiciels et mise en conformité réglementaire."
+        }
+      ],
+      "checklist": [
+        "Sélectionner 5 KPIs essentiels adaptés au profil de son entreprise",
+        "Construire une maquette de tableau de bord de pilotage SSI",
+        "Rédiger un mémo d'arbitrage budgétaire pour la direction"
+      ],
+      "chatItems": [],
+      "description": "Traduire la posture de cybersécurité en indicateurs mesurables et intelligibles pour la direction générale. Justifier les budgets et piloter les plans de remédiation."
+    },
+    {
+      "id": "sep-9",
+      "number": 9,
+      "title": "Gestion des identités et des accès (IAM) : habilitations et contrôle",
+      "bloc": "Bloc 2 : Supervision & Détection (70h)",
+      "compCode": "C5 & C1",
+      "compTitle": "Gestion des Identités & Accès (IAM & RBAC)",
+      "duration": "120-180 min",
+      "isReplayAvailable": false,
+      "videoUrl": null,
+      "docxUrl": "/Guides_Pedagogiques_PASI/Guide_Pedagogique_PASI_Septembre_Session_9.docx",
+      "pdfUrl": null,
+      "transcriptUrl": null,
+      "dateFormatted": "Mercredi 28 Octobre 2026",
+      "dateShort": "28/10/2026",
+      "tools": [
+        "Active Directory",
+        "Azure AD / Entra ID",
+        "RBAC Matrix",
+        "Bastion PAM",
+        "LAPS"
+      ],
+      "cadrage": "Gérer le cycle de vie des identités et restreindre les droits d'accès au strict nécessaire. Déploiement du modèle RBAC et sécurisation des comptes à privilèges.",
+      "sections": [
+        {
+          "title": "9.1 Modèle RBAC & Principe du Moindre Privilège",
+          "content": "Attribution des habilitations selon la fonction métier (Role-Based Access Control). Élimination des droits d'administration locale permanente."
+        },
+        {
+          "title": "9.2 Gestion des Comptes à Privilèges (PAM)",
+          "content": "Déploiement de bastions d'administration, élévation temporaire des droits (Just-In-Time access), rotation automatique des mots de passe avec Microsoft LAPS."
+        },
+        {
+          "title": "9.3 Revue Périodique des Accès & Départs Collaborateurs",
+          "content": "Processus formel de désactivation immédiate lors des départs (offboarding), audit des comptes inactifs et traçabilité des délégations de pouvoir."
+        }
+      ],
+      "checklist": [
+        "Cartographier les comptes Administrateur du Domaine (Domain Admins)",
+        "Définir la matrice des rôles et profils utilisateurs (RBAC)",
+        "Mettre en place la procédure de revue trimestrielle des accès"
+      ],
+      "chatItems": [],
+      "description": "Gérer le cycle de vie des identités et restreindre les droits d'accès au strict nécessaire. Déploiement du modèle RBAC et sécurisation des comptes à privilèges."
+    },
+    {
+      "id": "sep-10",
+      "number": 10,
+      "title": "Architecture de sécurité : défense en profondeur et segmentation",
+      "bloc": "Bloc 1 : Fondamentaux de la SSI (42h)",
+      "compCode": "C1 & C5",
+      "compTitle": "Architecture de Sécurité & Défense en Profondeur",
+      "duration": "120-180 min",
+      "isReplayAvailable": false,
+      "videoUrl": null,
+      "docxUrl": "/Guides_Pedagogiques_PASI/Guide_Pedagogique_PASI_Septembre_Session_10.docx",
+      "pdfUrl": null,
+      "transcriptUrl": null,
+      "dateFormatted": "Mercredi 4 Novembre 2026",
+      "dateShort": "04/11/2026",
+      "tools": [
+        "VLANs",
+        "Pare-feu NGFW",
+        "Zones DMZ",
+        "Bastion d'Admin",
+        "Modèle Zero Trust"
+      ],
+      "cadrage": "Concevoir une architecture réseau résiliente reposant sur la défense en profondeur, le cloisonnement étanche des zones et les principes du Zero Trust.",
+      "sections": [
+        {
+          "title": "10.1 Cloisonnement Réseau & Segmentation VLANs",
+          "content": "Isolation des flux sensibles : VLAN administration, VLAN utilisateurs, VLAN invités, VLAN serveurs de production, VLAN IoT/médical."
+        },
+        {
+          "title": "10.2 Architecture DMZ & Filtrage des Flux Entrants/Sortants",
+          "content": "Mise en place de DMZ publique et DMZ applicative. Règles de filtrage strictes : interdiction des flux directs DMZ vers le réseau interne (LAN)."
+        },
+        {
+          "title": "10.3 Principes du Zero Trust (Never Trust, Always Verify)",
+          "content": "Vérification continue de l'identité, de l'état du terminal et du contexte de connexion. Micro-segmentation et chiffrement systématique des flux internes."
+        }
+      ],
+      "checklist": [
+        "Dessiner le schéma d'architecture réseau cible avec zones DMZ",
+        "Vérifier l'absence de flux directs entre le web et la base de données interne",
+        "Formaliser la matrice de flux autorisés inter-VLANs"
+      ],
+      "chatItems": [],
+      "description": "Concevoir une architecture réseau résiliente reposant sur la défense en profondeur, le cloisonnement étanche des zones et les principes du Zero Trust."
+    },
+    {
+      "id": "sep-11",
+      "number": 11,
+      "title": "Continuité d'activité : PCA, PRA et gestion de crise",
+      "bloc": "Bloc 4 : Gestion de Crise (28h)",
+      "compCode": "C4 & C6",
+      "compTitle": "Continuité d'Activité & Gestion de Crise (PCA/PRA)",
+      "duration": "120-180 min",
+      "isReplayAvailable": false,
+      "videoUrl": null,
+      "docxUrl": "/Guides_Pedagogiques_PASI/Guide_Pedagogique_PASI_Septembre_Session_11.docx",
+      "pdfUrl": null,
+      "transcriptUrl": null,
+      "dateFormatted": "Mercredi 11 Novembre 2026",
+      "dateShort": "11/11/2026",
+      "tools": [
+        "PCA / PRA",
+        "BIA (Business Impact Analysis)",
+        "Sauvegardes 3-2-1-1-0",
+        "Cellule de Crise",
+        "Fiches Réflexes"
+      ],
+      "cadrage": "Assurer la survie de l'organisation face à une cyberattaque majeure. Structuration des plans de reprise/continuité d'activité et animation d'une cellule de crise.",
+      "sections": [
+        {
+          "title": "11.1 Élaboration du PCA et du PRA Informatique",
+          "content": "Définition des métriques critiques : RTO (Recovery Time Objective) et RPO (Recovery Point Objective). Identification des processus métier vitaux via le BIA."
+        },
+        {
+          "title": "11.2 Stratégie de Sauvegarde Immuable (Règle 3-2-1-1-0)",
+          "content": "3 copies des données, 2 supports différents, 1 copie hors site (off-site), 1 copie déconnectée ou immuable (WORM/Air-gap), 0 erreur de restauration vérifiée."
+        },
+        {
+          "title": "11.3 Organisation & Rôle de la Cellule de Crise",
+          "content": "Composition de la cellule (Direction, DSI, RSSI, Communication, Juridique). Fiches réflexes d'urgence, canaux de communication alternatifs (hors réseau compromis)."
+        }
+      ],
+      "checklist": [
+        "Définir le RTO et RPO cibles pour les applications critiques",
+        "Tester la procédure de restauration d'une sauvegarde isolée",
+        "Rédiger la fiche réflexe 'Attaque Rançongiciel en cours'"
+      ],
+      "chatItems": [],
+      "description": "Assurer la survie de l'organisation face à une cyberattaque majeure. Structuration des plans de reprise/continuité d'activité et animation d'une cellule de crise."
+    },
+    {
+      "id": "sep-12",
+      "number": 12,
+      "title": "Tests d'intrusion (Partie 1) : identification des failles et scanning",
+      "bloc": "Bloc 3 : Sécurisation & Pentest (63h)",
+      "compCode": "C7",
+      "compTitle": "Tests d'Intrusion (Partie 1) : Reconnaissance & Scanning",
+      "duration": "120-180 min",
+      "isReplayAvailable": false,
+      "videoUrl": null,
+      "docxUrl": "/Guides_Pedagogiques_PASI/Guide_Pedagogique_PASI_Septembre_Session_12.docx",
+      "pdfUrl": null,
+      "transcriptUrl": null,
+      "dateFormatted": "Mercredi 18 Novembre 2026",
+      "dateShort": "18/11/2026",
+      "tools": [
+        "Nmap",
+        "OpenVAS / Greenbone",
+        "Nessus",
+        "Amass / Sublist3r",
+        "Shodan"
+      ],
+      "cadrage": "Maîtriser la phase offensive de cartographie et de découverte des vulnérabilités selon le référentiel méthodologique PASSI de l'ANSSI.",
+      "sections": [
+        {
+          "title": "12.1 Méthodologie d'Audit & Cadre Légal (Convention de Pentest)",
+          "content": "Respect strict du cadre juridique (articles 323-1 et suivants du Code pénal). Définition du périmètre (Black Box, Grey Box, White Box) et règles d'engagement."
+        },
+        {
+          "title": "12.2 Reconnaissance Passive & OSINT",
+          "content": "Collecte de données en sources ouvertes : DNS, certificats SSL, métadonnées, fuites d'identifiants, interrogation de bases Shodan/Censys sans toucher la cible."
+        },
+        {
+          "title": "12.3 Reconnaissance Active & Scanning de Vulnérabilités",
+          "content": "Énumération des ports et bannières avec Nmap (scans SYN, détection d'OS et de services). Exécution de scanners de vulnérabilités et qualification des résultats."
+        }
+      ],
+      "checklist": [
+        "Rédiger une convention d'audit technique d'intrusion",
+        "Effectuer un scan de ports Nmap sur une cible autorisée de lab",
+        "Qualifier les vulnérabilités identifiées selon leur score CVSS"
+      ],
+      "chatItems": [],
+      "description": "Maîtriser la phase offensive de cartographie et de découverte des vulnérabilités selon le référentiel méthodologique PASSI de l'ANSSI."
+    },
+    {
+      "id": "sep-13",
+      "number": 13,
+      "title": "Tests d'intrusion (Partie 2) : exploitation et évaluation de sécurité",
+      "bloc": "Bloc 3 : Sécurisation & Pentest (63h)",
+      "compCode": "C7 & C3",
+      "compTitle": "Tests d'Intrusion (Partie 2) : Exploitation & Rapport",
+      "duration": "120-180 min",
+      "isReplayAvailable": false,
+      "videoUrl": null,
+      "docxUrl": "/Guides_Pedagogiques_PASI/Guide_Pedagogique_PASI_Septembre_Session_13.docx",
+      "pdfUrl": null,
+      "transcriptUrl": null,
+      "dateFormatted": "Mercredi 25 Novembre 2026",
+      "dateShort": "25/11/2026",
+      "tools": [
+        "Metasploit",
+        "Burp Suite",
+        "Rapport d'Audit PASSI",
+        "Plan de Remédiation",
+        "Score CVSS v3.1"
+      ],
+      "cadrage": "Prouver la faisabilité des attaques par des démonstrations d'exploitation contrôlées et formaliser un rapport d'audit professionnel avec plan d'action hiérarchisé.",
+      "sections": [
+        {
+          "title": "13.1 Exploitation de Failles & Élévation de Privilèges",
+          "content": "Utilisation de Proof of Concept (PoC) pour valider l'exploitabilité. Mouvement latéral dans le réseau interne et élévation de privilèges locaux."
+        },
+        {
+          "title": "13.2 Cotation CVSS v3.1 & Impact Métier Réel",
+          "content": "Calcul des vecteurs CVSS (Base Score, Temporal Score, Environmental Score). Traduction de la criticité technique en risque opérationnel concret pour l'entreprise."
+        },
+        {
+          "title": "13.3 Rédaction du Rapport d'Audit & Plan de Remédiation",
+          "content": "Structure type du rapport PASSI : synthèse managériale pour la direction, fiches techniques détaillées par vulnérabilité, plan d'actions de remédiation priorisé."
+        }
+      ],
+      "checklist": [
+        "Rédiger la synthèse managériale d'un rapport de test d'intrusion",
+        "Classer 5 vulnérabilités découvertes par ordre d'urgence",
+        "Proposer les correctifs techniques immédiats et à moyen terme"
+      ],
+      "chatItems": [],
+      "description": "Prouver la faisabilité des attaques par des démonstrations d'exploitation contrôlées et formaliser un rapport d'audit professionnel avec plan d'action hiérarchisé."
+    },
+    {
+      "id": "sep-14",
+      "number": 14,
+      "title": "Sécurité des postes de travail : protection, configuration et durcissement",
+      "bloc": "Bloc 3 : Sécurisation & Pentest (63h)",
+      "compCode": "C5",
+      "compTitle": "Sécurité des Postes de Travail & Hardening",
+      "duration": "120-180 min",
+      "isReplayAvailable": false,
+      "videoUrl": null,
+      "docxUrl": "/Guides_Pedagogiques_PASI/Guide_Pedagogique_PASI_Septembre_Session_14.docx",
+      "pdfUrl": null,
+      "transcriptUrl": null,
+      "dateFormatted": "Mercredi 2 Décembre 2026",
+      "dateShort": "02/12/2026",
+      "tools": [
+        "EDR (CrowdStrike / Defender for Endpoint)",
+        "GPO Hardening (CIS Benchmarks)",
+        "BitLocker / LUKS",
+        "WSUS / Patch Management",
+        "AppLocker"
+      ],
+      "cadrage": "Durcir les postes clients et serveurs face aux attaques avancées. Implémentation des guides de durcissement de l'ANSSI et déploiement d'un EDR.",
+      "sections": [
+        {
+          "title": "14.1 Guides de Durcissement (Hardening) ANSSI & CIS Benchmarks",
+          "content": "Désactivation des protocoles obsolètes (SMBv1, LLMNR, NBT-NS), restriction de PowerShell, désactivation des macros Office par GPO."
+        },
+        {
+          "title": "14.2 Protection des Terminaux : De l'Antivirus à l'EDR",
+          "content": "Fonctionnement d'un EDR (Endpoint Detection and Response) : analyse comportementale en temps réel, détection de mouvements latéraux, isolation automatique du poste."
+        },
+        {
+          "title": "14.3 Chiffrement des Disques & Gestion des Correctifs",
+          "content": "Chiffrement intégral des disques durs portables (BitLocker/LUKS) avec puce TPM. Politique de patch management rigoureuse pour les failles critiques (sous 14 jours)."
+        }
+      ],
+      "checklist": [
+        "Appliquer les règles de durcissement recommandées par l'ANSSI sur un poste test",
+        "Vérifier le chiffrement complet des disques sur le parc nomade",
+        "Mettre en place la surveillance des alertes EDR"
+      ],
+      "chatItems": [],
+      "description": "Durcir les postes clients et serveurs face aux attaques avancées. Implémentation des guides de durcissement de l'ANSSI et déploiement d'un EDR."
+    },
+    {
+      "id": "sep-15",
+      "number": 15,
+      "title": "Sécurité des applications : vulnérabilités OWASP, tests et sécurisation",
+      "bloc": "Bloc 3 : Sécurisation & Pentest (63h)",
+      "compCode": "C5 & C7",
+      "compTitle": "Sécurité des Applications & OWASP Top 10",
+      "duration": "120-180 min",
+      "isReplayAvailable": false,
+      "videoUrl": null,
+      "docxUrl": "/Guides_Pedagogiques_PASI/Guide_Pedagogique_PASI_Septembre_Session_15.docx",
+      "pdfUrl": null,
+      "transcriptUrl": null,
+      "dateFormatted": "Mercredi 9 Décembre 2026",
+      "dateShort": "09/12/2026",
+      "tools": [
+        "OWASP Top 10",
+        "Burp Suite Community",
+        "OWASP ZAP",
+        "WAF (Web Application Firewall)",
+        "SonarQube"
+      ],
+      "cadrage": "Identifier et corriger les vulnérabilités applicatives majeures. Compréhension du Top 10 OWASP, sécurisation du code et tests d'intrusion web.",
+      "sections": [
+        {
+          "title": "15.1 Analyse Détaillée de l'OWASP Top 10",
+          "content": "Injections (SQL, NoSQL, Commandes OS), faiblesses d'authentification, failles de contrôle d'accès (IDOR), failles XSS, mauvaise configuration de sécurité."
+        },
+        {
+          "title": "15.2 Sécurisation du Code & Principes de DevSecOps",
+          "content": "Validation et échappement strict des entrées utilisateurs, requêtes préparées (Prepared Statements), utilisation d'outils d'analyse statique de code (SAST/DAST)."
+        },
+        {
+          "title": "15.3 Protection Périmétrique avec un WAF",
+          "content": "Rôle du Web Application Firewall : filtrage des requêtes HTTP/HTTPS malveillantes, blocage des attaques connues et protection contre les zero-days web."
+        }
+      ],
+      "checklist": [
+        "Tester l'interception de requêtes web avec Burp Suite",
+        "Identifier et neutraliser une vulnérabilité d'injection SQL",
+        "Vérifier les en-têtes HTTP de sécurité (CSP, HSTS, X-Frame-Options)"
+      ],
+      "chatItems": [],
+      "description": "Identifier et corriger les vulnérabilités applicatives majeures. Compréhension du Top 10 OWASP, sécurisation du code et tests d'intrusion web."
+    },
+    {
+      "id": "sep-16",
+      "number": 16,
+      "title": "Sécurité Cloud : responsabilités, risques et sécurisation des environnements",
+      "bloc": "Bloc 3 : Sécurisation & Pentest (63h)",
+      "compCode": "C5 & C2",
+      "compTitle": "Sécurité du Cloud (SaaS / IaaS / PaaS)",
+      "duration": "120-180 min",
+      "isReplayAvailable": false,
+      "videoUrl": null,
+      "docxUrl": "/Guides_Pedagogiques_PASI/Guide_Pedagogique_PASI_Septembre_Session_16.docx",
+      "pdfUrl": null,
+      "transcriptUrl": null,
+      "dateFormatted": "Mercredi 16 Décembre 2026",
+      "dateShort": "16/12/2026",
+      "tools": [
+        "AWS Security Hub",
+        "Azure Defender",
+        "CloudTrail / CloudWatch",
+        "KMS (Key Management)",
+        "CASB"
+      ],
+      "cadrage": "Comprendre les spécificités de la sécurité Cloud. Maîtriser le modèle de responsabilité partagée et sécuriser les configurations d'environnements IaaS/PaaS/SaaS.",
+      "sections": [
+        {
+          "title": "16.1 Modèle de Responsabilité Partagée dans le Cloud",
+          "content": "Délimitation des responsabilités entre le fournisseur Cloud (CSP) et le client selon le modèle de service (IaaS, PaaS, SaaS). Sécurisation des données et des identités."
+        },
+        {
+          "title": "16.2 Gestion des Accès IAM Cloud & Politiques de Moindre Privilège",
+          "content": "Configuration stricte des rôles et politiques IAM, suppression des clés d'accès permanentes au profit de rôles temporaires, activation obligatoire du MFA sur la console racine."
+        },
+        {
+          "title": "16.3 Sécurisation du Stockage & Journalisation Cloud",
+          "content": "Interdiction publique des buckets de stockage (S3/Blob Storage), chiffrement des volumes avec clés gérées par le client (KMS), activation systématique des logs d'audit (CloudTrail)."
+        }
+      ],
+      "checklist": [
+        "Auditer la configuration d'un bucket de stockage Cloud pour interdire l'accès public",
+        "Activer la journalisation complète des accès administrateur Cloud",
+        "Vérifier la politique de rotation des clés de chiffrement KMS"
+      ],
+      "chatItems": [],
+      "description": "Comprendre les spécificités de la sécurité Cloud. Maîtriser le modèle de responsabilité partagée et sécuriser les configurations d'environnements IaaS/PaaS/SaaS."
+    },
+    {
+      "id": "sep-17",
+      "number": 17,
+      "title": "Sécurité des réseaux : filtrage, segmentation et protection des flux",
+      "bloc": "Bloc 3 : Sécurisation & Pentest (63h)",
+      "compCode": "C5",
+      "compTitle": "Sécurité des Réseaux & Protection des Flux",
+      "duration": "120-180 min",
+      "isReplayAvailable": false,
+      "videoUrl": null,
+      "docxUrl": "/Guides_Pedagogiques_PASI/Guide_Pedagogique_PASI_Septembre_Session_17.docx",
+      "pdfUrl": null,
+      "transcriptUrl": null,
+      "dateFormatted": "Mercredi 23 Décembre 2026",
+      "dateShort": "23/12/2026",
+      "tools": [
+        "Pare-feu NGFW",
+        "IPsec VPN",
+        "TLS 1.3",
+        "WPA3 Enterprise / 802.1X",
+        "Radius"
+      ],
+      "cadrage": "Sécuriser les interconnexions, les accès distants et les communications internes par le filtrage applicatif, le chiffrement fort des tunnels et l'authentification réseau.",
+      "sections": [
+        {
+          "title": "17.1 Filtrage Nouvelle Génération (NGFW) & Inspection SSL/TLS",
+          "content": "Inspection applicative (couche 7), déchiffrement SSL pour analyse antivirale et anti-malware, filtrage URL et prévention des fuites de données (DLP)."
+        },
+        {
+          "title": "17.2 Tunnels Sécurisés VPN (IPsec & OpenVPN / WireGuard)",
+          "content": "Chiffrement des liaisons inter-sites et accès nomades : protocoles IKEv2, algorithmes cryptographiques recommandés par l'ANSSI (AES-256-GCM, SHA-256, DH group 19+)."
+        },
+        {
+          "title": "17.3 Sécurisation du Wi-Fi d'Entreprise (802.1X & WPA3)",
+          "content": "Abandon du WPA2-PSK au profit du WPA3-Enterprise avec authentification par certificat (EAP-TLS) et serveur Radius. Cloisonnement strict du Wi-Fi Invités."
+        }
+      ],
+      "checklist": [
+        "Vérifier la configuration des protocoles VPN nomades",
+        "Déployer un réseau Wi-Fi invités strictement isolé du réseau interne",
+        "Activer TLS 1.3 et désactiver TLS 1.0 / 1.1 sur les serveurs web"
+      ],
+      "chatItems": [],
+      "description": "Sécuriser les interconnexions, les accès distants et les communications internes par le filtrage applicatif, le chiffrement fort des tunnels et l'authentification réseau."
+    },
+    {
+      "id": "sep-18",
+      "number": 18,
+      "title": "Sécurité des données : classification, protection et gestion de la conformité",
+      "bloc": "Bloc 1 : Fondamentaux & Conformité (42h)",
+      "compCode": "C1 & C2",
+      "compTitle": "Sécurité des Données & Conformité RGPD",
+      "duration": "120-180 min",
+      "isReplayAvailable": false,
+      "videoUrl": null,
+      "docxUrl": "/Guides_Pedagogiques_PASI/Guide_Pedagogique_PASI_Septembre_Session_18.docx",
+      "pdfUrl": null,
+      "transcriptUrl": null,
+      "dateFormatted": "Mercredi 30 Décembre 2026",
+      "dateShort": "30/12/2026",
+      "tools": [
+        "Registre RGPD",
+        "Chiffrement AES-256",
+        "DLP (Data Loss Prevention)",
+        "Outil PIA CNIL",
+        "Anonymisation"
+      ],
+      "cadrage": "Garantir la confidentialité et l'intégrité des données à caractère personnel et des actifs sensibles. Mise en conformité avec le RGPD et déploiement de techniques de protection des données.",
+      "sections": [
+        {
+          "title": "18.1 Classification des Données & Données Sensibles (DCP)",
+          "content": "Identification des données à caractère personnel, données de santé, secrets d'affaires. Règles de minimisation et de durée de conservation légale."
+        },
+        {
+          "title": "18.2 Chiffrement des Données au Repos et en Transit",
+          "content": "Standards de chiffrement symétrique (AES-256) et asymétrique (RSA-4096 / ECC). Gestion sécurisée des clés de déchiffrement et gestion des sauvegardes chiffrées."
+        },
+        {
+          "title": "18.3 Gestion des Violations de Données & Notification CNIL",
+          "content": "Procédure d'alerte interne lors d'une fuite de données, qualification du risque pour les personnes concernées et notification officielle à la CNIL sous 72h."
+        }
+      ],
+      "checklist": [
+        "Cartographier les traitements de données à caractère personnel dans le registre",
+        "Tester la procédure de notification d'une violation de données sous 72h",
+        "Vérifier le chiffrement de toutes les bases de données contenant des DCP"
+      ],
+      "chatItems": [],
+      "description": "Garantir la confidentialité et l'intégrité des données à caractère personnel et des actifs sensibles. Mise en conformité avec le RGPD et déploiement de techniques de protection des données."
+    },
+    {
+      "id": "sep-19",
+      "number": 19,
+      "title": "Gestion des accès et authentification : contrôle et traçabilité",
+      "bloc": "Bloc 2 : Supervision & Détection (70h)",
+      "compCode": "C5 & C8",
+      "compTitle": "Gestion Avancée des Accès & Traçabilité",
+      "duration": "120-180 min",
+      "isReplayAvailable": false,
+      "videoUrl": null,
+      "docxUrl": "/Guides_Pedagogiques_PASI/Guide_Pedagogique_PASI_Septembre_Session_19.docx",
+      "pdfUrl": null,
+      "transcriptUrl": null,
+      "dateFormatted": "Mercredi 6 Janvier 2027",
+      "dateShort": "06/01/2027",
+      "tools": [
+        "Audit Logs AD",
+        "Revue d'Accès",
+        "Sysvol Audit",
+        "MFA Conditionnel",
+        "SSO"
+      ],
+      "cadrage": "Approfondir le contrôle et la surveillance continue des habilitations pour prévenir les abus de privilèges et garantir une traçabilité complète des actions sensibles.",
+      "sections": [
+        {
+          "title": "19.1 Traçabilité Complète des Actions Administrateurs",
+          "content": "Enregistrement vidéo ou textuel des sessions de télémaintenance et d'administration via bastion PAM. Détection des commandes à haut risque."
+        },
+        {
+          "title": "19.2 Accès Conditionnel & Analyse de Risque à la Connexion",
+          "content": "Politiques d'accès basées sur le lieu de connexion, l'état de conformité du terminal (compliant device), et le score de risque calculé en temps réel."
+        },
+        {
+          "title": "19.3 Audit des Délégations & Élimination des Droits Dormants",
+          "content": "Recherche des privilèges orphelins, des appartenances à des groupes imbriqués et assainissement des listes de contrôle d'accès (ACLs)."
+        }
+      ],
+      "checklist": [
+        "Auditer la liste de tous les utilisateurs ayant des droits d'administration",
+        "Configurer une règle d'accès conditionnel bloquant les connexions étrangères non autorisées",
+        "Mettre en place la traçabilité des ouvertures de session sur les serveurs clés"
+      ],
+      "chatItems": [],
+      "description": "Approfondir le contrôle et la surveillance continue des habilitations pour prévenir les abus de privilèges et garantir une traçabilité complète des actions sensibles."
+    },
+    {
+      "id": "sep-20",
+      "number": 20,
+      "title": "Préparation — Dossier professionnel et livrables d'évaluation",
+      "bloc": "Bloc 4 : Soutenance & Livrables (28h)",
+      "compCode": "C1 à C10",
+      "compTitle": "Préparation du Dossier Professionnel & Livrables",
+      "duration": "120-180 min",
+      "isReplayAvailable": false,
+      "videoUrl": null,
+      "docxUrl": "/Guides_Pedagogiques_PASI/Guide_Pedagogique_PASI_Septembre_Session_20.docx",
+      "pdfUrl": null,
+      "transcriptUrl": null,
+      "dateFormatted": "Mercredi 13 Janvier 2027",
+      "dateShort": "13/01/2027",
+      "tools": [
+        "Dossier Professionnel",
+        "Livrables Écrits",
+        "Grille 46 Critères",
+        "Cas Pratique Fil Rouge",
+        "Guide Soutenance"
+      ],
+      "cadrage": "Structurer et finaliser l'ensemble des livrables écrits exigés pour la certification PASI. Synthèse des réalisations professionnelles et validation des critères de compétences.",
+      "sections": [
+        {
+          "title": "20.1 Structure du Dossier Professionnel de Certification",
+          "content": "Organisation des parties : présentation du candidat et de son contexte d'entreprise, démonstration détaillée des 4 Blocs de compétences, présentation des preuves techniques et organisationnelles."
+        },
+        {
+          "title": "20.2 Compilation des Livrables Techniques",
+          "content": "Rapport d'analyse des risques (EBIOS RM), rapport d'audit technique / test d'intrusion, plan d'actions de remédiation, tableau de bord SSI, plan de gestion de crise / PCA."
+        },
+        {
+          "title": "20.3 Auto-Évaluation sur la Grille des 46 Critères",
+          "content": "Vérification point par point de la couverture des 10 compétences C1 à C10. Identification des points forts et consolidation des éventuelles faiblesses avant soumission au jury."
+        }
+      ],
+      "checklist": [
+        "Finaliser la rédaction des 4 sections du dossier professionnel",
+        "Joindre les 5 livrables techniques obligatoires",
+        "Vérifier la conformité de son dossier avec la grille d'évaluation du jury"
+      ],
+      "chatItems": [],
+      "description": "Structurer et finaliser l'ensemble des livrables écrits exigés pour la certification PASI. Synthèse des réalisations professionnelles et validation des critères de compétences."
+    },
+    {
+      "id": "sep-21",
+      "number": 21,
+      "title": "Préparation — Soutenance orale et jury final de certification",
+      "bloc": "Bloc 4 : Soutenance & Livrables (28h)",
+      "compCode": "C1 à C10",
+      "compTitle": "Soutenance Orale & Validation Finale devant le Jury",
+      "duration": "120-180 min",
+      "isReplayAvailable": false,
+      "videoUrl": null,
+      "docxUrl": "/Guides_Pedagogiques_PASI/Guide_Pedagogique_PASI_Septembre_Session_21.docx",
+      "pdfUrl": null,
+      "transcriptUrl": null,
+      "dateFormatted": "Mercredi 20 Janvier 2027",
+      "dateShort": "20/01/2027",
+      "tools": [
+        "Support de Présentation",
+        "Simulation Soutenance",
+        "Grille Notation Jury",
+        "Arguments d'Arbitrage"
+      ],
+      "cadrage": "Préparer et réussir l'épreuve orale finale devant le jury de professionnels présidé par Patrice Chelim. Présentation percutante et maîtrise des échanges techniques et managériaux.",
+      "sections": [
+        {
+          "title": "21.1 Déroulement de l'Épreuve Orale de Soutenance",
+          "content": "Gestion du temps (présentation du candidat ~20-30 min, questions/réponses avec les membres du jury ~30-40 min). Posture professionnelle et clarté des démonstrations."
+        },
+        {
+          "title": "21.2 Argumentation & Justification des Choix Techniques",
+          "content": "Capacité à défendre ses arbitrages face au jury : pourquoi avoir choisi cette solution, comment avoir pris en compte les contraintes budgétaires, quelle stratégie de résilience face aux menaces."
+        },
+        {
+          "title": "21.3 Délibération du Jury & Délivrance de la Certification",
+          "content": "Critères d'attribution du titre certifiant PASI (seuil minimal de 70% par bloc de compétences). Remise des attestations et officialisation du titre."
+        }
+      ],
+      "checklist": [
+        "Préparer son diaporama de soutenance orale (15 à 20 slides synthétiques)",
+        "Réaliser une simulation orale chronométrée",
+        "Préparer les réponses aux 5 questions pièges classiques du jury"
+      ],
+      "chatItems": [],
+      "description": "Préparer et réussir l'épreuve orale finale devant le jury de professionnels présidé par Patrice Chelim. Présentation percutante et maîtrise des échanges techniques et managériaux."
+    }
+  ]
+}

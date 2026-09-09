@@ -1,0 +1,101 @@
+{
+  "promotionId": "pasi-septembre-2026",
+  "promotionName": "Promotion PASI Cybersécurité — Septembre 2026",
+  "dateEdition": "07 Septembre 2026",
+  "globalScore": 8.8,
+  "motivationScore": 8.8,
+  "impactMetierScore": 8.8,
+  "totalApprenants": 6,
+  "axesPositionnement": [
+    {
+      "id": "axe-1",
+      "titre": "Mettre en place une stratégie de cybersécurité à partir d’une analyse du risque",
+      "noteMoyenne": 4.5,
+      "maitriseObjectifs": 5.8,
+      "distribution": {
+        "totalement": "0%",
+        "enPartie": "66%",
+        "pasDuTout": "33%"
+      }
+    },
+    {
+      "id": "axe-2",
+      "titre": "Sécuriser des réseaux, des protocoles, des terminaux et des serveurs",
+      "noteMoyenne": 4.7,
+      "maitriseObjectifs": 5.8,
+      "distribution": {
+        "totalement": "0%",
+        "enPartie": "66%",
+        "pasDuTout": "33%"
+      }
+    },
+    {
+      "id": "axe-3",
+      "titre": "Animer et évaluer la mise en œuvre d’une stratégie de cybersécurité",
+      "noteMoyenne": 5,
+      "maitriseObjectifs": 6.3,
+      "distribution": {
+        "totalement": "0%",
+        "enPartie": "66%",
+        "insuffisamment": "16%",
+        "pasDuTout": "16%"
+      }
+    }
+  ],
+  "apprenants": [
+    {
+      "id": "app-pasi-1",
+      "nom": "CHELZA",
+      "prenom": "Didier",
+      "fonction": "Consultant",
+      "anciennete": "+ de 20 ans",
+      "email": "didier.chelza@gmail.com",
+      "motivation": "Animer des formations autour de la cybersécurité. Proposer des prestations d'audit cybersécurité - Sécuriser mon activité"
+    },
+    {
+      "id": "app-pasi-2",
+      "nom": "POGNON",
+      "prenom": "Fabrice",
+      "fonction": "Technicien Informatique",
+      "anciennete": "10 ans",
+      "email": "fabrice.pognon@gmail.com",
+      "motivation": "Répondre à une demande croissante en matière de sécurité, certains clients ayant déjà été victimes de ransomware. Proposer des solutions de haut niveau, sécuriser les parcs clients."
+    },
+    {
+      "id": "app-pasi-3",
+      "nom": "THAMS",
+      "prenom": "Sébastien",
+      "fonction": "Technicien Informatique",
+      "anciennete": "8 ans",
+      "email": "sebastien.thams@gmail.com",
+      "motivation": "Approfondir mes connaissances techniques et consolider mes compétences cyber."
+    },
+    {
+      "id": "app-pasi-4",
+      "nom": "DELANNAY",
+      "prenom": "Naim",
+      "fonction": "Technico-commercial",
+      "anciennete": "7 mois",
+      "email": "naim.delannay@gmail.com",
+      "motivation": "Être à jour techniquement et compléter mes arguments de vente."
+    },
+    {
+      "id": "app-pasi-5",
+      "nom": "VALERO",
+      "prenom": "Alain",
+      "fonction": "CEO OIDANEOS",
+      "anciennete": "5 ans",
+      "email": "alain.valero@oidaneos.com",
+      "motivation": "Comprendre le contenu pédagogique de cette formation. Être capable de maîtriser le rôle de RSSI à la sortie. Identifier le lien avec l'IA de ce programme."
+    },
+    {
+      "id": "app-pasi-6",
+      "nom": "MACAL",
+      "prenom": "Anthony",
+      "fonction": "PASI / Opérationnel",
+      "anciennete": "N/A",
+      "email": "anthony.macal@gmail.com",
+      "motivation": "Amélioration des compétences et mise à niveau des exigences. Intégration plus claire de la cybersécurité dans nos protocoles."
+    }
+  ]
+}

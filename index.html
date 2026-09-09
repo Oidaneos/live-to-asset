@@ -59,107 +59,91 @@
 
   <style>
     /* Smooth touch scrolling & Mobile Polish */
-    html, body { 
-      overflow-x: hidden; 
-      width: 100%; 
-      max-width: 100vw; 
-      -webkit-tap-highlight-color: transparent; 
-      scroll-behavior: smooth; 
-    }
+    html { -webkit-tap-highlight-color: transparent; scroll-behavior: smooth; }
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     @media (max-width: 640px) {
       .touch-target { min-height: 44px; }
-      .mobile-p-tight { padding: 0.875rem !important; }
+      .mobile-p-tight { padding: 1rem !important; }
     }
   </style>
 
 </head>
 <body class="h-full flex flex-col antialiased selection:bg-oidaneos-pink selection:text-white custom-scroll bg-[#FBF9FD]">
 
-  <!-- ================= TOPBAR BRANDÉE OIDANEOS (TIER 1 : LOGO & COMPTE) ================= -->
-  <header class="bg-white sticky top-0 z-40 border-b border-oidaneos-line shadow-xs">
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between gap-3">
-      
-      <!-- Brand Logo -->
-      <a href="#" onclick="showHomeView(); return false;" class="flex items-center gap-2 sm:gap-3 group shrink-0 min-w-0">
-        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-grad-oidaneos flex items-center justify-center font-black text-white shadow-btn text-sm sm:text-lg group-hover:scale-105 transition shrink-0">
+      <!-- ================= TOPBAR BRANDÉE OIDANEOS (MOBILE-OPTIMIZED) ================= -->
+  <header class="bg-white sticky top-0 z-40 border-b border-oidaneos-line px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-between shadow-sm">
+    <div class="flex items-center gap-2 sm:gap-4">
+      <a href="#" onclick="showHomeView(); return false;" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-grad-oidaneos flex items-center justify-center font-black text-white shadow-btn text-base sm:text-lg group-hover:scale-105 transition shrink-0">
           O
         </div>
-        <div class="min-w-0">
+        <div>
           <div class="flex items-center gap-1.5">
-            <span class="font-extrabold tracking-tight text-oidaneos-ink text-sm sm:text-lg truncate">OIDANEOS</span>
-            <span class="px-1.5 py-0.5 text-[9px] font-extrabold uppercase rounded-full bg-oidaneos-lav100 text-oidaneos-purple border border-oidaneos-line shrink-0">
+            <span class="font-extrabold tracking-tight text-oidaneos-ink text-base sm:text-xl">OIDANEOS</span>
+            <span class="px-1.5 sm:px-2 py-0.5 text-[9px] sm:text-[10px] font-bold uppercase rounded-full bg-oidaneos-lav100 text-oidaneos-purple border border-oidaneos-line">
               Live
             </span>
           </div>
-          <p class="text-[10px] text-oidaneos-muted font-medium truncate hidden sm:block">E-Learning & Guides</p>
+          <p class="text-[10px] sm:text-xs text-oidaneos-muted font-medium truncate max-w-[140px] sm:max-w-none">E-Learning & Guides</p>
         </div>
       </a>
-
-      <!-- Actions Droite : Utilisateur & Quitter -->
-      <div class="flex items-center gap-2 shrink-0">
-        
-        <!-- Espace Utilisateur Connecté -->
-        <div id="userHeaderBadgeContainer" class="hidden flex items-center gap-1.5 sm:gap-2 bg-oidaneos-lav50 px-2 sm:px-3 py-1 rounded-xl border border-oidaneos-line">
-          <div id="headerUserAvatar" class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-grad-oidaneos text-white text-[9px] sm:text-[10px] font-black flex items-center justify-center shrink-0">
-            --
-          </div>
-          <div class="flex items-center gap-1 min-w-0">
-            <span id="headerUserName" class="text-[11px] sm:text-xs font-extrabold text-oidaneos-ink max-w-[90px] sm:max-w-[160px] truncate">Espace Apprenant</span>
-            <span id="headerUserRoleBadge" class="hidden px-1.5 py-0.5 rounded-full bg-oidaneos-purple text-white text-[8px] font-extrabold uppercase shrink-0">Formateur</span>
-          </div>
-
-          <!-- Sélecteur Formateur (Superviseur Alain, Pierre, Milène) -->
-          <select id="trainerLearnerSelector" onchange="trainerSelectLearner(this.value)" class="hidden bg-white text-oidaneos-purple text-[10px] sm:text-xs font-extrabold border border-oidaneos-line rounded-lg px-1.5 py-0.5 focus:outline-none cursor-pointer max-w-[110px] sm:max-w-none truncate">
-            <option value="ackaraib@orange.fr">Murielle (ACKARAIB)</option>
-            <option value="mamalylys2323@gmail.com">Mailys (ACKARAIB)</option>
-            <option value="gwenaelle.davrain1@gmail.com">Gwenaelle (ACKARAIB)</option>
-            <option value="babzwayne@gmail.com">Ruben (Ishanoa)</option>
-          </select>
-        </div>
-
-        <!-- Bouton Déconnexion / Quitter -->
-        <button id="btnLogoutBtn" onclick="handleLogout()" title="Se déconnecter / Changer d'email" class="p-1.5 sm:px-2.5 sm:py-1.5 rounded-xl bg-oidaneos-lav50 hover:bg-pink-50 hover:text-red-600 border border-oidaneos-line text-oidaneos-muted transition text-xs font-semibold flex items-center gap-1.5 cursor-pointer shrink-0">
-          <i data-lucide="log-out" class="w-3.5 h-3.5 text-oidaneos-pink shrink-0"></i>
-          <span class="hidden sm:inline">Quitter</span>
-        </button>
-
-      </div>
     </div>
 
-    <!-- ================= SUB-NAV BAR (TIER 2 : NAVIGATION & SÉLECTEUR DE PROMOTION) ================= -->
-    <div class="bg-gray-50/90 border-t border-oidaneos-line/60">
-      <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-1.5 flex items-center justify-between gap-2 overflow-x-auto no-scrollbar">
-        
-        <!-- Onglets Navigation -->
-        <nav class="flex items-center gap-1 sm:gap-2 shrink-0">
-          <button onclick="showHomeView()" id="btnNavHome" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple text-xs font-bold transition shrink-0">
-            <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
-            <span id="btnNavHomeLabel">Toutes les sessions (14)</span>
-          </button>
+    <!-- Actions Droite -->
+    <div class="flex items-center gap-2 sm:gap-3">
+      <button onclick="showHomeView()" id="btnNavHome" class="inline-flex items-center gap-1 px-2.5 sm:px-3.5 py-1.5 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple text-xs font-bold transition">
+        <i data-lucide="layout-grid" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+        <span class="hidden sm:inline">Toutes les sessions (14)</span>
+        <span class="sm:hidden">14 Sessions</span>
+      </button>
 
-          <button onclick="showProgramView()" id="btnNavProgram" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-oidaneos-lav100 text-oidaneos-body hover:text-oidaneos-purple text-xs font-bold border border-oidaneos-line transition shrink-0">
-            <i data-lucide="target" class="w-3.5 h-3.5 text-oidaneos-pink"></i>
-            <span>Programme & Compétences</span>
-          </button>
+      <button onclick="showProgramView()" id="btnNavProgram" class="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple text-xs font-bold border border-oidaneos-line transition">
+        <i data-lucide="target" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-oidaneos-pink"></i>
+        <span class="hidden sm:inline">Programme & Compétences</span>
+        <span class="sm:hidden">Programme</span>
+      </button>
 
-          <button onclick="showEvaluationsView()" id="btnNavEvaluations" class="hidden inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-grad-oidaneos text-white text-xs font-extrabold shadow-btn hover:opacity-95 transition shrink-0">
-            <i data-lucide="clipboard-check" class="w-3.5 h-3.5 text-pink-200"></i>
-            <span>Évaluations & Qualité</span>
-          </button>
-        </nav>
+      <button onclick="showEvaluationsView()" id="btnNavEvaluations" class="hidden inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-xl bg-grad-oidaneos text-white text-xs font-extrabold shadow-btn hover:opacity-95 transition">
+        <i data-lucide="clipboard-check" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-pink-200"></i>
+        <span class="hidden sm:inline">Évaluations & Qualité</span>
+        <span class="sm:hidden">Qualité</span>
+      </button>
 
-        <!-- Sélecteur de Promotion Compact -->
-        <div id="promoSelectorContainer" class="flex items-center gap-1.5 bg-white px-2.5 py-1 rounded-xl border border-oidaneos-line shrink-0 shadow-xs">
-          <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-oidaneos-pink shrink-0"></i>
-          <select id="promoSelector" onchange="onPromotionChange(this.value)" class="bg-transparent text-oidaneos-ink text-[11px] sm:text-xs font-bold border-none focus:outline-none cursor-pointer">
-            <option value="septembre-2026" selected>🎓 Promo Septembre 2026 (En cours)</option>
-            <option value="juin-2026">🎓 Promo Juin 2026 (Archive 14 Séances)</option>
-          </select>
+      <!-- Badge Promo & Déconnexion Mobile -->
+            <!-- Sélecteur de Promotion -->
+      <div class="flex items-center gap-1.5 bg-oidaneos-lav50 px-2.5 py-1 rounded-2xl border border-oidaneos-line">
+        <i data-lucide="graduation-cap" class="w-4 h-4 text-oidaneos-pink shrink-0"></i>
+        <select id="promoSelector" onchange="onPromotionChange(this.value)" class="bg-transparent text-oidaneos-ink text-xs font-bold border-none focus:outline-none cursor-pointer">
+          <option value="juin-2026" selected>🎓 Promo Juin 2026 (Jury 14 Séances)</option>
+          <option value="septembre-2026">🎓 Promo Septembre 2026 (En cours)</option>
+        </select>
+      </div>
+
+      <!-- Espace Utilisateur Connecté (Privé ou Formateur) -->
+      <div id="userHeaderBadgeContainer" class="hidden flex items-center gap-2 bg-white px-3 py-1.5 rounded-2xl border border-oidaneos-line shadow-sm">
+        <div id="headerUserAvatar" class="w-6 h-6 rounded-full bg-grad-oidaneos text-white text-[10px] font-black flex items-center justify-center shrink-0">
+          ML
+        </div>
+        <div class="flex items-center gap-1.5">
+          <span id="headerUserName" class="text-xs font-extrabold text-oidaneos-ink max-w-[140px] sm:max-w-[200px] truncate">Murielle LAPILUS</span>
+          <span id="headerUserRoleBadge" class="hidden px-2 py-0.5 rounded-full bg-oidaneos-purple text-white text-[9px] font-extrabold uppercase">Formateur</span>
         </div>
 
+        <!-- Sélecteur Formateur (Visible UNIQUEMENT pour Alain, Pierre et Milène) -->
+        <select id="trainerLearnerSelector" onchange="trainerSelectLearner(this.value)" class="hidden bg-oidaneos-lav50 text-oidaneos-purple text-xs font-extrabold border border-oidaneos-line rounded-lg px-2 py-1 focus:outline-none cursor-pointer">
+          <option value="ackaraib@orange.fr">Vue : Murielle LAPILUS (ACKARAIB)</option>
+          <option value="mamalylys2323@gmail.com">Vue : Mailys DAVRAIN (ACKARAIB)</option>
+          <option value="gwenaelle.davrain1@gmail.com">Vue : Gwenaelle POUMAROUX (ACKARAIB)</option>
+          <option value="babzwayne@gmail.com">Vue : Ruben MEL (Ishanoa)</option>
+        </select>
       </div>
+
+      <!-- Bouton Déconnexion -->
+      <button id="btnLogoutBtn" onclick="handleLogout()" title="Se déconnecter / Changer d'email" class="p-1.5 sm:px-2.5 sm:py-1.5 rounded-xl bg-oidaneos-lav50 hover:bg-pink-50 hover:text-red-600 border border-oidaneos-line text-oidaneos-muted transition text-xs font-semibold flex items-center gap-1.5">
+        <i data-lucide="log-out" class="w-3.5 h-3.5 text-oidaneos-pink"></i>
+        <span class="hidden sm:inline">Quitter</span>
+      </button>
     </div>
   </header>
 
@@ -171,102 +155,103 @@
     <!-- ========================================================================= -->
     <div id="viewHome" class="space-y-8 animate-fade-in">
       
-      <!-- En-tête de bienvenue & Indicateurs Bento -->
-      <div class="bg-white rounded-3xl p-6 lg:p-8 border border-slate-200/80 shadow-[0_4px_25px_-5px_rgba(109,40,166,0.06)] flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative overflow-hidden">
-        <div class="absolute -right-16 -bottom-16 w-72 h-72 bg-gradient-to-br from-oidaneos-purple/10 via-oidaneos-pink/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+      <!-- En-tête de bienvenue & Indicateurs -->
+      <div class="bg-white rounded-3xl p-6 lg:p-8 border border-oidaneos-line shadow-card flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative overflow-hidden">
+        <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-gradient-to-br from-oidaneos-purple/10 via-oidaneos-pink/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
         
         <div class="space-y-3 relative max-w-2xl">
-          <div id="heroPromoTag" class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-50 text-purple-700 border border-purple-200/60 text-xs font-bold shadow-xs">
+          <div id="heroPromoTag" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-oidaneos-lav100 text-oidaneos-purple text-xs font-bold">
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             Promotion IA IT Juin 2026 • 14 Séances & Guides Étalons Approfondis
           </div>
-          <h1 class="text-2xl lg:text-3xl font-black text-slate-900 tracking-tight leading-tight">
+          <h1 class="text-2xl lg:text-3xl font-black text-oidaneos-ink tracking-tight">
             Concepteur & Développeur de Solutions d'Intelligence Artificielle
           </h1>
-          <p id="heroPromoDesc" class="text-xs sm:text-sm text-slate-600 leading-relaxed">Chaque séance en direct est transformée en <strong>micro-vidéos ciblées</strong> découpées par Vincent, accompagnée d'un <strong>Guide Pédagogique Étalon complet et approfondi</strong> extrait du transcript, et des <strong>fiches de révision officielles</strong> en format Word.</p>
+          <p id="heroPromoDesc" class="text-sm text-oidaneos-body leading-relaxed">Chaque séance en direct est transformée en <strong>micro-vidéos ciblées</strong> découpées par Vincent, accompagnée d'un <strong>Guide Pédagogique Étalon complet et approfondi</strong> extrait du transcript, et des <strong>fiches de révision officielles</strong> en format Word.</p>
         </div>
 
-        <!-- Badges Statistiques Bento -->
+        <!-- Badges Statistiques -->
         <div class="relative shrink-0 flex flex-col sm:flex-row lg:flex-col items-start lg:items-end justify-center gap-3">
-          <div class="p-3.5 sm:px-4 sm:py-3.5 rounded-2xl bg-emerald-50/70 border border-emerald-200/70 flex items-center gap-3 shadow-xs hover:bg-emerald-50 transition">
-            <div id="statAssetisedCount" class="w-9 h-9 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-black text-sm shadow-sm">
+          <div class="p-3.5 rounded-2xl bg-emerald-50/80 border border-emerald-200/80 flex items-center gap-3">
+            <div id="statAssetisedCount" class="w-8 h-8 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-bold text-sm">
               8
             </div>
             <div>
-              <div class="text-xs font-extrabold text-emerald-950">Sessions Assetisées</div>
-              <div id="statMicroVideosCount" class="text-[11px] font-medium text-emerald-700">82 micro-vidéos découpées</div>
+              <div class="text-xs font-bold text-emerald-900">Sessions Assetisées</div>
+              <div id="statMicroVideosCount" class="text-[10px] text-emerald-700">82 micro-vidéos découpées</div>
             </div>
           </div>
 
-          <div class="p-3.5 sm:px-4 sm:py-3.5 rounded-2xl bg-amber-50/70 border border-amber-200/70 flex items-center gap-3 shadow-xs hover:bg-amber-50 transition">
-            <div id="statReplaysCount" class="w-9 h-9 rounded-xl bg-amber-500 text-white flex items-center justify-center font-black text-sm shadow-sm">
+          <div class="p-3.5 rounded-2xl bg-amber-50/80 border border-amber-200/80 flex items-center gap-3">
+            <div id="statReplaysCount" class="w-8 h-8 rounded-xl bg-amber-500 text-white flex items-center justify-center font-bold text-sm">
               6
             </div>
             <div>
-              <div id="statReplaysTitle" class="text-xs font-extrabold text-amber-950">Replays Disponibles</div>
-              <div id="statReplaysSub" class="text-[11px] font-medium text-amber-700">En cours de découpage</div>
+              <div class="text-xs font-bold text-amber-900">Replays en cours</div>
+              <div class="text-[10px] text-amber-700">Découpage Vincent en cours</div>
             </div>
           </div>
         </div>
       </div>
 
       <!-- ================= BANNIÈRE SALLE DE CLASSE ZOOM EN DIRECT (PROMO SEPTEMBRE) ================= -->
-      <div id="zoomBannerContainer" class="hidden bg-gradient-to-r from-slate-950 via-indigo-950 to-purple-950 rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden flex flex-col lg:flex-row lg:items-center justify-between gap-6 border border-indigo-500/25">
-        <div class="space-y-2 max-w-2xl">
-          <div class="flex items-center gap-2 flex-wrap">
-            <span class="px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider rounded-full bg-pink-500/20 text-pink-300 border border-pink-400/40 flex items-center gap-1.5 shadow-xs">
-              <span class="w-2 h-2 rounded-full bg-pink-400 animate-ping"></span>
+      <div id="zoomBannerContainer" class="hidden bg-gradient-to-r from-blue-900 via-indigo-900 to-oidaneos-purpleDeep rounded-3xl p-6 text-white shadow-card relative overflow-hidden flex flex-col md:flex-row md:items-center justify-between gap-5 border border-indigo-500/30">
+        <div class="space-y-1.5 max-w-2xl">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider rounded-full bg-red-500/20 text-red-300 border border-red-400/40 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-red-400 animate-ping"></span>
               <span>Direct Hebdomadaire</span>
             </span>
             <span class="text-xs text-indigo-200 font-semibold">• Tous les Vendredis de 08h00 à 10h00 (Heure Guadeloupe)</span>
           </div>
-          <h2 class="text-lg sm:text-2xl font-black text-white tracking-tight">
+          <h2 class="text-lg sm:text-xl font-black text-white">
             Salle de Classe Virtuelle Zoom — Promotion Septembre 2026
           </h2>
-          <p class="text-xs sm:text-sm text-indigo-100/80 leading-relaxed">
-            Rejoignez vos séances hebdomadaires en direct avec Pierre Lacombe et Alain Valero. Prochaine séance : <strong>Vendredi 11 Septembre à 8h00</strong>.
+          <p class="text-xs text-indigo-100/80 leading-relaxed">
+            Rejoignez vos sessions en direct avec Pierre Lacombe et Alain Valero. Prochaine session : <strong>Vendredi 11 Septembre à 8h00</strong>.
           </p>
         </div>
 
-        <div class="shrink-0 flex flex-wrap items-center gap-3">
-          <a href="/Planning_Formation_IA_OIDANEOS_Septembre_2026.ics" download="Planning_Formation_IA_OIDANEOS_Septembre_2026.ics" class="px-4 py-3 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs font-extrabold border border-white/20 transition flex items-center gap-2 shadow-sm hover:scale-[1.02] cursor-pointer">
+        <div class="shrink-0 flex flex-wrap items-center gap-2.5">
+          <a href="/Planning_Formation_IA_OIDANEOS_Septembre_2026.ics" download="Planning_Formation_IA_OIDANEOS_Septembre_2026.ics" class="px-4 py-3 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs font-extrabold border border-white/20 transition flex items-center gap-2 shadow-sm hover:scale-105">
             <i data-lucide="calendar-plus" class="w-4 h-4 text-pink-300"></i>
             <span>Ajouter à mon Agenda (.ICS)</span>
           </a>
-          <a href="https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1" target="_blank" class="px-5 py-3 rounded-2xl bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white text-xs font-black shadow-btn transition flex items-center gap-2 group hover:scale-[1.02] cursor-pointer">
-            <i data-lucide="video" class="w-4 h-4 text-white group-hover:animate-pulse"></i>
+          <a href="https://us06web.zoom.us/j/86465637409?pwd=Bqb74UfS8WkhF2Ppedj9VS3kYGA513.1" target="_blank" class="px-5 py-3 rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white text-xs font-extrabold shadow-btn transition flex items-center gap-2 group hover:scale-105">
+            <i data-lucide="video" class="w-4 h-4 text-blue-200 group-hover:animate-pulse"></i>
             <span>Rejoindre le Live Zoom</span>
-            <i data-lucide="external-link" class="w-3.5 h-3.5 opacity-80"></i>
+            <i data-lucide="external-link" class="w-3.5 h-3.5 opacity-70"></i>
           </a>
         </div>
       </div>
+
 
       <!-- Filtres et Grille des Sessions -->
       <div class="space-y-4">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-1">
           <div>
-            <h2 class="text-lg sm:text-xl font-black text-slate-900 flex items-center gap-2 tracking-tight">
+            <h2 class="text-lg font-black text-oidaneos-ink flex items-center gap-2">
               <i data-lucide="folder-kanban" class="w-5 h-5 text-oidaneos-pink"></i>
               Programme Complet des Séances
             </h2>
-            <p class="text-xs text-slate-500">Sélectionnez une session pour accéder aux vidéos, au guide étalon complet et aux téléchargements Word</p>
+            <p class="text-xs text-oidaneos-muted">Sélectionnez une session pour accéder aux vidéos, au guide étalon complet et aux téléchargements Word</p>
           </div>
 
-          <!-- Boutons Filtres Segmented Control -->
-          <div class="inline-flex items-center gap-1 bg-slate-100/90 p-1 rounded-2xl border border-slate-200/70 shadow-inner self-start">
-            <button onclick="setFilter('ALL')" id="filter-ALL" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white text-purple-900 shadow-xs transition">
+          <!-- Boutons Filtres -->
+          <div class="flex items-center gap-2 bg-white p-1 rounded-2xl border border-oidaneos-line shadow-sm self-start">
+            <button onclick="setFilter('ALL')" id="filter-ALL" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-oidaneos-lav100 text-oidaneos-purple transition">
               Toutes (14)
             </button>
-            <button onclick="setFilter('ASSETISE')" id="filter-ASSETISE" class="px-3 py-1.5 rounded-xl text-xs font-bold text-slate-600 hover:text-purple-900 transition">
+            <button onclick="setFilter('ASSETISE')" id="filter-ASSETISE" class="px-3 py-1.5 rounded-xl text-xs font-bold text-oidaneos-muted hover:text-oidaneos-purple transition">
               Assetisées (8)
             </button>
-            <button onclick="setFilter('REPLAY')" id="filter-REPLAY" class="px-3 py-1.5 rounded-xl text-xs font-bold text-slate-600 hover:text-purple-900 transition">
+            <button onclick="setFilter('REPLAY')" id="filter-REPLAY" class="px-3 py-1.5 rounded-xl text-xs font-bold text-oidaneos-muted hover:text-oidaneos-purple transition">
               Replays bruts (6)
             </button>
           </div>
         </div>
 
-        <div id="sessionsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        <div id="sessionsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           <!-- Dynamically populated -->
         </div>
       </div>
@@ -1697,55 +1682,51 @@
         
         <!-- Colonne Gauche : Lecteur Vidéo + Titre du module -->
         <div id="colVideoPlayer" class="lg:col-span-8 space-y-4">
-          <div class="relative group">
-            <!-- Ambient cinema glow -->
-            <div class="absolute -inset-1 bg-gradient-to-r from-purple-600/30 via-pink-600/20 to-indigo-600/30 rounded-3xl blur-xl opacity-60 group-hover:opacity-90 transition duration-700"></div>
-            <div class="relative bg-slate-950 rounded-3xl overflow-hidden shadow-2xl border border-slate-800 aspect-video">
-              <video id="playerVideo" controls preload="metadata" class="w-full h-full object-contain bg-slate-950">
-                <source id="playerVideoSource" src="" type="video/mp4">
-                Votre navigateur ne prend pas en charge la vidéo HTML5.
-              </video>
-            </div>
+          <div class="bg-black rounded-3xl overflow-hidden shadow-2xl border border-slate-800 relative group aspect-video">
+            <video id="playerVideo" controls preload="metadata" class="w-full h-full object-contain bg-black">
+              <source id="playerVideoSource" src="" type="video/mp4">
+              Votre navigateur ne prend pas en charge la vidéo HTML5.
+            </video>
           </div>
 
           <!-- Informations sur la capsule active -->
-          <div class="p-5 sm:p-6 rounded-3xl bg-white border border-slate-200/80 shadow-[0_4px_25px_-5px_rgba(109,40,166,0.06)] flex items-center justify-between gap-4">
-            <div class="space-y-1.5 min-w-0">
+          <div class="p-5 rounded-2xl bg-white border border-oidaneos-line shadow-card flex items-center justify-between gap-4">
+            <div class="space-y-1">
               <div class="flex items-center gap-2">
-                <span id="currentVideoBadge" class="px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider rounded-full bg-purple-50 text-purple-700 border border-purple-200/60">
+                <span id="currentVideoBadge" class="px-2.5 py-0.5 text-[10px] font-bold rounded-full bg-oidaneos-lav100 text-oidaneos-purple border border-oidaneos-line">
                   Micro-Vidéo
                 </span>
-                <span id="currentVideoIndexTag" class="text-xs font-mono text-oidaneos-pink font-bold">#1</span>
+                <span id="currentVideoIndexTag" class="text-[11px] font-mono text-oidaneos-pink font-bold">#1</span>
               </div>
-              <h3 id="currentVideoTitle" class="text-base sm:text-lg font-black text-slate-900 truncate">
+              <h3 id="currentVideoTitle" class="text-base font-extrabold text-oidaneos-ink">
                 Titre de la vidéo
               </h3>
-              <p id="currentVideoDesc" class="text-xs text-slate-600 leading-relaxed line-clamp-2">
+              <p id="currentVideoDesc" class="text-xs text-oidaneos-body">
                 Description de la vidéo
               </p>
             </div>
           </div>
 
-          <!-- Sélecteur d'Onglets Mobile (Visible uniquement sur Smartphone / Tablette) -->
-          <div class="lg:hidden flex items-center gap-1 p-1.5 bg-slate-100/90 rounded-2xl border border-slate-200/70 shadow-inner overflow-x-auto no-scrollbar">
-            <button onclick="switchMobileTab('video-guide')" id="mTab-video-guide" class="flex-1 min-w-[120px] py-2 px-3 rounded-xl bg-white text-purple-900 text-xs font-black shadow-xs flex items-center justify-center gap-1.5 transition">
-              <i data-lucide="book-open" class="w-3.5 h-3.5 text-pink-600"></i>
-              <span>Cours & Vidéo</span>
-            </button>
-            <button onclick="switchMobileTab('playlist')" id="mTab-playlist" class="flex-1 min-w-[110px] py-2 px-3 rounded-xl bg-transparent text-slate-600 hover:text-purple-900 text-xs font-bold flex items-center justify-center gap-1.5 transition">
-              <i data-lucide="list-video" class="w-3.5 h-3.5"></i>
-              <span>Playlists</span>
-            </button>
-            <button onclick="switchMobileTab('tools-chat')" id="mTab-tools-chat" class="flex-1 min-w-[110px] py-2 px-3 rounded-xl bg-transparent text-slate-600 hover:text-purple-900 text-xs font-bold flex items-center justify-center gap-1.5 transition">
-              <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
-              <span>Chat & Liens</span>
-            </button>
-          </div>
+      <!-- Sélecteur d'Onglets Mobile (Visible uniquement sur Smartphone / Tablette) -->
+      <div class="lg:hidden flex items-center gap-1 p-1 bg-white rounded-2xl border border-oidaneos-line shadow-sm overflow-x-auto no-scrollbar">
+        <button onclick="switchMobileTab('video-guide')" id="mTab-video-guide" class="flex-1 min-w-[120px] py-2 px-3 rounded-xl bg-oidaneos-purple text-white text-xs font-extrabold flex items-center justify-center gap-1.5 transition">
+          <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+          <span>Cours & Vidéo</span>
+        </button>
+        <button onclick="switchMobileTab('playlist')" id="mTab-playlist" class="flex-1 min-w-[110px] py-2 px-3 rounded-xl bg-transparent text-oidaneos-body hover:bg-oidaneos-lav50 text-xs font-bold flex items-center justify-center gap-1.5 transition">
+          <i data-lucide="list-video" class="w-3.5 h-3.5"></i>
+          <span>Playlists</span>
+        </button>
+        <button onclick="switchMobileTab('tools-chat')" id="mTab-tools-chat" class="flex-1 min-w-[110px] py-2 px-3 rounded-xl bg-transparent text-oidaneos-body hover:bg-oidaneos-lav50 text-xs font-bold flex items-center justify-center gap-1.5 transition">
+          <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+          <span>Chat & Liens</span>
+        </button>
+      </div>
 
         </div>
 
         <!-- Colonne Droite : Playlist des Micro-Vidéos Découpées -->
-        <div id="colPlaylist" class="lg:col-span-4 bg-white rounded-3xl p-5 sm:p-6 border border-slate-200/80 shadow-[0_4px_25px_-5px_rgba(109,40,166,0.06)] flex flex-col lg:h-[520px] max-h-96 lg:max-h-none">
+        <div id="colPlaylist" class="lg:col-span-4 bg-white rounded-3xl p-4 sm:p-5 border border-oidaneos-line shadow-card flex flex-col lg:h-[500px] max-h-96 lg:max-h-none">
           
           <div class="pb-3 border-b border-oidaneos-line space-y-1">
             <div class="flex items-center justify-between">
@@ -1871,23 +1852,11 @@
         avatar: "AV",
         color: "from-purple-600 to-pink-600"
       },
-      "pie.lacombe@gmail.com": {
-        email: "pie.lacombe@gmail.com",
-        name: "Pierre LACOMBE",
-        firstname: "Pierre",
-        lastname: "LACOMBE",
-        phone: "+590 690 64 93 18",
-        role: "Expert IA & Formateur Technique",
-        company: "OIDANEOS",
-        isTrainer: true,
-        avatar: "PL",
-        color: "from-blue-700 to-indigo-700"
-      },
       "pierre@oidaneos.com": {
-        email: "pie.lacombe@gmail.com",
-        name: "Pierre LACOMBE",
+        email: "pierre@oidaneos.com",
+        name: "Pierre",
         firstname: "Pierre",
-        lastname: "LACOMBE",
+        lastname: "Formateur",
         phone: "+590 690 64 93 18",
         role: "Expert IA & Formateur Technique",
         company: "OIDANEOS",
@@ -2111,8 +2080,8 @@
       }
     };
 
-    let loggedInUserEmail = null;
-    let currentInspectedLearnerEmail = null;
+    let loggedInUserEmail = 'alain@oidaneos.com';
+    let currentInspectedLearnerEmail = 'ackaraib@orange.fr';
 
     // =========================================================================
     //   INITIALISATION DE L'APPLICATION
@@ -2137,16 +2106,15 @@
         console.log("♻️ Reboot effectué : Toutes les fiches apprenants sont réinitialisées à zéro.");
       }
 
-        // Initialisation par défaut : Promotion Septembre 2026 (En cours)
+        // Initialisation par défaut : Promotion Juin 2026 (Fixe et Conforme)
         const urlParams = new URLSearchParams(window.location.search);
         const promoParam = urlParams.get('promo');
         const emailParam = urlParams.get('email');
-        const savedPromo = localStorage.getItem('oidaneos_auth_promo');
 
-        if (promoParam === 'juin' || promoParam === 'juin-2026' || savedPromo === 'juin-2026') {
-          onPromotionChange('juin-2026');
-        } else {
+        if (promoParam === 'septembre' || emailParam) {
           onPromotionChange('septembre-2026');
+        } else {
+          onPromotionChange('juin-2026');
         }
       } catch (err) {
         console.error("Erreur de chargement des catalogues JSON:", err);
@@ -2156,44 +2124,11 @@
       if (window.lucide) lucide.createIcons();
     });
 
-    function updatePromoSelectorUI() {
-      const selector = document.getElementById('promoSelector');
-      if (!selector) return;
-
-      if (loggedInUserEmail) {
-        selector.innerHTML = `
-          <option value="septembre-2026" ${currentPromo === 'septembre-2026' ? 'selected' : ''}>🎓 Promo Septembre 2026 (En cours)</option>
-          <option value="juin-2026" ${currentPromo === 'juin-2026' ? 'selected' : ''}>🎓 Promo Juin 2026 (Archive 14 Séances)</option>
-        `;
-        selector.disabled = false;
-      } else {
-        selector.innerHTML = `
-          <option value="juin-2026" selected>🎓 Promo Juin 2026 (Archive 14 Séances)</option>
-        `;
-        selector.disabled = true;
-      }
-    }
-
     // --- CHANGEMENT DE PROMOTION (SÉPARATION STRICTE JUIN 2026 vs SEPTEMBRE 2026) ---
     function onPromotionChange(promoId) {
-      if (promoId === 'septembre-2026' && !loggedInUserEmail) {
-        // Utilisateur connecté par code uniquement (ex: IA2026) -> Bloquer Septembre et demander email
-        const modal = document.getElementById('accessGateModal');
-        if (modal) {
-          modal.classList.remove('hidden');
-          const input = document.getElementById('accessGateInput');
-          if (input) {
-            input.value = '';
-            input.focus();
-          }
-        }
-        updatePromoSelectorUI();
-        return;
-      }
-
       currentPromo = promoId;
-      localStorage.setItem('oidaneos_auth_promo', promoId);
-      updatePromoSelectorUI();
+      const selector = document.getElementById('promoSelector');
+      if (selector) selector.value = promoId;
 
       const zoomBanner = document.getElementById('zoomBannerContainer');
       const btnEval = document.getElementById('btnNavEvaluations');
@@ -2211,10 +2146,7 @@
 
         // 2. AFFICHER LES BOUTONS & BADGES SPÉCIFIQUES SEPTEMBRE
         if (btnEval) btnEval.classList.remove('hidden');
-        if (userBadge) {
-          if (loggedInUserEmail) userBadge.classList.remove('hidden');
-          else userBadge.classList.add('hidden');
-        }
+        if (userBadge) userBadge.classList.remove('hidden');
         if (btnLogout) btnLogout.classList.remove('hidden');
 
         // 3. TEXTES HERO BANNER POUR SEPTEMBRE
@@ -2229,16 +2161,10 @@
         // 1. MASQUER LE DIRECT ZOOM (Juin est terminé)
         if (zoomBanner) zoomBanner.classList.add('hidden');
 
-        // 2. ÉLÉMENTS SPÉCIFIQUES : L'apprenant connecté conserve son accès complet
-        if (btnEval) {
-          if (loggedInUserEmail) btnEval.classList.remove('hidden');
-          else btnEval.classList.add('hidden');
-        }
-        if (userBadge) {
-          if (loggedInUserEmail) userBadge.classList.remove('hidden');
-          else userBadge.classList.add('hidden');
-        }
-        if (btnLogout) btnLogout.classList.remove('hidden');
+        // 2. MASQUER LES ÉLÉMENTS SEPTEMBRE EN VUE JUIN
+        if (btnEval) btnEval.classList.add('hidden');
+        if (userBadge) userBadge.classList.add('hidden');
+        if (btnLogout) btnLogout.classList.add('hidden');
 
         // 3. TEXTES HERO BANNER POUR JUIN
         if (heroTag) heroTag.innerHTML = '<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Promotion IA IT Juin 2026 • 14 Séances & Guides Étalons Approfondis';
@@ -2258,9 +2184,9 @@
         const btn = document.getElementById('filter-' + f);
         if (btn) {
           if (f === filter) {
-            btn.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white text-purple-900 shadow-xs transition";
+            btn.className = "px-3 py-1.5 rounded-xl text-xs font-bold bg-oidaneos-lav100 text-oidaneos-purple transition shadow-sm";
           } else {
-            btn.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-600 hover:text-purple-900 transition";
+            btn.className = "px-3 py-1.5 rounded-xl text-xs font-bold text-oidaneos-muted hover:text-oidaneos-purple transition";
           }
         }
       });
@@ -2273,42 +2199,21 @@
       const grid = document.getElementById("sessionsGrid");
       if (!grid) return;
       
-      const totalSessionsCount = catalogData.sessions.length;
       const assetised = catalogData.sessions.filter(s => s.isAssetised).length;
-      const replaysAvailable = catalogData.sessions.filter(s => !s.isAssetised && s.status === 'REPLAY_BRUT').length;
-      const upcomingCount = catalogData.sessions.filter(s => s.status === 'A_VENIR').length;
+      const replays = catalogData.sessions.length - assetised;
       const totalVideos = catalogData.sessions.reduce((acc, s) => acc + (s.microVideosCount || 0), 0);
       
       const elAssetised = document.getElementById("statAssetisedCount");
       if (elAssetised) elAssetised.textContent = assetised;
       const elVideos = document.getElementById("statMicroVideosCount");
       if (elVideos) elVideos.textContent = `${totalVideos} micro-vidéos découpées`;
-      
       const elReplays = document.getElementById("statReplaysCount");
-      const statReplaysTitle = document.getElementById("statReplaysTitle");
-      const statReplaysSub = document.getElementById("statReplaysSub");
+      if (elReplays) elReplays.textContent = replays;
       
-      if (currentPromo === 'septembre-2026') {
-        if (elReplays) elReplays.textContent = replaysAvailable;
-        if (statReplaysTitle) statReplaysTitle.textContent = "Replay Disponible";
-        if (statReplaysSub) statReplaysSub.textContent = `1 dispo • ${upcomingCount} séances en direct à venir`;
-      } else {
-        if (elReplays) elReplays.textContent = replaysAvailable;
-        if (statReplaysTitle) statReplaysTitle.textContent = "Replays Disponibles";
-        if (statReplaysSub) statReplaysSub.textContent = "En cours de découpage";
-      }
-      
-      const btnAll = document.getElementById("filter-ALL");
-      if (btnAll) btnAll.textContent = `Toutes (${totalSessionsCount})`;
       const btnAssetise = document.getElementById("filter-ASSETISE");
       if (btnAssetise) btnAssetise.textContent = `Assetisées (${assetised})`;
       const btnReplay = document.getElementById("filter-REPLAY");
-      if (btnReplay) btnReplay.textContent = currentPromo === 'septembre-2026' ? `Replay & Directs (${replaysAvailable + upcomingCount})` : `Replays bruts (${replaysAvailable})`;
-
-      const btnHome = document.getElementById('btnNavHome');
-      if (btnHome) {
-        btnHome.innerHTML = `<i data-lucide="layout-grid" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i><span class="hidden sm:inline">Toutes les sessions (${totalSessionsCount})</span><span class="sm:hidden">${totalSessionsCount} Sessions</span>`;
-      }
+      if (btnReplay) btnReplay.textContent = `Replays bruts (${replays})`;
 
       let filtered = catalogData.sessions;
       if (currentFilter === 'ASSETISE') filtered = catalogData.sessions.filter(s => s.isAssetised);
@@ -2320,71 +2225,62 @@
         
         let statusBadgeHtml = '';
         if (s.isAssetised) {
-          statusBadgeHtml = '<span class="px-2.5 py-0.5 text-[10px] font-bold uppercase rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-1.5 shadow-2xs"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>Assetisé</span>';
+          statusBadgeHtml = '<span class="px-2.5 py-0.5 text-[10px] font-bold uppercase rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>Assetisé</span>';
         } else if (isUpcoming) {
-          statusBadgeHtml = '<span class="px-2.5 py-0.5 text-[10px] font-bold uppercase rounded-full bg-slate-100 text-slate-700 border border-slate-200 flex items-center gap-1.5"><i data-lucide="calendar" class="w-3 h-3 text-slate-500"></i>Live à venir</span>';
+          statusBadgeHtml = '<span class="px-2.5 py-0.5 text-[10px] font-bold uppercase rounded-full bg-slate-100 text-slate-700 border border-slate-200 flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3 text-slate-500"></i>Live à venir</span>';
         } else {
-          statusBadgeHtml = '<span class="px-2.5 py-0.5 text-[10px] font-bold uppercase rounded-full bg-amber-50 text-amber-800 border border-amber-200/80">Replay Brut</span>';
+          statusBadgeHtml = '<span class="px-2.5 py-0.5 text-[10px] font-bold uppercase rounded-full bg-amber-50 text-amber-700 border border-amber-200">Replay Brut</span>';
         }
 
         return `
           <div onclick="handleSessionCardClick('${s.id}', ${isUpcoming})" 
-               class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 border ${isS9 ? 'border-pink-400 ring-2 ring-pink-400/20 shadow-lg' : isUpcoming ? 'border-dashed border-slate-300 opacity-80' : 'border-slate-200/80 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:border-purple-300'} transition-all duration-300 flex flex-col justify-between space-y-4 group cursor-pointer hover:-translate-y-1 hover:shadow-[0_16px_30px_-10px_rgba(109,40,166,0.12)] relative overflow-hidden">
+               class="bg-white rounded-3xl p-6 border ${isS9 ? 'border-oidaneos-pink ring-2 ring-oidaneos-pink/20 shadow-card-hover' : isUpcoming ? 'border-dashed border-slate-300 opacity-80' : 'border-oidaneos-line shadow-card hover:border-oidaneos-purple/40'} transition flex flex-col justify-between space-y-4 group cursor-pointer hover:-translate-y-0.5">
             
-            <!-- Ligne d'accent gradient au survol -->
-            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-600 via-pink-500 to-amber-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
             <div class="space-y-3">
-              <div class="flex items-center justify-between gap-2 flex-wrap">
+              <div class="flex items-center justify-between gap-2">
                 ${statusBadgeHtml}
-                <span class="text-[11px] text-slate-500 font-medium flex items-center gap-1">
-                  <i data-lucide="calendar" class="w-3 h-3 text-slate-400"></i>
-                  <span>${s.date ? s.date.split('(')[0] : '2026'}</span>
-                </span>
+                <span class="text-xs text-oidaneos-muted font-medium">${s.date || '2026'}</span>
               </div>
 
               <div>
-                <div class="text-[11px] font-bold text-pink-600 uppercase tracking-wider flex items-center gap-1.5">
-                  <span>${s.number === 0 ? (currentPromo === 'septembre-2026' ? "Session d'Accueil & Pré-rentrée" : "Session d'Accueil") : `Session ${s.number}`}</span>
-                  ${isS9 ? '<span class="px-1.5 py-0.2 rounded bg-pink-100 text-pink-700 text-[10px] font-extrabold">⭐ Pilote</span>' : s.isSpecialEvent ? '<span class="px-1.5 py-0.2 rounded bg-amber-100 text-amber-800 text-[10px] font-extrabold">⭐ Spéciale</span>' : ''}
+                <div class="text-[11px] font-bold text-oidaneos-pink uppercase tracking-wider">
+                  ${s.number === 0 ? (currentPromo === 'septembre-2026' ? "Session d'Accueil & Pré-rentrée" : "Session d'Accueil") : `Session ${s.number}`} ${isS9 ? '• ⭐ Référence Pilote' : s.isSpecialEvent ? '• ⭐ Spéciale' : ''}
                 </div>
-                <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-purple-700 transition line-clamp-2 mt-0.5 tracking-tight">
+                <h3 class="text-base font-extrabold text-oidaneos-ink group-hover:text-oidaneos-purple transition line-clamp-2 mt-0.5">
                   ${s.title}
                 </h3>
               </div>
 
-              <!-- Tags Programme & Compétences Clés (Bento Chips) -->
+              <!-- Tags Programme & Compétences Clés (Exact Production) -->
               <div class="flex items-center gap-1.5 flex-wrap pt-0.5">
                 ${(s.modules || []).map(m => `
-                  <span class="px-2 py-0.5 text-[10px] font-bold rounded-lg bg-slate-100/90 text-slate-700 border border-slate-200/80 flex items-center gap-1 group-hover:bg-purple-50 group-hover:text-purple-700 group-hover:border-purple-200 transition">
-                    <i data-lucide="book-open" class="w-3 h-3 opacity-70"></i>
+                  <span class="px-2 py-0.5 text-[10px] font-bold rounded-lg bg-oidaneos-lav100 text-oidaneos-purple border border-oidaneos-line flex items-center gap-1">
+                    <i data-lucide="book-open" class="w-3 h-3 text-oidaneos-purple"></i>
                     ${m}
                   </span>
                 `).join('')}
                 ${(s.competenceDetails || []).map(c => `
-                  <span class="px-2 py-0.5 text-[10px] font-extrabold rounded-lg bg-pink-50 text-pink-700 border border-pink-200/80 flex items-center gap-1 shadow-2xs">
-                    <i data-lucide="award" class="w-3 h-3 text-pink-500"></i>
+                  <span class="px-2 py-0.5 text-[10px] font-extrabold rounded-lg bg-pink-50 text-pink-700 border border-pink-200 flex items-center gap-1">
+                    <i data-lucide="award" class="w-3 h-3 text-oidaneos-pink"></i>
                     ${c}
                   </span>
                 `).join('')}
               </div>
 
-              <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed">
+              <p class="text-xs text-oidaneos-body line-clamp-2 leading-relaxed">
                 ${s.description}
               </p>
             </div>
 
-            <!-- Card Footer : Stats & Bouton d'action -->
-            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-700">
-              <span class="flex items-center gap-1.5 text-slate-600">
-                <i data-lucide="${s.isAssetised ? 'film' : 'video'}" class="w-4 h-4 text-pink-500"></i>
-                <span class="text-[11px] font-semibold">${s.isAssetised ? `${s.microVideosCount} micro-capsules` : isUpcoming ? 'Direct à venir' : 'Replay intégral 2h'}</span>
+            <div class="pt-3 border-t border-oidaneos-line flex items-center justify-between text-xs font-bold ${s.isAssetised ? 'text-oidaneos-purple' : 'text-amber-700'}">
+              <span class="flex items-center gap-1.5">
+                <i data-lucide="${s.isAssetised ? 'film' : 'video'}" class="w-4 h-4 text-oidaneos-pink"></i>
+                <span>${s.isAssetised ? `${s.microVideosCount} micro-vidéos` : isUpcoming ? 'Direct à venir' : '1 replay intégral 2h'}</span>
               </span>
-              
-              <div class="flex items-center gap-1 text-purple-700 group-hover:text-pink-600 transition font-extrabold text-[11px]">
-                <span>Accéder</span>
-                <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition"></i>
-              </div>
+              <span class="text-[10px] font-bold text-oidaneos-purple bg-oidaneos-lav100 px-2 py-0.5 rounded-md border border-oidaneos-line flex items-center gap-1">
+                <i data-lucide="file-text" class="w-3 h-3 text-oidaneos-pink"></i>
+                <span>Guide Word (.DOCX)</span>
+              </span>
             </div>
 
           </div>
@@ -2413,17 +2309,17 @@
 
       if (btnHome) {
         if (activeView === 'home') {
-          btnHome.className = "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple text-xs font-bold transition shrink-0";
+          btnHome.className = "inline-flex items-center gap-1 px-2.5 sm:px-3.5 py-1.5 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple text-xs font-bold transition";
         } else {
-          btnHome.className = "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-oidaneos-lav100 text-oidaneos-body hover:text-oidaneos-purple text-xs font-bold border border-oidaneos-line transition shrink-0";
+          btnHome.className = "inline-flex items-center gap-1 px-2.5 sm:px-3.5 py-1.5 rounded-xl bg-white hover:bg-oidaneos-lav50 text-oidaneos-purple text-xs font-bold border border-oidaneos-line transition shadow-sm";
         }
       }
 
       if (btnProg) {
         if (activeView === 'program') {
-          btnProg.className = "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-grad-oidaneos text-white text-xs font-extrabold shadow-btn hover:opacity-95 transition shrink-0";
+          btnProg.className = "inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-xl bg-grad-oidaneos text-white text-xs font-extrabold shadow-btn hover:opacity-95 transition";
         } else {
-          btnProg.className = "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-oidaneos-lav100 text-oidaneos-body hover:text-oidaneos-purple text-xs font-bold border border-oidaneos-line transition shrink-0";
+          btnProg.className = "inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple text-xs font-bold border border-oidaneos-line transition";
         }
       }
 
@@ -2433,9 +2329,9 @@
         } else {
           btnEval.classList.remove('hidden');
           if (activeView === 'evaluations') {
-            btnEval.className = "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-grad-oidaneos text-white text-xs font-extrabold shadow-btn hover:opacity-95 transition shrink-0";
+            btnEval.className = "inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-xl bg-grad-oidaneos text-white text-xs font-extrabold shadow-btn hover:opacity-95 transition ring-2 ring-oidaneos-pink/40";
           } else {
-            btnEval.className = "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-oidaneos-lav100 text-oidaneos-body hover:text-oidaneos-purple text-xs font-bold border border-oidaneos-line transition shrink-0";
+            btnEval.className = "inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple text-xs font-bold border border-oidaneos-line transition";
           }
         }
       }
@@ -2482,7 +2378,13 @@
       if (vProgram) vProgram.classList.add("hidden");
       if (vEval) vEval.classList.remove("hidden");
 
-      updateNavButtons('evaluations');
+      // Button styles
+      const btnHome = document.getElementById("btnNavHome");
+      const btnProg = document.getElementById("btnNavProgram");
+      const btnEval = document.getElementById("btnNavEvaluations");
+      if (btnProg) btnProg.className = "inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple text-xs font-bold border border-oidaneos-line transition";
+      if (btnEval) btnEval.className = "inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-xl bg-grad-oidaneos text-white text-xs font-extrabold shadow-btn hover:opacity-95 transition";
+
       syncActiveLearnerView(currentInspectedLearnerEmail || 'ackaraib@orange.fr');
       window.scrollTo({ top: 0, behavior: 'smooth' });
       if (window.lucide) lucide.createIcons();
@@ -2599,19 +2501,19 @@
         container.innerHTML = session.microVideos.map((vid, idx) => `
           <div onclick="loadVideo(${idx})" 
                id="playlist-item-${idx}" 
-               class="p-3 rounded-2xl ${idx === 0 ? 'bg-purple-50/80 border-purple-300/80 shadow-xs' : 'bg-slate-50/60 hover:bg-slate-100/80 border-slate-200/70'} border transition cursor-pointer flex items-center justify-between gap-3 group">
+               class="p-3 rounded-2xl ${idx === 0 ? 'bg-oidaneos-lav100 border-oidaneos-purple/40' : 'bg-white hover:bg-oidaneos-lav50 border-oidaneos-line'} border transition cursor-pointer flex items-center justify-between gap-3 group">
             <div class="flex items-center gap-2.5 min-w-0">
-              <div class="w-7 h-7 rounded-xl ${idx === 0 ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white' : 'bg-slate-200/70 text-slate-700'} font-black text-xs flex items-center justify-center shrink-0">
+              <div class="w-7 h-7 rounded-xl ${idx === 0 ? 'bg-grad-oidaneos text-white' : 'bg-oidaneos-lav100 text-oidaneos-purple'} font-black text-xs flex items-center justify-center shrink-0">
                 ${vid.id}
               </div>
               <div class="min-w-0">
-                <div class="text-xs font-bold text-slate-900 group-hover:text-purple-700 transition truncate">
+                <div class="text-xs font-bold text-oidaneos-ink group-hover:text-oidaneos-purple transition truncate">
                   ${vid.cleanTitle}
                 </div>
-                <div class="text-[10px] text-slate-500">Micro-vidéo • Vincent</div>
+                <div class="text-[10px] text-oidaneos-muted">Micro-vidéo • Vincent</div>
               </div>
             </div>
-            <i data-lucide="play" class="w-3.5 h-3.5 text-pink-600 shrink-0 group-hover:scale-110 transition"></i>
+            <i data-lucide="play" class="w-3.5 h-3.5 text-oidaneos-pink shrink-0"></i>
           </div>
         `).join('');
       } else {
@@ -2632,19 +2534,19 @@
       if (replayBox) {
         if (session.replayVideo) {
           replayBox.innerHTML = `
-            <div onclick="loadReplay()" id="playlist-item-replay" class="p-3 rounded-2xl bg-slate-50/60 hover:bg-slate-100/80 border border-slate-200/70 transition cursor-pointer flex items-center justify-between gap-3 group">
+            <div onclick="loadReplay()" id="playlist-item-replay" class="p-3 rounded-2xl bg-oidaneos-lav50 hover:bg-oidaneos-lav100 border border-oidaneos-line transition cursor-pointer flex items-center justify-between gap-3 group">
               <div class="flex items-center gap-2.5">
-                <div class="w-7 h-7 rounded-xl bg-pink-100 text-pink-700 font-bold text-xs flex items-center justify-center shrink-0">
+                <div class="w-7 h-7 rounded-xl bg-oidaneos-pink/10 text-oidaneos-pink font-bold text-xs flex items-center justify-center shrink-0">
                   <i data-lucide="video" class="w-3.5 h-3.5"></i>
                 </div>
                 <div>
-                  <div class="text-xs font-bold text-slate-900 group-hover:text-pink-600 transition">
+                  <div class="text-xs font-bold text-oidaneos-ink group-hover:text-oidaneos-pink transition">
                     Replay Intégral Live
                   </div>
-                  <div class="text-[10px] text-slate-500">Format long original • ~2h</div>
+                  <div class="text-[10px] text-oidaneos-muted">Format long original • ~2h</div>
                 </div>
               </div>
-              <span class="text-[10px] font-bold text-purple-700 bg-white px-2 py-0.5 rounded-lg border border-purple-200/60 shadow-2xs">
+              <span class="text-[10px] font-bold text-oidaneos-purple bg-white px-2 py-0.5 rounded-md border border-oidaneos-line">
                 Replay
               </span>
             </div>
@@ -2672,22 +2574,22 @@
       }
 
       document.getElementById("currentVideoBadge").textContent = "Micro-Vidéo";
-      document.getElementById("currentVideoBadge").className = "px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider rounded-full bg-purple-50 text-purple-700 border border-purple-200/60";
+      document.getElementById("currentVideoBadge").className = "px-2.5 py-0.5 text-[10px] font-bold rounded-full bg-oidaneos-lav100 text-oidaneos-purple border border-oidaneos-line";
       document.getElementById("currentVideoIndexTag").textContent = `Module #${vid.id}`;
       document.getElementById("currentVideoTitle").textContent = vid.title;
       document.getElementById("currentVideoDesc").textContent = `Séquence pédagogique extraite de la ${session.number === 0 ? "Session d'Accueil" : `Session ${session.number}`}.`;
 
       document.querySelectorAll("#playlistContainer > div").forEach(el => {
-        el.className = "p-3 rounded-2xl bg-slate-50/60 hover:bg-slate-100/80 border border-slate-200/70 transition cursor-pointer flex items-center justify-between gap-3 group";
+        el.className = "p-3 rounded-2xl bg-white hover:bg-oidaneos-lav50 border border-oidaneos-line transition cursor-pointer flex items-center justify-between gap-3 group";
       });
       const activeEl = document.getElementById(`playlist-item-${idx}`);
       if (activeEl) {
-        activeEl.className = "p-3 rounded-2xl bg-purple-50/80 border border-purple-300/80 transition cursor-pointer flex items-center justify-between gap-3 group shadow-xs";
+        activeEl.className = "p-3 rounded-2xl bg-oidaneos-lav100 border border-oidaneos-purple/40 transition cursor-pointer flex items-center justify-between gap-3 group shadow-sm";
       }
 
       const replayEl = document.getElementById("playlist-item-replay");
       if (replayEl) {
-        replayEl.className = "p-3 rounded-2xl bg-slate-50/60 hover:bg-slate-100/80 border border-slate-200/70 transition cursor-pointer flex items-center justify-between gap-3 group";
+        replayEl.className = "p-3 rounded-2xl bg-oidaneos-lav50 hover:bg-oidaneos-lav100 border border-oidaneos-line transition cursor-pointer flex items-center justify-between gap-3 group";
       }
     }
 
@@ -2706,17 +2608,17 @@
       }
 
       document.getElementById("currentVideoBadge").textContent = "Replay Live";
-      document.getElementById("currentVideoBadge").className = "px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider rounded-full bg-amber-50 text-amber-700 border border-amber-200";
+      document.getElementById("currentVideoBadge").className = "px-2.5 py-0.5 text-[10px] font-bold rounded-full bg-amber-50 text-amber-700 border border-amber-200";
       document.getElementById("currentVideoIndexTag").textContent = "Format Long";
       document.getElementById("currentVideoTitle").textContent = `Replay Intégral — ${session.title}`;
       document.getElementById("currentVideoDesc").textContent = `Enregistrement complet du live Zoom (avec ${session.formateur}).`;
 
       document.querySelectorAll("#playlistContainer > div").forEach(el => {
-        el.className = "p-3 rounded-2xl bg-slate-50/60 hover:bg-slate-100/80 border border-slate-200/70 transition cursor-pointer flex items-center justify-between gap-3 group";
+        el.className = "p-3 rounded-2xl bg-white hover:bg-oidaneos-lav50 border border-oidaneos-line transition cursor-pointer flex items-center justify-between gap-3 group";
       });
       const replayEl = document.getElementById("playlist-item-replay");
       if (replayEl) {
-        replayEl.className = "p-3 rounded-2xl bg-purple-50/80 border border-purple-300/80 transition cursor-pointer flex items-center justify-between gap-3 group shadow-xs";
+        replayEl.className = "p-3 rounded-2xl bg-oidaneos-lav100 border border-oidaneos-purple/40 transition cursor-pointer flex items-center justify-between gap-3 group shadow-sm";
       }
     }
 
@@ -2913,166 +2815,71 @@
       localStorage.setItem('oidaneos_learner_' + email, JSON.stringify(data));
     }
 
-    function checkMagicLinkAndAuth() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const emailParam = urlParams.get('email');
-      const promoParam = urlParams.get('promo');
-      const codeParam = urlParams.get('code');
-      const resetParam = urlParams.get('reset') || urlParams.get('logout') || urlParams.get('deconnexion');
-      const modal = document.getElementById('accessGateModal');
+    function normalizeEmail(str) {
+      if (!str) return '';
+      let s = str.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      if (s.endsWith('@gmail.com') || s.endsWith('@googlemail.com')) {
+        const parts = s.split('@');
+        s = parts[0].replace(/\./g, '') + '@gmail.com';
+      }
+      return s;
+    }
 
-      // 0. Forced Reset / Logout via URL (?reset=1 or ?logout=1)
-      if (resetParam) {
-        localStorage.clear();
-        sessionStorage.clear();
-        loggedInUserEmail = null;
-        currentInspectedLearnerEmail = null;
-        if (window.history && window.history.replaceState) {
-          window.history.replaceState({}, document.title, window.location.pathname);
-        }
-        const userBadge = document.getElementById('userHeaderBadgeContainer');
-        if (userBadge) userBadge.classList.add('hidden');
-        if (modal) {
-          modal.classList.remove('hidden');
-          const input = document.getElementById('accessGateInput');
-          const errBox = document.getElementById('accessGateErrorMsg');
-          if (errBox) errBox.classList.add('hidden');
-          if (input) {
-            input.value = '';
-            setTimeout(() => input.focus(), 150);
+    function handleEmailLogin(e) {
+      if (e) e.preventDefault();
+      const input = document.getElementById('loginEmailInput');
+      const err = document.getElementById('loginErrorMsg');
+      const rawInput = (input ? input.value : '').trim();
+      const cleanInput = rawInput.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      const normInput = normalizeEmail(rawInput);
+
+      let matchedUser = ALL_USERS_DATABASE[rawInput.toLowerCase()] || ALL_USERS_DATABASE[cleanInput];
+
+      // Match via normalized email (e.g. ignoring dots for gmail)
+      if (!matchedUser) {
+        for (const [key, usr] of Object.entries(ALL_USERS_DATABASE)) {
+          if (normalizeEmail(key) === normInput || (usr.email && normalizeEmail(usr.email) === normInput)) {
+            matchedUser = usr;
+            break;
           }
         }
-        return;
       }
 
-      // 1. Direct Magic Link via Email query parameter (?email=...)
-      if (emailParam) {
-        const rawEmail = emailParam.trim().toLowerCase();
-        let matchedUser = ALL_USERS_DATABASE[rawEmail];
-        if (!matchedUser) {
-          if (rawEmail === 'alain' || rawEmail === 'alain@oidaneos' || rawEmail === 'alain@oidaneos.com') matchedUser = ALL_USERS_DATABASE['alain@oidaneos.com'];
-          else if (rawEmail === 'pierre' || rawEmail === 'lacombe' || rawEmail === 'pierre@oidaneos.com' || rawEmail === 'pie.lacombe@gmail.com' || rawEmail === 'pie.lacombe') matchedUser = ALL_USERS_DATABASE['pie.lacombe@gmail.com'];
-          else if (rawEmail === 'milene' || rawEmail === 'milenepaul' || rawEmail === 'milene@oidaneos.com' || rawEmail === 'hello@milenepaul.com') matchedUser = ALL_USERS_DATABASE['hello@milenepaul.com'];
-          else if (rawEmail === 'murielle' || rawEmail === 'ackaraib') matchedUser = ALL_USERS_DATABASE['ackaraib@orange.fr'];
-          else if (rawEmail === 'mailys') matchedUser = ALL_USERS_DATABASE['mamalylys2323@gmail.com'];
-          else if (rawEmail === 'gwenaelle') matchedUser = ALL_USERS_DATABASE['gwenaelle.davrain1@gmail.com'];
-          else if (rawEmail === 'ruben' || rawEmail === 'ishanoa') matchedUser = ALL_USERS_DATABASE['babzwayne@gmail.com'];
-        }
-
-        if (matchedUser) {
-          localStorage.setItem('oidaneos_auth_promo', 'septembre-2026');
-          performLogin(matchedUser.email);
-          onPromotionChange('septembre-2026');
-          if (modal) modal.classList.add('hidden');
-          return;
-        }
-      }
-
-      // 2. Direct link for Juin 2026 (?promo=juin or ?code=juin...)
-      const juneCodes = ['ia2026', 'ia-2026', 'ia_2026', 'ia 2026', 'ia', 'juin', 'juin2026', 'juin-2026', 'oidaneos', 'oidaneos2026', 'live2026', 'atlas2026', 'elearning2026', 'promo-juin'];
-      if ((promoParam && promoParam.startsWith('juin')) || (codeParam && (juneCodes.includes(codeParam.toLowerCase().trim()) || codeParam.toLowerCase().replace(/[-_ ]/g, '') === 'ia2026'))) {
-        localStorage.setItem('oidaneos_auth_promo', 'juin-2026');
-        localStorage.removeItem('oidaneos_auth_email');
-        onPromotionChange('juin-2026');
-        if (modal) modal.classList.add('hidden');
-        return;
-      }
-
-      // 3. Saved localStorage session check
-      const savedEmail = localStorage.getItem('oidaneos_auth_email');
-      const savedPromo = localStorage.getItem('oidaneos_auth_promo');
-
-      if (savedEmail && ALL_USERS_DATABASE[savedEmail]) {
-        performLogin(savedEmail);
-        onPromotionChange(savedPromo === 'juin-2026' ? 'juin-2026' : 'septembre-2026');
-        if (modal) modal.classList.add('hidden');
-        return;
-      }
-
-      if (savedPromo === 'juin-2026') {
-        onPromotionChange('juin-2026');
-        if (modal) modal.classList.add('hidden');
-        return;
-      }
-
-      // 4. Default: User is NOT authenticated -> show access gate modal
-      if (modal) {
-        modal.classList.remove('hidden');
-        const input = document.getElementById('accessGateInput');
-        if (input) {
-          input.value = '';
-          setTimeout(() => input.focus(), 200);
-        }
-      }
-    }
-
-    function handleLogout() {
-      // Clear all stored auth tokens & user session
-      try {
-        localStorage.clear();
-        sessionStorage.clear();
-      } catch(e) {}
-      loggedInUserEmail = null;
-      currentInspectedLearnerEmail = null;
-
-      // Force full reload on clean reset URL
-      window.location.href = window.location.origin + window.location.pathname + '?reset=1';
-    }
-
-    function handleAccessFormSubmit(e) {
-      if (e) e.preventDefault();
-      const input = document.getElementById('accessGateInput');
-      const errBox = document.getElementById('accessGateErrorMsg');
-      const errText = document.getElementById('accessGateErrorText');
-      if (!input) return;
-      const rawVal = input.value.trim().toLowerCase();
-
-      if (!rawVal) {
-        if (errBox) {
-          errBox.classList.remove('hidden');
-          if (errText) errText.textContent = "Veuillez renseigner votre adresse email ou votre code de session.";
-        }
-        return;
-      }
-
-      // Codes valides pour la promotion Juin 2026
-      const juneCodes = ['ia2026', 'ia-2026', 'ia_2026', 'ia 2026', 'ia', 'juin', 'juin2026', 'juin-2026', 'oidaneos', 'oidaneos2026', 'live2026', 'atlas2026', 'elearning2026', 'promo-juin'];
-      const normalizedInput = rawVal.replace(/[-_ ]/g, '');
-
-      if (juneCodes.includes(rawVal) || normalizedInput === 'ia2026' || normalizedInput === 'juin2026') {
-        if (errBox) errBox.classList.add('hidden');
-        localStorage.setItem('oidaneos_auth_promo', 'juin-2026');
-        localStorage.removeItem('oidaneos_auth_email');
-        onPromotionChange('juin-2026');
-        const modal = document.getElementById('accessGateModal');
-        if (modal) modal.classList.add('hidden');
-        return;
-      }
-
-      // Vérification Email / Alias pour la promotion Septembre 2026
-      let matchedUser = ALL_USERS_DATABASE[rawVal];
+      // Match via explicit aliases and name / company variations
       if (!matchedUser) {
-        if (rawVal === 'alain' || rawVal === 'alain@oidaneos' || rawVal === 'alain@oidaneos.com') matchedUser = ALL_USERS_DATABASE['alain@oidaneos.com'];
-        else if (rawVal === 'pierre' || rawVal === 'lacombe' || rawVal === 'pierre@oidaneos.com' || rawVal === 'pie.lacombe@gmail.com' || rawVal === 'pie.lacombe') matchedUser = ALL_USERS_DATABASE['pie.lacombe@gmail.com'];
-        else if (rawVal === 'milene' || rawVal === 'milenepaul' || rawVal === 'milene@oidaneos.com' || rawVal === 'hello@milenepaul.com') matchedUser = ALL_USERS_DATABASE['hello@milenepaul.com'];
-        else if (rawVal === 'murielle' || rawVal === 'ackaraib') matchedUser = ALL_USERS_DATABASE['ackaraib@orange.fr'];
-        else if (rawVal === 'mailys') matchedUser = ALL_USERS_DATABASE['mamalylys2323@gmail.com'];
-        else if (rawVal === 'gwenaelle') matchedUser = ALL_USERS_DATABASE['gwenaelle.davrain1@gmail.com'];
-        else if (rawVal === 'ruben' || rawVal === 'ishanoa') matchedUser = ALL_USERS_DATABASE['babzwayne@gmail.com'];
+        if (cleanInput.includes('gwenaelle') || cleanInput.includes('davrain') || cleanInput.includes('poumaroux')) {
+          matchedUser = ALL_USERS_DATABASE['gwenaelle.davrain1@gmail.com'];
+        } else if (cleanInput.includes('mailys') || cleanInput.includes('mamalylys')) {
+          matchedUser = ALL_USERS_DATABASE['mamalylys2323@gmail.com'];
+        } else if (cleanInput.includes('murielle') || cleanInput.includes('lapilus') || cleanInput.includes('ackaraib')) {
+          matchedUser = ALL_USERS_DATABASE['ackaraib@orange.fr'];
+        } else if (cleanInput.includes('ruben') || cleanInput.includes('mel') || cleanInput.includes('babzwayne') || cleanInput.includes('ishanoa')) {
+          matchedUser = ALL_USERS_DATABASE['babzwayne@gmail.com'];
+        } else if (cleanInput.includes('alain') || cleanInput.includes('vale') || cleanInput.includes('oidaneos')) {
+          matchedUser = ALL_USERS_DATABASE['alain@oidaneos.com'];
+        } else if (cleanInput.includes('pierre') || cleanInput.includes('lacombe')) {
+          matchedUser = ALL_USERS_DATABASE['pierre@oidaneos.com'] || ALL_USERS_DATABASE['pie.lacombe@gmail.com'];
+        } else if (cleanInput.includes('milene') || cleanInput.includes('paul')) {
+          matchedUser = ALL_USERS_DATABASE['hello@milenepaul.com'];
+        } else if (cleanInput.includes('guillaume') || cleanInput.includes('carayon')) {
+          matchedUser = ALL_USERS_DATABASE['guillaume.carayon@gmail.com'] || ALL_USERS_DATABASE['alain@oidaneos.com'];
+        }
+      }
+
+      // Match session codes
+      if (!matchedUser) {
+        if (cleanInput === 'juin-2026' || cleanInput === 'juin2026' || cleanInput === 'juin') {
+          matchedUser = ALL_USERS_DATABASE['ackaraib@orange.fr'];
+        } else if (cleanInput === 'septembre-2026' || cleanInput === 'septembre2026' || cleanInput === 'sept2026' || cleanInput === 'septembre') {
+          matchedUser = ALL_USERS_DATABASE['gwenaelle.davrain1@gmail.com'];
+        }
       }
 
       if (matchedUser) {
-        if (errBox) errBox.classList.add('hidden');
-        localStorage.setItem('oidaneos_auth_promo', 'septembre-2026');
+        if (err) err.classList.add('hidden');
         performLogin(matchedUser.email);
-        onPromotionChange('septembre-2026');
-        return;
-      }
-
-      // Si non reconnu
-      if (errBox) {
-        errBox.classList.remove('hidden');
-        if (errText) errText.textContent = "Accès non reconnu. Saisissez votre email stagiaire (Septembre 2026) ou le code de session (Juin 2026).";
+      } else {
+        if (err) err.classList.remove('hidden');
       }
     }
 
@@ -3083,9 +2890,6 @@
 
       const modal = document.getElementById('accessGateModal');
       if (modal) modal.classList.add('hidden');
-
-      const userBadge = document.getElementById('userHeaderBadgeContainer');
-      if (userBadge) userBadge.classList.remove('hidden');
 
       updateHeaderUserUI(user);
 
@@ -3923,6 +3727,31 @@
       `).join('');
     }
 
+    function checkMagicLinkAndAuth() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const emailParam = urlParams.get('email');
+
+      if (emailParam && ALL_USERS_DATABASE[emailParam.toLowerCase()]) {
+        performLogin(emailParam.toLowerCase());
+        return;
+      }
+
+      const savedEmail = localStorage.getItem('oidaneos_auth_email');
+      if (savedEmail && ALL_USERS_DATABASE[savedEmail]) {
+        performLogin(savedEmail);
+      } else {
+        performLogin('alain@oidaneos.com');
+      }
+    }
+
+    function handleLogout() {
+      if (confirm("Voulez-vous vous déconnecter et changer d'adresse email ?")) {
+        localStorage.removeItem('oidaneos_auth_email');
+        const modal = document.getElementById('accessGateModal');
+        if (modal) modal.classList.remove('hidden');
+      }
+    }
+
     // =========================================================================
     //   MODULE ÉVALUATIONS & QUALITÉ
     // =========================================================================
@@ -4301,140 +4130,6 @@ Diplôme : OK`;
 
         </div>
 
-      </div>
-
-    </div>
-  </div>
-
-
-  <!-- ================= MODAL SIGNATURE ÉLECTRONIQUE (YOUSIGN SIMULATION) ================= -->
-  <div id="signDocumentModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in">
-    <div class="bg-white w-full max-w-lg rounded-3xl border border-slate-200 shadow-2xl overflow-hidden p-6 sm:p-8 space-y-6">
-      
-      <!-- Modal Header -->
-      <div class="flex items-center justify-between border-b border-slate-100 pb-4">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 text-white flex items-center justify-center shadow-btn font-bold text-sm">
-            <i data-lucide="file-signature" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <h3 class="text-base font-black text-slate-900" id="signModalDocTitle">Signature Électronique</h3>
-            <p class="text-xs text-slate-500 font-medium">Validation réglementaire & administrative Qualiopi</p>
-          </div>
-        </div>
-        <button onclick="closeSignModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center transition cursor-pointer">
-          <i data-lucide="x" class="w-4 h-4"></i>
-        </button>
-      </div>
-
-      <!-- Modal Body -->
-      <div class="space-y-4">
-        <p class="text-xs text-slate-600 leading-relaxed" id="signModalDocDesc">
-          Veuillez relire et valider les termes du document avant de signer électroniquement.
-        </p>
-
-        <!-- Dynamic Form Fields & Signature Canvas Box -->
-        <div class="p-5 rounded-2xl bg-slate-50/80 border border-slate-200/80 space-y-3">
-          <div class="flex items-center gap-2 border-b border-slate-200/60 pb-2">
-            <i data-lucide="edit-3" class="w-4 h-4 text-purple-700"></i>
-            <span class="text-xs font-black text-slate-900 uppercase tracking-wider">Renseignements & Consentement</span>
-          </div>
-
-          <!-- Champs spécifiques convention ou droit à l'image -->
-          <div id="signFormFieldsContainer" class="space-y-2.5 text-xs">
-            <!-- Injecté dynamiquement -->
-          </div>
-
-          <!-- Cadre Signature YouSign -->
-          <div class="space-y-1.5 pt-2">
-            <label class="font-extrabold text-[11px] text-slate-900 block">Signature Électronique Certifiée :</label>
-            <div class="p-4 rounded-2xl bg-white border-2 border-dashed border-purple-300 flex flex-col items-center justify-center text-center space-y-1 shadow-2xs">
-              <span class="font-serif italic text-2xl font-bold text-purple-950" id="signaturePreviewText">Ruben MEL</span>
-              <span class="text-[10px] text-slate-500 font-medium">Horodaté & Certifié par YouSign × OIDANEOS</span>
-            </div>
-          </div>
-
-          <label class="flex items-start gap-2 text-[11px] text-slate-600 cursor-pointer pt-1">
-            <input type="checkbox" id="signAcceptCheckbox" checked class="mt-0.5 rounded text-purple-600 focus:ring-0">
-            <span>Je certifie l'exactitude des informations et valide ce document par signature électronique.</span>
-          </label>
-        </div>
-
-        <!-- Actions Footer -->
-        <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
-          <button onclick="closeSignModal()" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold transition cursor-pointer">
-            Annuler
-          </button>
-          <button onclick="confirmSignDoc()" class="flex-1 px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white text-xs font-black shadow-btn transition flex items-center justify-center gap-1.5 cursor-pointer">
-            <i data-lucide="check-circle" class="w-4 h-4 text-pink-200"></i>
-            <span>Valider & Signer</span>
-          </button>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-
-
-  <!-- ================= MODAL ACCÈS SÉCURISÉ AUX COURS (CODE JUIN / EMAIL SEPTEMBRE) ================= -->
-  <div id="accessGateModal" class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in">
-    <div class="relative bg-white w-full max-w-md rounded-3xl border border-slate-200/90 shadow-2xl overflow-hidden p-6 sm:p-8 space-y-6 text-center">
-      
-      <!-- Subtle top decorative ambient glow -->
-      <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-48 h-48 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-full blur-2xl pointer-events-none"></div>
-
-      <!-- Logo Icon Badge -->
-      <div class="flex justify-center relative">
-        <div class="w-14 h-14 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 text-white flex items-center justify-center font-black text-2xl shadow-btn hover:scale-105 transition">
-          O
-        </div>
-      </div>
-
-      <!-- Title & Subtitle -->
-      <div class="space-y-1 relative">
-        <div class="flex items-center justify-center gap-2">
-          <span class="text-xl font-black text-slate-900 tracking-tight">OIDANEOS</span>
-          <span class="px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 font-extrabold text-[10px] uppercase border border-purple-200/60 shadow-2xs">E-LEARNING</span>
-        </div>
-        <p class="text-xs text-slate-500 font-medium">Espace Apprenants & Formateurs (Live-to-Asset)</p>
-      </div>
-
-      <!-- Main Instruction -->
-      <div class="space-y-2 pt-1 relative">
-        <h3 class="text-lg font-black text-slate-900">Accès Sécurisé à vos Cours</h3>
-        <p class="text-xs text-slate-600 leading-relaxed max-w-xs mx-auto">
-          Saisissez votre <strong>adresse email</strong> (Promotion Septembre) ou votre <strong>code de session</strong> (Promotion Juin) pour déverrouiller l'espace.
-        </p>
-      </div>
-
-      <!-- Input Form -->
-      <form onsubmit="handleAccessFormSubmit(event)" class="space-y-4 pt-2 relative">
-        <div class="relative">
-          <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-            <i data-lucide="lock" class="w-4 h-4 text-pink-500"></i>
-          </div>
-          <input type="text" id="accessGateInput" placeholder="Email ou code de session..." autocomplete="username" class="w-full pl-10 pr-4 py-3.5 rounded-2xl border-2 border-slate-200 hover:border-pink-300 focus:border-purple-600 focus:ring-0 text-sm font-semibold text-slate-900 placeholder:text-slate-400 outline-none transition shadow-2xs">
-        </div>
-
-        <div id="accessGateErrorMsg" class="hidden text-xs text-rose-700 bg-rose-50 border border-rose-200 p-3 rounded-xl text-left flex items-start gap-2">
-          <i data-lucide="alert-circle" class="w-4 h-4 text-rose-600 shrink-0 mt-0.5"></i>
-          <span id="accessGateErrorText">Code ou Email non reconnu. Vérifiez votre saisie ou contactez OIDANEOS.</span>
-        </div>
-
-        <button type="submit" class="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-black text-sm shadow-btn transition flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.01]">
-          <span>Accéder aux cours</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </button>
-      </form>
-
-      <!-- Footer Info -->
-      <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 relative">
-        <span>Accès réservé aux apprenants</span>
-        <a href="https://oidaneos.com" target="_blank" class="text-purple-700 hover:text-pink-600 font-bold flex items-center gap-1 transition">
-          <span>Oidaneos.com</span>
-          <i data-lucide="external-link" class="w-3 h-3"></i>
-        </a>
       </div>
 
     </div>

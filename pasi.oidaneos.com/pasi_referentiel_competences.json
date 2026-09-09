@@ -1,0 +1,316 @@
+{
+  "certification": "Piloter et animer la sécurité informatique",
+  "code": "PASI",
+  "totalHours": 217,
+  "totalCompetences": 10,
+  "totalCriteres": 46,
+  "passingScorePercent": 70,
+  "eliminatoryScorePercent": 50,
+  "blocs": [
+    {
+      "id": "bloc-1",
+      "titre": "Fondamentaux de la cybersécurité",
+      "heures": 42,
+      "competences": [
+        "C1",
+        "C2",
+        "C5"
+      ]
+    },
+    {
+      "id": "bloc-2",
+      "titre": "Supervision et suivi du SI",
+      "heures": 70,
+      "competences": [
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "id": "bloc-3",
+      "titre": "Gestion et remédiation des incidents",
+      "heures": 63,
+      "competences": [
+        "C4",
+        "C6"
+      ]
+    },
+    {
+      "id": "bloc-4",
+      "titre": "Gestion de crise, veille et sensibilisation",
+      "heures": 28,
+      "competences": [
+        "C3",
+        "C8",
+        "C9",
+        "C10"
+      ]
+    }
+  ],
+  "competences": [
+    {
+      "id": "C1",
+      "numero": 1,
+      "titre": "Réaliser un état des lieux du système d’information en classant les actifs informatiques en fonction de leur importance pour l’entreprise, en vue d’évaluer leur criticité et d’identifier ceux à protéger en priorité.",
+      "critereEvaluation": "Pertinence de l’état des lieux des actifs informatiques (matériel, données, systèmes et logiciels)",
+      "indicateurs": [
+        {
+          "id": "1.1",
+          "label": "Le processus métier de l’entreprise et ses enjeux en termes d’activité sont compris"
+        },
+        {
+          "id": "1.2",
+          "label": "Les actifs informatiques de l’entreprise sont inventoriés (via un logiciel, un tableur, ou sur papier)"
+        },
+        {
+          "id": "1.3",
+          "label": "Les niveaux de sécurité et de criticité des actifs informatiques sont définis et analysés via une grille comportant des critères pertinents (critères DICP : Disponibilité, Intégrité, Confidentialité, Preuves)"
+        },
+        {
+          "id": "1.4",
+          "label": "Les actifs les plus exposés sont clairement identifiés et priorisés en fonction de leur degré de criticité"
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "numero": 2,
+      "titre": "Évaluer les risques de sécurité en tenant compte de la réglementation et en appliquant des méthodologies d’analyse des risques afin de mesurer le niveau d’exposition de l’entreprise et de déterminer la nature de la réponse à apporter.",
+      "critereEvaluation": "Qualité de l’évaluation des risques de sécurité informatique",
+      "indicateurs": [
+        {
+          "id": "2.1",
+          "label": "Les méthodes d’analyse des risques sont identifiées (EBIOS, CIS20, NIST, etc.), sélectionnées et adaptées aux besoins de l’entreprise"
+        },
+        {
+          "id": "2.2",
+          "label": "Les différents scénarios d’incidents de sécurité (intrusion, attaque, etc.) sont définis"
+        },
+        {
+          "id": "2.3",
+          "label": "Les risques et leurs impacts (financiers, de propriété, d’image/notoriété, réglementaires, etc.) sur le fonctionnement global de l’entreprise sont identifiés, évalués et cartographiés (menace, gravité des incidents, coûts, probabilité d’occurrence, etc.)"
+        },
+        {
+          "id": "2.4",
+          "label": "L’analyse des risques est précise, exhaustive et synthétique"
+        },
+        {
+          "id": "2.5",
+          "label": "La réglementation est connue et maîtrisée (RGPD, réglementations sectorielles, obligations OIV / OSE, etc.)"
+        },
+        {
+          "id": "2.6",
+          "label": "Les écarts avec la réglementation sont identifiés"
+        },
+        {
+          "id": "2.7",
+          "label": "Les pratiques des utilisateurs (salariés, sous-traitants, intervenants, etc.) sont identifiées et analysées"
+        },
+        {
+          "id": "2.8",
+          "label": "Les vulnérabilités du système d’information sont clairement identifiées"
+        }
+      ]
+    },
+    {
+      "id": "C3",
+      "numero": 3,
+      "titre": "Piloter un plan d’actions en cybersécurité en apportant des recommandations auprès de la direction ou de la gouvernance de l’entreprise afin de l’appuyer dans ses prises de décision et l’arbitrage des réponses à apporter au regard de l’analyse établie.",
+      "critereEvaluation": "Qualité du plan d’action stratégique",
+      "indicateurs": [
+        {
+          "id": "3.1",
+          "label": "Le plan d’actions est exhaustif (principes, mesures stratégiques, techniques et organisationnelles, actions)"
+        },
+        {
+          "id": "3.2",
+          "label": "Le plan d’actions proposé répond aux besoins et aux contraintes (budgétaires, légales, temporelles, acteurs concernés, etc.) de l’entreprise et aux risques identifiés au préalable"
+        },
+        {
+          "id": "3.3",
+          "label": "Les recommandations sont présentées de manière claire, précise et professionnelle à la direction de l’entreprise (techniques de communication telles que l’écoute active, la reformulation, l’argumentation ; vocabulaire adapté)"
+        }
+      ]
+    },
+    {
+      "id": "C4",
+      "numero": 4,
+      "titre": "Organiser la réponse à incident de l’entreprise en formalisant les processus de gestion de crise et d’incident de sécurité afin que les actions soient anticipées et coordonnées.",
+      "critereEvaluation": "Le candidat propose un plan d’action pertinent et exhaustif",
+      "indicateurs": [
+        {
+          "id": "4.1",
+          "label": "Le plan de réponse à incident est formalisé et comporte toutes les informations utiles (chaîne d’alerte, scénarios de menace, outils, procédures, etc.)"
+        },
+        {
+          "id": "4.2",
+          "label": "Le plan de réponse à incident tient compte de l’analyse de risque effectuée au préalable"
+        },
+        {
+          "id": "4.3",
+          "label": "La chaîne d’alerte (rôle et responsabilités de chacun) élaborée tient compte des ressources à disposition au sein de l’entreprise"
+        },
+        {
+          "id": "4.4",
+          "label": "Les dispositifs et processus à mettre en œuvre en cas de cyberattaque (PCA, PRA, plan de sauvegarde) sont rédigés de manière claire, méthodique et adaptée"
+        },
+        {
+          "id": "4.5",
+          "label": "Le plan de réponse à incident est actualisé en fonction des retours et des éventuelles lacunes identifiées"
+        }
+      ]
+    },
+    {
+      "id": "C5",
+      "numero": 5,
+      "titre": "Mettre en œuvre une démarche de sécurisation des actifs informatiques en appliquant les règles de cybersécurité validées par l’entreprise et en implémentant des outils de protection des systèmes d’information en vue d’assurer leur intégrité.",
+      "critereEvaluation": "La démarche de sécurisation est pertinente et définie dans le respect des besoins de l’entreprise",
+      "indicateurs": [
+        {
+          "id": "5.1",
+          "label": "Les solutions techniques et organisationnelles proposées sont pertinentes au regard des besoins de l’entreprise"
+        },
+        {
+          "id": "5.2",
+          "label": "Les fragilités et les spécificités de chaque système d’exploitation (Windows, Linux, Mac, Android, iOS, etc.) sont identifiées et prises en compte"
+        },
+        {
+          "id": "5.3",
+          "label": "Les outils sélectionnés (technologiques : mise à niveau, bonne configuration ; juridiques : RGPD, certifications) sont pertinents et cohérents"
+        },
+        {
+          "id": "5.4",
+          "label": "Les impacts liés au changement (application des actions de cybersécurité) sont compris et maîtrisés"
+        }
+      ]
+    },
+    {
+      "id": "C6",
+      "numero": 6,
+      "titre": "Encadrer la gestion des incidents de sécurité en participant à la mise en œuvre du processus de réponse et en coordonnant les actions avec les parties prenantes (experts informatiques, métiers, etc.) afin de maintenir ou de rétablir les activités critiques de l’entreprise.",
+      "critereEvaluation": "Les éléments liés à l’incident sont communiqués aux parties prenantes",
+      "indicateurs": [
+        {
+          "id": "6.1",
+          "label": "Le rôle et les missions des parties prenantes internes et externes (métiers, techniciens, administrateurs, experts) sont définis"
+        },
+        {
+          "id": "6.2",
+          "label": "Les informations relatives à l’incident sont correctement analysées"
+        },
+        {
+          "id": "6.3",
+          "label": "Le plan de réponse à incident est connu et appliqué (chaîne d’alerte, réponse adaptée, procédures, coordination)"
+        },
+        {
+          "id": "6.4",
+          "label": "Les choix relatifs aux moyens dédiés au suivi et au reporting (outils, canaux sécurisés) sont expliqués et argumentés"
+        },
+        {
+          "id": "6.5",
+          "label": "Les dispositifs et processus en cas d’incident majeur sont appliqués (PCA, PRA, sauvegarde immuable)"
+        }
+      ]
+    },
+    {
+      "id": "C7",
+      "numero": 7,
+      "titre": "Mettre en œuvre une démarche d’évaluation de l’efficacité des mesures de cybersécurité en s’appuyant sur des outils et des méthodologies de test et d’audit en vue de vérifier leur robustesse.",
+      "critereEvaluation": "Pertinence de la démarche d’évaluation",
+      "indicateurs": [
+        {
+          "id": "7.1",
+          "label": "Le choix de la méthodologie de contrôle (recettage, tests, audit de configuration, pentest) est pertinent et conforme à la PGSSI"
+        },
+        {
+          "id": "7.2",
+          "label": "L’action de contrôle est planifiée (fréquence) et organisée (environnement de test, compétences PASSI)"
+        },
+        {
+          "id": "7.3",
+          "label": "Les obligations réglementaires sont respectées"
+        },
+        {
+          "id": "7.4",
+          "label": "Les vulnérabilités et recommandations d’audits sont tracées dans un plan d’action complet avec délais et responsables"
+        },
+        {
+          "id": "7.5",
+          "label": "Les documents formalisant la démarche de cybersécurité sont actualisés"
+        }
+      ]
+    },
+    {
+      "id": "C8",
+      "numero": 8,
+      "titre": "Sensibiliser les utilisateurs finaux aux enjeux de sécurité, aux bonnes pratiques et aux règles d’hygiène informatique en les accompagnant via des actions de formation ou d’information afin de les acculturer à la prévention des risques au sein de l’entreprise.",
+      "critereEvaluation": "Qualité des actions de sensibilisation mises en place pour les utilisateurs finaux",
+      "indicateurs": [
+        {
+          "id": "8.1",
+          "label": "Le niveau de sensibilisation à apporter est apprécié selon les profils"
+        },
+        {
+          "id": "8.2",
+          "label": "Des actions de communication sont proposées et mises en œuvre (diffusion PGSSI, affichage, intranet, simulations)"
+        },
+        {
+          "id": "8.3",
+          "label": "Les outils d’accompagnement proposés (guides, modes opératoires) sont adaptés et pédagogiques"
+        },
+        {
+          "id": "8.4",
+          "label": "Les bonnes pratiques et les 10 règles d’hygiène informatique sont présentées et expliquées"
+        }
+      ]
+    },
+    {
+      "id": "C9",
+      "numero": 9,
+      "titre": "Sélectionner les formations en cybersécurité destinées aux professionnels des systèmes d’information en appui avec les services RH de l’entreprise afin de les accompagner dans leur montée en compétences.",
+      "critereEvaluation": "Qualité de l’accompagnement dans la montée en compétences des professionnels des SI",
+      "indicateurs": [
+        {
+          "id": "9.1",
+          "label": "Les besoins en formation identifiés répondent au besoin de l’entreprise et du professionnel"
+        },
+        {
+          "id": "9.2",
+          "label": "Les prestataires et les formations sélectionnés répondent aux besoins identifiés (technique & séminaire CODIR)"
+        },
+        {
+          "id": "9.3",
+          "label": "Le tableau de bord pour le suivi des formations est complet"
+        }
+      ]
+    },
+    {
+      "id": "C10",
+      "numero": 10,
+      "titre": "Réaliser une veille sur les évolutions techniques, technologiques et réglementaires en matière de cybersécurité en consultant des ressources documentaires ou en participant à des événements spécialisés en vue d’intégrer les informations utiles à ses pratiques.",
+      "critereEvaluation": "Qualité de la veille",
+      "indicateurs": [
+        {
+          "id": "10.1",
+          "label": "Les ressources et outils de veille cyber sont connus et mobilisés à bon escient (CERT-FR, ANSSI, CTI, clubs cyber)"
+        },
+        {
+          "id": "10.2",
+          "label": "La méthodologie de veille proposée est pertinente et pérenne"
+        },
+        {
+          "id": "10.3",
+          "label": "Les types d’information à recueillir (vulnérabilités, ransomwares, normes, outils) sont identifiés"
+        },
+        {
+          "id": "10.4",
+          "label": "Les informations recueillies sont fiables et d’actualité"
+        },
+        {
+          "id": "10.5",
+          "label": "Les informations sont analysées, sélectionnées et diffusées selon les publics cibles (DSI, Direction, Utilisateurs)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,563 @@
+{
+  "promotionId": "pasi-septembre-2026",
+  "filiere": "pasi",
+  "filiereName": "Cybersécurité & Sécurité des SI",
+  "promotionName": "Promotion PASI Cybersécurité — Septembre 2026",
+  "formationTitle": "PASI — Piloter et animer la sécurité informatique",
+  "certificationCode": "PASI",
+  "totalHours": 217,
+  "status": "EN_COURS",
+  "startDate": "02 Septembre 2026",
+  "endDate": "16 Décembre 2026",
+  "zoomUrl": "https://us06web.zoom.us/j/86104069048?pwd=2wazoREVQKBLLWSJrRN2NElYrtb2nl.1",
+  "schedule": "Tous les mercredis de 14h00 à 16h00 (Heure de Guadeloupe)",
+  "totalSessions": 20,
+  "activeSession": 0,
+  "etudeCasFilRouge": {
+    "titre": "Étude de cas officiel — CLINISANTÉ (Certification PASI V1)",
+    "filename": "Etude cas fictif - CLINISANTE - Certif PASI V1.pdf",
+    "relPath": "/Contenus_Pedagogiques_PASI/Etude cas fictif - CLINISANTE - Certif PASI V1.pdf",
+    "description": "Dossier support et cas d'école officiel servant de base à l'analyse des risques et à la soutenance devant le jury."
+  },
+  "fichesRevisionOfficielles": [
+    {
+      "id": "fiche-1",
+      "numero": 1,
+      "titre": "Fondamentaux SSI et réseaux",
+      "filename": "01_Fondamentaux SSI et réseaux.pdf",
+      "relPath": "/Contenus_Pedagogiques_PASI/Fiches de révision/01_Fondamentaux SSI et réseaux.pdf",
+      "competences": [
+        "C1"
+      ]
+    },
+    {
+      "id": "fiche-2",
+      "numero": 2,
+      "titre": "Réglementation & Normes",
+      "filename": "02_Réglementation.pdf",
+      "relPath": "/Contenus_Pedagogiques_PASI/Fiches de révision/02_Réglementation.pdf",
+      "competences": [
+        "C2"
+      ]
+    },
+    {
+      "id": "fiche-3",
+      "numero": 3,
+      "titre": "Gouvernance et stratégie de la sécurité",
+      "filename": "03_Gouvernance et stratégie de la sécurité.pdf",
+      "relPath": "/Contenus_Pedagogiques_PASI/Fiches de révision/03_Gouvernance et stratégie de la sécurité.pdf",
+      "competences": [
+        "C3"
+      ]
+    },
+    {
+      "id": "fiche-4",
+      "numero": 4,
+      "titre": "Gestion des prestataires et conformité",
+      "filename": "04_Gestion des prestataires et conformité.pdf",
+      "relPath": "/Contenus_Pedagogiques_PASI/Fiches de révision/04_Gestion des prestataires et conformité.pdf",
+      "competences": [
+        "C7"
+      ]
+    },
+    {
+      "id": "fiche-5",
+      "numero": 5,
+      "titre": "Analyse et évaluation des risques",
+      "filename": "05_Analyse et évaluation des risques.pdf",
+      "relPath": "/Contenus_Pedagogiques_PASI/Fiches de révision/05_Analyse et évaluation des risques.pdf",
+      "competences": [
+        "C2"
+      ]
+    },
+    {
+      "id": "fiche-6",
+      "numero": 6,
+      "titre": "Mise en œuvre d'actions de contrôle",
+      "filename": "06_Mise en oeuvre d'actions de contrôle.pdf",
+      "relPath": "/Contenus_Pedagogiques_PASI/Fiches de révision/06_Mise en oeuvre d'actions de contrôle.pdf",
+      "competences": [
+        "C6",
+        "C7"
+      ]
+    },
+    {
+      "id": "fiche-7",
+      "numero": 7,
+      "titre": "Organisation et coordination réponse à incident",
+      "filename": "07_Organisation et coordination réponse à incident.pdf",
+      "relPath": "/Contenus_Pedagogiques_PASI/Fiches de révision/07_Organisation et coordination réponse à incident.pdf",
+      "competences": [
+        "C4",
+        "C6"
+      ]
+    },
+    {
+      "id": "fiche-8",
+      "numero": 8,
+      "titre": "Sensibilisation et formation",
+      "filename": "08_Sensibilisation et formation.pdf",
+      "relPath": "/Contenus_Pedagogiques_PASI/Fiches de révision/08_Sensibilisation et formation.pdf",
+      "competences": [
+        "C8",
+        "C9"
+      ]
+    }
+  ],
+  "sessions": [
+    {
+      "id": "pasi-ses-1",
+      "number": 1,
+      "title": "Module 1.1 — Fondamentaux de la SSI et des réseaux — Jour 1",
+      "date": "Mercredi 02 Septembre 2026 (14h - 15h)",
+      "durationMinutes": 60,
+      "formateur": "Patrice CHELIM & Alain VALERO",
+      "description": "Cadrage de la formation, concepts fondamentaux de la sécurité des systèmes d'information, vocabulaire clé et acteurs majeurs.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "blocId": "bloc-1",
+      "competences": [
+        "C1"
+      ],
+      "competenceDetails": [
+        "C1 (Cartographie des actifs SI)"
+      ],
+      "ficheRevisionWord": "Mise en ligne Webinaire PASI.docx",
+      "supportPdf": "20260105_Lancement-Formation-PASI.pdf"
+    },
+    {
+      "id": "pasi-ses-2",
+      "number": 2,
+      "title": "Authentification forte : MFA, gestion des mots de passe et bonnes pratiques",
+      "date": "Mercredi 09 Septembre 2026 (14h - 17h)",
+      "durationMinutes": 180,
+      "formateur": "Patrice CHELIM & Alain VALERO",
+      "description": "Mise en œuvre du MFA, politiques de mots de passe robustes, gestionnaires de secrets et règles d'hygiène informatique.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "blocId": "bloc-1",
+      "competences": [
+        "C5",
+        "C8"
+      ],
+      "competenceDetails": [
+        "C5 (Sécurisation des actifs)",
+        "C8 (Hygiène numérique)"
+      ],
+      "ficheRevisionWord": "Fiche révision 1501.docx"
+    },
+    {
+      "id": "pasi-ses-3",
+      "number": 3,
+      "title": "Analyse des risques SSI : identification, évaluation et traitement",
+      "date": "Mercredi 16 Septembre 2026 (14h - 17h)",
+      "durationMinutes": 180,
+      "formateur": "Patrice CHELIM & Alain VALERO",
+      "description": "Méthodologies d'analyse des risques (EBIOS, NIST, CIS20), cartographie des menaces, matrice DICP et plan de traitement.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "blocId": "bloc-1",
+      "competences": [
+        "C2"
+      ],
+      "competenceDetails": [
+        "C2 (Évaluation des risques cyber)"
+      ],
+      "ficheRevisionWord": "Fiche révision 2201.docx"
+    },
+    {
+      "id": "pasi-ses-4",
+      "number": 4,
+      "title": "SIEM : collecte, corrélation et détection des événements de sécurité",
+      "date": "Mercredi 23 Septembre 2026 (14h - 17h)",
+      "durationMinutes": 180,
+      "formateur": "Patrice CHELIM & Alain VALERO",
+      "description": "Architecture de collecte de logs (Syslog, Windows Event), règles de corrélation, détection d'anomalies et alertes en temps réel.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "blocId": "bloc-2",
+      "competences": [
+        "C6"
+      ],
+      "competenceDetails": [
+        "C6 (Supervision & SIEM)"
+      ],
+      "ficheRevisionWord": "Fiche révision 2901.docx"
+    },
+    {
+      "id": "pasi-ses-5",
+      "number": 5,
+      "title": "Threat intelligence : sources, qualification et exploitation opérationnelle",
+      "date": "Mercredi 30 Septembre 2026 (14h - 17h)",
+      "durationMinutes": 180,
+      "formateur": "Patrice CHELIM & Alain VALERO",
+      "description": "Flux CTI, indicateurs de compromission (IoC), veille sur les vulnérabilités CVE et partage d'informations de menace.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "blocId": "bloc-4",
+      "competences": [
+        "C10"
+      ],
+      "competenceDetails": [
+        "C10 (Veille cyber & CTI)"
+      ],
+      "ficheRevisionWord": "Fiche révision 0402.docx"
+    },
+    {
+      "id": "pasi-ses-6",
+      "number": 6,
+      "title": "Détection des intrusions : IDS, IPS et surveillance des activités suspectes",
+      "date": "Mercredi 07 Octobre 2026 (14h - 15h)",
+      "durationMinutes": 60,
+      "formateur": "Patrice CHELIM & Alain VALERO",
+      "description": "Sondes réseau, détection d'attaques périmétriques et blocage actif des flux malveillants.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "blocId": "bloc-2",
+      "competences": [
+        "C6",
+        "C7"
+      ],
+      "competenceDetails": [
+        "C6 (Gestion des alertes)",
+        "C7 (Contrôle technique)"
+      ],
+      "ficheRevisionWord": "Fiche révision 0602.docx"
+    },
+    {
+      "id": "pasi-ses-7",
+      "number": 7,
+      "title": "Tableaux de bord sécurité : indicateurs, reporting et pilotage opérationnel",
+      "date": "Mercredi 14 Octobre 2026 (14h - 15h30)",
+      "durationMinutes": 90,
+      "formateur": "Patrice CHELIM & Alain VALERO",
+      "description": "KPIs de sécurité, reporting pour la gouvernance et étude de cas d'application MedPlay.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "blocId": "bloc-2",
+      "competences": [
+        "C6"
+      ],
+      "competenceDetails": [
+        "C6 (Tableaux de bord & Reporting)"
+      ],
+      "ficheRevisionWord": "Fiche révision 1202.docx",
+      "ressourcesSession": [
+        "Étude de cas - MedPlay.pdf",
+        "2 - Méthodologie.pdf",
+        "3 - Principes de sécurité.pdf",
+        "4 - Références SSI.pdf"
+      ]
+    },
+    {
+      "id": "pasi-ses-8",
+      "number": 8,
+      "title": "Gestion des identités et des accès : authentification, habilitations et traçabilité",
+      "date": "Mercredi 21 Octobre 2026 (14h - 15h30)",
+      "durationMinutes": 90,
+      "formateur": "Patrice CHELIM & Alain VALERO",
+      "description": "Annuaire Active Directory, RBAC, principe du moindre privilège et journalisation des accès sensibles.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "blocId": "bloc-1",
+      "competences": [
+        "C5"
+      ],
+      "competenceDetails": [
+        "C5 (Gestion des identités & IAM)"
+      ],
+      "ficheRevisionWord": "Fiche révision 1302.docx"
+    },
+    {
+      "id": "pasi-ses-9",
+      "number": 9,
+      "title": "Architecture de sécurité : défense en profondeur et segmentation réseau",
+      "date": "Mercredi 28 Octobre 2026 (14h - 15h30)",
+      "durationMinutes": 90,
+      "formateur": "Patrice CHELIM & Alain VALERO",
+      "description": "Segmentation VLAN, DMZ, filtrage inter-zones et réduction de la surface d'attaque.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "blocId": "bloc-1",
+      "competences": [
+        "C1",
+        "C5"
+      ],
+      "competenceDetails": [
+        "C1 (Cartographie)",
+        "C5 (Défense en profondeur)"
+      ],
+      "ficheRevisionWord": "Fiche de révision 1902.docx"
+    },
+    {
+      "id": "pasi-ses-10",
+      "number": 10,
+      "title": "Continuité d’activité : PCA, PRA et gestion de crise",
+      "date": "Mercredi 04 Novembre 2026 (14h - 16h)",
+      "durationMinutes": 120,
+      "formateur": "Patrice CHELIM & Alain VALERO",
+      "description": "Calcul RTO / RPO, procédures de secours en mode dégradé, sauvegardes immuables et cellule de crise.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "blocId": "bloc-3",
+      "competences": [
+        "C4"
+      ],
+      "competenceDetails": [
+        "C4 (Plans PCA / PRA & Résilience)"
+      ],
+      "ficheRevisionWord": "Fiche de révision 2602.docx"
+    },
+    {
+      "id": "pasi-ses-11",
+      "number": 11,
+      "title": "Tests d’intrusion (Partie 1) : identification des failles et évaluation de la sécurité",
+      "date": "Mercredi 11 Novembre 2026 (14h - 15h45)",
+      "durationMinutes": 105,
+      "formateur": "Patrice CHELIM & Alain VALERO",
+      "description": "Méthodologie des tests d'intrusion (pentests), scans de vulnérabilités et qualification PASSI.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "blocId": "bloc-2",
+      "competences": [
+        "C7"
+      ],
+      "competenceDetails": [
+        "C7 (Audits de sécurité & Pentest)"
+      ],
+      "ficheRevisionWord": "Fiche de révision 0503.docx"
+    },
+    {
+      "id": "pasi-ses-12",
+      "number": 12,
+      "title": "Tests d’intrusion (Partie 2) : identification des failles et évaluation pratique",
+      "date": "Mercredi 18 Novembre 2026 (14h - 16h40)",
+      "durationMinutes": 160,
+      "formateur": "Patrice CHELIM & Alain VALERO",
+      "description": "Ateliers pratiques de détection de vulnérabilités, exploitation contrôlée et plans de remédiation.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "blocId": "bloc-2",
+      "competences": [
+        "C7"
+      ],
+      "competenceDetails": [
+        "C7 (Remédiation des failles)"
+      ],
+      "ficheRevisionWord": "Fiche de révision 1303.docx"
+    },
+    {
+      "id": "pasi-ses-13",
+      "number": 13,
+      "title": "Sécurité des postes de travail : protection, configuration et bonnes pratiques",
+      "date": "Mercredi 25 Novembre 2026 (14h - 15h45)",
+      "durationMinutes": 105,
+      "formateur": "Patrice CHELIM & Alain VALERO",
+      "description": "EDR, chiffrement BitLocker, gestion des terminaux mobiles (MDM) et durcissement des postes clients.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "blocId": "bloc-1",
+      "competences": [
+        "C5",
+        "C8"
+      ],
+      "competenceDetails": [
+        "C5 (Sécurisation terminaux)",
+        "C8 (Hygiène)"
+      ],
+      "ficheRevisionWord": "Fiche de révision 1803.docx"
+    },
+    {
+      "id": "pasi-ses-14",
+      "number": 14,
+      "title": "Sécurité des applications : vulnérabilités, tests et sécurisation du développement",
+      "date": "Mardi 01 Décembre 2026 (14h - 16h)",
+      "durationMinutes": 120,
+      "formateur": "Patrice CHELIM & Alain VALERO",
+      "description": "Top 10 OWASP, sécurisation du code, validation des entrées et bonnes pratiques DevSecOps.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "blocId": "bloc-2",
+      "competences": [
+        "C7"
+      ],
+      "competenceDetails": [
+        "C7 (Sécurité applicative OWASP)"
+      ],
+      "ficheRevisionWord": "Fiche de révision 2003.docx"
+    },
+    {
+      "id": "pasi-ses-15",
+      "number": 15,
+      "title": "Sécurité cloud : responsabilités, risques et sécurisation des environnements",
+      "date": "Mercredi 02 Décembre 2026 (14h - 16h)",
+      "durationMinutes": 120,
+      "formateur": "Patrice CHELIM & Alain VALERO",
+      "description": "Modèle de responsabilité partagée, sécurisation des environnements SaaS / IaaS et gestion des accès cloud.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "blocId": "bloc-1",
+      "competences": [
+        "C5"
+      ],
+      "competenceDetails": [
+        "C5 (Sécurité Cloud & SaaS)"
+      ],
+      "ficheRevisionWord": "Fiche de révision 2303.docx"
+    },
+    {
+      "id": "pasi-ses-16",
+      "number": 16,
+      "title": "Sécurité des réseaux : filtrage, segmentation et protection des communications",
+      "date": "Vendredi 04 Décembre 2026 (14h - 16h40)",
+      "durationMinutes": 160,
+      "formateur": "Patrice CHELIM & Alain VALERO",
+      "description": "VPN IPsec/SSL, inspection SSL des flux chiffrés, filtrage applicatif et sécurité Wi-Fi WPA3 Enterprise.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "blocId": "bloc-2",
+      "competences": [
+        "C5",
+        "C7"
+      ],
+      "competenceDetails": [
+        "C5 (Chiffrement des flux)",
+        "C7 (Audit réseau)"
+      ],
+      "ficheRevisionWord": "Fiche de révision 2503.docx"
+    },
+    {
+      "id": "pasi-ses-17",
+      "number": 17,
+      "title": "Sécurité des données : classification, protection et gestion des accès",
+      "date": "Mardi 08 Décembre 2026 (14h - 17h)",
+      "durationMinutes": 180,
+      "formateur": "Patrice CHELIM & Alain VALERO",
+      "description": "Classification des données, DLP (Data Loss Prevention), chiffrement au repos et conformité RGPD.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "blocId": "bloc-1",
+      "competences": [
+        "C1",
+        "C5"
+      ],
+      "competenceDetails": [
+        "C1 (Classification)",
+        "C5 (Protection des données)"
+      ],
+      "ficheRevisionWord": "Fiche de révision 0104.docx"
+    },
+    {
+      "id": "pasi-ses-18",
+      "number": 18,
+      "title": "Gestion des accès et authentification : contrôle, sécurisation et bonnes pratiques",
+      "date": "Mercredi 09 Décembre 2026 (14h - 15h20)",
+      "durationMinutes": 80,
+      "formateur": "Patrice CHELIM & Alain VALERO",
+      "description": "Revue périodique des habilitations, désactivation des comptes inactifs et traçabilité des accès administrateurs.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "blocId": "bloc-1",
+      "competences": [
+        "C5"
+      ],
+      "competenceDetails": [
+        "C5 (Contrôle des habilitations)"
+      ]
+    },
+    {
+      "id": "pasi-ses-19",
+      "number": 19,
+      "title": "Préparation 1/3 - Dossier professionnel & Référentiel de compétences",
+      "date": "Mardi 15 Décembre 2026 (14h - 15h)",
+      "durationMinutes": 60,
+      "formateur": "Patrice CHELIM & Alain VALERO",
+      "description": "Méthodologie de rédaction du dossier professionnel à partir de l'étude de cas CLINISANTÉ et formalisation des livrables.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "blocId": "bloc-4",
+      "competences": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "competenceDetails": [
+        "Préparation des 10 compétences"
+      ]
+    },
+    {
+      "id": "pasi-ses-20",
+      "number": 20,
+      "title": "⭐ Préparation Finale & Soutenances Blanches devant Jury",
+      "date": "Mercredi 16 Décembre 2026 (14h - 17h)",
+      "durationMinutes": 180,
+      "formateur": "Patrice CHELIM & Alain VALERO",
+      "description": "Simulation de soutenance orale en conditions réelles d'examen devant un jury d'experts cyber et debriefing personnalisé.",
+      "isAssetised": false,
+      "status": "A_VENIR",
+      "microVideosCount": 0,
+      "microVideos": [],
+      "blocId": "bloc-4",
+      "competences": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "competenceDetails": [
+        "Validation complète du titre PASI"
+      ]
+    }
+  ]
+}

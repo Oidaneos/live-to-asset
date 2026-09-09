@@ -23,3 +23,24 @@ services:
       - "traefik.http.routers.elearning.tls=true"
       - "traefik.http.routers.elearning.tls.certresolver=letsencrypt"
       - "traefik.http.services.elearning.loadbalancer.server.port=3000"
+
+  oidaneos-pasi:
+    build:
+      context: .
+      dockerfile: pasi.oidaneos.com/Dockerfile
+    container_name: oidaneos-pasi-cybersecurite
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - NODE_ENV=production
+    volumes:
+      - ./Sessions_PASI:/app/Sessions_PASI:ro
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.pasi.rule=Host(`pasi.oidaneos.com`)"
+      - "traefik.http.routers.pasi.entrypoints=https"
+      - "traefik.http.routers.pasi.tls=true"
+      - "traefik.http.routers.pasi.tls.certresolver=letsencrypt"
+      - "traefik.http.services.pasi.loadbalancer.server.port=3001"

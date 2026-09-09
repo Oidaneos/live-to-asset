@@ -1,0 +1,33 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//OIDANEOS//Formation PASI Cybersecurite//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Formation PASI OIDANEOS (Septembre - Décembre 2026)
+X-WR-TIMEZONE:America/Guadeloupe
+BEGIN:VTIMEZONE
+TZID:America/Guadeloupe
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0400
+TZNAME:AST
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:pasi-live-hebdo-2026@oidaneos.com
+DTSTAMP:20260908T120000Z
+DTSTART;TZID=America/Guadeloupe:20260909T140000
+DTEND;TZID=America/Guadeloupe:20260909T160000
+RRULE:FREQ=WEEKLY;BYDAY=WE;UNTIL=20261216T235959Z
+SUMMARY:🛡️ Salle de Classe Virtuelle — Formation PASI OIDANEOS
+DESCRIPTION:Séance hebdomadaire en direct de la Certification PASI avec Guillaume Carayon et Alain-Franck Valero (12 séances + Grand Oral Blanc & Soutenance Finale le 16/12/2026).\n\nLien Zoom direct : https://us06web.zoom.us/j/86104069048?pwd=2wazoREVQKBLLWSJrRN2NElYrtb2nl.1\nID de réunion : 861 0406 9048\nCode secret : 2wazoR
+LOCATION:Zoom (https://us06web.zoom.us/j/86104069048?pwd=2wazoREVQKBLLWSJrRN2NElYrtb2nl.1)
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Rappel : La séance PASI avec Guillaume Carayon commence dans 15 minutes !
+END:VALARM
+END:VEVENT
+END:VCALENDAR
