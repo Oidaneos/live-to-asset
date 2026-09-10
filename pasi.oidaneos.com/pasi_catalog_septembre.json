@@ -48,47 +48,90 @@
     {
       "id": "sep-2",
       "number": 2,
-      "title": "Module 1.1 — Fondamentaux de la SSI et des réseaux",
-      "bloc": "Bloc 1 : Fondamentaux de la SSI (42h)",
+      "title": "Fondamentaux de la SSI : Enjeux, Critères DICP & Pilotage des Risques Cyber",
+      "bloc": "Bloc 1 : Risques Cyber & Actifs (70h)",
       "compCode": "C1",
-      "compTitle": "État des lieux du SI & Classification DICP",
-      "duration": "120-180 min",
-      "isReplayAvailable": false,
-      "videoUrl": null,
+      "compTitle": "État des Lieux & Classification DICP",
+      "duration": "120 min",
+      "isReplayAvailable": true,
+      "videoUrl": "/Sessions_Pasi_Septembre_2026/pasi_replay_session_02/GMT20260909-174630_Recording_1920x1080.mp4",
       "docxUrl": "/Guides_Pedagogiques_PASI/Guide_Pedagogique_PASI_Septembre_Session_2.docx",
-      "pdfUrl": null,
+      "pdfUrl": "/Supports_PDF/20260909_Lancement-Formation-PASI.pdf",
       "transcriptUrl": null,
-      "dateFormatted": "Mercredi 9 Septembre 2026",
+      "dateFormatted": "Mercredi 09 Septembre 2026 (14h00 - 16h00)",
       "dateShort": "09/09/2026",
       "tools": [
-        "Wireshark",
-        "Nmap",
-        "Cartographie Réseau",
+        "CISO Assistant (GRC)",
+        "Docker / Compose",
+        "Kahoot Quiz",
+        "Guide Hygiène ANSSI",
         "Matrice DICP",
-        "Modèle OSI"
+        "MITRE ATT&CK",
+        "CVSS / EPSS"
       ],
-      "cadrage": "Maîtriser les concepts fondamentaux de la sécurité des systèmes d'information, les protocoles de communication et la méthode de classification des actifs selon les critères Disponibilité, Intégrité, Confidentialité et Preuve (DICP).",
+      "cadrage": "Présentation de l'architecture pédagogique du parcours PASI, distinction clé entre sécurité informatique, sécurité de l'information et cybersécurité, approfondissement de la matrice DICP, introduction à l'analyse des risques (EBIOS RM / ISO 27005) et découverte de CISO Assistant.",
       "sections": [
         {
-          "title": "2.1 Les Piliers DICP et la Classification des Actifs",
-          "content": "Définition rigoureuse des critères Disponibilité, Intégrité, Confidentialité et Traçabilité/Preuve. Méthode de cotation des actifs d'information et détermination des seuils de criticité métier."
+          "title": "2.1 Architecture du Parcours & Posture du Pilote SSI",
+          "content": "Présentation de la progression sur 3 mois (Fondamentaux, Supervision, Remédiation, Gestion de crise, Certification). Rôle du référent SSI : comprendre les enjeux métiers, traduire les risques techniques en impacts organisationnels/financiers et structurer le plan d'action."
         },
         {
-          "title": "2.2 Fondamentaux des Réseaux & Protocoles de Communication",
-          "content": "Analyse approfondie du modèle OSI (couches 1 à 7) et de la pile TCP/IP. Identification des vulnérabilités inhérentes aux protocoles non chiffrés (HTTP, Telnet, FTP) et principes d'encapsulation."
+          "title": "2.2 Sécurité de l'Information, Cybersécurité & Matrice DICP",
+          "content": "Distinction entre sécurité des composants techniques, patrimoine informationnel global et cyberespace. Détail des critères DICP : Disponibilité (accessibilité temporelle), Intégrité (non-altération), Confidentialité (accès restreint), Preuve & Traçabilité (imputabilité des actions et des logs)."
         },
         {
-          "title": "2.3 Cartographie du Système d'Information",
-          "content": "Méthodologie d'inventaire des composants matériels, logiciels, serveurs et flux d'interconnexion. Établissement du schéma directeur de sécurité et cartographie des zones de confiance."
+          "title": "2.3 Menaces, Vulnérabilités & Notions de Risque Cyber",
+          "content": "Définition de la menace (ransomware, phishing, fuite de données, catastrophe) et de la vulnérabilité (failles logicielles, erreurs de configuration, facteur humain). Évaluation de la criticité, de l'impact et de la vraisemblance selon les méthodologies EBIOS RM et ISO 27005."
+        },
+        {
+          "title": "2.4 Moyens de Défense, EDR, IDS/IPS & Frameworks d'Attaque",
+          "content": "Différenciation Antivirus vs EDR (analyse comportementale temps réel). Systèmes de détection IDS/IPS, SIEM et SOC. Modélisation des cyberattaques via la Cyber Kill Chain et la matrice MITRE ATT&CK."
+        },
+        {
+          "title": "2.5 Gouvernance, Conformité & Cadre Légal (ISO, RGPD, NIS 2)",
+          "content": "Panorama des normes ISO 27001 (SMSI) et ISO 27002 (mesures de sécurité). Exigences réglementaires : RGPD (protection des données personnelles, PIA/AIPD), Directives NIS 2 et DORA."
         }
       ],
       "checklist": [
-        "Télécharger la fiche révision Word du Module 1.1",
-        "Établir la matrice de criticité DICP sur un périmètre applicatif",
-        "Identifier les 5 protocoles critiques à sécuriser en priorité"
+        "Choisir et déployer CISO Assistant (SaaS 30j, Community Docker/VM ou instance formateur)",
+        "Compléter le Diagnostic Initial dans l'onglet 'Évaluation Jury'",
+        "Signer le formulaire de Droit à l'Image dans l'onglet 'Guide d'Accueil'",
+        "Régulariser tous vos émargements manquants sur Digiforma (en attendant la solution intégrée)",
+        "Refaire le quiz interactif Kahoot : https://kahoot.it/challenge/002647422"
       ],
-      "chatItems": [],
-      "description": "Maîtriser les concepts fondamentaux de la sécurité des systèmes d'information, les protocoles de communication et la méthode de classification des actifs selon les critères Disponibilité, Intégrité, Confidentialité et Preuve (DICP)."
+      "chatItems": [
+        {
+          "time": "00:15:20",
+          "sender": "Alain Valero - Oidaneos",
+          "message": "Bienvenue à tous sur cette 2ème séance dédiée aux Fondamentaux SSI et aux critères DICP. N'hésitez pas à poser vos questions dans le chat."
+        },
+        {
+          "time": "00:22:45",
+          "sender": "Guillaume Carayon",
+          "message": "Lien direct vers le challenge Kahoot pour réviser et refaire le quiz : https://kahoot.it/challenge/002647422"
+        },
+        {
+          "time": "01:05:10",
+          "sender": "Didier",
+          "message": "Pour CISO Assistant, est-ce qu'on doit l'installer en local avec Docker ou est-ce qu'il y aura une instance fournie ?"
+        },
+        {
+          "time": "01:06:40",
+          "sender": "Guillaume Carayon",
+          "message": "Pour CISO Assistant, 3 solutions possibles : Essai SaaS 30j (https://intuitem.com/trial), version Community sur infra / Docker (https://github.com/intuitem/ciso-assistant-community), ou mon instance (remontez-moi votre demande pour création d'accès). Doc : https://intuitem.gitbook.io/ciso-assistant"
+        },
+        {
+          "time": "01:28:15",
+          "sender": "Guillaume Carayon",
+          "message": "Guide d'hygiène informatique de l'ANSSI (42 mesures) : https://messervices.cyber.gouv.fr/documents-guides/guide_hygiene_informatique_anssi.pdf"
+        },
+        {
+          "time": "01:45:00",
+          "sender": "Milène - Coordination OIDANEOS",
+          "message": "Rappels administratifs importants : pensez à compléter votre diagnostic initial dans l'onglet Évaluation Jury, à signer votre droit à l'image dans le Guide d'accueil, et à valider vos émargements en attente sur Digiforma."
+        }
+      ],
+      "description": "Fondamentaux de la SSI : comprendre les enjeux, les critères DICP et poser les bases du pilotage des risques cyber avec CISO Assistant."
     },
     {
       "id": "sep-3",
