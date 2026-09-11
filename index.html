@@ -68,6 +68,32 @@
     }
   </style>
 
+  <style>
+    @media print {
+      body * {
+        visibility: hidden !important;
+      }
+      #diagnosticPrintContainerIa, #diagnosticPrintContainerIa * {
+        visibility: visible !important;
+      }
+      #diagnosticPrintContainerIa {
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 20px !important;
+        background: white !important;
+        color: #0f172a !important;
+        display: block !important;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+
 </head>
 <body class="h-full flex flex-col antialiased selection:bg-oidaneos-pink selection:text-white custom-scroll bg-[#FBF9FD]">
 
@@ -120,23 +146,16 @@
         </select>
       </div>
 
-      <!-- Espace Utilisateur Connecté (Privé ou Formateur) -->
+      <!-- Espace Utilisateur Connecté (Privé ou Formateur / Administration) -->
       <div id="userHeaderBadgeContainer" class="hidden flex items-center gap-2 bg-white px-3 py-1.5 rounded-2xl border border-oidaneos-line shadow-sm">
-        <div id="headerUserAvatar" class="w-6 h-6 rounded-full bg-grad-oidaneos text-white text-[10px] font-black flex items-center justify-center shrink-0">
-          ML
+        <div id="headerUserAvatar" class="w-7 h-7 rounded-xl bg-grad-oidaneos text-white text-xs font-black flex items-center justify-center shrink-0 shadow-xs">
+          AV
         </div>
-        <div class="flex items-center gap-1.5">
-          <span id="headerUserName" class="text-xs font-extrabold text-oidaneos-ink max-w-[140px] sm:max-w-[200px] truncate">Murielle LAPILUS</span>
-          <span id="headerUserRoleBadge" class="hidden px-2 py-0.5 rounded-full bg-oidaneos-purple text-white text-[9px] font-extrabold uppercase">Formateur</span>
+        <div class="block text-left">
+          <select id="userSelector" onchange="switchUser(this.value)" class="bg-transparent text-oidaneos-ink text-xs font-bold border-none focus:outline-none cursor-pointer max-w-[170px] sm:max-w-none truncate">
+          </select>
+          <span id="userStaticBadge" class="hidden text-xs font-bold text-oidaneos-ink truncate"></span>
         </div>
-
-        <!-- Sélecteur Formateur (Visible UNIQUEMENT pour Alain, Pierre et Milène) -->
-        <select id="trainerLearnerSelector" onchange="trainerSelectLearner(this.value)" class="hidden bg-oidaneos-lav50 text-oidaneos-purple text-xs font-extrabold border border-oidaneos-line rounded-lg px-2 py-1 focus:outline-none cursor-pointer">
-          <option value="ackaraib@orange.fr">Vue : Murielle LAPILUS (ACKARAIB)</option>
-          <option value="mamalylys2323@gmail.com">Vue : Mailys DAVRAIN (ACKARAIB)</option>
-          <option value="gwenaelle.davrain1@gmail.com">Vue : Gwenaelle POUMAROUX (ACKARAIB)</option>
-          <option value="babzwayne@gmail.com">Vue : Ruben MEL (Ishanoa)</option>
-        </select>
       </div>
 
       <!-- Bouton Déconnexion -->
@@ -936,6 +955,48 @@
             </div>
           </div>
 
+          <!-- ===== EXPRESSION DES BESOINS, ATTENTES & CONTEXTE PROFESSIONNEL (QUALIOPI IND. 1 & 4) ===== -->
+          <div class="p-6 rounded-3xl bg-white border border-oidaneos-line shadow-sm space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-oidaneos-line pb-3">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-xl bg-oidaneos-purple text-white flex items-center justify-center font-bold text-xs shadow-btn">
+                  <i data-lucide="target" class="w-4 h-4 text-pink-300"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-black text-oidaneos-ink">Expression des Besoins, Attentes &amp; Contexte Professionnel</h4>
+                  <p class="text-[11px] text-oidaneos-muted">Permet aux formateurs (Pierre Lacombe &amp; Alain Valero) de personnaliser les cas pratiques IA</p>
+                </div>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-oidaneos-lav100 text-oidaneos-purple text-[10px] font-black border border-oidaneos-line shrink-0">Qualiopi Indicateurs 1 &amp; 4</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+              <div class="space-y-1.5 md:col-span-2">
+                <label class="font-bold text-oidaneos-ink flex items-center gap-1.5">
+                  <i data-lucide="compass" class="w-3.5 h-3.5 text-oidaneos-purple"></i>
+                  <span>1. Vos Attentes &amp; Objectifs Prioritaires pour cette formation IA/Data :</span>
+                </label>
+                <textarea id="iaAttenteObjectifs" rows="3" oninput="saveCurrentLearnerAttentesIa()" placeholder="Ex: Automatiser mes tâches répétitives, créer un agent IA pour mon métier, structurer mes données et déployer une solution No-Code..." class="w-full p-3 rounded-2xl bg-oidaneos-lav50 border border-oidaneos-line font-medium text-oidaneos-ink focus:outline-none focus:ring-2 focus:ring-oidaneos-purple text-xs leading-relaxed"></textarea>
+              </div>
+
+              <div class="space-y-1.5">
+                <label class="font-bold text-oidaneos-ink flex items-center gap-1.5">
+                  <i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-oidaneos-purple"></i>
+                  <span>2. Principales difficultés / tâches chronophages dans votre métier :</span>
+                </label>
+                <textarea id="iaAttenteDefis" rows="3" oninput="saveCurrentLearnerAttentesIa()" placeholder="Ex: Recherche d'informations manuelle, rédaction de rapports, saisie de données, analyse de documents, suivi client..." class="w-full p-3 rounded-2xl bg-oidaneos-lav50 border border-oidaneos-line font-medium text-oidaneos-ink focus:outline-none focus:ring-2 focus:ring-oidaneos-purple text-xs leading-relaxed"></textarea>
+              </div>
+
+              <div class="space-y-1.5">
+                <label class="font-bold text-oidaneos-ink flex items-center gap-1.5">
+                  <i data-lucide="wrench" class="w-3.5 h-3.5 text-oidaneos-purple"></i>
+                  <span>3. Cas d'usage IA concrets &amp; projets à concevoir pendant la formation :</span>
+                </label>
+                <textarea id="iaAttenteProjets" rows="3" oninput="saveCurrentLearnerAttentesIa()" placeholder="Ex: Agent de veille automatisé, assistant de rédaction de rapports, pipeline d'analyse de données clients, chatbot métier..." class="w-full p-3 rounded-2xl bg-oidaneos-lav50 border border-oidaneos-line font-medium text-oidaneos-ink focus:outline-none focus:ring-2 focus:ring-oidaneos-purple text-xs leading-relaxed"></textarea>
+              </div>
+            </div>
+          </div>
+
           <!-- Consignes Pédagogiques & Barème d'Auto-Évaluation -->
           <div class="p-6 rounded-3xl bg-gradient-to-br from-oidaneos-lav50 via-white to-pink-50/30 border border-oidaneos-line space-y-4 shadow-sm">
             <div class="flex items-center justify-between border-b border-oidaneos-line pb-3">
@@ -1127,10 +1188,16 @@
 
           <div class="pt-4 border-t border-oidaneos-line flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <span class="text-xs text-oidaneos-muted">Diagnostic sauvegardé pour le calcul automatique du rapport qualité Qualiopi.</span>
-            <button onclick="saveAndLockPositionnement()" id="btnSavePositionnement" class="px-5 py-2.5 rounded-xl bg-grad-oidaneos text-white text-xs font-extrabold shadow-btn hover:opacity-95 transition flex items-center justify-center gap-2">
-              <i data-lucide="lock" class="w-4 h-4"></i>
-              <span>Enregistrer & Figer mon Positionnement Initial</span>
-            </button>
+            <div class="flex items-center gap-2">
+              <button onclick="exportDiagnosticPDFIa()" class="px-4 py-2.5 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav50 text-oidaneos-purple text-xs font-black transition flex items-center gap-1.5 border border-oidaneos-line">
+                <i data-lucide="printer" class="w-4 h-4"></i>
+                <span>Imprimer / PDF</span>
+              </button>
+              <button onclick="saveAndExportIaPdf()" id="btnSavePositionnement" class="px-5 py-2.5 rounded-xl bg-grad-oidaneos text-white text-xs font-extrabold shadow-btn hover:opacity-95 transition flex items-center justify-center gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                <span>Enregistrer &amp; Générer le PDF (T0)</span>
+              </button>
+            </div>
           </div>
 
         </div>
@@ -1836,7 +1903,7 @@
     //   BASE DE DONNÉES DES UTILISATEURS — PROMOTION SEPTEMBRE 2026
     //   (4 APPRENANTS + 3 FORMATEURS / DIRECTION)
     // =========================================================================
-        const DATA_VERSION = '2026.09.06_v12_ics_prominent';
+        const DATA_VERSION = '2026.09.11_v13_unlock_autoeval_sept';
 
                 const ALL_USERS_DATABASE = {
       // --- FORMATEURS ET COORDINATION ---
@@ -1846,19 +1913,44 @@
         firstname: "Alain-Franck",
         lastname: "VALERO",
         phone: "+590 690 64 93 18",
-        role: "CEO & Formateur Référent IA",
+        role: "Directeur & Formateur Référent",
         company: "OIDANEOS",
         isTrainer: true,
+        isDirector: true,
         avatar: "AV",
         color: "from-purple-600 to-pink-600"
       },
-      "pierre@oidaneos.com": {
-        email: "pierre@oidaneos.com",
-        name: "Pierre",
+      "pie.lacombe@gmail.com": {
+        email: "pie.lacombe@gmail.com",
+        name: "Pierre LACOMBE",
         firstname: "Pierre",
-        lastname: "Formateur",
+        lastname: "LACOMBE",
         phone: "+590 690 64 93 18",
-        role: "Expert IA & Formateur Technique",
+        role: "Lead Formateur IA",
+        company: "OIDANEOS",
+        isTrainer: true,
+        avatar: "PL",
+        color: "from-blue-700 to-indigo-700"
+      },
+      "pierre@oidaneos.com": {
+        email: "pie.lacombe@gmail.com",
+        name: "Pierre LACOMBE",
+        firstname: "Pierre",
+        lastname: "LACOMBE",
+        phone: "+590 690 64 93 18",
+        role: "Lead Formateur IA",
+        company: "OIDANEOS",
+        isTrainer: true,
+        avatar: "PL",
+        color: "from-blue-700 to-indigo-700"
+      },
+      "pierre.lacombe@gmail.com": {
+        email: "pie.lacombe@gmail.com",
+        name: "Pierre LACOMBE",
+        firstname: "Pierre",
+        lastname: "LACOMBE",
+        phone: "+590 690 64 93 18",
+        role: "Lead Formateur IA",
         company: "OIDANEOS",
         isTrainer: true,
         avatar: "PL",
@@ -1870,9 +1962,23 @@
         firstname: "Milène",
         lastname: "PAUL",
         phone: "+590 690 14 11 42",
-        role: "Référente Pédagogique & Coordination",
+        role: "Coordination & Admin",
         company: "OIDANEOS",
         isTrainer: true,
+        isCoordinator: true,
+        avatar: "MP",
+        color: "from-pink-600 to-rose-600"
+      },
+      "milene@oidaneos.com": {
+        email: "hello@milenepaul.com",
+        name: "Milène PAUL",
+        firstname: "Milène",
+        lastname: "PAUL",
+        phone: "+590 690 14 11 42",
+        role: "Coordination & Admin",
+        company: "OIDANEOS",
+        isTrainer: true,
+        isCoordinator: true,
         avatar: "MP",
         color: "from-pink-600 to-rose-600"
       },
@@ -1925,8 +2031,8 @@
         yousign_convention_date: "01/09/2026",
         yousign_signed_droit_image: false,
         yousign_droit_image_date: null,
-        isLocked: true,
-        lockedDate: "02/09/2026 (Digiforma T0)"
+        isLocked: false,
+        lockedDate: null
       },
       "mamalylys2323@gmail.com": {
         email: "mamalylys2323@gmail.com",
@@ -1975,8 +2081,8 @@
         yousign_convention_date: null,
         yousign_signed_droit_image: false,
         yousign_droit_image_date: null,
-        isLocked: true,
-        lockedDate: "02/09/2026 (Digiforma T0)"
+        isLocked: false,
+        lockedDate: null
       },
       "gwenaelle.davrain1@gmail.com": {
         email: "gwenaelle.davrain1@gmail.com",
@@ -2025,8 +2131,8 @@
         yousign_convention_date: null,
         yousign_signed_droit_image: false,
         yousign_droit_image_date: null,
-        isLocked: true,
-        lockedDate: "02/09/2026 (Digiforma T0)"
+        isLocked: false,
+        lockedDate: null
       },
       "babzwayne@gmail.com": {
         email: "babzwayne@gmail.com",
@@ -2075,8 +2181,8 @@
         yousign_convention_date: null,
         yousign_signed_droit_image: false,
         yousign_droit_image_date: null,
-        isLocked: true,
-        lockedDate: "02/09/2026 (Digiforma T0)"
+        isLocked: false,
+        lockedDate: null
       }
     };
 
@@ -2902,40 +3008,110 @@
       syncActiveLearnerView(currentInspectedLearnerEmail);
     }
 
-    function updateHeaderUserUI(user) {
-      const elAvatar = document.getElementById('headerUserAvatar');
-      const elName = document.getElementById('headerUserName');
-      const elRoleBadge = document.getElementById('headerUserRoleBadge');
-      const elTrainerSelector = document.getElementById('trainerLearnerSelector');
-      const elEvalTrainerBox = document.getElementById('evalTrainerSwitchBox');
+    function populateUserDropdown(authEmail) {
+      const selectEl = document.getElementById('userSelector');
+      const staticBadge = document.getElementById('userStaticBadge');
+      if (!selectEl) return;
 
-      if (elAvatar) elAvatar.textContent = user.avatar;
-      if (elName) elName.textContent = user.name;
+      const authUser = ALL_USERS_DATABASE[authEmail] || ALL_USERS_DATABASE['alain@oidaneos.com'];
+      const isAlain = (authEmail === 'alain@oidaneos.com' || authUser.isDirector);
+      const isPierre = (authEmail === 'pierre@oidaneos.com' || authEmail === 'pie.lacombe@gmail.com' || authEmail === 'pierre.lacombe@gmail.com');
+      const isMilene = (authEmail === 'hello@milenepaul.com' || authEmail === 'milene@oidaneos.com' || authUser.isCoordinator);
 
-      if (user.isTrainer) {
-        if (elRoleBadge) {
-          elRoleBadge.classList.remove('hidden');
-          elRoleBadge.textContent = "👑 Formateur";
-        }
-        if (elTrainerSelector) elTrainerSelector.classList.remove('hidden');
-        if (elEvalTrainerBox) elEvalTrainerBox.classList.remove('hidden');
+      let optionsHtml = '';
+
+      if (isAlain) {
+        if (staticBadge) staticBadge.classList.add('hidden');
+        selectEl.classList.remove('hidden');
+        optionsHtml += '<optgroup label="🎓 Formateurs & Administration">';
+        optionsHtml += '<option value="alain@oidaneos.com">Alain VALERO (Directeur OIDANEOS)</option>';
+        optionsHtml += '<option value="pie.lacombe@gmail.com">Pierre LACOMBE (Lead Formateur IA)</option>';
+        optionsHtml += '<option value="hello@milenepaul.com">Milène PAUL (Coordination & Admin)</option>';
+        optionsHtml += '</optgroup>';
+        optionsHtml += '<optgroup label="💼 Stagiaires Promotion Septembre 2026">';
+        optionsHtml += '<option value="ackaraib@orange.fr">Murielle LAPILUS (ACKARAIB)</option>';
+        optionsHtml += '<option value="mamalylys2323@gmail.com">Mailys DAVRAIN (ACKARAIB)</option>';
+        optionsHtml += '<option value="gwenaelle.davrain1@gmail.com">Gwenaelle POUMAROUX (ACKARAIB)</option>';
+        optionsHtml += '<option value="babzwayne@gmail.com">Ruben MEL (Ishanoa)</option>';
+        optionsHtml += '</optgroup>';
+      } else if (isPierre) {
+        if (staticBadge) staticBadge.classList.add('hidden');
+        selectEl.classList.remove('hidden');
+        optionsHtml += '<optgroup label="🎓 Mon Espace Formateur Expert">';
+        optionsHtml += '<option value="pie.lacombe@gmail.com">👑 Pierre LACOMBE (Lead Formateur IA)</option>';
+        optionsHtml += '</optgroup>';
+        optionsHtml += '<optgroup label="💼 Stagiaires Promotion Septembre 2026">';
+        optionsHtml += '<option value="ackaraib@orange.fr">Vue : Murielle LAPILUS (ACKARAIB)</option>';
+        optionsHtml += '<option value="mamalylys2323@gmail.com">Vue : Mailys DAVRAIN (ACKARAIB)</option>';
+        optionsHtml += '<option value="gwenaelle.davrain1@gmail.com">Vue : Gwenaelle POUMAROUX (ACKARAIB)</option>';
+        optionsHtml += '<option value="babzwayne@gmail.com">Vue : Ruben MEL (Ishanoa)</option>';
+        optionsHtml += '</optgroup>';
+      } else if (isMilene) {
+        if (staticBadge) staticBadge.classList.add('hidden');
+        selectEl.classList.remove('hidden');
+        optionsHtml += '<optgroup label="📋 Mon Espace Coordination">';
+        optionsHtml += '<option value="hello@milenepaul.com">👑 Milène PAUL (Coordination & Admin Qualiopi)</option>';
+        optionsHtml += '</optgroup>';
+        optionsHtml += '<optgroup label="💼 Stagiaires Promotion Septembre 2026">';
+        optionsHtml += '<option value="ackaraib@orange.fr">Vue : Murielle LAPILUS (ACKARAIB)</option>';
+        optionsHtml += '<option value="mamalylys2323@gmail.com">Vue : Mailys DAVRAIN (ACKARAIB)</option>';
+        optionsHtml += '<option value="gwenaelle.davrain1@gmail.com">Vue : Gwenaelle POUMAROUX (ACKARAIB)</option>';
+        optionsHtml += '<option value="babzwayne@gmail.com">Vue : Ruben MEL (Ishanoa)</option>';
+        optionsHtml += '</optgroup>';
       } else {
-        if (elRoleBadge) elRoleBadge.classList.add('hidden');
-        if (elTrainerSelector) elTrainerSelector.classList.add('hidden');
-        if (elEvalTrainerBox) elEvalTrainerBox.classList.add('hidden');
+        selectEl.classList.add('hidden');
+        if (staticBadge) {
+          staticBadge.classList.remove('hidden');
+          staticBadge.textContent = authUser.name + ' (' + (authUser.company || 'Stagiaire') + ')';
+        }
+        optionsHtml = '<option value="' + authUser.email + '">' + authUser.name + '</option>';
+      }
+
+      selectEl.innerHTML = optionsHtml;
+      selectEl.value = authUser.email;
+    }
+
+    function switchUser(targetEmail) {
+      if (!targetEmail || !ALL_USERS_DATABASE[targetEmail]) return;
+      const targetUser = ALL_USERS_DATABASE[targetEmail];
+
+      const avatarEl = document.getElementById('headerUserAvatar');
+      if (avatarEl) {
+        avatarEl.textContent = targetUser.avatar || 'AV';
+        avatarEl.className = `w-7 h-7 rounded-xl bg-gradient-to-br ${targetUser.color || 'from-purple-600 to-pink-600'} text-white text-xs font-black flex items-center justify-center shrink-0 shadow-xs`;
+      }
+
+      const selectorEl = document.getElementById('userSelector');
+      if (selectorEl && selectorEl.value !== targetEmail) {
+        selectorEl.value = targetEmail;
+      }
+
+      if (targetUser.isTrainer) {
+        loggedInUserEmail = targetUser.email;
+        currentInspectedLearnerEmail = localStorage.getItem('oidaneos_trainer_last_inspected') || 'ackaraib@orange.fr';
+        syncActiveLearnerView(currentInspectedLearnerEmail);
+      } else {
+        currentInspectedLearnerEmail = targetUser.email;
+        localStorage.setItem('oidaneos_trainer_last_inspected', targetUser.email);
+        syncActiveLearnerView(targetUser.email);
       }
     }
 
+    function updateHeaderUserUI(user) {
+      const container = document.getElementById('userHeaderBadgeContainer');
+      if (container) container.classList.remove('hidden');
+
+      const avatarEl = document.getElementById('headerUserAvatar');
+      if (avatarEl) {
+        avatarEl.textContent = user.avatar || 'AV';
+        avatarEl.className = `w-7 h-7 rounded-xl bg-gradient-to-br ${user.color || 'from-purple-600 to-pink-600'} text-white text-xs font-black flex items-center justify-center shrink-0 shadow-xs`;
+      }
+
+      populateUserDropdown(user.email);
+    }
+
     function trainerSelectLearner(email) {
-      currentInspectedLearnerEmail = email;
-      localStorage.setItem('oidaneos_trainer_last_inspected', email);
-
-      const sel1 = document.getElementById('trainerLearnerSelector');
-      const sel2 = document.getElementById('evalSectionTrainerSelect');
-      if (sel1) sel1.value = email;
-      if (sel2) sel2.value = email;
-
-      syncActiveLearnerView(email);
+      switchUser(email);
     }
 
     
@@ -3615,7 +3791,12 @@
       currentInspectedLearnerEmail = email;
       localStorage.setItem('oidaneos_trainer_last_inspected', email);
 
-      // Synchronisation stricte et immédiate des 2 sélecteurs de vue (En-tête + Onglet Évaluations)
+      // Synchronisation stricte et immédiate des sélecteurs de vue (En-tête + Onglet Évaluations)
+      const selUser = document.getElementById('userSelector');
+      if (selUser) {
+        const hasOption = Array.from(selUser.options).some(o => o.value === email);
+        if (hasOption) selUser.value = email;
+      }
       const sel1 = document.getElementById('trainerLearnerSelector');
       const sel2 = document.getElementById('evalSectionTrainerSelect');
       if (sel1) sel1.value = email;
@@ -3645,6 +3826,14 @@
       updateEvalScore();
 
       applyPositionnementLockState(data.isLocked, data.lockedDate);
+
+      // Pré-remplissage de l'Expression des Besoins (Septembre IA)
+      const attObj = document.getElementById('iaAttenteObjectifs');
+      const attDef = document.getElementById('iaAttenteDefis');
+      const attProj = document.getElementById('iaAttenteProjets');
+      if (attObj) attObj.value = (data.attentes && data.attentes.objectifs) ? data.attentes.objectifs : (data.projectTitle ? `Maîtriser les outils IA et concrétiser le projet : ${data.projectTitle}` : '');
+      if (attDef) attDef.value = (data.attentes && data.attentes.defis) ? data.attentes.defis : (data.timeWasting || '');
+      if (attProj) attProj.value = (data.attentes && data.attentes.projets) ? data.attentes.projets : (data.projectDesc || '');
 
       const cert = data.certifia || {};
       const elFn = document.getElementById('certifia-firstname');
@@ -3806,6 +3995,13 @@
           s.disabled = true;
           s.classList.add('opacity-60', 'cursor-not-allowed');
         });
+        const attTextareas = [document.getElementById('iaAttenteObjectifs'), document.getElementById('iaAttenteDefis'), document.getElementById('iaAttenteProjets')];
+        attTextareas.forEach(t => {
+          if (t) {
+            t.disabled = true;
+            t.classList.add('opacity-60', 'cursor-not-allowed');
+          }
+        });
         if (lockBanner) lockBanner.className = "p-4 rounded-2xl bg-emerald-50 border border-emerald-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs";
         if (lockBadge) {
           lockBadge.className = "px-2.5 py-0.5 text-[10px] font-extrabold uppercase rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 flex items-center gap-1";
@@ -3823,6 +4019,13 @@
         sliders.forEach(s => {
           s.disabled = false;
           s.classList.remove('opacity-60', 'cursor-not-allowed');
+        });
+        const attTextareas = [document.getElementById('iaAttenteObjectifs'), document.getElementById('iaAttenteDefis'), document.getElementById('iaAttenteProjets')];
+        attTextareas.forEach(t => {
+          if (t) {
+            t.disabled = false;
+            t.classList.remove('opacity-60', 'cursor-not-allowed');
+          }
         });
         if (lockBanner) lockBanner.className = "p-4 rounded-2xl bg-amber-50 border border-amber-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs";
         if (lockBadge) {
@@ -3856,12 +4059,227 @@
       data.isLocked = true;
       data.lockedDate = new Date().toLocaleDateString('fr-FR') + ' (Validé)';
       saveLearnerData(currentInspectedLearnerEmail, data);
+      saveCurrentLearnerAttentesIa();
       applyPositionnementLockState(true, data.lockedDate);
       renderQualityReport(data);
       renderLearnerJustificatifs(data);
       renderYouSignDocuments(data);
       alert("✅ Positionnement Initial T0 enregistré et verrouillé avec succès pour " + data.name + " !");
     }
+
+    function saveCurrentLearnerAttentesIa() {
+      const data = getLearnerData(currentInspectedLearnerEmail);
+      if (!data.attentes) data.attentes = {};
+      const objEl = document.getElementById('iaAttenteObjectifs');
+      const defEl = document.getElementById('iaAttenteDefis');
+      const projEl = document.getElementById('iaAttenteProjets');
+      if (objEl) data.attentes.objectifs = objEl.value;
+      if (defEl) data.attentes.defis = defEl.value;
+      if (projEl) data.attentes.projets = projEl.value;
+      saveLearnerData(currentInspectedLearnerEmail, data);
+    }
+
+    const IA_COMPETENCES_EVAL_LIST = [
+      { code: "C1", title: "Collecter et Préparer les données (Besoins métiers & Données sources)", desc: "Capacité à nettoyer, transformer et structurer des données pour les rendre exploitables par l'IA." },
+      { code: "C2", title: "Identifier les risques éthiques et sociétaux (RGPD, IA Act, Biais & Sécurité)", desc: "Capacité à repérer les enjeux éthiques, les risques de fuite de données et la réglementation européenne." },
+      { code: "C3", title: "Préparer les données pour renforcer leur intégrité (Airtable / JSON / SQL)", desc: "Capacité à modéliser un schéma relationnel propre et éliminer les doublons/bruits." },
+      { code: "C4", title: "Choisir un modèle IA adapté (LLMs, Claude vs GPT, petits vs grands modèles)", desc: "Capacité à comparer différents modèles d'intelligence artificielle selon les coûts et contraintes d'inférence." },
+      { code: "C5", title: "Entraîner et optimiser le modèle (Prompting avancé, Grounding & Méta-prompts)", desc: "Capacité à concevoir des règles système strictes sans hallucination et structurer des agents IA." },
+      { code: "C6", title: "Implémenter la solution IA (APIs, Interfaces No-Code / Code & Déploiement)", desc: "Capacité à intégrer un modèle dans une application concrète (Celestory, Stitch, Cline, Webhooks)." },
+      { code: "C7", title: "Concevoir l'architecture cible (Frontend, Backend, Serveurs & Stockage)", desc: "Compréhension des composants d'une architecture globale et participation à sa conception." },
+      { code: "C8", title: "Mesurer la performance et le ROI (KPIs, temps d'accès, satisfaction)", desc: "Capacité à évaluer la précision et analyser les impacts métiers chiffrés." },
+      { code: "C9", title: "Amélioration continue et maintenance (MLOps, mises à jour, évolutions)", desc: "Capacité à proposer des ajustements pour améliorer la pérennité et la maintenance d'une solution IA." }
+    ];
+
+    function exportDiagnosticPDFIa(emailTarget) {
+      const email = emailTarget || currentInspectedLearnerEmail || "ackaraib@orange.fr";
+      const u = getLearnerData(email);
+      if (!u) return;
+
+      const dateStr = new Date().toLocaleDateString('fr-FR');
+      const objEl = document.getElementById('iaAttenteObjectifs');
+      const defEl = document.getElementById('iaAttenteDefis');
+      const projEl = document.getElementById('iaAttenteProjets');
+
+      const objText = (u.attentes && u.attentes.objectifs) ? u.attentes.objectifs : (objEl && objEl.value ? objEl.value : (u.projectTitle ? `Maîtriser les outils IA et concrétiser le projet : ${u.projectTitle}` : "Non renseigné"));
+      const defText = (u.attentes && u.attentes.defis) ? u.attentes.defis : (defEl && defEl.value ? defEl.value : (u.timeWasting || "Non renseigné"));
+      const projText = (u.attentes && u.attentes.projets) ? u.attentes.projets : (projEl && projEl.value ? projEl.value : (u.projectDesc || "Non renseigné"));
+
+      let sumT0 = 0;
+      for (let i = 1; i <= 9; i++) {
+        sumT0 += (u.scores && u.scores['c' + i] !== undefined) ? u.scores['c' + i] : 5.0;
+      }
+      const scoreT0 = (sumT0 / 9);
+      const scoreT1 = 9.5;
+      const diff = (scoreT1 - scoreT0).toFixed(1);
+      const progPercent = scoreT0 > 0 ? (((scoreT1 - scoreT0) / scoreT0) * 100).toFixed(0) : 100;
+
+      const cert = u.certifia || {};
+      const phone = cert.phone || u.phone || "0690 XX XX XX";
+      const situation = cert.situation || "Salariée / Dirigeante en poste";
+      const company = cert.company || u.company || "SAS ACKARAIB";
+      const metier = cert.lastJob || u.role || "Concepteur & Développeur IA";
+      const diplome = cert.diploma || "Bac+2 / Titre Professionnel";
+      const experience = cert.expYears || u.experience || "Plusieurs années";
+
+      const htmlContent = `
+        <div class="bg-white p-8 max-w-4xl mx-auto rounded-3xl border border-slate-200 shadow-sm space-y-6 text-slate-800 font-sans text-xs">
+          
+          <!-- En-tête officiel Qualiopi & Centre -->
+          <div class="flex items-center justify-between border-b-2 border-purple-900 pb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-purple-900 text-white font-black text-sm flex items-center justify-center">
+                OID
+              </div>
+              <div>
+                <h1 class="text-base font-black text-purple-950 uppercase">OIDANEOS — CENTRE DE FORMATION &amp; CONSEIL</h1>
+                <p class="text-[11px] text-slate-500">Déclaration d'activité n° 01973166597 • Certifié Qualiopi au titre des actions de formation</p>
+                <p class="text-[10px] text-purple-800 font-bold">Formation Certifiante : Concepteur &amp; Développeur de Solutions d'Intelligence Artificielle No-Code</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-900 font-black text-[11px] border border-purple-200">Qualiopi Indicateur 8</span>
+              <div class="text-[10px] text-slate-500 mt-1">Édité le ${dateStr}</div>
+            </div>
+          </div>
+
+          <!-- Titre Principal -->
+          <div class="text-center py-2 bg-slate-50 rounded-2xl border border-slate-200">
+            <h2 class="text-sm font-black text-slate-900 uppercase tracking-wide">FICHE DE DIAGNOSTIC INITIAL, POSITIONNEMENT D'ENTRÉE &amp; RECUEIL DES BESOINS (T0)</h2>
+            <p class="text-[11px] text-slate-600">Mesure des prérequis et des acquis initiaux avant le démarrage du parcours certifiant IA &amp; Data</p>
+          </div>
+
+          <!-- Bloc Identité du Stagiaire & Entreprise -->
+          <div class="grid grid-cols-2 gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200">
+            <div class="space-y-1">
+              <div><strong>Nom &amp; Prénom :</strong> ${u.name}</div>
+              <div><strong>Email :</strong> ${u.email}</div>
+              <div><strong>Téléphone :</strong> ${phone}</div>
+              <div><strong>Situation :</strong> ${situation}</div>
+            </div>
+            <div class="space-y-1">
+              <div><strong>Entreprise / Employeur :</strong> ${company}</div>
+              <div><strong>Fonction / Métier :</strong> ${metier}</div>
+              <div><strong>Niveau de Diplôme :</strong> ${diplome}</div>
+              <div><strong>Expérience Professionnelle :</strong> ${experience}</div>
+            </div>
+          </div>
+
+          <!-- Synthèse des Scores T0 vs Cible T1 -->
+          <div class="grid grid-cols-3 gap-3 text-center">
+            <div class="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 space-y-1">
+              <div class="text-[10px] font-black uppercase text-amber-900">Score Moyen Initial (T0)</div>
+              <div class="text-xl font-black text-amber-700">${scoreT0.toFixed(1)} / 10</div>
+              <div class="text-[10px] text-amber-800">Auto-évaluation préformation</div>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 space-y-1">
+              <div class="text-[10px] font-black uppercase text-emerald-900">Score Cible Prévisionnel (T1)</div>
+              <div class="text-xl font-black text-emerald-700">${scoreT1.toFixed(1)} / 10</div>
+              <div class="text-[10px] text-emerald-800">Niveau visé en fin de parcours</div>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-purple-50 border border-purple-200 space-y-1">
+              <div class="text-[10px] font-black uppercase text-purple-900">Progression Attendue</div>
+              <div class="text-xl font-black text-purple-700">+${progPercent}%</div>
+              <div class="text-[10px] text-purple-800">+${diff} points de compétences</div>
+            </div>
+          </div>
+
+          <!-- Grille Détaillée des 9 Compétences IA -->
+          <div class="space-y-2">
+            <h3 class="font-black text-slate-900 uppercase text-xs text-purple-900 flex items-center gap-1.5">
+              <span>GRILLE D'ÉVALUATION DES 9 COMPÉTENCES DU RÉFÉRENTIEL (C1 À C9) :</span>
+            </h3>
+            <table class="w-full border-collapse border border-slate-200 text-[11px]">
+              <thead>
+                <tr class="bg-purple-900 text-white font-bold">
+                  <th class="p-2 border border-slate-300 text-left w-12">Code</th>
+                  <th class="p-2 border border-slate-300 text-left">Intitulé de la Compétence Professionnelle</th>
+                  <th class="p-2 border border-slate-300 text-center w-28">Score Initial (T0)</th>
+                  <th class="p-2 border border-slate-300 text-center w-28">Cible Finale (T1)</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${IA_COMPETENCES_EVAL_LIST.map((c, idx) => {
+                  const sT0 = (u.scores && u.scores['c' + (idx + 1)] !== undefined) ? u.scores['c' + (idx + 1)] : 5.0;
+                  return `
+                    <tr class="even:bg-slate-50">
+                      <td class="p-2 border border-slate-200 font-black text-purple-900 text-center">${c.code}</td>
+                      <td class="p-2 border border-slate-200">
+                        <div class="font-bold text-slate-900">${c.title}</div>
+                        <div class="text-[10px] text-slate-500">${c.desc}</div>
+                      </td>
+                      <td class="p-2 border border-slate-200 text-center font-bold text-amber-800 bg-amber-50/50">${sT0.toFixed(1)} / 10</td>
+                      <td class="p-2 border border-slate-200 text-center font-bold text-emerald-800 bg-emerald-50/50">9.5 / 10</td>
+                    </tr>
+                  `;
+                }).join('')}
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Section Expression des Besoins & Attentes -->
+          <div class="p-4 rounded-2xl bg-purple-50/50 border border-purple-200 space-y-3">
+            <h3 class="font-black text-purple-950 uppercase text-xs">EXPRESSION DES BESOINS &amp; CONTEXTE MÉTIER DE L'APPRENANT :</h3>
+            <div class="space-y-2">
+              <div>
+                <strong class="text-purple-900">1. Vos Attentes &amp; Objectifs Prioritaires :</strong>
+                <p class="mt-0.5 text-slate-700 bg-white p-2 rounded-xl border border-slate-200 leading-relaxed">${objText}</p>
+              </div>
+              <div>
+                <strong class="text-purple-900">2. Principales difficultés / tâches chronophages :</strong>
+                <p class="mt-0.5 text-slate-700 bg-white p-2 rounded-xl border border-slate-200 leading-relaxed">${defText}</p>
+              </div>
+              <div>
+                <strong class="text-purple-900">3. Cas d'usage concrets &amp; projets IA souhaités :</strong>
+                <p class="mt-0.5 text-slate-700 bg-white p-2 rounded-xl border border-slate-200 leading-relaxed">${projText}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bloc Signatures & Visa Pédagogique -->
+          <div class="grid grid-cols-2 gap-6 pt-4 border-t-2 border-slate-200">
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+              <div class="font-bold text-slate-900 text-xs">Visa &amp; Signature du Stagiaire :</div>
+              <div class="text-[11px] text-slate-500">« Je confirme l'exactitude de mon auto-positionnement initial. »</div>
+              <div class="pt-2 text-purple-900 font-bold">✍️ ${u.name}</div>
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+              <div class="font-bold text-slate-900 text-xs">Visa Pédagogique OIDANEOS :</div>
+              <div class="text-[11px] text-slate-500">Pierre Lacombe &amp; Alain Valero</div>
+              <div class="pt-2 text-emerald-700 font-bold">✓ Validé au titre du dossier Qualiopi</div>
+            </div>
+          </div>
+
+        </div>
+      `;
+
+      const printContainer = document.getElementById('diagnosticPrintContainerIa');
+      if (printContainer) printContainer.innerHTML = htmlContent;
+
+      const modalBody = document.getElementById('diagnosticPdfModalBodyIa');
+      if (modalBody) modalBody.innerHTML = htmlContent;
+
+      const modal = document.getElementById('diagnosticPdfPreviewModalIa');
+      if (modal) modal.classList.remove('hidden');
+
+      if (window.lucide && typeof window.lucide.createIcons === 'function') window.lucide.createIcons();
+    }
+
+    function closeDiagnosticPdfModalIa() {
+      const modal = document.getElementById('diagnosticPdfPreviewModalIa');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function printDiagnosticDocumentIa() {
+      window.print();
+    }
+
+    function saveAndExportIaPdf() {
+      saveCurrentLearnerAttentesIa();
+      saveAndLockPositionnement();
+      exportDiagnosticPDFIa();
+    }
+
 
     function saveLearnerCaseData() {
       const data = getLearnerData(currentInspectedLearnerEmail);
@@ -4132,6 +4550,72 @@ Diplôme : OK`;
 
       </div>
 
+  <div id="diagnosticPrintContainerIa" class="hidden">
+    <!-- Contenu injecté dynamiquement par exportDiagnosticPDFIa() -->
+  </div>
+
+  <!-- Modal Aperçu / Impression Fiche Diagnostic Initial PDF (IA/Data) -->
+  <div id="diagnosticPdfPreviewModalIa" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-6 animate-fade-in" onclick="if(event.target === this) closeDiagnosticPdfModalIa()">
+    <div class="bg-white rounded-3xl w-full max-w-4xl overflow-hidden shadow-2xl flex flex-col max-h-[95vh]" onclick="event.stopPropagation()">
+      <!-- Header -->
+      <div class="p-5 border-b border-slate-200 flex items-center justify-between bg-gradient-to-r from-purple-900 to-indigo-950 text-white">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-white/10 text-white flex items-center justify-center font-bold">
+            <i data-lucide="file-check" class="w-5 h-5 text-pink-400"></i>
+          </div>
+          <div>
+            <h3 class="font-black text-white text-sm">Fiche de Diagnostic Initial &amp; Besoins (T0)</h3>
+            <p class="text-[11px] text-purple-200">Document Officiel de Positionnement • Conforme Qualiopi (Ind. 1, 4 &amp; 8)</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="printDiagnosticDocumentIa()" class="px-4 py-2 rounded-xl bg-grad-oidaneos text-white text-xs font-black shadow-btn hover:opacity-95 transition flex items-center gap-1.5 cursor-pointer">
+            <i data-lucide="printer" class="w-4 h-4"></i>
+            <span>Imprimer / Enregistrer en PDF (Drive)</span>
+          </button>
+          <button onclick="closeDiagnosticPdfModalIa()" class="w-8 h-8 rounded-xl bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition cursor-pointer">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Preview Sheet (Scrollable) -->
+      <div id="diagnosticPdfModalBodyIa" class="p-6 overflow-y-auto flex-1 bg-slate-100/70 space-y-4">
+        <!-- Rendered sheet inserted here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL DE CONNEXION / ACCÈS IA & DATA ================= -->
+  <div id="accessGateModal" class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md hidden flex items-center justify-center p-4 animate-fade-in">
+    <div class="bg-white rounded-3xl w-full max-w-md overflow-hidden shadow-2xl border border-oidaneos-line flex flex-col" onclick="event.stopPropagation()">
+      <div class="p-6 bg-gradient-to-r from-purple-900 via-oidaneos-purple to-indigo-950 text-white text-center space-y-2">
+        <div class="w-12 h-12 rounded-2xl bg-white/10 text-white flex items-center justify-center font-black mx-auto shadow-md">
+          <i data-lucide="sparkles" class="w-6 h-6 text-pink-400"></i>
+        </div>
+        <h2 class="text-lg font-black text-white">OIDANEOS — Espace E-Learning IA</h2>
+        <p class="text-xs text-purple-200">Formation Concepteur &amp; Développeur de Solutions IA No-Code</p>
+      </div>
+
+      <form onsubmit="handleEmailLogin(event)" class="p-6 space-y-4 bg-slate-50/50">
+        <div class="space-y-1.5">
+          <label class="block text-xs font-bold text-slate-800">Votre adresse email ou nom (Stagiaire ou Formateur) :</label>
+          <input type="text" id="loginEmailInput" placeholder="ex: alain@..., pierre@..., milene@..., murielle@..." required class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 font-semibold text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-oidaneos-purple shadow-xs">
+          <p id="loginErrorMsg" class="hidden text-xs text-red-600 font-bold mt-1 flex items-center gap-1">
+            <i data-lucide="alert-circle" class="w-3.5 h-3.5"></i>
+            <span>Email ou nom non reconnu pour la promotion Septembre 2026.</span>
+          </p>
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-xl bg-grad-oidaneos text-white font-extrabold text-xs uppercase tracking-wider hover:opacity-95 transition shadow-md flex items-center justify-center gap-2 cursor-pointer">
+          <span>Accéder à mon Espace IA</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 text-pink-200"></i>
+        </button>
+
+        <div class="pt-3 border-t border-slate-200 text-center">
+          <p class="text-[11px] text-slate-500 font-medium">Session Septembre 2026 • 14 Séances en direct &amp; Cas Pratiques</p>
+        </div>
+      </form>
     </div>
   </div>
 
