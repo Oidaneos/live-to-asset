@@ -791,7 +791,12 @@
 
       <!-- ================= ONGLET 1 : POSITIONNEMENT INITIAL (C1 À C9) ================= -->
       <div id="evalSection-tab-positionnement" class="space-y-6 animate-fade-in">
-        <div class="bg-white rounded-3xl p-6 lg:p-8 border border-oidaneos-line shadow-card space-y-6">
+        <!-- VUE SUPERVISEUR FORMATEUR & DIRECTION (Injecté dynamiquement) -->
+        <div id="evalPositionnementSupervisorContainer" class="space-y-6 hidden"></div>
+
+        <!-- VUE STAGIAIRE (Auto-évaluation & Dossier individuel) -->
+        <div id="evalPositionnementLearnerContainer" class="space-y-6">
+          <div class="bg-white rounded-3xl p-6 lg:p-8 border border-oidaneos-line shadow-card space-y-6">
           
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-oidaneos-line pb-4">
             <div class="space-y-1">
@@ -1201,10 +1206,16 @@
           </div>
 
         </div>
+        </div>
       </div>
 
       <!-- ================= ONGLET 2 : CADRAGE EXHAUSTIF DU CAS PRATIQUE (8 VOLETS DIGIFORMA) ================= -->
       <div id="evalSection-tab-cas-pratique" class="space-y-6 hidden animate-fade-in">
+        <!-- VUE SUPERVISEUR FORMATEUR & DIRECTION (Injecté dynamiquement) -->
+        <div id="evalCasePratiqueSupervisorContainer" class="space-y-6 hidden"></div>
+
+        <!-- VUE STAGIAIRE (Édition ou consultation des 8 volets) -->
+        <div id="evalCasePratiqueLearnerContainer" class="space-y-6">
         <div class="bg-white rounded-3xl p-6 lg:p-8 border border-oidaneos-line shadow-card space-y-8">
           
           <div class="border-b border-oidaneos-line pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -1397,6 +1408,7 @@
           </div>
 
         </div>
+        </div>
       </div>
 
             <!-- ================= ONGLET 3 : GUIDE D'ACCUEIL & FORMALITÉS YOUSIGN (MILÈNE) ================= -->
@@ -1456,138 +1468,161 @@
           <div class="space-y-4">
             <h3 class="text-sm font-extrabold text-oidaneos-ink flex items-center gap-2">
               <span class="w-6 h-6 rounded-lg bg-oidaneos-lav100 text-oidaneos-purple text-xs font-black flex items-center justify-center">2</span>
-              <span>Vos Premières Actions — Checklist de Démarrage</span>
+              <span id="checklistTitle">Vos Premières Actions — Checklist de Démarrage</span>
             </h3>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-              <div class="p-4 rounded-2xl bg-oidaneos-lav50 border border-oidaneos-line space-y-2.5">
-                <span class="font-bold text-oidaneos-purple">Accès & Outils Numériques :</span>
-                <div class="space-y-2">
-                  <label class="flex items-start gap-2.5 cursor-pointer">
-                    <input type="checkbox" checked class="mt-0.5 rounded text-oidaneos-purple focus:ring-0">
-                    <span>Accéder à la plateforme E-Learning OIDANEOS</span>
-                  </label>
-                  <label class="flex items-start gap-2.5 cursor-pointer">
-                    <input type="checkbox" checked class="mt-0.5 rounded text-oidaneos-purple focus:ring-0">
-                    <span>Installer l'application Zoom Desktop (v6+)</span>
-                  </label>
-                  <label class="flex items-start gap-2.5 cursor-pointer">
-                    <input type="checkbox" checked class="mt-0.5 rounded text-oidaneos-purple focus:ring-0">
-                    <span>Tester le lien Zoom permanent du vendredi (08h-10h)</span>
-                  </label>
-                  <div class="pt-1">
-                    <a href="/Planning_Formation_IA_OIDANEOS_Septembre_2026.ics" download="Planning_Formation_IA_OIDANEOS_Septembre_2026.ics" class="inline-flex items-center gap-1.5 text-xs font-extrabold text-oidaneos-purple hover:underline bg-white px-3 py-1.5 rounded-xl border border-oidaneos-line shadow-sm">
-                      <i data-lucide="calendar" class="w-3.5 h-3.5 text-oidaneos-pink"></i>
-                      <span>Télécharger le calendrier complet (.ICS)</span>
-                    </a>
+            <div id="checklistContainerWrapper" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+              <!-- Géré dynamiquement par renderChecklistByRole(data) -->
+            </div>
+          </div>
+
+          <!-- Section 3 : Le Déroulement du Parcours en 6 Étapes -->
+          <div class="space-y-4">
+            <h3 class="text-sm font-extrabold text-oidaneos-ink flex items-center gap-2">
+              <span class="w-6 h-6 rounded-lg bg-oidaneos-lav100 text-oidaneos-purple text-xs font-black flex items-center justify-center">3</span>
+              <span>Le Déroulement de Votre Parcours en 6 Étapes Clés</span>
+            </h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3 text-xs">
+              <div class="p-4 rounded-2xl bg-white border border-oidaneos-line space-y-2 text-center flex flex-col justify-between shadow-xs">
+                <div class="space-y-1.5">
+                  <div class="w-8 h-8 rounded-xl bg-oidaneos-lav100 text-oidaneos-purple font-black text-xs flex items-center justify-center mx-auto">1</div>
+                  <div class="font-extrabold text-oidaneos-ink">Démarrage &amp; Besoins</div>
+                  <p class="text-[11px] text-oidaneos-muted leading-relaxed">Diagnostic initial T0, recueil des besoins personnalisés et pièces administratives.</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white border border-oidaneos-line space-y-2 text-center flex flex-col justify-between shadow-xs">
+                <div class="space-y-1.5">
+                  <div class="w-8 h-8 rounded-xl bg-oidaneos-lav100 text-oidaneos-purple font-black text-xs flex items-center justify-center mx-auto">2</div>
+                  <div class="font-extrabold text-oidaneos-ink">Sessions Live</div>
+                  <p class="text-[11px] text-oidaneos-muted leading-relaxed">Vendredi 08h-10h sur Zoom avec Pierre &amp; Alain, cas réels &amp; replays 1080p.</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white border border-oidaneos-line space-y-2 text-center flex flex-col justify-between shadow-xs">
+                <div class="space-y-1.5">
+                  <div class="w-8 h-8 rounded-xl bg-oidaneos-lav100 text-oidaneos-purple font-black text-xs flex items-center justify-center mx-auto">3</div>
+                  <div class="font-extrabold text-oidaneos-ink">Hub Asynchrone</div>
+                  <p class="text-[11px] text-oidaneos-muted leading-relaxed">Travail en autonomie à votre rythme : modules e-learning, fiches mémo et ressources.</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white border border-oidaneos-line space-y-2 text-center flex flex-col justify-between shadow-xs">
+                <div class="space-y-1.5">
+                  <div class="w-8 h-8 rounded-xl bg-oidaneos-lav100 text-oidaneos-purple font-black text-xs flex items-center justify-center mx-auto">4</div>
+                  <div class="font-extrabold text-oidaneos-ink">Suivi &amp; Émargements</div>
+                  <p class="text-[11px] text-oidaneos-muted leading-relaxed">Émargement numérique des lives, suivi des connexions et justification du temps.</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white border border-oidaneos-line space-y-2 text-center flex flex-col justify-between shadow-xs">
+                <div class="space-y-1.5">
+                  <div class="w-8 h-8 rounded-xl bg-indigo-100 text-indigo-800 font-black text-xs flex items-center justify-center mx-auto">5</div>
+                  <div class="font-extrabold text-oidaneos-ink">Examen Blanc Cas Pratique</div>
+                  <p class="text-[11px] text-oidaneos-muted leading-relaxed">Mise en situation sur étude de cas concrète, constitution du dossier C1-C9 et répétition orale.</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-pink-50/60 border border-pink-200 space-y-2 text-center flex flex-col justify-between shadow-xs">
+                <div class="space-y-1.5">
+                  <div class="w-8 h-8 rounded-xl bg-grad-oidaneos text-white font-black text-xs flex items-center justify-center mx-auto shadow-btn">6</div>
+                  <div class="font-extrabold text-oidaneos-ink">Grand Oral Jury</div>
+                  <p class="text-[11px] text-pink-900/80 leading-relaxed">20 min d'exposé + 40 min d'échange avec les membres du Jury CertifIA.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 4 : Interlocuteurs Privilégiés -->
+          <div class="space-y-3 pt-2">
+            <h3 class="text-sm font-extrabold text-oidaneos-ink flex items-center gap-2">
+              <span class="w-6 h-6 rounded-lg bg-oidaneos-lav100 text-oidaneos-purple text-xs font-black flex items-center justify-center">4</span>
+              <span>Vos Interlocuteurs Privilégiés (Formateur Expert, Coordination &amp; Direction)</span>
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+              <!-- Pierre LACOMBE -->
+              <div class="p-5 rounded-3xl bg-indigo-50/70 border border-indigo-200/80 shadow-xs space-y-3 flex flex-col justify-between">
+                <div class="space-y-2.5">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-2xl bg-indigo-900 text-white font-black text-sm flex items-center justify-center shadow-sm">
+                      PL
+                    </div>
+                    <div>
+                      <div class="font-black text-slate-900 text-sm">Pierre LACOMBE</div>
+                      <div class="text-[11px] text-indigo-700 font-bold">Lead Formateur IA • OIDANEOS</div>
+                    </div>
+                  </div>
+                  <p class="text-[11px] text-slate-600 leading-relaxed">
+                    Animation des séances live du vendredi (08h-10h), encadrement technique des ateliers pratiques et suivi du dossier de certification C1-C9.
+                  </p>
+                </div>
+                <div class="space-y-1.5 pt-2 border-t border-indigo-100">
+                  <div class="flex items-center gap-2 text-slate-700">
+                    <i data-lucide="mail" class="w-4 h-4 text-indigo-600 shrink-0"></i>
+                    <a href="mailto:pie.lacombe@gmail.com" class="font-bold text-indigo-900 hover:underline truncate">pie.lacombe@gmail.com</a>
+                  </div>
+                  <div class="flex items-center gap-2 text-[10px] text-slate-500 font-medium">
+                    <i data-lucide="message-square" class="w-3.5 h-3.5 text-indigo-500 shrink-0"></i>
+                    <span>Questions techniques &amp; livrables par email / live Zoom</span>
                   </div>
                 </div>
               </div>
 
-              <div class="p-4 rounded-2xl bg-oidaneos-lav50 border border-oidaneos-line space-y-2.5">
-                <span class="font-bold text-oidaneos-purple">Documents & Évaluations :</span>
-                <div class="space-y-2">
-                  <label class="flex items-start gap-2.5 cursor-pointer">
-                    <input type="checkbox" checked class="mt-0.5 rounded text-oidaneos-purple focus:ring-0">
-                    <span>Valider le Positionnement Initial (T0)</span>
-                  </label>
-                  <label class="flex items-start gap-2.5 cursor-pointer">
-                    <input type="checkbox" checked class="mt-0.5 rounded text-oidaneos-purple focus:ring-0">
-                    <span>Compléter la Fiche Administrative CertifIA</span>
-                  </label>
-                  <label class="flex items-start gap-2.5 cursor-pointer">
-                    <input type="checkbox" checked class="mt-0.5 rounded text-oidaneos-purple focus:ring-0">
-                    <span>Participer au Live de pré-rentrée (Session 0)</span>
-                  </label>
+              <!-- Milène PAUL -->
+              <div class="p-5 rounded-3xl bg-pink-50/60 border border-pink-200/80 shadow-xs space-y-3 flex flex-col justify-between">
+                <div class="space-y-2.5">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-2xl bg-grad-oidaneos text-white font-black text-sm flex items-center justify-center shadow-sm">
+                      MP
+                    </div>
+                    <div>
+                      <div class="font-black text-slate-900 text-sm">Milène PAUL</div>
+                      <div class="text-[11px] text-pink-700 font-bold">Référente Pédagogique &amp; Coordination</div>
+                    </div>
+                  </div>
+                  <p class="text-[11px] text-slate-600 leading-relaxed">
+                    Suivi de l'assiduité, feuilles d'émargement, plannings, replays, formalités administratives et accompagnement des stagiaires.
+                  </p>
+                </div>
+                <div class="space-y-1.5 pt-2 border-t border-pink-100">
+                  <div class="flex items-center gap-2 text-slate-700">
+                    <i data-lucide="mail" class="w-4 h-4 text-pink-600 shrink-0"></i>
+                    <a href="mailto:hello@milenepaul.com" class="font-bold text-purple-950 hover:underline truncate">hello@milenepaul.com</a>
+                  </div>
+                  <div class="flex items-center gap-2 text-slate-700">
+                    <i data-lucide="phone" class="w-4 h-4 text-pink-600 shrink-0"></i>
+                    <a href="tel:+590690141142" class="font-bold text-purple-950 hover:underline">+590 690 14 11 42</a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          <!-- Section 3 : Le Déroulement du Parcours en 5 Étapes -->
-          <div class="space-y-4">
-            <h3 class="text-sm font-extrabold text-oidaneos-ink flex items-center gap-2">
-              <span class="w-6 h-6 rounded-lg bg-oidaneos-lav100 text-oidaneos-purple text-xs font-black flex items-center justify-center">3</span>
-              <span>Le Déroulement de Votre Parcours en 5 Étapes Clés</span>
-            </h3>
-
-            <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 text-xs">
-              <div class="p-4 rounded-2xl bg-white border border-oidaneos-line space-y-2 text-center">
-                <div class="w-8 h-8 rounded-xl bg-oidaneos-lav100 text-oidaneos-purple font-black text-xs flex items-center justify-center mx-auto">1</div>
-                <div class="font-extrabold text-oidaneos-ink">Démarrage</div>
-                <p class="text-[11px] text-oidaneos-muted">Positionnement T0, dossier administratif & Module 1.</p>
-              </div>
-
-              <div class="p-4 rounded-2xl bg-white border border-oidaneos-line space-y-2 text-center">
-                <div class="w-8 h-8 rounded-xl bg-oidaneos-lav100 text-oidaneos-purple font-black text-xs flex items-center justify-center mx-auto">2</div>
-                <div class="font-extrabold text-oidaneos-ink">Sessions Live</div>
-                <p class="text-[11px] text-oidaneos-muted">Vendredi 08h-10h sur Zoom, exercices pratiques & replays.</p>
-              </div>
-
-              <div class="p-4 rounded-2xl bg-white border border-oidaneos-line space-y-2 text-center">
-                <div class="w-8 h-8 rounded-xl bg-oidaneos-lav100 text-oidaneos-purple font-black text-xs flex items-center justify-center mx-auto">3</div>
-                <div class="font-extrabold text-oidaneos-ink">Suivi & Émargements</div>
-                <p class="text-[11px] text-oidaneos-muted">Feuilles de présence, suivi individualisé & coaching.</p>
-              </div>
-
-              <div class="p-4 rounded-2xl bg-white border border-oidaneos-line space-y-2 text-center">
-                <div class="w-8 h-8 rounded-xl bg-oidaneos-lav100 text-oidaneos-purple font-black text-xs flex items-center justify-center mx-auto">4</div>
-                <div class="font-extrabold text-oidaneos-ink">Journal de Bord</div>
-                <p class="text-[11px] text-oidaneos-muted">Itérations, difficultés surmontées & livrables C1-C9.</p>
-              </div>
-
-              <div class="p-4 rounded-2xl bg-white border border-oidaneos-line space-y-2 text-center">
-                <div class="w-8 h-8 rounded-xl bg-pink-100 text-pink-700 font-black text-xs flex items-center justify-center mx-auto">5</div>
-                <div class="font-extrabold text-oidaneos-ink">Grand Oral Jury</div>
-                <p class="text-[11px] text-oidaneos-muted">20 min de soutenance + 40 min d'échange avec les experts.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Section 4 : Contacts & Référents Pédagogiques -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs pt-2">
-            <!-- Milène -->
-            <div class="p-5 rounded-3xl bg-oidaneos-lav50 border border-oidaneos-line space-y-3">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-2xl bg-grad-oidaneos text-white font-black text-sm flex items-center justify-center shadow-btn">
-                  MP
+              <!-- Alain VALERO -->
+              <div class="p-5 rounded-3xl bg-purple-50/70 border border-purple-200/80 shadow-xs space-y-3 flex flex-col justify-between">
+                <div class="space-y-2.5">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-2xl bg-purple-950 text-white font-black text-sm flex items-center justify-center shadow-sm">
+                      AV
+                    </div>
+                    <div>
+                      <div class="font-black text-slate-900 text-sm">Alain VALERO</div>
+                      <div class="text-[11px] text-purple-800 font-bold">Direction OIDANEOS &amp; Handicap</div>
+                    </div>
+                  </div>
+                  <p class="text-[11px] text-slate-600 leading-relaxed">
+                    Direction de l'organisme, conventionnement OPCO, conformité Qualiopi, cadre institutionnel et aménagements spécifiques handicap.
+                  </p>
                 </div>
-                <div>
-                  <div class="font-extrabold text-oidaneos-ink text-sm">Milène PAUL</div>
-                  <div class="text-[11px] text-oidaneos-purple font-bold">Référente Pédagogique & Coordination</div>
-                </div>
-              </div>
-              <div class="space-y-1.5 pt-1">
-                <div class="flex items-center gap-2 text-oidaneos-body">
-                  <i data-lucide="mail" class="w-4 h-4 text-oidaneos-pink"></i>
-                  <a href="mailto:hello@milenepaul.com" class="font-semibold text-oidaneos-purple hover:underline">hello@milenepaul.com</a>
-                </div>
-                <div class="flex items-center gap-2 text-oidaneos-body">
-                  <i data-lucide="phone" class="w-4 h-4 text-oidaneos-pink"></i>
-                  <a href="tel:+590690141142" class="font-semibold text-oidaneos-purple hover:underline">+590 690 14 11 42</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Alain -->
-            <div class="p-5 rounded-3xl bg-oidaneos-lav50 border border-oidaneos-line space-y-3">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-2xl bg-oidaneos-purple text-white font-black text-sm flex items-center justify-center shadow-btn">
-                  AV
-                </div>
-                <div>
-                  <div class="font-extrabold text-oidaneos-ink text-sm">Alain VALERO</div>
-                  <div class="text-[11px] text-oidaneos-purple font-bold">Direction OIDANEOS & Référent Handicap</div>
-                </div>
-              </div>
-              <div class="space-y-1.5 pt-1">
-                <div class="flex items-center gap-2 text-oidaneos-body">
-                  <i data-lucide="mail" class="w-4 h-4 text-oidaneos-pink"></i>
-                  <a href="mailto:alain@oidaneos.com" class="font-semibold text-oidaneos-purple hover:underline">alain@oidaneos.com</a>
-                </div>
-                <div class="flex items-center gap-2 text-oidaneos-body">
-                  <i data-lucide="phone" class="w-4 h-4 text-oidaneos-pink"></i>
-                  <a href="tel:+590690649318" class="font-semibold text-oidaneos-purple hover:underline">+590 690 64 93 18</a>
+                <div class="space-y-1.5 pt-2 border-t border-purple-100">
+                  <div class="flex items-center gap-2 text-slate-700">
+                    <i data-lucide="mail" class="w-4 h-4 text-purple-900 shrink-0"></i>
+                    <a href="mailto:alain@oidaneos.com" class="font-bold text-purple-950 hover:underline truncate">alain@oidaneos.com</a>
+                  </div>
+                  <div class="flex items-center gap-2 text-slate-700">
+                    <i data-lucide="phone" class="w-4 h-4 text-purple-900 shrink-0"></i>
+                    <a href="tel:+590690649318" class="font-bold text-purple-950 hover:underline">+590 690 64 93 18</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2999,10 +3034,10 @@
 
       updateHeaderUserUI(user);
 
-      if (!user.isTrainer) {
-        currentInspectedLearnerEmail = user.email;
-      } else {
-        currentInspectedLearnerEmail = localStorage.getItem('oidaneos_trainer_last_inspected') || 'ackaraib@orange.fr';
+      currentInspectedLearnerEmail = user.email;
+      if (user.isTrainer) {
+        trainerViewModeIa = 'supervisor';
+        caseTrainerViewModeIa = 'supervisor';
       }
 
       syncActiveLearnerView(currentInspectedLearnerEmail);
@@ -3073,6 +3108,28 @@
 
     function switchUser(targetEmail) {
       if (!targetEmail || !ALL_USERS_DATABASE[targetEmail]) return;
+      const currentAuthUser = ALL_USERS_DATABASE[loggedInUserEmail] || {};
+      
+      // Règle 1 : Un stagiaire ne peut JAMAIS changer d'utilisateur
+      if (!currentAuthUser.isTrainer && targetEmail !== loggedInUserEmail) {
+        console.warn("Accès restreint : un stagiaire ne peut consulter que son propre espace.");
+        return;
+      }
+
+      // Règle 2 : Pierre ne peut voir que lui-même et les stagiaires (PAS Alain ni Milène)
+      const isPierre = (loggedInUserEmail === 'pie.lacombe@gmail.com' || loggedInUserEmail === 'pierre@oidaneos.com');
+      if (isPierre && (targetEmail === 'alain@oidaneos.com' || targetEmail === 'hello@milenepaul.com' || targetEmail === 'milene@oidaneos.com')) {
+        console.warn("Accès restreint pour le profil Formateur IA.");
+        return;
+      }
+
+      // Règle 3 : Milène ne peut voir que elle-même et les stagiaires (PAS Alain ni Pierre)
+      const isMilene = (loggedInUserEmail === 'hello@milenepaul.com' || loggedInUserEmail === 'milene@oidaneos.com');
+      if (isMilene && (targetEmail === 'alain@oidaneos.com' || targetEmail === 'pie.lacombe@gmail.com' || targetEmail === 'pierre@oidaneos.com')) {
+        console.warn("Accès restreint pour le profil Coordination.");
+        return;
+      }
+
       const targetUser = ALL_USERS_DATABASE[targetEmail];
 
       const avatarEl = document.getElementById('headerUserAvatar');
@@ -3086,15 +3143,14 @@
         selectorEl.value = targetEmail;
       }
 
+      currentInspectedLearnerEmail = targetUser.email;
       if (targetUser.isTrainer) {
-        loggedInUserEmail = targetUser.email;
-        currentInspectedLearnerEmail = localStorage.getItem('oidaneos_trainer_last_inspected') || 'ackaraib@orange.fr';
-        syncActiveLearnerView(currentInspectedLearnerEmail);
+        trainerViewModeIa = 'supervisor';
+        caseTrainerViewModeIa = 'supervisor';
       } else {
-        currentInspectedLearnerEmail = targetUser.email;
         localStorage.setItem('oidaneos_trainer_last_inspected', targetUser.email);
-        syncActiveLearnerView(targetUser.email);
       }
+      syncActiveLearnerView(targetUser.email);
     }
 
     function updateHeaderUserUI(user) {
@@ -3381,72 +3437,130 @@
       if (sigPreview) sigPreview.textContent = data.name;
 
       if (type === 'convention') {
-        if (title) title.textContent = "Convention de Formation Professionnelle — Lecture & Signature";
-        if (subtitle) subtitle.textContent = `Certification IT IA (150h) — OIDANEOS × ${data.company}`;
-        if (headerLabel) headerLabel.textContent = `Contrat de Formation Professionnelle (${data.company})`;
+        if (data.isTrainer) {
+          if (title) title.textContent = "Convention Prestation Formateur IA — Lecture & Signature";
+          if (subtitle) subtitle.textContent = `Contrat d'intervention & animation pédagogique — OIDANEOS × ${data.name}`;
+          if (headerLabel) headerLabel.textContent = `Convention Prestation Formateur (${data.name})`;
 
-        if (scrollArea) {
-          scrollArea.innerHTML = `
-            <div class="space-y-3">
-              <div class="p-3 rounded-xl bg-oidaneos-lav50 border border-oidaneos-line text-[11px] font-mono">
-                <strong>ORGANISME DE FORMATION :</strong> OIDANEOS (SIRET 89828107600015 • NDA 01973336297)<br/>
-                <strong>REPRÉSENTÉ PAR :</strong> Alain-Franck VALERO<br/>
-                <strong>BÉNÉFICIAIRE :</strong> ${data.company} (Représentée par ${data.name})
+          if (scrollArea) {
+            scrollArea.innerHTML = `
+              <div class="space-y-3 text-xs leading-relaxed">
+                <div class="p-3 rounded-xl bg-oidaneos-lav50 border border-oidaneos-line text-[11px] font-mono">
+                  <strong>ORGANISME DE FORMATION :</strong> OIDANEOS (SIRET 89828107600015 • NDA 01973336297)<br/>
+                  <strong>REPRÉSENTÉ PAR :</strong> Alain-Franck VALERO<br/>
+                  <strong>INTERVENANT FORMATEUR :</strong> ${data.name} (${data.role || 'Formateur Expert IA'})
+                </div>
+
+                <h4 class="font-extrabold text-sm text-oidaneos-ink border-b border-oidaneos-line pb-1">1. Objet de l'Intervention</h4>
+                <p>Le Formateur s'engage à assurer l'animation pédagogique et l'accompagnement des apprenants pour l'action certifiante suivante :<br/>
+                <strong>Intitulé :</strong> Concepteur &amp; Développeur de Solutions d'Intelligence Artificielle No-Code<br/>
+                <strong>Promotion :</strong> Septembre 2026 (4 stagiaires certifiants)<br/>
+                <strong>Période :</strong> Du 7 septembre 2026 au 30 novembre 2026<br/>
+                <strong>Rythme :</strong> Ateliers live Zoom du vendredi (08h-10h), travaux pratiques guidés et suivi asynchrone.</p>
+
+                <h4 class="font-extrabold text-sm text-oidaneos-ink border-b border-oidaneos-line pb-1">2. Engagements Qualité &amp; Qualiopi (Indicateurs 8, 11, 21, 22)</h4>
+                <ul class="list-disc pl-4 space-y-1">
+                  <li>Maîtrise des objectifs pédagogiques et des 9 compétences du référentiel (C1 à C9).</li>
+                  <li>Contrôle de l'assiduité et validation des émargements numériques après chaque classe virtuelle.</li>
+                  <li>Suivi individualisé et soutien méthodologique sur le cadrage du projet et cas pratique.</li>
+                </ul>
+
+                <h4 class="font-extrabold text-sm text-oidaneos-ink border-b border-oidaneos-line pb-1">3. Rémunération &amp; Modalités</h4>
+                <p>La prestation pédagogique est rémunérée conformément aux accords contractuels convenus entre les parties, sur présentation d'état de service et émargements complets.</p>
+
+                <div class="p-3 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-[11px] font-bold">
+                  ✓ Validé par la Direction OIDANEOS (Alain VALERO)
+                </div>
               </div>
+            `;
+          }
 
-              <h4 class="font-extrabold text-sm text-oidaneos-ink border-b border-oidaneos-line pb-1">1. Objet de la Convention</h4>
-              <p>L’Organisme de Formation s’engage à organiser l’action de formation certifiante suivante :<br/>
-              <strong>Intitulé :</strong> IT IA — Concevoir et implémenter une solution d'IA (Sept. 2026)<br/>
-              <strong>Durée :</strong> 150 heures (21.5 jours)<br/>
-              <strong>Période :</strong> Du 7 septembre 2026 au 30 novembre 2026<br/>
-              <strong>Stagiaire accueilli :</strong> ${data.name}</p>
-
-              <h4 class="font-extrabold text-sm text-oidaneos-ink border-b border-oidaneos-line pb-1">2. Les 4 Blocs de Compétences (Référentiel C1 à C9)</h4>
-              <ul class="list-disc pl-4 space-y-1">
-                <li><strong>Bloc 1 – Données et préparation (26h) :</strong> Traitement, nettoyage, RGPD, IA Act (C1, C2, C3).</li>
-                <li><strong>Bloc 2 – Modélisation et apprentissage (28h) :</strong> LLMs, prompting avancé, agents IA (C4, C5).</li>
-                <li><strong>Bloc 3 – Éthique, enjeux et performance (46h) :</strong> Mesure de performance, sécurité, ROI (C6, C7, C8).</li>
-                <li><strong>Bloc 4 – Industrialisation et architecture (50h) :</strong> Déploiement logiciel, APIs, MLOps (C9).</li>
-              </ul>
-
-              <h4 class="font-extrabold text-sm text-oidaneos-ink border-b border-oidaneos-line pb-1">3. Prix & Subrogation OPCO Atlas</h4>
-              <p>Coût de l'action de formation : <strong>5 133,33 € Net de Taxes</strong> (Exonéré de TVA selon l'art. 261-4-4° du CGI). Prise en charge à 100% dans le cadre du dispositif Atlas.</p>
-
-              <h4 class="font-extrabold text-sm text-oidaneos-ink border-b border-oidaneos-line pb-1">4. Émargements & Sanction</h4>
-              <p>L'assiduité est attestée par des émargements numériques à chaque séance. La certification est délivrée après soutenance orale devant le jury officiel.</p>
-
-              <div class="p-3 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-[11px] font-bold">
-                ✓ Signé le 01/09/2026 pour OIDANEOS par Alain VALERO (Certifié OIDANEOS Sign)
+          if (formContainer) {
+            formContainer.innerHTML = `
+              <div class="space-y-1">
+                <label class="font-bold text-oidaneos-ink text-[11px]">Intervenant / Formateur :</label>
+                <input type="text" id="signFieldCompany" value="${data.name} (${data.role || 'Formateur'})" class="w-full p-2 rounded-xl border border-oidaneos-line bg-white font-semibold text-xs">
               </div>
-            </div>
-          `;
-        }
+              <div class="grid grid-cols-2 gap-2">
+                <div class="space-y-1">
+                  <label class="font-bold text-oidaneos-ink text-[11px]">Fait à (Ville) :</label>
+                  <input type="text" id="signFieldSiret" value="Baie-Mahault" class="w-full p-2 rounded-xl border border-oidaneos-line bg-white text-xs">
+                </div>
+                <div class="space-y-1">
+                  <label class="font-bold text-oidaneos-ink text-[11px]">Date :</label>
+                  <input type="text" value="${new Date().toLocaleDateString('fr-FR')}" class="w-full p-2 rounded-xl border border-oidaneos-line bg-gray-50 text-xs font-mono" readonly>
+                </div>
+              </div>
+            `;
+          }
+        } else {
+          if (title) title.textContent = "Convention de Formation Professionnelle — Lecture & Signature";
+          if (subtitle) subtitle.textContent = `Certification IT IA (150h) — OIDANEOS × ${data.company}`;
+          if (headerLabel) headerLabel.textContent = `Contrat de Formation Professionnelle (${data.company})`;
 
-        if (formContainer) {
-          formContainer.innerHTML = `
-            <div class="space-y-1">
-              <label class="font-bold text-oidaneos-ink text-[11px]">Raison Sociale de l'Entreprise :</label>
-              <input type="text" id="signFieldCompany" value="${data.company}" class="w-full p-2 rounded-xl border border-oidaneos-line bg-white font-semibold text-xs">
-            </div>
-            <div class="space-y-1">
-              <label class="font-bold text-oidaneos-ink text-[11px]">Numéro SIRET :</label>
-              <input type="text" id="signFieldSiret" value="${data.siret || '920 123 456 00012'}" placeholder="Ex: 87947490600044" class="w-full p-2 rounded-xl border border-oidaneos-line bg-white font-mono text-xs">
-            </div>
-            <div class="space-y-1">
-              <label class="font-bold text-oidaneos-ink text-[11px]">Représentant Signataire :</label>
-              <input type="text" id="signFieldName" value="${data.name} (${data.role})" class="w-full p-2 rounded-xl border border-oidaneos-line bg-white font-semibold text-xs">
-            </div>
-            <div class="space-y-1">
-              <label class="font-bold text-oidaneos-ink text-[11px]">Dispositif de Financement :</label>
-              <input type="text" value="OPCO Atlas — Prise en charge 100% Subrogation" readonly class="w-full p-2 rounded-xl border border-oidaneos-line bg-gray-50 text-gray-600 text-xs font-medium">
-            </div>
-          `;
+          if (scrollArea) {
+            scrollArea.innerHTML = `
+              <div class="space-y-3">
+                <div class="p-3 rounded-xl bg-oidaneos-lav50 border border-oidaneos-line text-[11px] font-mono">
+                  <strong>ORGANISME DE FORMATION :</strong> OIDANEOS (SIRET 89828107600015 • NDA 01973336297)<br/>
+                  <strong>REPRÉSENTÉ PAR :</strong> Alain-Franck VALERO<br/>
+                  <strong>BÉNÉFICIAIRE :</strong> ${data.company} (Représentée par ${data.name})
+                </div>
+
+                <h4 class="font-extrabold text-sm text-oidaneos-ink border-b border-oidaneos-line pb-1">1. Objet de la Convention</h4>
+                <p>L’Organisme de Formation s’engage à organiser l’action de formation certifiante suivante :<br/>
+                <strong>Intitulé :</strong> IT IA — Concevoir et implémenter une solution d'IA (Sept. 2026)<br/>
+                <strong>Durée :</strong> 150 heures (21.5 jours)<br/>
+                <strong>Période :</strong> Du 7 septembre 2026 au 30 novembre 2026<br/>
+                <strong>Stagiaire accueilli :</strong> ${data.name}</p>
+
+                <h4 class="font-extrabold text-sm text-oidaneos-ink border-b border-oidaneos-line pb-1">2. Les 4 Blocs de Compétences (Référentiel C1 à C9)</h4>
+                <ul class="list-disc pl-4 space-y-1">
+                  <li><strong>Bloc 1 – Données et préparation (26h) :</strong> Traitement, nettoyage, RGPD, IA Act (C1, C2, C3).</li>
+                  <li><strong>Bloc 2 – Modélisation et apprentissage (28h) :</strong> LLMs, prompting avancé, agents IA (C4, C5).</li>
+                  <li><strong>Bloc 3 – Éthique, enjeux et performance (46h) :</strong> Mesure de performance, sécurité, ROI (C6, C7, C8).</li>
+                  <li><strong>Bloc 4 – Industrialisation et architecture (50h) :</strong> Déploiement logiciel, APIs, MLOps (C9).</li>
+                </ul>
+
+                <h4 class="font-extrabold text-sm text-oidaneos-ink border-b border-oidaneos-line pb-1">3. Prix & Subrogation OPCO Atlas</h4>
+                <p>Coût de l'action de formation : <strong>5 133,33 € Net de Taxes</strong> (Exonéré de TVA selon l'art. 261-4-4° du CGI). Prise en charge à 100% dans le cadre du dispositif Atlas.</p>
+
+                <h4 class="font-extrabold text-sm text-oidaneos-ink border-b border-oidaneos-line pb-1">4. Émargements & Sanction</h4>
+                <p>L'assiduité est attestée par des émargements numériques à chaque séance. La certification est délivrée après soutenance orale devant le jury officiel.</p>
+
+                <div class="p-3 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-[11px] font-bold">
+                  ✓ Signé le 01/09/2026 pour OIDANEOS par Alain VALERO (Certifié OIDANEOS Sign)
+                </div>
+              </div>
+            `;
+          }
+
+          if (formContainer) {
+            formContainer.innerHTML = `
+              <div class="space-y-1">
+                <label class="font-bold text-oidaneos-ink text-[11px]">Raison Sociale de l'Entreprise :</label>
+                <input type="text" id="signFieldCompany" value="${data.company}" class="w-full p-2 rounded-xl border border-oidaneos-line bg-white font-semibold text-xs">
+              </div>
+              <div class="space-y-1">
+                <label class="font-bold text-oidaneos-ink text-[11px]">Numéro SIRET :</label>
+                <input type="text" id="signFieldSiret" value="${data.siret || '920 123 456 00012'}" placeholder="Ex: 87947490600044" class="w-full p-2 rounded-xl border border-oidaneos-line bg-white font-mono text-xs">
+              </div>
+              <div class="space-y-1">
+                <label class="font-bold text-oidaneos-ink text-[11px]">Représentant Signataire :</label>
+                <input type="text" id="signFieldName" value="${data.name} (${data.role})" class="w-full p-2 rounded-xl border border-oidaneos-line bg-white font-semibold text-xs">
+              </div>
+              <div class="space-y-1">
+                <label class="font-bold text-oidaneos-ink text-[11px]">Dispositif de Financement :</label>
+                <input type="text" value="OPCO Atlas — Prise en charge 100% Subrogation" readonly class="w-full p-2 rounded-xl border border-oidaneos-line bg-gray-50 text-gray-600 text-xs font-medium">
+              </div>
+            `;
+          }
         }
 
       } else {
         // DROIT À L'IMAGE
-        if (title) title.textContent = "Autorisation de Droit à l'Image — Lecture & Signature";
-        if (subtitle) subtitle.textContent = `Formation Certification IA DROM — Apprenant : ${data.name}`;
+        if (title) title.textContent = data.isTrainer ? "Autorisation de Droit à l'Image (Formateur) — Lecture & Signature" : "Autorisation de Droit à l'Image — Lecture & Signature";
+        if (subtitle) subtitle.textContent = data.isTrainer ? `Intervenant Pédagogique OIDANEOS : ${data.name}` : `Formation Certification IA DROM — Apprenant : ${data.name}`;
         if (headerLabel) headerLabel.textContent = "Clauses Officielles du Droit à l'Image";
 
         if (scrollArea) {
@@ -3472,7 +3586,7 @@
         if (formContainer) {
           formContainer.innerHTML = `
             <div class="space-y-1">
-              <label class="font-bold text-oidaneos-ink text-[11px]">Nom & Prénom de l'Apprenant :</label>
+              <label class="font-bold text-oidaneos-ink text-[11px]">Nom & Prénom :</label>
               <input type="text" id="signFieldDroitName" value="${data.name}" class="w-full p-2 rounded-xl border border-oidaneos-line bg-white font-semibold text-xs">
             </div>
             <div class="grid grid-cols-2 gap-2">
@@ -3543,13 +3657,1040 @@
       saveLearnerData(currentInspectedLearnerEmail, data);
       closeSignModal();
       syncActiveLearnerView(currentInspectedLearnerEmail);
-      alert(`✅ ${currentSigningType === 'convention' ? 'Convention de formation' : "Autorisation de droit à l'image"} signée avec succès par ${data.name} en ligne !`);
+      alert(`✅ ${currentSigningType === 'convention' ? (data.isTrainer ? 'Convention de prestation formateur' : 'Convention de formation') : "Autorisation de droit à l'image"} signée avec succès par ${data.name} en ligne !`);
     }
 
-            function renderYouSignDocuments(data) {
+    // --- CHECKLIST DYNAMIQUE PAR RÔLE ---
+    function renderChecklistByRole(data) {
+      const titleEl = document.getElementById('checklistTitle');
+      const container = document.getElementById('checklistContainerWrapper');
+      if (!container) return;
+
+      if (data.isTrainer) {
+        if (titleEl) titleEl.textContent = "Vos Premières Actions — Checklist " + (data.isCoordinator ? "Coordination & Qualiopi" : "Formateur Expert");
+        container.innerHTML = `
+          <div class="p-4 rounded-2xl bg-oidaneos-lav50 border border-oidaneos-line space-y-2.5">
+            <span class="font-bold text-oidaneos-purple">Accès &amp; Outils Pédagogiques :</span>
+            <div class="space-y-2">
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" checked class="mt-0.5 rounded text-oidaneos-purple focus:ring-0">
+                <span>Accéder à l'Espace Superviseur &amp; Plateforme E-Learning OIDANEOS</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" checked class="mt-0.5 rounded text-oidaneos-purple focus:ring-0">
+                <span>Tester la salle Zoom permanente des séances du vendredi (08h-10h)</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" checked class="mt-0.5 rounded text-oidaneos-purple focus:ring-0">
+                <span>Vérifier les supports de cours, notebooks Google Colab &amp; cas réels</span>
+              </label>
+              <div class="pt-1">
+                <a href="/Planning_Formation_IA_OIDANEOS_Septembre_2026.ics" download="Planning_Formation_IA_OIDANEOS_Septembre_2026.ics" class="inline-flex items-center gap-1.5 text-xs font-extrabold text-oidaneos-purple hover:underline bg-white px-3 py-1.5 rounded-xl border border-oidaneos-line shadow-sm">
+                  <i data-lucide="calendar" class="w-3.5 h-3.5 text-oidaneos-pink"></i>
+                  <span>Télécharger le planning complet (.ICS)</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-oidaneos-lav50 border border-oidaneos-line space-y-2.5">
+            <span class="font-bold text-oidaneos-purple">Pédagogie &amp; Suivi Qualiopi :</span>
+            <div class="space-y-2">
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" checked class="mt-0.5 rounded text-oidaneos-purple focus:ring-0">
+                <span>Consulter les diagnostics T0 et cas d'usage des 4 stagiaires</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" checked class="mt-0.5 rounded text-oidaneos-purple focus:ring-0">
+                <span>${data.isCoordinator ? "Vérifier la conformité des pièces administratives (CNI &amp; Diplômes)" : "Signer la Convention Prestation Formateur &amp; le Droit à l'Image"}</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" checked class="mt-0.5 rounded text-oidaneos-purple focus:ring-0">
+                <span>Valider les feuilles d'émargement numériques après chaque séance</span>
+              </label>
+            </div>
+          </div>
+        `;
+      } else {
+        if (titleEl) titleEl.textContent = "Vos Premières Actions — Checklist de Démarrage";
+        container.innerHTML = `
+          <div class="p-4 rounded-2xl bg-oidaneos-lav50 border border-oidaneos-line space-y-2.5">
+            <span class="font-bold text-oidaneos-purple">Accès &amp; Outils Numériques :</span>
+            <div class="space-y-2">
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" checked class="mt-0.5 rounded text-oidaneos-purple focus:ring-0">
+                <span>Accéder à la plateforme E-Learning OIDANEOS</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" checked class="mt-0.5 rounded text-oidaneos-purple focus:ring-0">
+                <span>Installer l'application Zoom Desktop (v6+)</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" checked class="mt-0.5 rounded text-oidaneos-purple focus:ring-0">
+                <span>Tester le lien Zoom permanent du vendredi (08h-10h)</span>
+              </label>
+              <div class="pt-1">
+                <a href="/Planning_Formation_IA_OIDANEOS_Septembre_2026.ics" download="Planning_Formation_IA_OIDANEOS_Septembre_2026.ics" class="inline-flex items-center gap-1.5 text-xs font-extrabold text-oidaneos-purple hover:underline bg-white px-3 py-1.5 rounded-xl border border-oidaneos-line shadow-sm">
+                  <i data-lucide="calendar" class="w-3.5 h-3.5 text-oidaneos-pink"></i>
+                  <span>Télécharger le calendrier complet (.ICS)</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-oidaneos-lav50 border border-oidaneos-line space-y-2.5">
+            <span class="font-bold text-oidaneos-purple">Documents &amp; Évaluations :</span>
+            <div class="space-y-2">
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" checked class="mt-0.5 rounded text-oidaneos-purple focus:ring-0">
+                <span>Valider le Positionnement Initial (T0)</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" checked class="mt-0.5 rounded text-oidaneos-purple focus:ring-0">
+                <span>Compléter la Fiche Administrative CertifIA</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" checked class="mt-0.5 rounded text-oidaneos-purple focus:ring-0">
+                <span>Participer au Live de pré-rentrée (Session 0)</span>
+              </label>
+            </div>
+          </div>
+        `;
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+
+    // --- TABLEAU DE BORD SUPERVISEUR FORMATEUR & COORDINATION (SEPTEMBRE 2026 IA) ---
+    let trainerViewModeIa = 'supervisor'; // 'supervisor' or 'detail'
+    let supervisorInspectedLearnerIa = 'ackaraib@orange.fr';
+
+    function setTrainerViewModeIa(mode, targetEmail) {
+      trainerViewModeIa = mode;
+      if (targetEmail) supervisorInspectedLearnerIa = targetEmail;
+      renderTrainerSupervisorDashboardIa(currentInspectedLearnerEmail);
+    }
+    window.setTrainerViewModeIa = setTrainerViewModeIa;
+
+    function renderTrainerSupervisorDashboardIa(email) {
+      const container = document.getElementById('evalPositionnementSupervisorContainer');
+      if (!container) return;
+
+      const currentTrainer = ALL_USERS_DATABASE[email] || ALL_USERS_DATABASE['alain@oidaneos.com'];
+      const candidateEmails = [
+        'ackaraib@orange.fr',
+        'mamalylys2323@gmail.com',
+        'gwenaelle.davrain1@gmail.com',
+        'babzwayne@gmail.com'
+      ];
+
+      const candidates = candidateEmails.map(em => {
+        const c = getLearnerData(em);
+        let sum = 0;
+        for (let i = 1; i <= 9; i++) {
+          sum += (c.scores && c.scores['c' + i] !== undefined) ? c.scores['c' + i] : 5.0;
+        }
+        c.scoreT0 = sum / 9;
+        return c;
+      });
+
+      const avgT0 = (candidates.reduce((sum, c) => sum + c.scoreT0, 0) / candidates.length).toFixed(1);
+
+      if (trainerViewModeIa === 'detail' && supervisorInspectedLearnerIa) {
+        // Vue détaillée d'un apprenant pour le formateur / superviseur
+        const c = getLearnerData(supervisorInspectedLearnerIa) || candidates[0];
+        let sumC = 0;
+        for (let i = 1; i <= 9; i++) {
+          sumC += (c.scores && c.scores['c' + i] !== undefined) ? c.scores['c' + i] : 5.0;
+        }
+        const candidateScoreT0 = (sumC / 9).toFixed(1);
+
+        const hasCni = Boolean(c.justificatifs && c.justificatifs.cni && c.justificatifs.cni.dataUrl);
+        const hasDiploma = Boolean(c.justificatifs && c.justificatifs.diploma && c.justificatifs.diploma.dataUrl);
+
+        container.innerHTML = `
+          <div class="space-y-6">
+            <!-- Barre retour superviseur -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-4 rounded-2xl border border-slate-200 shadow-xs">
+              <button onclick="setTrainerViewModeIa('supervisor')" class="px-4 py-2 rounded-xl bg-purple-100 hover:bg-purple-200 text-purple-900 text-xs font-black flex items-center gap-2 transition cursor-pointer shrink-0">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>Retour au tableau de bord de la promotion</span>
+              </button>
+              <div class="flex items-center gap-3">
+                <span class="text-xs text-slate-500 font-bold truncate">Dossier en consultation : <strong>${c.name}</strong> (${c.company})</span>
+                <button onclick="exportDiagnosticPDFIa('${c.email}')" class="px-4 py-2 rounded-xl bg-grad-oidaneos text-white text-xs font-black shadow-btn flex items-center gap-1.5 transition cursor-pointer shrink-0">
+                  <i data-lucide="file-down" class="w-3.5 h-3.5"></i>
+                  <span>Exporter Fiche PDF</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Fiche détaillée de l'apprenant -->
+            <div class="bg-white rounded-3xl p-6 lg:p-8 border border-slate-200 shadow-xs space-y-6">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-900 text-[10px] font-black uppercase">${(c.certifia && c.certifia.situation) || (c.isExecutive ? 'Dirigeant / TNS' : 'Salarié')}</span>
+                    <span class="text-xs text-slate-500 font-bold">${c.company}</span>
+                  </div>
+                  <h3 class="text-lg font-black text-slate-900 mt-1">${c.name} — Dossier Administratif &amp; Auto-Évaluation T0</h3>
+                  <p class="text-xs text-slate-600">${c.role} • ${c.email} • ${c.phone || '+590 690 ...'}</p>
+                </div>
+                <div class="p-3 rounded-2xl bg-amber-50 border border-amber-200 text-center shrink-0">
+                  <div class="text-[10px] uppercase font-bold text-amber-900">Score Positionnement T0</div>
+                  <div class="text-lg font-black text-amber-700">${candidateScoreT0} / 10</div>
+                </div>
+              </div>
+
+              <!-- Expression des Besoins (Qualiopi IND 1 & 4) -->
+              <div class="p-5 rounded-2xl bg-purple-50/60 border border-purple-200 space-y-3">
+                <div class="font-black text-purple-950 uppercase text-xs flex items-center gap-2">
+                  <i data-lucide="help-circle" class="w-4 h-4 text-purple-700"></i>
+                  <span>Attentes &amp; Objectifs formulés par ${c.firstname || c.name} (Qualiopi Ind. 1 &amp; 4) :</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+                  <div class="bg-white p-3.5 rounded-xl border border-purple-100 space-y-1">
+                    <strong class="text-purple-900 block text-[11px]">1. Objectifs Prioritaires :</strong>
+                    <p class="text-slate-700 leading-relaxed">${(c.attentes && c.attentes.objectifs) || (c.projectTitle ? 'Maîtriser les outils IA et concrétiser le projet : ' + c.projectTitle : 'Automatiser les tâches récurrentes et intégrer l\\\'IA dans le quotidien professionnel.')}</p>
+                  </div>
+                  <div class="bg-white p-3.5 rounded-xl border border-purple-100 space-y-1">
+                    <strong class="text-purple-900 block text-[11px]">2. Défis &amp; Tâches Chronophages :</strong>
+                    <p class="text-slate-700 leading-relaxed">${(c.attentes && c.attentes.defis) || c.timeWasting || 'Recherche manuelle d\\\'informations, traitement des documents et saisies répétitives.'}</p>
+                  </div>
+                  <div class="bg-white p-3.5 rounded-xl border border-purple-100 space-y-1">
+                    <strong class="text-purple-900 block text-[11px]">3. Cas d'Usage &amp; Projet en Entreprise :</strong>
+                    <p class="text-slate-700 leading-relaxed">${(c.attentes && c.attentes.projets) || c.projectDesc || 'Création d\\\'un agent IA sur-mesure pour fiabiliser et accélérer les processus métiers.'}</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Grille des 9 compétences T0 -->
+              <div class="space-y-3">
+                <h4 class="font-black text-slate-900 text-xs uppercase text-purple-900">Détail des 9 Compétences initiales (T0) :</h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
+                  ${IA_COMPETENCES_EVAL_LIST.map((comp, idx) => {
+                    const sc = (c.scores && c.scores['c' + (idx + 1)] !== undefined) ? c.scores['c' + (idx + 1)] : 5.0;
+                    return `
+                      <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-2">
+                        <div class="space-y-0.5 min-w-0">
+                          <span class="font-bold text-slate-900 block truncate">${comp.code} — ${comp.title}</span>
+                          <p class="text-[10px] text-slate-500 line-clamp-1">${comp.desc}</p>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-lg bg-purple-100 text-purple-900 font-black text-xs shrink-0">${sc.toFixed(1)} / 10</span>
+                      </div>
+                    `;
+                  }).join('')}
+                </div>
+              </div>
+
+              <!-- Pièces Justificatives CNI & Diplôme -->
+              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                <h4 class="font-black text-slate-900 text-xs uppercase text-purple-900">Pièces Justificatives déposées :</h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                  <div class="p-3 bg-white rounded-xl border border-slate-200 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <i data-lucide="${hasCni ? 'file-check' : 'clock'}" class="w-4 h-4 ${hasCni ? 'text-emerald-600' : 'text-amber-500'}"></i>
+                      <span class="font-bold text-slate-800">Pièce d'Identité (CNI / Passeport)</span>
+                    </div>
+                    <span class="text-[10px] ${hasCni ? 'text-emerald-700 bg-emerald-50' : 'text-amber-700 bg-amber-50'} px-2 py-0.5 rounded font-bold">${hasCni ? '✓ Enregistré' : '• En attente'}</span>
+                  </div>
+                  <div class="p-3 bg-white rounded-xl border border-slate-200 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <i data-lucide="${hasDiploma ? 'graduation-cap' : 'clock'}" class="w-4 h-4 ${hasDiploma ? 'text-purple-600' : 'text-amber-500'}"></i>
+                      <span class="font-bold text-slate-800">Diplôme Justificatif (${(c.certifia && c.certifia.diploma) || 'Bac+2'})</span>
+                    </div>
+                    <span class="text-[10px] ${hasDiploma ? 'text-emerald-700 bg-emerald-50' : 'text-amber-700 bg-amber-50'} px-2 py-0.5 rounded font-bold">${hasDiploma ? '✓ Enregistré' : '• En attente'}</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        `;
+        if (window.lucide) lucide.createIcons();
+        return;
+      }
+
+      // Vue Tableau Superviseur Promotion (Default)
+      container.innerHTML = `
+        <div class="space-y-6">
+          
+          <!-- En-tête Superviseur Formateur -->
+          <div class="p-6 rounded-3xl bg-gradient-to-r from-purple-950 via-purple-900 to-indigo-950 text-white flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-xl">
+            <div class="space-y-1.5">
+              <div class="flex items-center gap-2">
+                <span class="px-3 py-1 rounded-full bg-white/10 text-purple-200 text-[10px] font-black uppercase tracking-wider border border-white/20">
+                  🎓 Espace Superviseur Pédagogique &amp; Administration
+                </span>
+                <span class="text-xs text-purple-300">• Promotion Septembre 2026</span>
+              </div>
+              <h2 class="text-xl font-black text-white">Suivi Pédagogique, Diagnostics Initiaux &amp; Dossiers Stagiaires</h2>
+              <p class="text-xs text-purple-200/80 max-w-2xl leading-relaxed">
+                Connecté en tant que <strong>${currentTrainer.name}</strong> (${currentTrainer.role || 'Superviseur'}). Vous avez accès aux auto-évaluations T0, aux attentes professionnelles, aux pièces administratives et aux fiches PDF de l'ensemble des candidats.
+              </p>
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+              <div class="p-3 rounded-2xl bg-white/10 border border-white/10 text-center">
+                <div class="text-[10px] uppercase font-bold text-purple-200">Stagiaires Inscrits</div>
+                <div class="text-lg font-black text-white">${candidates.length} Candidats</div>
+              </div>
+              <div class="p-3 rounded-2xl bg-white/10 border border-white/10 text-center">
+                <div class="text-[10px] uppercase font-bold text-purple-200">Moyenne T0 Promo</div>
+                <div class="text-lg font-black text-amber-300">${avgT0} / 10</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tableau interactif de suivi des stagiaires -->
+          <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xs">
+            <div class="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+              <div class="font-black text-slate-900 text-xs flex items-center gap-2">
+                <i data-lucide="users" class="w-4 h-4 text-purple-600"></i>
+                <span>Liste des 4 Stagiaires de la Promotion — Diagnostic Initial (Qualiopi IND 8)</span>
+              </div>
+              <span class="text-[11px] text-slate-500 font-medium">Cliquez sur un stagiaire pour inspecter ou exporter sa fiche</span>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs border-collapse">
+                <thead>
+                  <tr class="bg-slate-100/70 text-slate-700 font-black uppercase text-[10px] border-b border-slate-200">
+                    <th class="p-3.5">Stagiaire &amp; Contact</th>
+                    <th class="p-3.5">Entreprise &amp; Profil</th>
+                    <th class="p-3.5 text-center">Score T0</th>
+                    <th class="p-3.5">Attentes &amp; Projets Métiers</th>
+                    <th class="p-3.5 text-center">Justificatifs</th>
+                    <th class="p-3.5 text-center">Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 font-sans">
+                  ${candidates.map(c => {
+                    const objShort = (c.attentes && c.attentes.objectifs) ? c.attentes.objectifs : (c.projectTitle || "Maîtriser les outils IA et concrétiser les projets métiers");
+                    const hasCni = Boolean(c.justificatifs && c.justificatifs.cni && c.justificatifs.cni.dataUrl);
+                    const hasDip = Boolean(c.justificatifs && c.justificatifs.diploma && c.justificatifs.diploma.dataUrl);
+                    return `
+                      <tr class="hover:bg-purple-50/40 transition">
+                        <td class="p-3.5">
+                          <div class="font-extrabold text-slate-900">${c.name}</div>
+                          <div class="text-[11px] text-slate-500 font-mono">${c.email}</div>
+                          <div class="text-[10px] text-slate-400">${c.phone || '+590 690 ...'}</div>
+                        </td>
+                        <td class="p-3.5">
+                          <div class="font-bold text-slate-900">${c.company}</div>
+                          <div class="text-[11px] text-slate-500">${c.role}</div>
+                          <span class="inline-block mt-1 px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 text-[10px] font-bold">${(c.certifia && c.certifia.situation) || (c.isExecutive ? 'Dirigeant / TNS' : 'Salarié')}</span>
+                        </td>
+                        <td class="p-3.5 text-center">
+                          <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl bg-amber-100 text-amber-900 font-black text-xs">
+                            <i data-lucide="award" class="w-3 h-3 text-amber-700"></i>
+                            <span>${c.scoreT0.toFixed(1)} / 10</span>
+                          </span>
+                        </td>
+                        <td class="p-3.5 max-w-xs">
+                          <p class="text-[11px] text-slate-700 line-clamp-2 leading-snug">${objShort}</p>
+                          <span class="text-[10px] text-purple-800 font-semibold">${((c.attentes && c.attentes.projets) || c.projectDesc) ? '✓ Projets définis' : '• En attente de précision'}</span>
+                        </td>
+                        <td class="p-3.5 text-center">
+                          ${hasCni && hasDip ? `
+                            <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-1 rounded-lg">
+                              <i data-lucide="check-circle" class="w-3 h-3 text-emerald-600"></i>
+                              <span>CNI &amp; Diplôme</span>
+                            </span>
+                          ` : hasCni || hasDip ? `
+                            <span class="inline-flex items-center gap-1 text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-1 rounded-lg">
+                              <i data-lucide="alert-circle" class="w-3 h-3 text-amber-600"></i>
+                              <span>1 doc reçu</span>
+                            </span>
+                          ` : `
+                            <span class="inline-flex items-center gap-1 text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded-lg">
+                              <i data-lucide="clock" class="w-3 h-3 text-slate-400"></i>
+                              <span>En attente</span>
+                            </span>
+                          `}
+                        </td>
+                        <td class="p-3.5 text-center">
+                          <div class="flex items-center justify-center gap-1.5">
+                            <button onclick="setTrainerViewModeIa('detail', '${c.email}')" class="px-2.5 py-1.5 rounded-xl bg-purple-100 hover:bg-purple-200 text-purple-900 text-[11px] font-bold transition flex items-center gap-1 cursor-pointer">
+                              <i data-lucide="eye" class="w-3.5 h-3.5 text-purple-700"></i>
+                              <span>Dossier</span>
+                            </button>
+                            <button onclick="exportDiagnosticPDFIa('${c.email}')" class="px-2.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-[11px] font-bold transition flex items-center gap-1 cursor-pointer">
+                              <i data-lucide="file-down" class="w-3.5 h-3.5 text-slate-600"></i>
+                              <span>PDF</span>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    `;
+                  }).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      `;
+
+      if (window.lucide) lucide.createIcons();
+    }
+
+    // --- TABLEAU DE BORD SUPERVISEUR CADRAGE CAS PRATIQUE (8 VOLETS DIGIFORMA) ---
+    let caseTrainerViewModeIa = 'supervisor'; // 'supervisor' or 'detail'
+    let caseSupervisorInspectedLearnerIa = 'ackaraib@orange.fr';
+
+    function setCaseTrainerViewModeIa(mode, targetEmail) {
+      caseTrainerViewModeIa = mode;
+      if (targetEmail) caseSupervisorInspectedLearnerIa = targetEmail;
+      renderTrainerCaseSupervisorDashboardIa(currentInspectedLearnerEmail);
+    }
+    window.setCaseTrainerViewModeIa = setCaseTrainerViewModeIa;
+
+    function exportCaseToJournalCandidate(email) {
+      const data = getLearnerData(email || currentInspectedLearnerEmail);
+      const text = `FICHE DE CADRAGE CAS PRATIQUE (COMPÉTENCE C1) — PROMOTION SEPTEMBRE 2026
+CANDIDAT : ${data.name} (${data.email}) — TÉL : ${data.phone || 'Non renseigné'}
+STRUCTURE : ${data.company} — FONCTION : ${data.role}
+========================================================================
+1. CONTEXTE & MISSIONS HEBDOMADAIRES :
+${data.weeklyMissions || 'Non renseigné'}
+Expérience métier : ${data.experience || 'Non renseigné'}
+
+2. LOGICIELS & ENVIRONNEMENT NUMÉRIQUE :
+Outils actuels : ${(data.toolsUsed && data.toolsUsed.join(', ')) || 'Non renseigné'}
+Outils IA payants : ${data.paidAiTools || 'Aucun'}
+Programmation / No-Code : ${data.codingExp || 'Non renseigné'}
+
+3. ACTIVITÉS CHRONOPHAGES (PERTE DE TEMPS IDENTIFIÉE) :
+${data.timeWasting || 'Non renseigné'}
+
+4. ACTIVITÉ LA PLUS RÉPÉTITIVE DU QUOTIDIEN :
+${data.repetitive || 'Non renseigné'}
+
+5. DONNÉES SOURCES MOBILISÉES (COMPÉTENCE C1) :
+${(data.dataSources && data.dataSources.join(', ')) || 'Non renseigné'}
+
+6. CAPACITÉS ATTENDUES DE LA SOLUTION IA :
+${(data.aiCapabilities && data.aiCapabilities.join(', ')) || 'Non renseigné'}
+Précisions libres : ${data.aiOther || 'Aucune'}
+
+7. GAINS RECHERCHÉS & CIBLE +30% ROI (COMPÉTENCE C8) :
+Gains prioritaires : ${(data.gains && data.gains.join(', ')) || 'Non renseigné'}
+Cible gain de 30% de temps : ${data.targetGain30 || 'Non renseigné'}
+
+8. PROJET IA RETENU & OBJECTIF OPÉRATIONNEL :
+Intitulé : ${data.projectTitle || 'En cours de validation'}
+Description détaillée : ${data.projectDesc || 'En cours de validation'}
+Impact estimé sur le travail : ${(data.impactScore || 10).toFixed(1)} / 10
+Degré de motivation : ${(data.motivationScore || 8.8).toFixed(1)} / 10
+========================================================================
+Données issues de l'évaluation Digiforma du 02/09/2026 certifiées OIDANEOS.`;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text);
+      }
+      alert("📋 Fiche Cas Pratique complète de " + data.name + " copiée dans votre presse-papiers !");
+    }
+    window.exportCaseToJournalCandidate = exportCaseToJournalCandidate;
+
+    function renderTrainerCaseSupervisorDashboardIa(email) {
+      const container = document.getElementById('evalCasePratiqueSupervisorContainer');
+      if (!container) return;
+
+      const currentTrainer = ALL_USERS_DATABASE[email] || ALL_USERS_DATABASE['alain@oidaneos.com'];
+      const candidateEmails = [
+        'ackaraib@orange.fr',
+        'mamalylys2323@gmail.com',
+        'gwenaelle.davrain1@gmail.com',
+        'babzwayne@gmail.com'
+      ];
+
+      const candidates = candidateEmails.map(em => {
+        const c = getLearnerData(em);
+        const v1 = Boolean(c.weeklyMissions && c.weeklyMissions.trim());
+        const v2 = Boolean((c.toolsUsed && c.toolsUsed.length > 0) || (c.paidAiTools && c.paidAiTools.trim()));
+        const v3 = Boolean(c.timeWasting && c.timeWasting.trim());
+        const v4 = Boolean(c.repetitive && c.repetitive.trim());
+        const v5 = Boolean(c.dataSources && c.dataSources.length > 0);
+        const v6 = Boolean((c.aiCapabilities && c.aiCapabilities.length > 0) || (c.aiOther && c.aiOther.trim()));
+        const v7 = Boolean((c.targetGain30 && c.targetGain30.trim()) || (c.gains && c.gains.length > 0));
+        const v8 = Boolean(c.projectTitle && c.projectTitle.trim() && c.projectDesc && c.projectDesc.trim());
+        
+        c.voletsStatus = [
+          { num: 1, label: "Contexte & Missions", ok: v1 },
+          { num: 2, label: "Logiciels & Outils", ok: v2 },
+          { num: 3, label: "Tâches Chronophages", ok: v3 },
+          { num: 4, label: "Tâche Répétitive", ok: v4 },
+          { num: 5, label: "Données C1", ok: v5 },
+          { num: 6, label: "IA Idéale", ok: v6 },
+          { num: 7, label: "ROI +30%", ok: v7 },
+          { num: 8, label: "Projet Retenu", ok: v8 }
+        ];
+        c.completedVoletsCount = c.voletsStatus.filter(v => v.ok).length;
+        c.missingVolets = c.voletsStatus.filter(v => !v.ok).map(v => `V${v.num}`);
+        return c;
+      });
+
+      if (caseTrainerViewModeIa === 'detail' && caseSupervisorInspectedLearnerIa) {
+        // Vue détaillée du Cadrage Cas Pratique d'un apprenant pour le formateur
+        const c = getLearnerData(caseSupervisorInspectedLearnerIa) || candidates[0];
+        const v1 = Boolean(c.weeklyMissions && c.weeklyMissions.trim());
+        const v2 = Boolean((c.toolsUsed && c.toolsUsed.length > 0) || (c.paidAiTools && c.paidAiTools.trim()));
+        const v3 = Boolean(c.timeWasting && c.timeWasting.trim());
+        const v4 = Boolean(c.repetitive && c.repetitive.trim());
+        const v5 = Boolean(c.dataSources && c.dataSources.length > 0);
+        const v6 = Boolean((c.aiCapabilities && c.aiCapabilities.length > 0) || (c.aiOther && c.aiOther.trim()));
+        const v7 = Boolean((c.targetGain30 && c.targetGain30.trim()) || (c.gains && c.gains.length > 0));
+        const v8 = Boolean(c.projectTitle && c.projectTitle.trim() && c.projectDesc && c.projectDesc.trim());
+        const voletsStatus = [
+          { num: 1, label: "Contexte & Missions", ok: v1 },
+          { num: 2, label: "Logiciels & Outils", ok: v2 },
+          { num: 3, label: "Tâches Chronophages", ok: v3 },
+          { num: 4, label: "Tâche Répétitive", ok: v4 },
+          { num: 5, label: "Données C1", ok: v5 },
+          { num: 6, label: "IA Idéale", ok: v6 },
+          { num: 7, label: "ROI +30%", ok: v7 },
+          { num: 8, label: "Projet Retenu", ok: v8 }
+        ];
+        const completedCount = voletsStatus.filter(v => v.ok).length;
+
+        container.innerHTML = `
+          <div class="space-y-6">
+            
+            <!-- Bandeau supérieur avec bouton retour -->
+            <div class="p-6 rounded-3xl bg-gradient-to-r from-purple-950 via-purple-900 to-indigo-950 text-white flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-xl">
+              <div class="space-y-2">
+                <button onclick="setCaseTrainerViewModeIa('supervisor')" class="px-3.5 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-purple-200 text-xs font-black flex items-center gap-1.5 transition border border-white/20 w-fit cursor-pointer">
+                  <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+                  <span>← Retour au tableau de bord des cas pratiques</span>
+                </button>
+                <div class="flex items-center gap-2 pt-1">
+                  <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-black uppercase tracking-wider border border-emerald-500/30">
+                    🔍 Revue Pédagogique Formateur
+                  </span>
+                  <span class="text-xs text-purple-300">• Cas Pratique Métier</span>
+                </div>
+                <h2 class="text-xl font-black text-white">
+                  ${c.name} — ${c.company}
+                </h2>
+                <p class="text-xs text-purple-200/90 max-w-2xl leading-relaxed">
+                  Projet Retenu : <strong>${c.projectTitle || 'En cours de cadrage'}</strong>. Fiche transmise lors de l'évaluation initiale Digiforma.
+                </p>
+              </div>
+
+              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
+                <div class="p-3 rounded-2xl bg-white/10 border border-white/10 text-center">
+                  <div class="text-[10px] uppercase font-bold text-purple-200">Complétude Cadrage</div>
+                  <div class="text-lg font-black ${completedCount === 8 ? 'text-emerald-300' : 'text-amber-300'}">${completedCount} / 8 Volets</div>
+                </div>
+                <div class="p-3 rounded-2xl bg-white/10 border border-white/10 text-center">
+                  <div class="text-[10px] uppercase font-bold text-purple-200">Impact Travail</div>
+                  <div class="text-lg font-black text-pink-300">${(c.impactScore || 10).toFixed(1)} / 10</div>
+                </div>
+                <button onclick="exportCaseToJournalCandidate('${c.email}')" class="px-4 py-3 rounded-2xl bg-white text-purple-950 hover:bg-purple-50 font-black text-xs transition flex items-center justify-center gap-2 shadow-btn cursor-pointer">
+                  <i data-lucide="copy" class="w-4 h-4 text-purple-700"></i>
+                  <span>Copier Fiche C1</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Fiche détaillée des 8 Volets en consultation pour le formateur -->
+            <div class="bg-white rounded-3xl p-6 lg:p-8 border border-slate-200 shadow-sm space-y-6">
+              
+              <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <div class="space-y-0.5">
+                  <h3 class="font-black text-slate-900 text-sm flex items-center gap-2">
+                    <i data-lucide="briefcase" class="w-4 h-4 text-purple-600"></i>
+                    <span>Détail des 8 Volets du Projet Professionnel de ${c.firstname || c.name}</span>
+                  </h3>
+                  <p class="text-[11px] text-slate-500">Données déclarées en entrée de formation et vérifiées pour la soutenance CertifIA (Qualiopi IND 1 &amp; 8).</p>
+                </div>
+                <span class="px-3 py-1 rounded-full ${completedCount === 8 ? 'bg-emerald-50 text-emerald-800 border border-emerald-200' : 'bg-amber-50 text-amber-800 border border-amber-200'} text-xs font-extrabold flex items-center gap-1.5">
+                  <i data-lucide="${completedCount === 8 ? 'check-circle-2' : 'alert-circle'}" class="w-3.5 h-3.5 ${completedCount === 8 ? 'text-emerald-600' : 'text-amber-600'}"></i>
+                  <span>${completedCount === 8 ? 'Dossier Cadré à 100%' : completedCount + ' / 8 Volets Renseignés'}</span>
+                </span>
+              </div>
+
+              <!-- VOLET 1 -->
+              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2 font-black text-slate-900 text-xs">
+                    <span class="w-5 h-5 rounded-md bg-purple-100 text-purple-900 text-[10px] font-extrabold flex items-center justify-center">1</span>
+                    <span>Contexte Professionnel &amp; Missions Hebdomadaires</span>
+                  </div>
+                  <span class="text-[10px] ${v1 ? 'text-emerald-700 bg-emerald-50 font-bold' : 'text-amber-700 bg-amber-50 font-bold'} px-2 py-0.5 rounded">${v1 ? '✓ Renseigné' : '• Manquant'}</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                  <div class="bg-white p-3 rounded-xl border border-slate-200">
+                    <span class="text-[10px] text-slate-400 font-bold uppercase block">Entreprise / Rôle</span>
+                    <div class="font-bold text-slate-900 mt-0.5">${c.company} — ${c.role}</div>
+                  </div>
+                  <div class="bg-white p-3 rounded-xl border border-slate-200">
+                    <span class="text-[10px] text-slate-400 font-bold uppercase block">Ancienneté &amp; Expérience</span>
+                    <div class="font-medium text-slate-800 mt-0.5">${c.experience || 'Non renseigné'}</div>
+                  </div>
+                  <div class="sm:col-span-2 bg-white p-3 rounded-xl border border-slate-200">
+                    <span class="text-[10px] text-slate-400 font-bold uppercase block">Principales missions réalisées chaque semaine</span>
+                    <div class="font-medium text-slate-800 mt-0.5">${c.weeklyMissions || 'Non renseigné'}</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- VOLET 2 -->
+              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2 font-black text-slate-900 text-xs">
+                    <span class="w-5 h-5 rounded-md bg-purple-100 text-purple-900 text-[10px] font-extrabold flex items-center justify-center">2</span>
+                    <span>Logiciels &amp; Outils Utilisés Actuellement</span>
+                  </div>
+                  <span class="text-[10px] ${v2 ? 'text-emerald-700 bg-emerald-50 font-bold' : 'text-amber-700 bg-amber-50 font-bold'} px-2 py-0.5 rounded">${v2 ? '✓ Renseigné' : '• Manquant'}</span>
+                </div>
+                <div class="flex flex-wrap gap-2 text-xs">
+                  ${(c.toolsUsed && c.toolsUsed.length > 0) ? c.toolsUsed.map(t => `<span class="px-2.5 py-1 rounded-lg bg-white text-purple-900 border border-purple-100 text-xs font-semibold">${t}</span>`).join('') : '<span class="text-slate-400 italic text-xs">Aucun outil renseigné</span>'}
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs pt-1">
+                  <div class="bg-white p-3 rounded-xl border border-slate-200">
+                    <span class="text-[10px] text-slate-400 font-bold uppercase block">Outils d'IA payants déjà utilisés</span>
+                    <div class="font-bold text-purple-900 mt-0.5">${c.paidAiTools || 'Aucun outil payant'}</div>
+                  </div>
+                  <div class="bg-white p-3 rounded-xl border border-slate-200">
+                    <span class="text-[10px] text-slate-400 font-bold uppercase block">Expérience en Programmation / No-Code</span>
+                    <div class="font-bold text-slate-900 mt-0.5">${c.codingExp || 'Non renseigné'}</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- VOLETS 3 & 4 (CHRONOPHAGE & RÉPÉTITIF) -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                <div class="p-5 rounded-2xl bg-amber-50/70 border border-amber-200/80 space-y-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2 font-black text-amber-950 text-xs">
+                      <span class="w-5 h-5 rounded-md bg-amber-200 text-amber-900 text-[10px] font-extrabold flex items-center justify-center">3</span>
+                      <span>Activités Chronophages (Perte de Temps)</span>
+                    </div>
+                    <span class="text-[10px] ${v3 ? 'text-emerald-700 bg-emerald-50 font-bold' : 'text-amber-700 bg-amber-50 font-bold'} px-2 py-0.5 rounded">${v3 ? '✓ Renseigné' : '• Manquant'}</span>
+                  </div>
+                  <div class="bg-white p-3 rounded-xl border border-amber-200 text-amber-950 font-medium leading-relaxed">
+                    ${c.timeWasting || 'Non renseigné'}
+                  </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2 font-black text-slate-900 text-xs">
+                      <span class="w-5 h-5 rounded-md bg-purple-100 text-purple-900 text-[10px] font-extrabold flex items-center justify-center">4</span>
+                      <span>Activité la plus Répétitive</span>
+                    </div>
+                    <span class="text-[10px] ${v4 ? 'text-emerald-700 bg-emerald-50 font-bold' : 'text-amber-700 bg-amber-50 font-bold'} px-2 py-0.5 rounded">${v4 ? '✓ Renseigné' : '• Manquant'}</span>
+                  </div>
+                  <div class="bg-white p-3 rounded-xl border border-slate-200 text-purple-900 font-bold">
+                    ${c.repetitive || 'Non renseigné'}
+                  </div>
+                </div>
+              </div>
+
+              <!-- VOLET 5 & 6 -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2 font-black text-slate-900 text-xs">
+                      <span class="w-5 h-5 rounded-md bg-purple-100 text-purple-900 text-[10px] font-extrabold flex items-center justify-center">5</span>
+                      <span>Données Sources d'Appui (Compétence C1)</span>
+                    </div>
+                    <span class="text-[10px] ${v5 ? 'text-emerald-700 bg-emerald-50 font-bold' : 'text-amber-700 bg-amber-50 font-bold'} px-2 py-0.5 rounded">${v5 ? '✓ Renseigné' : '• Manquant'}</span>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5">
+                    ${(c.dataSources && c.dataSources.length > 0) ? c.dataSources.map(d => `<span class="px-2.5 py-1 rounded-lg bg-pink-50 text-pink-800 border border-pink-100 text-[11px] font-semibold">${d}</span>`).join('') : '<span class="text-slate-400 italic text-xs">Aucune donnée source renseignée</span>'}
+                  </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2 font-black text-slate-900 text-xs">
+                      <span class="w-5 h-5 rounded-md bg-purple-100 text-purple-900 text-[10px] font-extrabold flex items-center justify-center">6</span>
+                      <span>Fonctionnalités Attendues de l'IA</span>
+                    </div>
+                    <span class="text-[10px] ${v6 ? 'text-emerald-700 bg-emerald-50 font-bold' : 'text-amber-700 bg-amber-50 font-bold'} px-2 py-0.5 rounded">${v6 ? '✓ Renseigné' : '• Manquant'}</span>
+                  </div>
+                  <div class="flex flex-wrap gap-1.5">
+                    ${(c.aiCapabilities && c.aiCapabilities.length > 0) ? c.aiCapabilities.map(a => `<span class="px-2.5 py-1 rounded-lg bg-purple-50 text-purple-900 border border-purple-100 text-[11px] font-semibold">${a}</span>`).join('') : '<span class="text-slate-400 italic text-xs">Non renseigné</span>'}
+                  </div>
+                  ${c.aiOther ? `<div class="bg-white p-2.5 rounded-xl border border-slate-200 text-[11px] text-slate-700 font-medium mt-1"><strong>Précision :</strong> ${c.aiOther}</div>` : ''}
+                </div>
+              </div>
+
+              <!-- VOLET 7 (GAINS & CIBLE 30%) -->
+              <div class="p-5 rounded-2xl bg-emerald-50/70 border border-emerald-200/80 space-y-3 text-xs">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2 font-black text-emerald-950 text-xs">
+                    <span class="w-5 h-5 rounded-md bg-emerald-200 text-emerald-900 text-[10px] font-extrabold flex items-center justify-center">7</span>
+                    <span>Gains Recherchés &amp; Objectif +30% de Gain de Temps (Compétence C8)</span>
+                  </div>
+                  <span class="text-[10px] ${v7 ? 'text-emerald-700 bg-emerald-50 font-bold' : 'text-amber-700 bg-amber-50 font-bold'} px-2 py-0.5 rounded">${v7 ? '✓ Renseigné' : '• Manquant'}</span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  ${(c.gains && c.gains.length > 0) ? c.gains.map(g => `<span class="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-900 border border-emerald-300 text-xs font-bold">${g}</span>`).join('') : '<span class="text-slate-400 italic text-xs">Non renseigné</span>'}
+                </div>
+                <div class="bg-white p-3 rounded-xl border border-emerald-200 mt-2">
+                  <span class="text-[10px] text-emerald-800 font-bold uppercase block">Activité ciblée pour le gain de 30% :</span>
+                  <div class="font-extrabold text-emerald-900 text-sm mt-0.5">${c.targetGain30 || 'Non renseigné'}</div>
+                </div>
+              </div>
+
+              <!-- VOLET 8 (PROJET IA RETENU) -->
+              <div class="p-6 rounded-3xl bg-gradient-to-br from-purple-950 via-purple-900 to-indigo-950 text-white space-y-4 shadow-md text-xs">
+                <div class="flex items-center justify-between border-b border-white/20 pb-3">
+                  <div class="flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-md bg-white/20 text-white text-xs font-black flex items-center justify-center">8</span>
+                    <h4 class="font-black text-white text-sm">Projet IA Retenu &amp; Objectif Opérationnel de Formation</h4>
+                  </div>
+                  <span class="px-2.5 py-0.5 rounded-full bg-pink-500 text-white text-[10px] font-extrabold">Journal de Bord C1</span>
+                </div>
+                <div class="space-y-1">
+                  <span class="text-[10px] uppercase font-bold text-pink-200">Intitulé Officiel :</span>
+                  <div class="text-base font-black text-white">${c.projectTitle || 'En cours de validation'}</div>
+                </div>
+                <div class="space-y-1">
+                  <span class="text-[10px] uppercase font-bold text-pink-200">Problème à résoudre &amp; Résultats attendus :</span>
+                  <div class="bg-white/10 p-3.5 rounded-2xl border border-white/15 text-purple-100 leading-relaxed font-medium">
+                    ${c.projectDesc || 'En cours de validation'}
+                  </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                  <div class="p-3 rounded-xl bg-black/20 border border-white/10">
+                    <span class="text-[10px] text-white/70 font-bold uppercase block">Impact attendu sur le travail</span>
+                    <div class="text-lg font-black text-pink-200">${(c.impactScore || 10).toFixed(1)} / 10</div>
+                  </div>
+                  <div class="p-3 rounded-xl bg-black/20 border border-white/10">
+                    <span class="text-[10px] text-white/70 font-bold uppercase block">Degré de motivation initial</span>
+                    <div class="text-lg font-black text-pink-200">${(c.motivationScore || 8.8).toFixed(1)} / 10</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bouton retour bas de page -->
+              <div class="pt-4 flex justify-between items-center border-t border-slate-100">
+                <button onclick="setCaseTrainerViewModeIa('supervisor')" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-black flex items-center gap-2 transition cursor-pointer">
+                  <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                  <span>Retour au tableau de cadrage de la promotion</span>
+                </button>
+                <button onclick="exportCaseToJournalCandidate('${c.email}')" class="px-4 py-2.5 rounded-xl bg-purple-900 hover:bg-purple-950 text-white text-xs font-black flex items-center gap-2 transition cursor-pointer shadow-btn">
+                  <i data-lucide="copy" class="w-4 h-4 text-purple-300"></i>
+                  <span>Copier Synthèse Jury (C1)</span>
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+        `;
+        if (window.lucide) lucide.createIcons();
+        return;
+      }
+
+      // Vue Tableau Superviseur Cas Pratiques Promotion (Default)
+      container.innerHTML = `
+        <div class="space-y-6">
+          
+          <!-- En-tête Superviseur Formateur Cas Pratique -->
+          <div class="p-6 rounded-3xl bg-gradient-to-r from-purple-950 via-purple-900 to-indigo-950 text-white flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-xl">
+            <div class="space-y-1.5">
+              <div class="flex items-center gap-2">
+                <span class="px-3 py-1 rounded-full bg-white/10 text-purple-200 text-[10px] font-black uppercase tracking-wider border border-white/20">
+                  🎯 Espace Superviseur Pédagogique • Cadrage des Projets Métiers
+                </span>
+                <span class="text-xs text-purple-300">• Promotion Septembre 2026</span>
+              </div>
+              <h2 class="text-xl font-black text-white">Suivi des Cas Pratiques Métiers &amp; Revue des 8 Volets</h2>
+              <p class="text-xs text-purple-200/80 max-w-2xl leading-relaxed">
+                Connecté en tant que <strong>${currentTrainer.name}</strong> (${currentTrainer.role || 'Superviseur'}). Les formateurs n'ont pas à remplir ce questionnaire : consultez ici l'avancement des cas pratiques des 4 stagiaires, ce qui est renseigné et les éléments manquants pour adapter les ateliers live.
+              </p>
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+              <div class="p-3 rounded-2xl bg-white/10 border border-white/10 text-center">
+                <div class="text-[10px] uppercase font-bold text-purple-200">Stagiaires Suivis</div>
+                <div class="text-lg font-black text-white">${candidates.length} Stagiaires</div>
+              </div>
+              <div class="p-3 rounded-2xl bg-white/10 border border-white/10 text-center">
+                <div class="text-[10px] uppercase font-bold text-purple-200">Cadrage Réalisé</div>
+                <div class="text-lg font-black text-emerald-300">${candidates.filter(c => c.completedVoletsCount === 8).length} / ${candidates.length}</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tableau interactif de suivi des Cas Pratiques -->
+          <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xs">
+            <div class="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+              <div class="font-black text-slate-900 text-xs flex items-center gap-2">
+                <i data-lucide="briefcase" class="w-4 h-4 text-purple-600"></i>
+                <span>Avancement du Cadrage des Projets Professionnels (Digiforma &amp; Qualiopi Ind. 1 &amp; 8)</span>
+              </div>
+              <span class="text-[11px] text-slate-500 font-medium">Cliquez sur un stagiaire pour inspecter l'ensemble de ses 8 volets</span>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs border-collapse">
+                <thead>
+                  <tr class="bg-slate-100/70 text-slate-700 font-black uppercase text-[10px] border-b border-slate-200">
+                    <th class="p-3.5">Stagiaire &amp; Contact</th>
+                    <th class="p-3.5">Projet IA Retenu (Volet 8)</th>
+                    <th class="p-3.5">Activités Chronophages (Volets 3 &amp; 4)</th>
+                    <th class="p-3.5 text-center">Statut des 8 Volets</th>
+                    <th class="p-3.5 text-center">Cible ROI &amp; Impact</th>
+                    <th class="p-3.5 text-center">Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 font-sans">
+                  ${candidates.map(c => {
+                    const isFullyDone = c.completedVoletsCount === 8;
+                    return `
+                      <tr class="hover:bg-purple-50/40 transition">
+                        <td class="p-3.5">
+                          <div class="font-extrabold text-slate-900">${c.name}</div>
+                          <div class="text-[11px] text-slate-500 font-mono">${c.email}</div>
+                          <div class="text-[11px] text-purple-900 font-bold">${c.company}</div>
+                          <div class="text-[10px] text-slate-400">${c.role}</div>
+                        </td>
+                        <td class="p-3.5 max-w-xs">
+                          <div class="font-black text-purple-950 leading-snug">${c.projectTitle || 'En cours de formulation'}</div>
+                          <p class="text-[11px] text-slate-600 line-clamp-2 mt-1 leading-snug">${c.projectDesc || 'Description en attente'}</p>
+                        </td>
+                        <td class="p-3.5 max-w-xs">
+                          <div class="text-[11px] text-slate-800 line-clamp-2 leading-snug"><strong>Perte de temps :</strong> ${c.timeWasting || 'Non renseigné'}</div>
+                          <div class="text-[10px] text-purple-800 font-semibold mt-1"><strong>Répétitif :</strong> ${c.repetitive || 'Non renseigné'}</div>
+                        </td>
+                        <td class="p-3.5 text-center">
+                          <div class="space-y-1.5">
+                            <span class="inline-flex items-center gap-1 text-[10px] font-bold ${isFullyDone ? 'text-emerald-700 bg-emerald-50' : 'text-amber-700 bg-amber-50'} px-2.5 py-1 rounded-lg">
+                              <i data-lucide="${isFullyDone ? 'check-circle-2' : 'alert-triangle'}" class="w-3 h-3 ${isFullyDone ? 'text-emerald-600' : 'text-amber-600'}"></i>
+                              <span>${isFullyDone ? '8/8 Volets complets' : c.completedVoletsCount + '/8 (Manque ' + c.missingVolets.join(', ') + ')'}</span>
+                            </span>
+                            <div class="flex items-center justify-center gap-0.5">
+                              ${c.voletsStatus.map(v => `
+                                <span title="Volet ${v.num} : ${v.label} (${v.ok ? 'Renseigné' : 'Manquant'})" class="w-3.5 h-3.5 rounded-sm flex items-center justify-center text-[8px] font-black ${v.ok ? 'bg-emerald-200 text-emerald-900' : 'bg-amber-200 text-amber-900'}">
+                                  ${v.num}
+                                </span>
+                              `).join('')}
+                            </div>
+                          </div>
+                        </td>
+                        <td class="p-3.5 text-center">
+                          <div class="text-xs font-black text-emerald-700">${c.targetGain30 || '+30% de temps'}</div>
+                          <div class="text-[10px] text-slate-500 font-medium">Impact : ${(c.impactScore || 10).toFixed(1)}/10</div>
+                          <div class="text-[10px] text-slate-400">Motiv : ${(c.motivationScore || 8.8).toFixed(1)}/10</div>
+                        </td>
+                        <td class="p-3.5 text-center">
+                          <div class="flex items-center justify-center gap-1.5">
+                            <button onclick="setCaseTrainerViewModeIa('detail', '${c.email}')" class="px-2.5 py-1.5 rounded-xl bg-purple-100 hover:bg-purple-200 text-purple-900 text-[11px] font-bold transition flex items-center gap-1 cursor-pointer">
+                              <i data-lucide="eye" class="w-3.5 h-3.5 text-purple-700"></i>
+                              <span>Consulter</span>
+                            </button>
+                            <button onclick="exportCaseToJournalCandidate('${c.email}')" class="px-2.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-[11px] font-bold transition flex items-center gap-1 cursor-pointer">
+                              <i data-lucide="copy" class="w-3.5 h-3.5 text-slate-600"></i>
+                              <span>Copier C1</span>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    `;
+                  }).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      `;
+
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function renderYouSignDocuments(data) {
       const container = document.getElementById('yousignCardsContainer');
       if (!container) return;
 
+      const regUrl = "/Documents_Administratifs_Septembre_2026/Reglement_Interieur_OIDANEOS_Septembre_2026.pdf";
+      const regFilename = "Reglement_Interieur_OIDANEOS_Septembre_2026.pdf";
+
+      // Mise à jour de la checklist selon le profil
+      renderChecklistByRole(data);
+
+      if (data.isTrainer) {
+        let cardConvention = "";
+        let cardCoordination = "";
+
+        if (data.isCoordinator) {
+          // Milène PAUL : Accès Coordination & Qualiopi
+          cardCoordination = `
+            <div class="p-5 rounded-2xl bg-white border border-pink-200 shadow-sm space-y-3 flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-black text-oidaneos-ink text-xs">1. Coordination &amp; Suivi Qualiopi</span>
+                  <span class="px-2 py-0.5 rounded-full bg-pink-100 text-pink-900 text-[10px] font-extrabold flex items-center gap-1">
+                    <i data-lucide="user-check" class="w-3 h-3 text-pink-700"></i>
+                    <span>Équipe OIDANEOS</span>
+                  </span>
+                </div>
+                <p class="text-[11px] text-oidaneos-muted leading-relaxed">
+                  Mission interne de coordination pédagogique, suivi de l'assiduité des apprenants et conformité Qualiopi (aucun contrat stagiaire requis).
+                </p>
+                <div class="p-2.5 rounded-xl bg-pink-50 text-[11px] text-pink-900 font-bold flex items-center gap-2">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5 shrink-0 text-pink-600"></i>
+                  <span class="truncate">Accès Coordination &amp; Administration Actif</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between pt-2 border-t border-oidaneos-line text-[11px] text-slate-500 font-medium">
+                <span class="text-emerald-700 font-bold flex items-center gap-1">
+                  <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i>
+                  <span>Dossier Conforme</span>
+                </span>
+                <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md font-bold">Référente Pédagogique</span>
+              </div>
+            </div>
+          `;
+        } else {
+          // Pierre LACOMBE ou Alain VALERO : Convention Prestation Formateur IA
+          if (data.yousign_signed_convention) {
+            cardConvention = `
+              <div class="p-5 rounded-2xl bg-white border border-purple-200 shadow-sm space-y-3 flex flex-col justify-between">
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between">
+                    <span class="font-black text-oidaneos-ink text-xs">1. Convention Prestation Formateur IA</span>
+                    <span class="px-2 py-0.5 rounded-full bg-purple-100 text-purple-900 text-[10px] font-extrabold flex items-center gap-1">
+                      <i data-lucide="check-circle" class="w-3 h-3 text-purple-700"></i>
+                      <span>Signée en ligne (Formateur)</span>
+                    </span>
+                  </div>
+                  <p class="text-[11px] text-oidaneos-muted leading-relaxed">
+                    Contrat d'intervention et d'animation pédagogique OIDANEOS signé par <strong>${data.name}</strong> pour la promotion Septembre 2026.
+                  </p>
+                  <div class="p-2.5 rounded-xl bg-purple-50 text-[11px] text-purple-900 font-bold flex items-center gap-2">
+                    <i data-lucide="file-check" class="w-3.5 h-3.5 shrink-0 text-purple-700"></i>
+                    <span class="truncate">Signé en ligne le ${data.yousign_convention_date || '01/09/2026'}</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2 pt-2 border-t border-oidaneos-line">
+                  <button onclick="openDocPreviewModal('Convention Prestation Formateur — ${data.name}', 'Signée en ligne', '/Documents_Administratifs_Septembre_2026/Convention_Prestation_Formateur_OIDANEOS.pdf', 'Convention_Prestation_Formateur.pdf')" class="flex-1 py-2 px-3 rounded-xl bg-purple-50 hover:bg-purple-100 text-purple-900 font-extrabold text-xs flex items-center justify-center gap-1.5 transition cursor-pointer">
+                    <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                    <span>Consulter</span>
+                  </button>
+                </div>
+              </div>
+            `;
+          } else {
+            cardConvention = `
+              <div class="p-5 rounded-2xl bg-white border border-amber-300 shadow-sm space-y-3 flex flex-col justify-between">
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between">
+                    <span class="font-black text-oidaneos-ink text-xs">1. Convention Prestation Formateur IA</span>
+                    <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[10px] font-extrabold">À signer (Formateur)</span>
+                  </div>
+                  <p class="text-[11px] text-oidaneos-muted leading-relaxed">
+                    Contrat d'intervention pour l'animation pédagogique et le suivi des ateliers de la promotion Septembre 2026.
+                  </p>
+                  <div class="p-2.5 rounded-xl bg-amber-50 text-[11px] text-amber-800 font-bold flex items-center gap-2">
+                    <i data-lucide="alert-circle" class="w-3.5 h-3.5 shrink-0 text-amber-600"></i>
+                    <span class="truncate">En attente de signature par ${data.name}</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2 pt-2 border-t border-oidaneos-line">
+                  <button onclick="openSignModal('convention')" class="w-full py-2.5 px-3 rounded-2xl bg-grad-oidaneos text-white text-xs font-black hover:opacity-95 transition flex items-center justify-center gap-2 shadow-btn cursor-pointer">
+                    <i data-lucide="pen-tool" class="w-4 h-4"></i>
+                    <span>Signer la Convention Formateur (${data.firstname || data.name})</span>
+                  </button>
+                </div>
+              </div>
+            `;
+          }
+        }
+
+        // Droit à l'image Formateur
+        let cardDroitImage = "";
+        if (data.yousign_signed_droit_image) {
+          cardDroitImage = `
+            <div class="p-5 rounded-2xl bg-white border border-emerald-200 shadow-sm space-y-3 flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-black text-oidaneos-ink text-xs">2. Autorisation Droit à l'Image</span>
+                  <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-extrabold flex items-center gap-1">
+                    <i data-lucide="check" class="w-3 h-3 text-emerald-600"></i>
+                    <span>Signée en ligne</span>
+                  </span>
+                </div>
+                <p class="text-[11px] text-oidaneos-muted leading-relaxed">
+                  Accord pour la captation vidéo des classes virtuelles Zoom et l'accès aux replays pédagogiques pour les apprenants.
+                </p>
+                <div class="p-2.5 rounded-xl bg-emerald-50 text-[11px] text-emerald-800 font-bold flex items-center gap-2">
+                  <i data-lucide="file-check" class="w-3.5 h-3.5 shrink-0 text-emerald-600"></i>
+                  <span class="truncate">Signé en ligne le ${data.yousign_droit_image_date || '01/09/2026'}</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 pt-2 border-t border-oidaneos-line">
+                <button onclick="openDocPreviewModal('Autorisation Droit à l\\'Image — ${data.name}', 'Signée en ligne', '/Documents_Administratifs_Septembre_2026/Droit_Image_Murielle_LAPILUS_Signe.pdf', 'Droit_Image.pdf')" class="flex-1 py-2 px-3 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple font-extrabold text-xs flex items-center justify-center gap-1.5 transition cursor-pointer">
+                  <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                  <span>Consulter</span>
+                </button>
+              </div>
+            </div>
+          `;
+        } else {
+          cardDroitImage = `
+            <div class="p-5 rounded-2xl bg-white border border-amber-300 shadow-sm space-y-3 flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-black text-oidaneos-ink text-xs">2. Autorisation Droit à l'Image</span>
+                  <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[10px] font-extrabold">À signer</span>
+                </div>
+                <p class="text-[11px] text-oidaneos-muted leading-relaxed">
+                  Accord pour la captation vidéo des classes virtuelles Zoom et la mise à disposition des replays de formation.
+                </p>
+                <div class="p-2.5 rounded-xl bg-amber-50 text-[11px] text-amber-800 font-bold flex items-center gap-2">
+                  <i data-lucide="alert-circle" class="w-3.5 h-3.5 shrink-0 text-amber-600"></i>
+                  <span class="truncate">En attente de signature par ${data.name}</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 pt-2 border-t border-oidaneos-line">
+                <button onclick="openSignModal('droit_image')" class="w-full py-2.5 px-3 rounded-2xl bg-grad-oidaneos text-white text-xs font-black hover:opacity-95 transition flex items-center justify-center gap-2 shadow-btn cursor-pointer">
+                  <i data-lucide="pen-tool" class="w-4 h-4"></i>
+                  <span>Lire &amp; Signer l'Autorisation (${data.firstname || data.name})</span>
+                </button>
+              </div>
+            </div>
+          `;
+        }
+
+        // Règlement intérieur
+        const cardReglement = `
+          <div class="p-5 rounded-2xl bg-white border border-oidaneos-line shadow-sm space-y-3 flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-black text-oidaneos-ink text-xs">3. Règlement Intérieur du Centre</span>
+                <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-extrabold flex items-center gap-1">
+                  <i data-lucide="check" class="w-3 h-3"></i>
+                  <span>Validé d'office</span>
+                </span>
+              </div>
+              <p class="text-[11px] text-oidaneos-muted leading-relaxed">
+                Prise de connaissance des règles d'assiduité, de fonctionnement et de déontologie du centre de formation OIDANEOS.
+              </p>
+              <div class="p-2.5 rounded-xl bg-oidaneos-lav50 text-[11px] text-oidaneos-purple font-medium flex items-center gap-2">
+                <i data-lucide="file-text" class="w-3.5 h-3.5 shrink-0"></i>
+                <span class="truncate">Document officiel OIDANEOS • Articles 1 à 11</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 pt-2 border-t border-oidaneos-line">
+              <button onclick="openDocPreviewModal('Règlement Intérieur OIDANEOS (11 Articles)', 'Centre de formation', '${regUrl}', '${regFilename}')" class="w-full py-2 px-3 rounded-xl bg-oidaneos-lav100 hover:bg-oidaneos-lav200 text-oidaneos-purple font-extrabold text-xs flex items-center justify-center gap-1.5 transition cursor-pointer">
+                <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+                <span>Consulter le Règlement Intérieur</span>
+              </button>
+            </div>
+          </div>
+        `;
+
+        container.className = "grid grid-cols-1 md:grid-cols-3 gap-4 text-xs";
+        container.innerHTML = (data.isCoordinator ? cardCoordination : cardConvention) + cardDroitImage + cardReglement;
+        if (window.lucide) lucide.createIcons();
+        return;
+      }
+
+      // --- POUR LES STAGIAIRES ---
       const email = (data.email || '').toLowerCase().trim();
       const isMurielle = (email === 'ackaraib@orange.fr' || (data.name && data.name.includes('Murielle')));
       const isMailys = (email === 'mamalylys2323@gmail.com' || (data.name && data.name.includes('Mailys')));
@@ -3558,8 +4699,6 @@
       const isExecutive = isMurielle || isRuben; // Seuls les dirigeants (Murielle LAPILUS et Ruben MEL) ont la convention
 
       // ================= CARD REGLEMENT INTERIEUR =================
-      const regUrl = "/Documents_Administratifs_Septembre_2026/Reglement_Interieur_OIDANEOS_Septembre_2026.pdf";
-      const regFilename = "Reglement_Interieur_OIDANEOS_Septembre_2026.pdf";
       const cardReglement = `
         <div class="p-5 rounded-2xl bg-white border border-oidaneos-line shadow-sm space-y-3 flex flex-col justify-between">
           <div class="space-y-2">
@@ -3650,7 +4789,7 @@
             <div class="flex items-center gap-2 pt-2 border-t border-oidaneos-line">
               <button onclick="openSignModal('droit_image')" class="flex-1 py-2 px-3 rounded-xl bg-grad-oidaneos text-white font-extrabold text-xs shadow-btn hover:opacity-95 flex items-center justify-center gap-1.5 transition cursor-pointer">
                 <i data-lucide="pen-tool" class="w-3.5 h-3.5"></i>
-                <span>Lire & Signer en ligne</span>
+                <span>Lire &amp; Signer en ligne</span>
               </button>
               <a href="${droitUrl}" download="${droitFilename}" class="p-2 rounded-xl bg-white hover:bg-oidaneos-lav50 border border-oidaneos-line text-oidaneos-purple transition shadow-sm" title="Télécharger le modèle PDF">
                 <i data-lucide="download" class="w-4 h-4"></i>
@@ -3721,7 +4860,7 @@
               <div class="flex items-center gap-2 pt-2 border-t border-oidaneos-line">
                 <button onclick="openSignModal('convention')" class="flex-1 py-2 px-3 rounded-xl bg-grad-oidaneos text-white font-extrabold text-xs shadow-btn hover:opacity-95 flex items-center justify-center gap-1.5 transition cursor-pointer">
                   <i data-lucide="pen-tool" class="w-3.5 h-3.5"></i>
-                  <span>Lire & Signer en ligne</span>
+                  <span>Lire &amp; Signer en ligne</span>
                 </button>
                 <a href="${convUrl}" download="${convFilename}" class="p-2 rounded-xl bg-white hover:bg-oidaneos-lav50 border border-oidaneos-line text-oidaneos-purple transition shadow-sm" title="Télécharger le modèle PDF">
                   <i data-lucide="download" class="w-4 h-4"></i>
@@ -3785,11 +4924,18 @@
     }
 
     function syncActiveLearnerView(email) {
+      const currentAuthUser = ALL_USERS_DATABASE[loggedInUserEmail] || {};
+      // Sécurité : si un stagiaire est connecté, il ne peut charger QUE ses propres données
+      if (loggedInUserEmail && !currentAuthUser.isTrainer) {
+        email = loggedInUserEmail;
+      }
       if (!email || !ALL_USERS_DATABASE[email]) {
         email = 'ackaraib@orange.fr';
       }
       currentInspectedLearnerEmail = email;
-      localStorage.setItem('oidaneos_trainer_last_inspected', email);
+      if (currentAuthUser.isTrainer) {
+        localStorage.setItem('oidaneos_trainer_last_inspected', email);
+      }
 
       // Synchronisation stricte et immédiate des sélecteurs de vue (En-tête + Onglet Évaluations)
       const selUser = document.getElementById('userSelector');
@@ -3803,6 +4949,39 @@
       if (sel2) sel2.value = email;
 
       const data = getLearnerData(email);
+
+      // Gestion de l'affichage Onglet 1 : Superviseur Pédagogique vs Apprenant Autodiagnostic
+      const evalLearnerContainer = document.getElementById('evalPositionnementLearnerContainer');
+      const evalSupervisorContainer = document.getElementById('evalPositionnementSupervisorContainer');
+
+      if (data.isTrainer) {
+        if (evalLearnerContainer) evalLearnerContainer.classList.add('hidden');
+        if (evalSupervisorContainer) {
+          evalSupervisorContainer.classList.remove('hidden');
+          renderTrainerSupervisorDashboardIa(email);
+        }
+      } else {
+        if (evalSupervisorContainer) evalSupervisorContainer.classList.add('hidden');
+        if (evalLearnerContainer) evalLearnerContainer.classList.remove('hidden');
+      }
+
+      // Gestion de l'affichage Onglet 2 : Superviseur Cas Pratique vs Apprenant Cadrage
+      const caseLearnerContainer = document.getElementById('evalCasePratiqueLearnerContainer');
+      const caseSupervisorContainer = document.getElementById('evalCasePratiqueSupervisorContainer');
+
+      if (data.isTrainer) {
+        if (caseLearnerContainer) caseLearnerContainer.classList.add('hidden');
+        if (caseSupervisorContainer) {
+          caseSupervisorContainer.classList.remove('hidden');
+          renderTrainerCaseSupervisorDashboardIa(email);
+        }
+      } else {
+        if (caseSupervisorContainer) caseSupervisorContainer.classList.add('hidden');
+        if (caseLearnerContainer) caseLearnerContainer.classList.remove('hidden');
+      }
+
+      // Checklist par rôle (Guide d'accueil)
+      renderChecklistByRole(data);
 
       const evalAvatar = document.getElementById('evalActiveAvatar');
       if (evalAvatar) {
@@ -3961,6 +5140,12 @@
           }
         }
       });
+      const currentInspectedUser = ALL_USERS_DATABASE[currentInspectedLearnerEmail] || {};
+      if (tabId === 'tab-cas-pratique' && currentInspectedUser.isTrainer) {
+        renderTrainerCaseSupervisorDashboardIa(currentInspectedLearnerEmail);
+      } else if (tabId === 'tab-positionnement' && currentInspectedUser.isTrainer) {
+        renderTrainerSupervisorDashboardIa(currentInspectedLearnerEmail);
+      }
       if (window.lucide) lucide.createIcons();
     }
 
@@ -4041,10 +5226,23 @@
           btnSave.className = "px-5 py-2.5 rounded-xl bg-grad-oidaneos text-white text-xs font-extrabold shadow-btn hover:opacity-95 transition flex items-center justify-center gap-2 cursor-pointer";
         }
       }
+      if (btnToggle) {
+        const auth = ALL_USERS_DATABASE[loggedInUserEmail];
+        if (!auth || !auth.isTrainer) {
+          btnToggle.classList.add('hidden');
+        } else {
+          btnToggle.classList.remove('hidden');
+        }
+      }
       if (window.lucide) lucide.createIcons();
     }
 
     function toggleLockPositionnement() {
+      const auth = ALL_USERS_DATABASE[loggedInUserEmail];
+      if (!auth || !auth.isTrainer) {
+        alert("Action réservée aux formateurs et à l'administration.");
+        return;
+      }
       const data = getLearnerData(currentInspectedLearnerEmail);
       data.isLocked = !data.isLocked;
       saveLearnerData(currentInspectedLearnerEmail, data);
@@ -4309,23 +5507,6 @@
 
     function exportAdminCertifia() {
       const data = getLearnerData(currentInspectedLearnerEmail);
-      const text = `DOSSIER CANDIDAT CERTIFIA / FRANCE COMPÉTENCES :
-Nom & Prénom : ${data.name}
-Email : ${data.email}
-Entreprise : ${document.getElementById('certifia-company').value || data.company}
-Situation avant formation : ${document.getElementById('certifia-situation').value}
-Dernier métier exercé : ${document.getElementById('certifia-lastjob').value}
-Années d'expérience métier : ${document.getElementById('certifia-exp-years').value}
-Dernier diplôme obtenu : ${document.getElementById('certifia-diploma').value}
-Adresse postale : ${document.getElementById('certifia-address').value}
-Pièce d'identité : OK
-Diplôme : OK`;
-      navigator.clipboard.writeText(text);
-      alert("📋 Fiche administrative CertifIA copiée dans le presse-papier !");
-    }
-
-    function exportAdminCertifia() {
-      const data = getLearnerData(currentInspectedLearnerEmail);
       const fn = document.getElementById('certifia-firstname')?.value || data.firstname || '';
       const ln = document.getElementById('certifia-lastname')?.value || data.lastname || '';
       const em = document.getElementById('certifia-email')?.value || data.email || '';
@@ -4365,6 +5546,9 @@ Diplôme : OK`;
     }
 
     function renderQualityReport(data) {
+      if (data.isTrainer) {
+        data = getLearnerData(supervisorInspectedLearnerIa || 'ackaraib@orange.fr');
+      }
       const elReportName = document.getElementById('reportLearnerName');
       const elTableName = document.getElementById('reportTableLearnerName');
       if (elReportName) elReportName.textContent = data.name;
